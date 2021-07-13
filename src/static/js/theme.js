@@ -22,7 +22,7 @@ function storageAvailable(type) {
   }
 }
 
-const themeKey = 'andybond.dev-theme';
+const themeKey = 'andy.bond-theme';
 const available = storageAvailable('localStorage');
 const system = window.matchMedia('(prefers-color-scheme: dark)').matches;
 let dark = system;
