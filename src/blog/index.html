@@ -1,11 +1,12 @@
 ---
 layout: blog
+permalink: "posts/index.html"
 ---
 
-<section>
+<section class="postlist">
   {% set postslist = collections.post %}
   {% for post in postslist | reverse %}
-    <article class="card">
+    <article class="postcard card">
       <h2>
         <a href="{{ post.url | url }}">
           {% if post.data.title %}
@@ -15,10 +16,8 @@ layout: blog
           {% endif %}
         </a>
       </h2>
-      <p class="flex flex-row align-items-center">
-        <time>
-          {{ post.date | readableDate }} by <a>{{ post.data.author }}</a>
-        </time>
+      <p class="byline">
+        {{ post.date | readableDate }}
       </p>
       {% if post.data.description %}
         <p>{{ post.data.description }}</p>

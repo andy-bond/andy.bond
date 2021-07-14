@@ -111,7 +111,7 @@ a {
 /* Navbar */
 
 #navbar {
-  grid-area: "header";
+  grid-area: header;
   position: relative;
   max-width: 1100px;
   margin: 0 auto;
@@ -192,7 +192,7 @@ a {
 /* Main */
 
 main {
-  grid-area: "main";
+  grid-area: main;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1em;
@@ -201,7 +201,7 @@ main {
 /* Footer */
 
 #footer {
-  grid-area: "footer";
+  grid-area: footer;
 }
 
 #footer a {
@@ -248,6 +248,10 @@ main {
 
 .relative {
   position: relative;
+}
+
+.gap-0\.5 {
+  gap: 0.5em;
 }
 
 .gap-1 {
@@ -333,6 +337,10 @@ main {
   transition: var(--default-transition);
 }
 
+.card > h1:first-child {
+  margin-top: 0;
+}
+
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],
@@ -356,6 +364,47 @@ body pre[class*="language-"] {
 
 #about-me-image img {
   width: 100%;
+}
+
+/* Blog (Post List) */
+
+.postcard .byline {
+  opacity: 0.8;
+  font-size: 0.8em;
+}
+
+/* Contact */
+
+.contact-form h1 {
+  margin: 0;
+}
+
+.contact-form input, textarea {
+  font-family: inherit;
+  width: clamp(100%, 1200px, 100%);
+  border: none;
+  padding: 1em;
+  background-color: var(--color-highlight);
+  color: inherit;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 2em;
+  background-color: var(--color-accent-darker);
+  color: rgb(var(--color-white));
+  border: none;
+  border-radius: 4px;
+  padding: 0.5em 2em;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  box-shadow: var(--default-shadow);
 }
 
 /* Medium Screens */

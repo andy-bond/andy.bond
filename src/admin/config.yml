@@ -12,56 +12,24 @@ local_backend: true
 publish_mode: editorial_workflow
 
 collections:
-  - label: "Personal Blog"
-    name: "personal_blog"
+  - label: "Blog"
+    name: "blog"
     folder: "src/posts"
     create: true
     editor:
       preview: false
-    filter: { field: "type", value: "personal" }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - {
-          lable: "Type",
-          name: "type",
-          widget: "select",
-          options: ["personal", "technical"],
-        }
       - widget: select
         label: "tags"
         name: "tags"
         multiple: true
         create: true
         options: ["life", "travel"]
-  - label: "Technical Blog"
-    name: "technical_blog"
-    folder: "src/posts"
-    create: true
-    editor:
-      preview: false
-    filter: { field: "type", value: "technical" }
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - {
-          lable: "Type",
-          name: "type",
-          widget: "select",
-          options: ["personal", "technical"],
-        }
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["web dev", "css", "html", "rxjs", "angular", ".net"]
   - label: "Settings"
     name: "settings"
     editor:
@@ -86,3 +54,4 @@ collections:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }
           - { label: URL, name: url, widget: string }
+          - { label: Copyright Year, name: copyright, widget: number }

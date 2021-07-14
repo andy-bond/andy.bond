@@ -1,7 +1,7 @@
 ---
 items:
-  - text: Blog
-    url: "/blog"
+  - text: Posts
+    url: "/posts"
   - text: Photos
     url: "/photos"
   - text: Contact
