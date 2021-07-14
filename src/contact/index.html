@@ -5,22 +5,23 @@ layout: contact
 <div class="contact-form card flex flex-col">
   <h1>Contact</h1>
   <p>Use the form below to send me a message.</p>
-  <form name="contact" class="flex flex-col" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+  <form name="contact" class="flex flex-col" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+    <p style="display: none" class="contact-item flex flex-col gap-0.5">
+      <label for="bot-field">Name</label>
+      <input type="text" name="bot-field" placeholder="Nice Try..."/>
+    </p>
     <p class="contact-item flex flex-col gap-0.5">
       <label for="name">Name</label>
-      <input type="text" name="name" required/>
+      <input type="text" name="name" placeholder="John Doe" required/>
     </p>
     <p class="contact-item flex flex-col gap-0.5">
       <label for="email">Email</label>
-      <input type="email" name="email" requried/>
+      <input type="email" name="email" placeholder="john.doe@gmail.com" required/>
     </p>
     <p class="contact-item flex flex-col gap-0.5">
       <label for="message">Message</label>
-      <textarea name="message" required></textarea>
+      <textarea name="message" placeholder="Wow, what a great website!" required></textarea>
     </p>
-    <div data-netlify-recaptcha="true"></div>
-    <p>
-      <button type="submit">Submit</button>
-    </p>
+    <button type="submit">Submit</button>
   </form>
 </div>

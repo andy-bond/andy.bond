@@ -379,14 +379,25 @@ body pre[class*="language-"] {
   margin: 0;
 }
 
-.contact-form input, textarea {
+.contact-form input,
+textarea {
   font-family: inherit;
+  font-size: 1em;
   width: clamp(100%, 1200px, 100%);
   border: none;
   padding: 1em;
   background-color: var(--color-highlight);
   color: inherit;
   border-radius: 4px;
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  transition: border-color var(--default-transition-timing) ease-in-out,
+    background-color var(--default-transition-timing) ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 2px solid var(--color-title);
 }
 
 .contact-form textarea {
@@ -394,6 +405,7 @@ body pre[class*="language-"] {
 }
 
 .contact-form button {
+  align-self: flex-start;
   font-family: inherit;
   cursor: pointer;
   margin-top: 2em;
@@ -404,7 +416,6 @@ body pre[class*="language-"] {
   padding: 0.5em 2em;
   font-size: 1.2em;
   text-transform: uppercase;
-  box-shadow: var(--default-shadow);
 }
 
 /* Medium Screens */
