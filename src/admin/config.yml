@@ -12,8 +12,8 @@ local_backend: true
 publish_mode: editorial_workflow
 
 collections:
-  - label: "Blog"
-    name: "blog"
+  - label: "Posts"
+    name: "posts"
     folder: "src/posts"
     create: true
     editor:
@@ -36,7 +36,7 @@ collections:
       preview: false
     files:
       - label: "Navigation"
-        name: "items"
+        name: "navigation"
         file: "src/_data/navigation.yaml"
         fields:
           - label: Nav Items
@@ -47,11 +47,12 @@ collections:
             fields:
               - { label: Title, name: text, widget: string }
               - { label: URL, name: url, widget: string }
-      - label: "Meta Settings"
-        name: "settings"
-        file: "src/_data/settings.yaml"
+      - label: "Metadata"
+        name: "metadata"
+        file: "src/_data/metadata.yaml"
         fields:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }
           - { label: URL, name: url, widget: string }
+          - { label: Repository, name: repository, widget: string }
           - { label: Copyright Year, name: copyright, widget: number }

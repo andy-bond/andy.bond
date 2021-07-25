@@ -5,25 +5,63 @@ path: home
 ---
 
 <article class="flex flex-col gap-2">
-  <section id="about-me" class="card relative flex flex-col">
+  <section id="about-me" class="card relative flex flex-col gap-2">
     <h1>👋 Hi, I'm Andy Bond - Welcome to my blog!</h1>
     <p>
         On this blog, I hope to write about my life, my
         travels, and some of my work - as well as have a place to put some of the
         photos I've taken over the years.
-      </p>
+    </p>
     <p>
         If you want to leave me a comment or just want to reach out, please do so using the form on the <a href="contact">contact page</a>.
       </p>
     <p>Thanks for stopping by!</p>
     <div id="about-me-image" class="flex flex-col align-items-center justify-content-center">
-      <img alt="Cartoonized Apple Memoji of Andy" src="/static/img/andy-memoji.png" />
+      <img alt="Cartoonized Apple Memoji of Andy" src="/static/img/andy-memoji.png"/>
     </div>
   </section>
   <section id="recent-posts" class="flex flex-col gap-2">
     <h1>Recent Posts</h1>
+    <div class="flex flex-row align-items-center wrap gap-1">
+      {% set postslist = collections.post %}
+      {% for post in postslist | reverse %}
+        {% if loop.index <= 4 %}
+          <article class="postcard card flex flex-col gap-0.5">
+            <div class="flex flex-col">
+              <h2>
+                <a href="{{ post.url | url }}">
+                  {% if post.data.title %}
+                    {{ post.data.title }}
+                  {% else %}
+                    Untitled
+                  {% endif %}
+                </a>
+              </h2>
+              <p class="byline">
+                {{ post.date | readableDate }}
+              </p>
+            </div>
+            {% if post.data.description %}
+              <p>{{ post.data.description }}</p>
+            {% endif %}
+            <p>
+              <a href="{{ post.url | url }}"> Read more →</a>
+            </p>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
   </section>
   <section id="recent-photos" class="flex flex-col gap-2">
     <h1>Recent Photos</h1>
+  </section>
+  <section id="recent-media" class="flex flex-col gap-2">
+    <h1>Recent Movies & TV</h1>
+  </section>
+  <section id="recent-reads" class="flex flex-col gap-2">
+    <h1>Recent Reads</h1>
+  </section>
+  <section id="recent-listens" class="flex flex-col gap-2">
+    <h1>Recent Listens</h1>
   </section>
 </article>

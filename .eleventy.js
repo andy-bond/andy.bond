@@ -4,10 +4,10 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
-  // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);
 
-  // Merge data instead of overriding
+  eleventyConfig.addWatchTarget("./src/static/scss/");
+
   eleventyConfig.setDataDeepMerge(true);
 
   // human readable date

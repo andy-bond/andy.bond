@@ -1,0 +1,47 @@
+@use "sass:string";
+
+@mixin generate-sided($name, $prefix, $sizes...) {
+  $variants: "", "x", "y", "t", "r", "b", "l";
+  @each $size in $sizes {
+    @each $variant in $variants {
+      $sizeString: #{$size};
+      $index: string.index($sizeString, ".");
+      @if ($index) {
+        $sizeString: string.insert($sizeString, "\\", $index);
+      }
+      .#{$prefix}#{$variant}-#{$sizeString} {
+        @if ($variant == "") {
+          #{$name}: #{$size}em;
+        } @else if ($variant == "x") {
+          #{$name}-left: #{$size}em;
+          #{$name}-right: #{$size}em;
+        } @else if ($variant == "y") {
+          #{$name}-top: #{$size}em;
+          #{$name}-bottom: #{$size}em;
+        } @else if ($variant == "t") {
+          #{$name}-top: #{$size}em;
+        } @else if ($variant == "r") {
+          #{$name}-right: #{$size}em;
+        } @else if ($variant == "b") {
+          #{$name}-bottom: #{$size}em;
+        } @else if ($variant == "l") {
+          #{$name}-left: #{$size}em;
+        }
+      }
+    }
+  }
+}
+
+@mixin default-transition($props...) {
+  $result: ();
+  @each $prop in $props {
+    $result: append(
+      $result,
+      $prop
+        #{var(--default-transition-timing)}
+        #{var(--default-transition-curve)},
+      $separator: comma
+    );
+  }
+  transition: $result;
+}

@@ -1,0 +1,22 @@
+@use '../mixins' as mixins;
+
+.card {
+  color: var(--color-text);
+  padding: 2em;
+  background-color: var(--color-card);
+  border-radius: 10px;
+  box-shadow: var(--default-shadow);
+  @include mixins.default-transition(background-color, color);
+}
+
+.card > h1:first-child {
+  margin-top: 0;
+}
+
+/* Smaller Screens */
+
+@media screen and (max-width: 499px) {
+  .card {
+    padding: 2em 1em;
+  }
+}

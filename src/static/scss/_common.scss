@@ -1,0 +1,125 @@
+@use './mixins' as mixins;
+
+:root {
+  /* Fonts */
+  --font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-weight-medium: 500;
+
+  /* Generic Colors */
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+
+  --color-primary: rgb(103, 58, 183);
+  --color-primary-darker: rgb(81, 45, 168);
+  --color-primary-lighter: rgb(162, 128, 255);
+
+  --color-accent: rgb(0, 150, 136);
+  --color-accent-darker: rgb(0, 121, 107);
+  --color-accent-lighter: rgb(1, 188, 188);
+
+  /* Specific Element Colors */
+  --color-text: rgba(var(--color-black), 0.87);
+  --color-background: #ecf2f9;
+  --color-title: var(--color-primary);
+  --color-highlight: rgba(var(--color-black), 0.125);
+  --color-card: rgb(var(--color-white));
+  --color-link: var(--color-accent-darker);
+
+  /* Transitions */
+  --default-transition-timing: 250ms;
+  --default-transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --default-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+
+.dark {
+  --font-weight-medium: 400;
+  --color-text: rgba(var(--color-white), 1);
+  --color-background: #0d1c2b;
+  --color-title: var(--color-primary-lighter);
+  --color-highlight: rgba(var(--color-white), 0.125);
+  --color-card: rgb(21, 39, 61);
+  --color-link: var(--color-accent-lighter);
+}
+
+/* Links */
+
+a {
+  color: var(--color-link);
+}
+
+/* Utilities */
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.relative {
+  position: relative;
+}
+
+.gap-0\.5 {
+  gap: 0.5em;
+}
+
+.gap-1 {
+  gap: 1em;
+}
+
+.gap-2 {
+  gap: 2em;
+}
+
+/* Padding */
+
+@include mixins.generate-sided('padding', 'p', 0.5, 1);
+
+/* Margin */
+
+@include mixins.generate-sided('margin', 'm', 0.5, 1);
+
+/* Syntax Highlighting*/
+
+body :not(pre) > code[class*="language-"],
+body pre[class*="language-"] {
+  border: none;
+}

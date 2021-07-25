@@ -21,7 +21,7 @@
     {% endif %}
 
     {% block head %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="/static/css/styles.css"/>
+    <link rel="stylesheet" href="{{ '/static/css/styles.css' | url }}"/>
 
     {% if prism == true %}
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css"/>
@@ -32,11 +32,15 @@
     <script type="text/javascript" src="/static/js/theme.js"></script>
   </head>
   <body>
-    {% include "./partials/navbar.html" %}
-    <main>
-      {{ content | safe }}
-    </main>
-    {% include "./partials/footer.html" %}
+    <div class="flex flex-col flex-auto">
+      <div class="content-wrapper">
+        {% include "./partials/header.html" %}
+        <main>
+          {{ content | safe }}
+        </main>
+      </div>
+      {% include "./partials/footer.html" %}
+    </div>
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->

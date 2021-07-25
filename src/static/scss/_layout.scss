@@ -1,0 +1,36 @@
+@use './mixins' as mixins;
+
+html,
+body {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: var(--font-sans-serif);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  @include mixins.default-transition(background-color, color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+/* Main */
+
+main {
+  padding: 1em;
+  flex: 1 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
