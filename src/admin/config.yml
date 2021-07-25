@@ -30,6 +30,28 @@ collections:
         multiple: true
         create: true
         options: ["life", "travel"]
+  - label: "Reads"
+    name: "reads"
+    folder: "src/reads"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "ISBN", name: "isbn", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Favorite", name: "favorite", widget: "boolean" }
+      - {
+          label: "Rating",
+          name: "rating",
+          widget: "number",
+          value_type: "int",
+          min: 1,
+          max: 5,
+        }
+      - { label: "Start Date", name: "start", widget: "datetime", default: "", required: false }
+      - { label: "End Date", name: "end", widget: "datetime", default: "", required: false }
+      - { label: "Review", name: "review", widget: "markdown", required: false }
   - label: "Settings"
     name: "settings"
     editor:
@@ -42,8 +64,6 @@ collections:
           - label: Nav Items
             name: items
             widget: list
-            allow_add: false
-            collapsed: false
             fields:
               - { label: Title, name: text, widget: string }
               - { label: URL, name: url, widget: string }
