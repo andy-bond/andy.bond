@@ -9,7 +9,7 @@
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass --no-source-map src/static/scss:_site/static/css",
     "build:eleventy": "eleventy",
-    "postbuild": "postcss _site/css/*.css -u autoprefixer cssnano -r --no-map",
+    "postbuild": "postcss _site/static/css/*.css -u autoprefixer cssnano -r --no-map",
     "cms": "npx netlify-cms-proxy-server"
   },
   "devDependencies": {
