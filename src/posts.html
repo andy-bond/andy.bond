@@ -4,8 +4,7 @@ permalink: "posts/index.html"
 ---
 
 <section class="postlist">
-  {% set postslist = collections.post %}
-  {% for post in postslist | reverse %}
+  {% for post in collections.post | reverse %}
     <article class="postcard card">
       <h2>
         <a href="{{ post.url | url }}">

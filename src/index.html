@@ -58,8 +58,13 @@ path: home
   <section id="recent-media" class="flex flex-col gap-2">
     <h1>Recent Movies & TV</h1>
   </section>
-  <section id="recent-reads" class="flex flex-col gap-2">
+  <section id="recent-reads" class="flex flex-col gap-1">
     <h1>Recent Reads</h1>
+    <div class="flex flex-row wrap gap-1">
+      {% for readItem in collections.read | limit(8) %}
+        {% read readItem %}
+      {% endfor %}
+    </div>
   </section>
   <section id="recent-listens" class="flex flex-col gap-2">
     <h1>Recent Listens</h1>

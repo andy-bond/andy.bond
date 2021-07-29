@@ -4,18 +4,45 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setUseGitIgnore(false);
+  /* --- Shortcodes --- */
+  /* eleventyConfig.addShortcode("read", (item) => {console.log(item);return `<a
+class="read-item"
+style="background-image: url(http://covers.openlibrary.org/b/ISBN/${item.data.isbn}-M.jpg)"
+href="${item.url}"
+alt="${item.data.title} by ${item.data.author}"
+></a>`}); */
 
-  eleventyConfig.addWatchTarget("./src/static/scss/");
+eleventyConfig.addShortcode("read", (item) => `<div class="read-item">
+  <img src="http://covers.openlibrary.org/b/ISBN/${item.data.isbn}-M.jpg" loading="lazy">
+  <div class="info">
+    <h1>${item.data.title}</h1>
+    <p class="read-author">by ${item.data.author}</p>
+    <p class="read-rating">${Array(5).fill('☆').fill('★', 0, item.data.rating).join('')}</p>
+    <a href="${item.url}">Read Review →</a>
+  </div>
+</div>
+`);
 
-  eleventyConfig.setDataDeepMerge(true);
+  /* --- Filters --- */
 
-  // human readable date
+  eleventyConfig.addFilter("limit", function (arr, limit) {
+    return arr.slice(0, limit);
+  });
+
+  // Human Readable Date
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "dd LLL yyyy"
     );
   });
+
+  /* Eleventy Configuration */
+
+  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.setDataDeepMerge(true);
+
+  // Watch for SCSS
+  eleventyConfig.addWatchTarget("./src/static/scss/");
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);

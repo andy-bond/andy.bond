@@ -4,7 +4,7 @@
   color: var(--color-text);
   padding: 2em;
   background-color: var(--color-card);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   box-shadow: var(--default-shadow);
   @include mixins.default-transition(background-color, color);
 }

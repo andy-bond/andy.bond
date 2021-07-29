@@ -1,0 +1,10 @@
+---
+layout: reads
+permalink: "reads/index.html"
+---
+
+<section class="flex flex-row wrap gap-1">
+  {% for readItem in collections.read | reverse %}
+    {% read readItem %}
+  {% endfor %}
+</section>
