@@ -13,7 +13,7 @@ alt="${item.data.title} by ${item.data.author}"
 ></a>`}); */
 
 eleventyConfig.addShortcode("read", (item) => `<div class="read-item">
-  <img src="http://covers.openlibrary.org/b/ISBN/${item.data.isbn}-M.jpg" loading="lazy">
+  <img src="https://covers.openlibrary.org/b/ISBN/${item.data.isbn}-M.jpg" loading="lazy">
   <div class="info">
     <h1>${item.data.title}</h1>
     <p class="read-author">by ${item.data.author}</p>
