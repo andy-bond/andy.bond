@@ -9,6 +9,7 @@
   /* Generic Colors */
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
+  --color-card-rgb: 255, 255, 255;
 
   --color-primary: rgb(103, 58, 183);
   --color-primary-darker: rgb(81, 45, 168);
@@ -21,6 +22,7 @@
   /* Specific Element Colors */
   --color-text: rgba(var(--color-black), 0.87);
   --color-background: #ecf2f9;
+  --color-background-secondary: #d2e0f1;
   --color-title: var(--color-primary);
   --color-highlight: rgba(var(--color-black), 0.125);
   --color-card: rgb(var(--color-white));
@@ -36,15 +38,17 @@
 
     /* Misc */
   --border-radius: 10px;
+  --wave-height: 4em;
 }
 
 .dark {
+  --color-background-secondary: #0b1724;
+  --color-background: #0d1c2b;
+  --color-card: #15273d;
   --font-weight-medium: 400;
   --color-text: rgba(var(--color-white), 1);
-  --color-background: #0d1c2b;
   --color-title: var(--color-primary-lighter);
   --color-highlight: rgba(var(--color-white), 0.125);
-  --color-card: rgb(21, 39, 61);
   --color-link: var(--color-accent-lighter);
 }
 
@@ -114,15 +118,46 @@ a {
 
 /* Padding */
 
-@include mixins.generate-sided('padding', 'p', 0.5, 1);
+@include mixins.generate-sided('padding', 'p', 0.5, 1, 2);
 
 /* Margin */
 
-@include mixins.generate-sided('margin', 'm', 0.5, 1);
+@include mixins.generate-sided('margin', 'm', 0.5, 1, 2);
 
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],
 body pre[class*="language-"] {
   border: none;
+}
+
+/* Wave Divider */
+
+.wave-svg {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  left: 0;
+
+  &.top {
+    top: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+    transform: rotate(180deg);
+  }
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: var(--wave-height);
+  }
+
+  .shape-fill {
+    fill: var(--color-background);
+    @include mixins.default-transition(fill);
+  }
 }

@@ -1,11 +1,12 @@
 ---
-layout: contact
+layout: default
+title: Contact
 ---
 
-<div class="contact-form card flex flex-col">
-  <h1>Contact</h1>
+<div class="contact-form card flex flex-col gap-1">
+  <h1>{{title}}</h1>
   <p>Use the form below to send me a message.</p>
-  <form name="contact" class="flex flex-col" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/contact/success">
+  <form name="contact" class="flex flex-col gap-1" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/contact/success">
     <p style="display: none" class="contact-item flex flex-col gap-0.5">
       <label for="bot-field">Name</label>
       <input type="text" name="bot-field" placeholder="Nice Try..."/>

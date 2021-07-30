@@ -23,14 +23,23 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: space-between;
 }
 
-/* Main */
+/* Full Bleed Wrapper */
 
-main {
-  padding: 1em;
-  flex: 1 0 auto;
-  max-width: 1200px;
-  margin: 0 auto;
+.full-bleed-wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(1200px, calc(100% - 2em))
+    1fr;
+  grid-column-gap: 1em;
+
+  > * {
+    grid-column: 2;
+  }
+
+  > .full-bleed {
+    grid-column: 1 / -1;
+  }
 }

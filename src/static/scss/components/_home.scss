@@ -1,4 +1,4 @@
-/* About Me */
+@use '../mixins' as mixins;
 
 #about-me-image {
   position: absolute;
@@ -9,12 +9,20 @@
   left: -2em;
   width: 75px;
   box-shadow: var(--default-shadow);
-  transition: left var(--default-transition-timing)
-    var(--default-transition-curve);
+  @include mixins.default-transition(left);
 }
 
 #about-me-image img {
   width: 100%;
+}
+
+#recent-entertainment,
+#recent-posts {
+  position: relative;
+  background-color: var(--color-background-secondary);
+  padding-top: var(--wave-height);
+  padding-bottom: var(--wave-height);
+  @include mixins.default-transition(background-color);
 }
 
 /* Medium Screens */
@@ -29,4 +37,3 @@
     transform: translateX(-50%);
   }
 }
-

@@ -1,26 +1,26 @@
 ---
 layout: default
-title: Home • Andy Bond
+title: Home
 path: home
 ---
 
-<article class="flex flex-col gap-2">
-  <section id="about-me" class="card relative flex flex-col gap-2">
-    <h1>👋 Hi, I'm Andy Bond - Welcome to my blog!</h1>
-    <p>
-        On this blog, I hope to write about my life, my
-        travels, and some of my work - as well as have a place to put some of the
-        photos I've taken over the years.
-    </p>
-    <p>
-        If you want to leave me a comment or just want to reach out, please do so using the form on the <a href="contact">contact page</a>.
-      </p>
-    <p>Thanks for stopping by!</p>
-    <div id="about-me-image" class="flex flex-col align-items-center justify-content-center">
-      <img alt="Cartoonized Apple Memoji of Andy" src="/static/img/andy-memoji.png"/>
-    </div>
-  </section>
-  <section id="recent-posts" class="flex flex-col gap-2">
+<section id="about-me" class="card relative flex flex-col my-2 gap-2">
+  <h1>👋 Hi, I'm Andy Bond - Welcome to my blog!</h1>
+  <p>
+    On this blog, I hope to write about my life, my
+    travels, and some of my work - as well as have a place to put some of the
+    photos I've taken over the years.
+  </p>
+  <p>
+    If you want to leave me a comment or just want to reach out, please do so using the form on the <a href="contact">contact page</a>.
+  </p>
+  <p>Thanks for stopping by!</p>
+  <div id="about-me-image" class="flex flex-col align-items-center justify-content-center">
+    <img alt="Cartoonized Apple Memoji of Andy" src="/static/img/andy-memoji.png"/>
+  </div>
+</section>
+<section id="recent-posts" class="full-bleed my-2">
+  <div class="full-bleed-wrapper flex flex-col p-2 gap-1">
     <h1>Recent Posts</h1>
     <div class="flex flex-row align-items-center wrap gap-1">
       {% set postslist = collections.post %}
@@ -51,22 +51,22 @@ path: home
         {% endif %}
       {% endfor %}
     </div>
-  </section>
-  <section id="recent-photos" class="flex flex-col gap-2">
-    <h1>Recent Photos</h1>
-  </section>
-  <section id="recent-media" class="flex flex-col gap-2">
-    <h1>Recent Movies & TV</h1>
-  </section>
-  <section id="recent-reads" class="flex flex-col gap-1">
-    <h1>Recent Reads</h1>
+  </div>
+  {% waves 'top' %}
+  {% waves 'bottom' %}
+</section>
+<section id="recent-photos" class="flex flex-col my-2 gap-1">
+  <h1>Recent Photos</h1>
+</section>
+<section id="recent-entertainment" class="full-bleed my-2">
+  <div class="full-bleed-wrapper flex flex-col p-2 gap-1">
+    <h1>📚🍿🎧 - Latest Entertainment</h1>
     <div class="flex flex-row wrap gap-1">
       {% for readItem in collections.read | limit(8) %}
         {% read readItem %}
       {% endfor %}
     </div>
-  </section>
-  <section id="recent-listens" class="flex flex-col gap-2">
-    <h1>Recent Listens</h1>
-  </section>
-</article>
+  </div>
+  {% waves 'top' %}
+  {% waves 'bottom' %}
+</section>
