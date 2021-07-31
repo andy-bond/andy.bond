@@ -1,8 +1,0 @@
----
-items:
-  - text: Posts
-    url: "/posts"
-  - text: Photos
-    url: "/photos"
-  - text: Contact
-    url: "/contact"

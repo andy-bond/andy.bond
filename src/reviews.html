@@ -1,0 +1,11 @@
+---
+layout: listing
+title: Reviews
+permalink: "reviews/index.html"
+---
+
+<section class="flex flex-row wrap gap-1">
+  {% for item in collections.review | reverse %}
+    {% review item %}
+  {% endfor %}
+</section>

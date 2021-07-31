@@ -6,12 +6,12 @@ const htmlmin = require("html-minifier");
 module.exports = function (eleventyConfig) {
   /* --- Shortcodes --- */
 
-  eleventyConfig.addShortcode("read", (item) => `<div class="read-item">
-  <img src="https://covers.openlibrary.org/b/ISBN/${item.data.isbn}-M.jpg" loading="lazy">
+  eleventyConfig.addShortcode("review", (item) => `<div class="review-item">
+  <img src="${item.data.image}" loading="lazy">
   <div class="info">
     <h1>${item.data.title}</h1>
-    <p class="read-author">by ${item.data.author}</p>
-    <p class="read-rating">${Array(5).fill('☆').fill('★', 0, item.data.rating).join('')}</p>
+    <p class="creator">by ${item.data.creator}</p>
+    <p class="rating">${Array(5).fill('☆').fill('★', 0, item.data.rating).join('')}</p>
     <a href="${item.url}">Read Review →</a>
   </div>
 </div>`);
@@ -27,7 +27,7 @@ module.exports = function (eleventyConfig) {
   /* --- Filters --- */
 
   eleventyConfig.addFilter("limit", function (arr, limit) {
-    return arr.slice(0, limit);
+    return arr && arr.length > 0 ? arr.slice(0, limit) : arr;
   });
 
   // Human Readable Date
@@ -48,21 +48,14 @@ module.exports = function (eleventyConfig) {
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
 
-  // To Support .yaml Extension in _data
-  // You may remove this if you can use JSON
-  eleventyConfig.addDataExtension("yaml", (contents) =>
-    yaml.load(contents)
-  );
-
   // Copy Static Files to /_Site
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
     "./node_modules/prismjs/themes/prism-tomorrow.css": "./static/css/prism-tomorrow.css",
   });
 
-  // Copy Image Folder to /_site
+  // Copy Items to Site
   eleventyConfig.addPassthroughCopy("./src/static/img");
-
   eleventyConfig.addPassthroughCopy("./src/static/js");
 
   // Copy favicon to route of /_site

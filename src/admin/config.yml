@@ -11,36 +11,43 @@ site_url: https://andy.bond
 local_backend: true
 publish_mode: editorial_workflow
 
+editor:
+  preview: false
+
 collections:
   - label: "Posts"
     name: "posts"
     folder: "src/posts"
     create: true
-    editor:
-      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - widget: select
-        label: "tags"
-        name: "tags"
-        multiple: true
-        create: true
-        options: ["life", "travel"]
-  - label: "Reads"
-    name: "reads"
-    folder: "src/reads"
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: select,
+          multiple: true,
+          options: ["life", "travel"],
+        }
+  - label: "Ratings & Reviews"
+    name: "reviews"
+    folder: "src/reviews"
     create: true
-    editor:
-      preview: false
     fields:
-      - { label: "ISBN", name: "isbn", widget: "string" }
+      - {
+          label: "Type",
+          name: "type",
+          widget: select,
+          options: ["movie", "tv", "book", "podcast", "music", "game"],
+        }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Creator", name: "creator", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", choose_url: false  }
       - { label: "Favorite", name: "favorite", widget: "boolean" }
+      - { label: "Series", name: "series", widget: "string", required: false }
       - {
           label: "Rating",
           name: "rating",
@@ -49,17 +56,13 @@ collections:
           min: 1,
           max: 5,
         }
-      - { label: "Start Date", name: "start", widget: "datetime", default: "", required: false }
-      - { label: "End Date", name: "end", widget: "datetime", default: "", required: false }
-      - { label: "Review", name: "review", widget: "markdown", required: false }
+      - { label: "Review", name: "body", widget: "markdown" }
   - label: "Settings"
     name: "settings"
-    editor:
-      preview: false
     files:
       - label: "Navigation"
         name: "navigation"
-        file: "src/_data/navigation.yaml"
+        file: "src/_data/navigation.json"
         fields:
           - label: Nav Items
             name: items
@@ -69,7 +72,7 @@ collections:
               - { label: URL, name: url, widget: string }
       - label: "Metadata"
         name: "metadata"
-        file: "src/_data/metadata.yaml"
+        file: "src/_data/metadata.json"
         fields:
           - { label: Name, name: name, widget: string }
           - { label: Author, name: author, widget: string }

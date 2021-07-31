@@ -21,7 +21,10 @@ path: home
 </section>
 <section id="recent-posts" class="full-bleed my-2">
   <div class="full-bleed-wrapper flex flex-col p-2 gap-1">
-    <h1>Recent Posts</h1>
+    <div class="flex flex-row align-items-center gap-1">
+      <h1>Posts</h1>
+      <a href="/posts">View All →</a>
+    </div>
     <div class="flex flex-row align-items-center wrap gap-1">
       {% set postslist = collections.post %}
       {% for post in postslist | reverse %}
@@ -56,14 +59,20 @@ path: home
   {% waves 'bottom' %}
 </section>
 <section id="recent-photos" class="flex flex-col my-2 gap-1">
-  <h1>Recent Photos</h1>
+  <div class="flex flex-row align-items-center gap-1">
+    <h1>Photos</h1>
+    <a href="/photos">View All →</a>
+  </div>
 </section>
 <section id="recent-entertainment" class="full-bleed my-2">
   <div class="full-bleed-wrapper flex flex-col p-2 gap-1">
-    <h1>📚🍿🎧 - Latest Entertainment</h1>
+    <div class="flex flex-row align-items-center gap-1">
+      <h1>Ratings & Reviews</h1>
+      <a href="/reviews">View All →</a>
+    </div>
     <div class="flex flex-row wrap gap-1">
-      {% for readItem in collections.read | limit(8) %}
-        {% read readItem %}
+      {% for item in collections.review | limit(8) %}
+        {% review item %}
       {% endfor %}
     </div>
   </div>

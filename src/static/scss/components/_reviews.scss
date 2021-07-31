@@ -1,6 +1,6 @@
 @use '../mixins' as mixins;
 
-.read-item {
+.review-item {
   --image-height: 266px;
   --image-width: 180px;
   --multiplier: 1.5;
@@ -60,11 +60,11 @@
 		opacity: 0;
     @include mixins.default-transition(opacity);
 
-    .read-rating {
+    .rating {
       color: gold;
     }
 
-    .read-author {
+    .creator {
       font-size: 0.8em;
     }
 
