@@ -2,8 +2,8 @@
 
 html,
 body {
-  height: 100vh;
-  max-height: 100vh;
+  height: 100%;
+  max-height: 100%;
   overflow: auto;
   overflow-x: hidden;
   margin: 0;
@@ -32,9 +32,8 @@ body {
   display: grid;
   grid-template-columns:
     1fr
-    min(1200px, calc(100% - 2em))
+    min(var(--container-size), 100%)
     1fr;
-  grid-column-gap: 1em;
 
   > * {
     grid-column: 2;
@@ -43,4 +42,11 @@ body {
   > .full-bleed {
     grid-column: 1 / -1;
   }
+}
+
+/* Constrain Container */
+
+.container {
+  max-width: var(--container-size);
+  margin: 0 auto;
 }

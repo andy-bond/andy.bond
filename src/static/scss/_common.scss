@@ -36,7 +36,8 @@
   --default-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
 
-    /* Misc */
+  /* Misc */
+  --container-size: 999px;
   --border-radius: 10px;
   --wave-height: 4em;
 }
@@ -118,11 +119,11 @@ a {
 
 /* Padding */
 
-@include mixins.generate-sided('padding', 'p', 0.5, 1, 2);
+@include mixins.generate-sided("padding", "p", 0.5, 1, 2);
 
 /* Margin */
 
-@include mixins.generate-sided('margin', 'm', 0.5, 1, 2);
+@include mixins.generate-sided("margin", "m", 0.5, 1, 2);
 
 /* Syntax Highlighting*/
 
