@@ -70,14 +70,14 @@ path: home
     </div>
   </div>
 </section>
-<section id="recent-entertainment" class="full-bleed my-2">
+<section id="recent-reviews" class="full-bleed my-2">
   <div class="container flex flex-col gap-1">
     <div class="flex flex-row align-items-center px-1 gap-1">
       <h1>Reviews</h1>
       <a href="/reviews">View All →</a>
     </div>
-    <div class="flex flex-row wrap px-1 gap-1">
-      {% for item in collections.review | limit(8) %}
+    <div class="reviews-grid px-1 gap-1">
+      {% for item in collections.review | reverse | limit(8) %}
         {% review item %}
       {% endfor %}
     </div>

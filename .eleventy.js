@@ -1,4 +1,3 @@
-const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
@@ -6,11 +5,11 @@ const htmlmin = require("html-minifier");
 module.exports = function (eleventyConfig) {
   /* --- Shortcodes --- */
 
-  eleventyConfig.addShortcode("review", (item) => `<div class="review-item">
+  eleventyConfig.addShortcode("review", (item) => `<div class="review-item" data-type="${item.data.type}">
   <img src="${item.data.image}" loading="lazy">
   <div class="info">
     <h1>${item.data.title}</h1>
-    <p class="creator">by ${item.data.creator}</p>
+    ${item.data.subtitle ? `<p class="subtitle">${item.data.subtitle}</p>` : ''}
     <p class="rating">${Array(5).fill('☆').fill('★', 0, item.data.rating).join('')}</p>
     <a href="${item.url}">Read Review →</a>
   </div>

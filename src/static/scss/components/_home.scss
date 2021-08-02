@@ -16,7 +16,7 @@
   width: 100%;
 }
 
-#recent-entertainment,
+#recent-reviews,
 #recent-posts {
   position: relative;
   background-color: var(--color-background-secondary);
@@ -24,6 +24,8 @@
   padding-bottom: var(--wave-height);
   @include mixins.default-transition(background-color);
 }
+
+
 
 /* Medium Screens */
 
