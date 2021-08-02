@@ -9,6 +9,10 @@
       "url": "/photos"
     },
     {
+      "text": "Reviews",
+      "url": "/reviews"
+    },
+    {
       "text": "Contact",
       "url": "/contact"
     }

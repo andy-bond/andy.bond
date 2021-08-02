@@ -18,11 +18,11 @@ collections:
   - label: "Posts"
     name: "posts"
     folder: "src/posts"
+    path: '{{slug}}/index'
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "author", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
       - {
@@ -32,9 +32,10 @@ collections:
           multiple: true,
           options: ["life", "travel"],
         }
-  - label: "Ratings & Reviews"
+  - label: "Reviews"
     name: "reviews"
     folder: "src/reviews"
+    path: '{{slug}}/index'
     create: true
     fields:
       - {
@@ -57,6 +58,7 @@ collections:
           min: 1,
           max: 5,
         }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Review", name: "body", widget: "markdown" }
   - label: "Settings"
     name: "settings"

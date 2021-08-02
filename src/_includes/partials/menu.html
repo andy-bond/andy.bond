@@ -1,0 +1,17 @@
+<div id="menu" class="flex flex-col w-full h-full align-items-center justify-content-center">
+  <nav class="flex flex-col align-items-center justify-content-center gap-2">
+    {% if navigation.items %}
+      <a {% if '/' === page.url %} aria-current="page" {% endif %} href="/">
+        Home
+      </a>
+      {% for item in navigation.items %}
+        <a {% if item.url in page.url %} aria-current="page" {% endif %} href="{{ item.url }}">
+          {{ item.text }}
+        </a>
+      {% endfor %}
+    {% endif %}
+  </nav>
+  <button id="close-menu" onclick="toggleMenu()">
+    {% icon 'x' %}
+  </button>
+</div>

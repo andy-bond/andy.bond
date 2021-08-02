@@ -1,69 +1,100 @@
-#site-header nav {
-  margin-left: 2em;
-}
+@use '../mixins' as mixins;
 
-@media screen and (max-width: 499px) {
-  #site-header {
+#site-header {
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-highlight);
+
+  a {
+    text-decoration: none;
+  }
+
+  nav {
+    visibility: visible;
+    max-width: 1000px;
+    margin-left: 2em;
+    @include mixins.default-transition(margin-left, max-width);
+
+    a {
+      color: inherit;
+      font-weight: bold;
+
+      &[aria-current="page"] {
+        text-decoration: underline;
+        text-decoration-color: var(--color-accent);
+      }
+    }
+  }
+
+  #title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--color-title);
+  }
+
+  button {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    transition: background-color 250ms ease-in-out;
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+
+    &:hover {
+      background-color: var(--color-highlight);
+    }
   }
 
-  #site-header nav {
+  #theme-btn {
+    .feather-sun {
+      display: block;
+    }
+    .feather-moon {
+      display: none;
+    }
+  }
+
+  #menu-btn {
+    visibility: hidden;
     margin-left: 0;
-    margin-top: 0.5em;
+    max-width: 0;
+    padding: 0;
+
+    @include mixins.default-transition(margin-left, padding, max-width);
+  }
+
+  @media screen and (max-width: 599px) {
+    nav {
+      visibility: hidden;
+      margin-left: 0;
+      max-width: 0;
+    }
+
+    #menu-btn {
+      visibility: visible;
+      margin-left: 0.5em;
+      padding: 0.5em;
+      max-width: 100px;
+    }
   }
 }
 
-#site-header a {
-  color: inherit;
-  text-decoration: none;
-}
-
-#site-header #title {
-  font-weight: bold;
-  font-size: 1.5em;
-  color: var(--color-title);
-}
-
-#site-header #title span:first-of-type {
-  margin-right: 0.25em;
-}
-
-#site-header #theme-btn {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  border: none;
-  background-color: inherit;
-  color: inherit;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  height: 48px;
-  width: 48px;
-  transition: background-color 250ms ease-in-out;
-}
-
-#theme-btn svg {
-  height: 24px;
-  width: 24px;
-}
-
-#site-header #theme-btn:hover {
-  background-color: var(--color-highlight);
-}
-
-#site-header nav a {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#site-header nav span {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+html.dark #site-header #theme-btn {
+  .feather-sun {
+    display: none;
+  }
+  .feather-moon {
+    display: block;
+  }
 }

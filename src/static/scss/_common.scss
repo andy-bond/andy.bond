@@ -161,3 +161,15 @@ body pre[class*="language-"] {
     @include mixins.default-transition(fill);
   }
 }
+
+/* Feather Icons */
+
+.feather {
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
