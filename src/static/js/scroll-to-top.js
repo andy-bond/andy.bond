@@ -1,5 +1,5 @@
 function handleScroll() {
-  const scrollingElement = document.body;
+  const scrollingElement = document.documentElement;
   const scrollToTopBtn = document.getElementById('back-to-top-btn');
   const scrollTotal = scrollingElement.scrollHeight - scrollingElement.clientHeight;
   if ((scrollingElement.scrollTop / scrollTotal) > 0.50) {
@@ -10,6 +10,6 @@ function handleScroll() {
 }
 
 function scrollToTop() {
-  const scrollingElement = document.body;
+  const scrollingElement = document.documentElement;
   scrollingElement.scrollTo({ top: 0, behavior: 'smooth' });
 }

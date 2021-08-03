@@ -2,9 +2,6 @@
 
 html,
 body {
-  height: 100%;
-  max-height: 100%;
-  overflow: hidden;
   margin: 0;
   font-family: var(--font-sans-serif);
   background-color: var(--color-background);
@@ -13,11 +10,19 @@ body {
   @include mixins.default-transition(background-color, color);
 }
 
+html {
+  height: 100%;
+  max-height: 100%;
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
 
-  overflow: auto;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
