@@ -1,6 +1,10 @@
 @use '../mixins' as mixins;
 
 #site-header {
+  position: relative;
+  top: 0;
+  z-index: 3;
+  background-color: var(--color-background);
   justify-content: space-between;
   border-bottom: 1px solid var(--color-highlight);
 
@@ -29,6 +33,7 @@
     font-weight: bold;
     font-size: 1.5em;
     color: var(--color-title);
+    white-space: nowrap;
   }
 
   button {
@@ -72,6 +77,10 @@
     padding: 0;
 
     @include mixins.default-transition(margin-left, padding, max-width);
+  }
+
+  @media screen and (max-width: 999px) {
+    position: sticky;
   }
 
   @media screen and (max-width: 599px) {

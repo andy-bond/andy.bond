@@ -1,12 +1,16 @@
 #menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  max-height: -webkit-fill-available;
   background-color: rgba(var(--color-black), 0.75);
   backdrop-filter: blur(8px);
   visibility: hidden;
+  z-index: 1000;
 
   &.open {
     visibility: visible;
@@ -18,7 +22,7 @@
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: inherit;
+    background-color: transparent;
     color: rgb(var(--color-white));
     cursor: pointer;
     padding: 0.5em;
@@ -39,7 +43,7 @@
 
   nav {
     a {
-      font-size: 2em;
+      font-size: clamp(1em, 5vw, 2em);
       text-decoration: none;
       font-weight: bold;
       color: rgb(var(--color-white));
@@ -57,5 +61,6 @@
     right: 0;
     margin-top: calc(1em + 2px);
     margin-right: calc(1em + 10px);
+    z-index: 2000;
   }
 }

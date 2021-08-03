@@ -31,9 +31,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/static/js/theme.js"></script>
     <script type="text/javascript" src="/static/js/menu.js"></script>
+    <script type="text/javascript" src="/static/js/scroll-to-top.js"></script>
   </head>
-  <body>
-    <div class="flex flex-col flex-auto">
+  <body class="relative">
+    <div class="flex flex-col flex-auto relative">
       <div class="content-wrapper">
         {% include "./partials/header.html" %}
         <main class="full-bleed-wrapper mt-2">
@@ -42,6 +43,7 @@
       </div>
       {% include "./partials/footer.html" %}
       {% include "./partials/menu.html" %}
+      {% include "./partials/back-to-top.html" %}
     </div>
 
     {% if path == "home" %}
@@ -49,5 +51,8 @@
       <!-- Needed only if you are using Netlify Identity feature -->
       <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% endif %}
+    <script type="text/javascript">
+      document.body.addEventListener("scroll", handleScroll);
+    </script>
   </body>
 </html>

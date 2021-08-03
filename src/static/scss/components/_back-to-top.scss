@@ -1,0 +1,46 @@
+@use '../mixins' as mixins;
+
+#back-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+#back-to-top-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--color-accent);
+  color: rgb(var(--color-white));
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  transition: background-color 250ms ease-in-out;
+  opacity: 0;
+  box-shadow: var(--default-shadow);
+  pointer-events: painted;
+  z-index: 4;
+  transform: translateY(100px);
+  @include mixins.default-transition(transform, opacity);
+
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background-color: var(--color-accent-darker);
+  }
+}
