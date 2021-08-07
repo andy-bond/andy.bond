@@ -7,8 +7,12 @@
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--review-image-tile-width), 1fr));
+  grid-template-columns: repeat(auto-fill, var(--review-image-tile-width));
   gap: 1em;
+
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .review-item {
