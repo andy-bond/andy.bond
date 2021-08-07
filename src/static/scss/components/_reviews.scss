@@ -9,10 +9,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--review-image-tile-width));
   gap: 1em;
-
-  @media screen and (max-width: 599px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .review-item {
@@ -20,7 +16,6 @@
   min-width: var(--review-image-tile-width);
   border-radius: var(--border-radius);
   padding: 1em;
-  background: rgba(var(--color-black), 0.6);
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -103,6 +98,8 @@
     top: 0;
     left: 0;
     border-radius: var(--border-radius);
+    background-color: var(--cover-color, rgba(var(--color-white), 0.25));
+    backdrop-filter: blur(8px);
   }
 
   .info {
@@ -133,6 +130,19 @@
       &:hover {
         background: var(--color-accent-darker);
         color: rgba(var(--color-white), 1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+
+    .review-item {
+      img {
+        object-fit: contain;
+        // background-color: blue;
       }
     }
   }
