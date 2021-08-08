@@ -6,13 +6,14 @@ const htmlmin = require("html-minifier");
 const Review = require('./src/_shortcodes/review');
 const Icon = require('./src/_shortcodes/icon');
 const Waves = require('./src/_shortcodes/waves');
+const ReviewType = require('./src/_shortcodes/review-type');
 
 module.exports = function (eleventyConfig) {
   /* --- Shortcodes --- */
-
   eleventyConfig.addShortcode("review", Review);
   eleventyConfig.addShortcode("icon", Icon)
   eleventyConfig.addShortcode("waves", Waves);
+  eleventyConfig.addShortcode("reviewType", ReviewType);
 
   /* --- Filters --- */
 

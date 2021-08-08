@@ -7,6 +7,34 @@
   --review-image-tile-width: 200px;
 }
 
+[data-type="movie"] {
+  --icon: "🎬 Movie";
+}
+
+[data-type="book"] {
+  --icon: "📚 Book";
+}
+
+[data-type="tv"] {
+  --icon: "📺 TV";
+}
+
+[data-type="podcast"] {
+  --icon: "🎙️ Podcast";
+}
+
+[data-type="music"] {
+  --icon: "🎵 Music";
+}
+
+[data-type="game"] {
+  --icon: "🕹️ Video Game";
+}
+
+[data-type="restaurant"] {
+  --icon: "🍴 Restaurant";
+}
+
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--review-image-tile-width));
@@ -46,34 +74,6 @@
     z-index: 2;
     transition: opacity 0.4s ease-in-out;
     opacity: 0;
-  }
-
-  &[data-type="movie"] {
-    --icon: "🎬 Movie";
-  }
-
-  &[data-type="book"] {
-    --icon: "📚 Book";
-  }
-
-  &[data-type="tv"] {
-    --icon: "📺 TV";
-  }
-
-  &[data-type="podcast"] {
-    --icon: "🎙️ Podcast";
-  }
-
-  &[data-type="music"] {
-    --icon: "🎵 Music";
-  }
-
-  &[data-type="game"] {
-    --icon: "🕹️ Video Game";
-  }
-
-  &[data-type="restaurant"] {
-    --icon: "🍴 Restaurant";
   }
 
   &::after {
@@ -149,5 +149,36 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.review-card {
+  border-bottom: 1px solid var(--color-highlight);
+
+  @media screen and (max-width: 499px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    height: var(--review-image-tile-height);
+    width: var(--review-image-tile-width);
+    border-radius: var(--border-radius);
+  }
+
+  .review-type {
+    color: rgb(var(--color-white));
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+    padding: 4px 8px;
+  }
+}
+
+.rating-card {
+  @media screen and (max-width: 499px) {
+    flex-direction: column;
+  }
+  .rating {
+    color: gold;
   }
 }

@@ -3,6 +3,47 @@ layout: default
 ---
 
 <div class="flex flex-col px-1 gap-2">
-  <h1>{{title}}</h1>
+  <div class="review-card flex flex-row pb-2 gap-2">
+    <img src="{{image}}" alt="">
+    <div class="flex flex-col gap-1">
+      <div class="flex flex-col flex-auto gap-1">
+        <h1>{{title}}</h1>
+        {% if subtitle %}
+          <p>{% reviewType type,
+            'subtitle' %}: {{subtitle}}</p>
+        {% endif %}
+        {% if series %}
+          <p>Series: {{series}}</p>
+        {% endif %}
+      </div>
+      <div class="flex flex-row wrap gap-1 align-items-center">
+        <div class="review-type flex flex-row gap-0.5 align-items-center">
+          {% reviewType type,
+          'tag' %}
+        </div>
+        {% if favorite %}
+          <div class="review-type flex flex-row gap-0.5 align-items-center">
+            {% icon 'star' %}
+            <div>Favorite</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="rating-card card flex flex-row gap-2 align-items-center">
+    <h2>Rating</h2>
+    <h2 class="rating">
+      {% for i in range(0, 5) %}
+        {% if i < rating %}★{% else %}☆{% endif %}
+      {% endfor %}
+    </h2>
+    {# <p>My Rating
+          <span class="rating">
+        {% for i in range(0, 5) %}
+          {% if i < rating %}★{% else %}☆{% endif %}
+        {% endfor %}
+      </span>
+    </p> #}
+  </div>
   {{ content | safe }}
 </div>

@@ -8,3 +8,5 @@ series: The Kingkiller Chronicle
 rating: 5
 date: 2021-08-07T14:04:27.422Z
 ---
+
+One of my favorite books of all time.
