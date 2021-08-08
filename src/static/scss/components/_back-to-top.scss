@@ -7,6 +7,7 @@
   left: 0;
   justify-content: flex-end;
   pointer-events: none;
+  z-index: 100;
 }
 
 #back-to-top-btn {
@@ -26,7 +27,7 @@
   opacity: 0;
   box-shadow: var(--default-shadow);
   pointer-events: painted;
-  z-index: 4;
+  z-index: 101;
   transform: translateY(100px);
   @include mixins.default-transition(transform, opacity);
 

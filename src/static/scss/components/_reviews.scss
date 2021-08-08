@@ -1,8 +1,10 @@
 @use '../mixins' as mixins;
 
+/* Resize Images to W: 350, H: 560 */
+
 :root {
-  --review-image-tile-height: 319.2px;
-  --review-image-tile-width: 216px;
+  --review-image-tile-height: 320px;
+  --review-image-tile-width: 200px;
 }
 
 .reviews-grid {
@@ -98,7 +100,7 @@
     top: 0;
     left: 0;
     border-radius: var(--border-radius);
-    background-color: var(--cover-color, rgba(var(--color-white), 0.25));
+    background-color: var(--color-highlight);
     backdrop-filter: blur(8px);
   }
 
@@ -124,8 +126,8 @@
       margin-top: 1em;
       padding: 0.5em;
       border-radius: 4px;
-      background: rgba(var(--color-white), 1);
-      color: rgba(var(--color-black), 1);
+      background-color: var(--color-accent);
+      color: rgba(var(--color-white), 1);
       @include mixins.default-transition(background-color, color);
       &:hover {
         background: var(--color-accent-darker);
@@ -140,9 +142,11 @@
     grid-template-columns: 1fr;
 
     .review-item {
-      img {
-        object-fit: contain;
-        // background-color: blue;
+      &::before {
+        opacity: 1;
+      }
+      .info {
+        opacity: 1;
       }
     }
   }

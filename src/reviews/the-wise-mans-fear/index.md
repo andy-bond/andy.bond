@@ -1,10 +1,10 @@
 ---
 type: book
-title: The Name of the Wind
+title: The Wise Man's Fear
 subtitle: Patrick Rothfuss
-image: the-name-of-the-wind.jpg
+image: the-wise-mans-fear.jpg
 favorite: true
 series: The Kingkiller Chronicle
 rating: 5
-date: 2021-08-07T14:04:27.422Z
+date: 2021-08-07T22:16:19.541Z
 ---

@@ -59,7 +59,6 @@ collections:
           max: 5,
         }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Show Review", name: "showReview", widget: "boolean" }
       - { label: "Review", name: "body", widget: "markdown", required: false }
   - label: "Settings"
     name: "settings"
