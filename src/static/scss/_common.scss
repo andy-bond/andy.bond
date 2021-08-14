@@ -15,11 +15,12 @@
   --color-primary-lighter: rgb(162, 128, 255);
 
   --color-accent: rgb(0, 150, 136);
-  --color-accent-darker: rgb(0, 121, 107);
-  --color-accent-lighter: rgb(1, 188, 188);
+  --color-accent-darker: #00796b;
+  --color-accent-lighter: #01bcbc;
 
   /* Specific Element Colors */
   --color-text: rgba(var(--color-black), 0.87);
+  --color-text-secondary: rgba(var(--color-black), 0.6);
   --color-background: #ecf2f9;
   --color-background-secondary: #d2e0f1;
   --color-title: var(--color-primary);
@@ -47,6 +48,7 @@
   --color-card: #15273d;
   --font-weight-medium: 400;
   --color-text: rgba(var(--color-white), 1);
+  --color-text-secondary: rgba(var(--color-white), 0.6);
   --color-title: var(--color-primary-lighter);
   --color-highlight: rgba(var(--color-white), 0.125);
   --color-link: var(--color-accent-lighter);
@@ -171,9 +173,64 @@ body pre[class*="language-"] {
 .feather {
   width: 1em;
   height: 1em;
-  stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  fill: none;
+
+  &:not(.feather-override) {
+    stroke: currentColor;
+    fill: none;
+  }
+}
+
+/* Circular Chart */
+
+.circular-chart {
+  --weird-offset: 11.2px;
+  position: relative;
+  margin-bottom: calc(0px - var(--weird-offset));
+
+  svg {
+    height: 100%;
+    width: 100%;
+    max-height: 100px;
+    max-width: 100px;
+    --start-color: hsl(0, 100%, 40%);
+    --end-color: hsl(var(--value), 100%, 40%);
+
+    .circle-bg {
+      fill: none;
+      stroke: var(--color-highlight);
+      stroke-width: 3.8;
+    }
+
+    .circle {
+      fill: none;
+      stroke-width: 2.8;
+      stroke-linecap: round;
+      animation: progress 1s ease-in-out forwards;
+    }
+
+    @keyframes progress {
+      0% {
+        stroke-dasharray: 0 100;
+        stroke: var(--start-color);
+      }
+      100% {
+        stroke-dasharray: var(--value) 100;
+        stroke: var(--end-color);
+      }
+    }
+  }
+
+  .percentage {
+    position: absolute;
+    top: 0;
+    height: calc(100% - var(--weird-offset));
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75em;
+  }
 }

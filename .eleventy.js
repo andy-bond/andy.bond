@@ -7,6 +7,8 @@ const Review = require('./src/_shortcodes/review');
 const Icon = require('./src/_shortcodes/icon');
 const Waves = require('./src/_shortcodes/waves');
 const ReviewType = require('./src/_shortcodes/review-type');
+const CircularChart = require('./src/_shortcodes/circular-chart');
+const Rating = require('./src/_shortcodes/rating');
 
 module.exports = function (eleventyConfig) {
   /* --- Shortcodes --- */
@@ -14,6 +16,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("icon", Icon)
   eleventyConfig.addShortcode("waves", Waves);
   eleventyConfig.addShortcode("reviewType", ReviewType);
+  eleventyConfig.addShortcode("circularChart", CircularChart);
+  eleventyConfig.addShortcode("rating", Rating);
 
   /* --- Filters --- */
 

@@ -20,6 +20,7 @@ module.exports = (name, thing) => {
       break;
     case 'restaurant':
       icon = '🍴';
+      subtitle = 'Location';
       break;
     case 'podcast':
       icon = '🎙️';

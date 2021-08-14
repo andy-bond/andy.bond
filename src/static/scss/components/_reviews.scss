@@ -95,12 +95,12 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
     border-radius: var(--border-radius);
-    background-color: var(--color-highlight);
+    background-color: var(--color-card);
     backdrop-filter: blur(8px);
   }
 
@@ -115,7 +115,13 @@
     @include mixins.default-transition(opacity);
 
     .rating {
-      color: gold;
+      padding: 0.25em 0.5em;
+      color: rgba(var(--color-white, 1));
+      background-color: var(--color-primary);
+      backdrop-filter: blur(8px);
+      border-radius: var(--border-radius);
+      margin-top: 1em;
+      @include mixins.default-transition(background-color, color);
     }
 
     .subtitle {
@@ -142,6 +148,9 @@
     grid-template-columns: 1fr;
 
     .review-item {
+      img {
+        object-fit: cover;
+      }
       &::before {
         opacity: 1;
       }
@@ -152,16 +161,27 @@
   }
 }
 
-.review-card {
-  border-bottom: 1px solid var(--color-highlight);
+@media screen and (hover: none) {
+  .review-item {
+    img {
+      object-fit: cover;
+    }
+    &::before {
+      opacity: 1;
+    }
+    .info {
+      opacity: 1;
+    }
+  }
+}
 
+.review-card {
   @media screen and (max-width: 499px) {
     flex-direction: column;
     align-items: center;
   }
 
   img {
-    height: var(--review-image-tile-height);
     width: var(--review-image-tile-width);
     border-radius: var(--border-radius);
   }
@@ -170,15 +190,24 @@
     color: rgb(var(--color-white));
     background-color: var(--color-primary);
     border-radius: var(--border-radius);
-    padding: 4px 8px;
+    padding: 0.5em 1em;
   }
 }
 
-.rating-card {
+.rating-score {
+  color: var(--color-text);
+  border: 1px solid var(--color-highlight);
+  background-color: var(--color-highlight);
+  border-radius: var(--border-radius);
+  font-size: 1.5em;
+  @include mixins.default-transition(background-color, color, border-color);
+
+  .rating-text {
+    text-transform: uppercase;
+  }
+
   @media screen and (max-width: 499px) {
     flex-direction: column;
-  }
-  .rating {
-    color: gold;
+    align-items: center;
   }
 }

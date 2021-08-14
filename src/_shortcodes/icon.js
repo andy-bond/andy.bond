@@ -1,5 +1,5 @@
 const feather = require('feather-icons');
 
-module.exports = (name) => {
-  return feather.icons[name].toSvg();
+module.exports = (name, options) => {
+  return feather.icons[name].toSvg(options);
 }

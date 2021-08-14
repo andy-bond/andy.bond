@@ -1,0 +1,17 @@
+@use '../mixins' as mixins;
+
+.breadcrumbs {
+  color: var(--color-text);
+  background-color: var(--color-highlight);
+  border: 1px solid var(--color-highlight);
+  border-radius: var(--border-radius);
+  @include mixins.default-transition(background-color, color, border-color);
+
+  div {
+    color: var(--color-text-secondary);
+  }
+
+  @media screen and (max-width: 599px) {
+    display: none;
+  }
+}

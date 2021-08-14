@@ -47,7 +47,6 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)", name: "subtitle", widget: "string", required: false }
       - { label: "Image", name: "image", widget: "image", choose_url: false  }
-      - { label: "Favorite", name: "favorite", widget: "boolean" }
       - { label: "Series", name: "series", widget: "string", required: false }
       - { label: "External Link", name: "externalLink", widget: "string", required: false }
       - {
@@ -55,8 +54,9 @@ collections:
           name: "rating",
           widget: "number",
           value_type: "int",
+          hint: "1 - Unbearable, 2 - Painful, 3 - Awful, 4 - Bad, 5 - Mediocre, 6 - Okay, 7 - Good, 8 - Great, 9 - Amazing, 10 - Masterpiece",
           min: 1,
-          max: 5,
+          max: 10,
         }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Review", name: "body", widget: "markdown", required: false }

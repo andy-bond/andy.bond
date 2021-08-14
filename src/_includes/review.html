@@ -3,14 +3,23 @@ layout: default
 ---
 
 <div class="flex flex-col px-1 gap-2">
-  <div class="review-card flex flex-row pb-2 gap-2">
+  <div class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1">
+    <a href="/" class="flex flex-row align-items-center gap-0.5">
+      {% icon 'home' %}
+      Home
+    </a>
+    <div>/</div>
+    <a href="/reviews">Reviews</a>
+    <div>/</div>
+    <div>{{title}}</div>
+  </div>
+  <div class="review-card flex flex-row gap-2">
     <img src="{{image}}" alt="">
-    <div class="flex flex-col gap-1">
+    <div class="flex flex-col flex-auto gap-1">
       <div class="flex flex-col flex-auto gap-1">
         <h1>{{title}}</h1>
         {% if subtitle %}
-          <p>{% reviewType type,
-            'subtitle' %}: {{subtitle}}</p>
+          <p>{% reviewType type, 'subtitle' %}: {{subtitle}}</p>
         {% endif %}
         {% if series %}
           <p>Series: {{series}}</p>
@@ -21,29 +30,23 @@ layout: default
           {% reviewType type,
           'tag' %}
         </div>
-        {% if favorite %}
-          <div class="review-type flex flex-row gap-0.5 align-items-center">
-            {% icon 'star' %}
-            <div>Favorite</div>
-          </div>
-        {% endif %}
       </div>
     </div>
   </div>
-  <div class="rating-card card flex flex-row gap-2 align-items-center">
-    <h2>Rating</h2>
-    <h2 class="rating">
-      {% for i in range(0, 5) %}
-        {% if i < rating %}★{% else %}☆{% endif %}
-      {% endfor %}
-    </h2>
-    {# <p>My Rating
-          <span class="rating">
-        {% for i in range(0, 5) %}
-          {% if i < rating %}★{% else %}☆{% endif %}
-        {% endfor %}
-      </span>
-    </p> #}
+
+  <div class="rating-score flex flex-row align-items-center p-1 gap-1">
+    <div class="rating-text flex-auto">
+      {% rating rating %}
+    </div>
+    {% set rating_scaled = rating * 10 %}
+    {% set rating_fraction = rating + ' / 10' %}
+    {% circularChart rating_scaled, rating_fraction %}
   </div>
-  {{ content | safe }}
+
+  {% if content.length > 0 %}
+    <hr class="w-full">
+    <div class="review-content">
+      {{ content | safe }}
+    </div>
+  {% endif %}
 </div>

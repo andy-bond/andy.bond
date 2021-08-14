@@ -4,7 +4,7 @@ module.exports = (item) => {
   <div class="info">
     <h1>${item.data.title}</h1>
     ${item.data.subtitle ? `<p class="subtitle">${item.data.subtitle}</p>` : ''}
-    <p class="rating">${Array(5).fill('☆').fill('★', 0, item.data.rating).join('')}</p>
+    <p class="rating">${item.data.rating} / 10</p>
     <a href="${item.url}">Read Review →</a>
   </div>
 </div>`;
