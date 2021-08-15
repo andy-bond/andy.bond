@@ -74,6 +74,11 @@ path: home
         {% icon 'arrow-right' %}
       </a>
     </div>
+    <div class="photos-grid px-1 gap-1">
+      {% for item in gallery.photos %}
+        <img class="photo-item" src="photos/{{item.photo}}" alt="{{item.name}}" loading="lazy">
+      {% endfor %}
+    </div>
   </div>
 </section>
 <section id="recent-reviews" class="full-bleed my-2">

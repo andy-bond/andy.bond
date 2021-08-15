@@ -18,7 +18,7 @@ collections:
   - label: "Posts"
     name: "posts"
     folder: "src/posts"
-    path: '{{slug}}/index'
+    path: "{{slug}}/index"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -32,23 +32,48 @@ collections:
           multiple: true,
           options: ["life", "travel"],
         }
+  - label: "Photos"
+    name: "photos"
+    files:
+      - label: "Gallery"
+        name: "gallery"
+        file: "src/_data/gallery.json"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", media_folder: "/src/photos", public_folder: '' }
+
   - label: "Reviews"
     name: "reviews"
     folder: "src/reviews"
-    path: '{{slug}}/index'
+    path: "{{slug}}/index"
     create: true
     fields:
       - {
           label: "Type",
           name: "type",
-          widget: select,
-          options: ["movie", "tv", "book", "podcast", "music", "game", "restaurant"],
+          widget: "select",
+          options:
+            ["movie", "tv", "book", "podcast", "music", "game", "restaurant"],
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)", name: "subtitle", widget: "string", required: false }
-      - { label: "Image", name: "image", widget: "image", choose_url: false  }
+      - {
+          label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Image", name: "image", widget: "image", choose_url: false }
       - { label: "Series", name: "series", widget: "string", required: false }
-      - { label: "External Link", name: "externalLink", widget: "string", required: false }
+      - {
+          label: "External Link",
+          name: "externalLink",
+          widget: "string",
+          required: false,
+        }
       - {
           label: "Rating",
           name: "rating",

@@ -1,0 +1,20 @@
+{
+  "photos": [
+    {
+      "name": "University of Kentucky - Autumn",
+      "photo": "campus-autumn.jpg"
+    },
+    {
+      "name": "Cardinal",
+      "photo": "cardinal.jpg"
+    },
+    {
+      "name": "Black Capped Chickadee",
+      "photo": "black-capped-chikadee.jpg"
+    },
+    {
+      "name": "Lumineers #1",
+      "photo": "lumineers-orange-blue.jpg"
+    }
+  ]
+}
