@@ -15,8 +15,8 @@
   --icon: "📚 Book";
 }
 
-[data-type="tv"] {
-  --icon: "📺 TV";
+[data-type="television"] {
+  --icon: "📺 Television";
 }
 
 [data-type="podcast"] {
@@ -37,7 +37,7 @@
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, var(--review-image-tile-width));
+  grid-template-columns: repeat(auto-fill, minmax(var(--review-image-tile-width), 1fr));
   gap: 1em;
 }
 
@@ -95,7 +95,7 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;

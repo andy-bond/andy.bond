@@ -3,7 +3,16 @@ layout: default
 title: Contact
 ---
 
-<div class="contact-form flex flex-col mx-1 gap-1">
+<div class="breadcrumbs mx-1 px-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2">
+  <a href="/" class="flex flex-row align-items-center gap-0.5">
+    {% icon 'home' %}
+      Home
+    </a>
+  <div>/</div>
+  <div>{{title}}</div>
+</div>
+
+<div class="contact-form card flex flex-col mx-1 gap-1">
   <h1>{{title}}</h1>
   <p>Use the form below to send me a message.</p>
   <form name="contact" class="flex flex-col gap-1" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/contact/success">

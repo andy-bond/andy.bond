@@ -3,28 +3,10 @@ layout: listing
 title: Photos
 ---
 
-<section class="photos-grid gap-1">
+<section class="photos-grid gap-1 mt-2">
   {% for item in gallery.photos %}
     <img class="photo-item" src="{{item.photo}}" alt="{{item.name}}" loading="lazy">
   {% endfor %}
 </section>
 
-<div id="lightbox" class="lightbox">
-  <button id="lightbox-close">
-    {% icon 'x' %}
-  </button>
-  <div id="lightbox-content">
-    <img id="lightbox-image" alt="" loading="lazy">
-    <div id="lightbox-caption"></div>
-  </div>
-</div>
-
-<script type="text/javascript">
-  const photoItems = document.getElementsByClassName('photo-item');
-  for (let i = 0; i < photoItems.length; i++) {
-    photoItems[i].addEventListener('click', openLightbox, false);
-  }
-
-  const closeLightboxButton = document.getElementById('lightbox-close');
-  closeLightboxButton.addEventListener('click', closeLightbox, false);
-</script>
+{% include "partials/lightbox.html" %}

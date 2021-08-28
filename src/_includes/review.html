@@ -26,10 +26,9 @@ layout: default
         {% endif %}
       </div>
       <div class="flex flex-row wrap gap-1 align-items-center">
-        <div class="review-type flex flex-row gap-0.5 align-items-center">
-          {% reviewType type,
-          'tag' %}
-        </div>
+        <a href="/reviews/tags/{{type}}" class="tag flex flex-row gap-0.5 align-items-center">
+          {% reviewType type, 'tag' %}
+        </a>
       </div>
     </div>
   </div>

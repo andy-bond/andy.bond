@@ -1,4 +1,3 @@
-const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 
@@ -10,7 +9,13 @@ const ReviewType = require('./src/_shortcodes/review-type');
 const CircularChart = require('./src/_shortcodes/circular-chart');
 const Rating = require('./src/_shortcodes/rating');
 
+// Filter Imports
+const Limit = require('./src/_filters/limit');
+const Pluck = require('./src/_filters/pluck');
+const ReadableDate = require('./src/_filters/readableDate');
+
 module.exports = function (eleventyConfig) {
+
   /* --- Shortcodes --- */
   eleventyConfig.addShortcode("review", Review);
   eleventyConfig.addShortcode("icon", Icon)
@@ -20,17 +25,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("rating", Rating);
 
   /* --- Filters --- */
-
-  eleventyConfig.addFilter("limit", function (arr, limit) {
-    return arr && arr.length > 0 ? arr.slice(0, limit) : arr;
-  });
-
-  // Human Readable Date
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL yyyy"
-    );
-  });
+  eleventyConfig.addFilter("limit", Limit);
+  eleventyConfig.addFilter("pluck", Pluck);
+  eleventyConfig.addFilter("readableDate", ReadableDate);
 
   /* Eleventy Configuration */
 

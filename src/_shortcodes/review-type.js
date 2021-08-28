@@ -11,7 +11,7 @@ module.exports = (name, thing) => {
       icon = '🎬';
       subtitle = 'Director';
       break;
-    case 'tv':
+    case 'television':
       icon = '📺';
       break;
     case 'game':

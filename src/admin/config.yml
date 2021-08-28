@@ -57,7 +57,7 @@ collections:
           name: "type",
           widget: "select",
           options:
-            ["movie", "tv", "book", "podcast", "music", "game", "restaurant"],
+            ["movie", "television", "book", "podcast", "music", "game", "restaurant"],
         }
       - { label: "Title", name: "title", widget: "string" }
       - {

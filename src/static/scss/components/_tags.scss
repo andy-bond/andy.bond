@@ -1,0 +1,29 @@
+.tags {
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+a.tag {
+  padding: 0.25em 0.5em;
+  border-radius: var(--border-radius);
+  background-color: var(--color-accent-darker);
+  color: rgb(var(--color-white));
+  text-decoration: none;
+  box-shadow: var(--default-shadow);
+
+  &[aria-current="page"] {
+    background-color: var(--color-primary-darker);
+  }
+}

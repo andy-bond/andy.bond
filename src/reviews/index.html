@@ -4,7 +4,9 @@ title: Reviews
 eleventyExcludeFromCollections: true
 ---
 
-<section class="reviews-grid gap-1">
+{% include 'partials/review-tags.html' %}
+
+<section class="reviews-grid gap-1 mt-2">
   {% for item in collections.review | reverse %}
     {% review item %}
   {% endfor %}
