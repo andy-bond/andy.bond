@@ -1,5 +1,5 @@
 ---
-type: podcast
+category: podcast
 title: Mugglecast
 image: mugglecast.jpg
 externalLink: https://www.mugglecast.com/

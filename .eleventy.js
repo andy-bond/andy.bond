@@ -5,12 +5,12 @@ const htmlmin = require("html-minifier");
 const Review = require('./src/_shortcodes/review');
 const Icon = require('./src/_shortcodes/icon');
 const Waves = require('./src/_shortcodes/waves');
-const ReviewType = require('./src/_shortcodes/review-type');
 const CircularChart = require('./src/_shortcodes/circular-chart');
 const Rating = require('./src/_shortcodes/rating');
 
 // Filter Imports
 const Limit = require('./src/_filters/limit');
+const Pick = require('./src/_filters/pick');
 const Pluck = require('./src/_filters/pluck');
 const ReadableDate = require('./src/_filters/readableDate');
 
@@ -20,12 +20,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("review", Review);
   eleventyConfig.addShortcode("icon", Icon)
   eleventyConfig.addShortcode("waves", Waves);
-  eleventyConfig.addShortcode("reviewType", ReviewType);
   eleventyConfig.addShortcode("circularChart", CircularChart);
   eleventyConfig.addShortcode("rating", Rating);
 
   /* --- Filters --- */
   eleventyConfig.addFilter("limit", Limit);
+  eleventyConfig.addFilter("pick", Pick);
   eleventyConfig.addFilter("pluck", Pluck);
   eleventyConfig.addFilter("readableDate", ReadableDate);
 

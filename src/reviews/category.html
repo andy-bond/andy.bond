@@ -1,0 +1,31 @@
+---
+layout: listing
+pagination:
+  data: categories.reviews
+  size: 1
+  alias: category
+permalink: "/reviews/category/{{ category.name }}/"
+eleventyComputed:
+  title: "{{category.name | capitalize}} Reviews"
+parent:
+  text: Reviews
+  link: /reviews
+eleventyExcludeFromCollections: true
+---
+
+{% set allLink = { url: '/reviews/', text: 'All Reviews'} %}
+{% set items = categories.reviews %}
+{% include 'partials/category-list.html' %}
+
+{% set items = collections.review | pluck(category.name, 'category') | reverse %}
+{% if items.length > 0 %}
+  <section class="reviews-grid gap-1 mt-2">
+    {% for item in items %}
+      {% review item %}
+    {% endfor %}
+  </section>
+{% else %}
+  <h3 class="no-reviews mt-2">
+    No Reviews tagged with {{category.name | capitalize}}
+  </h3>
+{% endif %}

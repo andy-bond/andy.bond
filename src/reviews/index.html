@@ -4,7 +4,9 @@ title: Reviews
 eleventyExcludeFromCollections: true
 ---
 
-{% include 'partials/review-tags.html' %}
+{% set allLink = { url: '/reviews/', text: 'All Reviews'} %}
+{% set items = categories.reviews %}
+{% include 'partials/category-list.html' %}
 
 <section class="reviews-grid gap-1 mt-2">
   {% for item in collections.review | reverse %}

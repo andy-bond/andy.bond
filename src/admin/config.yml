@@ -26,11 +26,12 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
       - {
-          label: "Tags",
-          name: "tags",
-          widget: select,
-          multiple: true,
-          options: ["life", "travel"],
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ['posts.*.name'],
+          value_field: 'posts.*.name'
         }
   - label: "Photos"
     name: "photos"
@@ -45,7 +46,14 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Photo", name: "photo", widget: "image", media_folder: "/src/photos", public_folder: '' }
-
+              - {
+                  label: "Category",
+                  name: "category",
+                  widget: "relation",
+                  collection: "categories",
+                  search_fields: ['photos.*.name'],
+                  value_field: 'photos.*.name'
+                }
   - label: "Reviews"
     name: "reviews"
     folder: "src/reviews"
@@ -53,11 +61,12 @@ collections:
     create: true
     fields:
       - {
-          label: "Type",
-          name: "type",
-          widget: "select",
-          options:
-            ["movie", "television", "book", "podcast", "music", "game", "restaurant"],
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ['reviews.*.name'],
+          value_field: 'reviews.*.name'
         }
       - { label: "Title", name: "title", widget: "string" }
       - {
@@ -85,6 +94,32 @@ collections:
         }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Review", name: "body", widget: "markdown", required: false }
+  - label: "Categories"
+    name: "categories"
+    files:
+      - label: "Categories"
+        name: "categories"
+        file: "src/_data/categories.json"
+        fields:
+          - label: "Review Categories"
+            name: "reviews"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - label: "Photo Categories"
+            name: "photos"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
+          - label: "Post Categories"
+            name: "posts"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
   - label: "Settings"
     name: "settings"
     files:

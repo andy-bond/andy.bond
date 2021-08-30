@@ -2,6 +2,9 @@
 layout: default
 ---
 
+{# Relations #}
+{% set category = categories.reviews | pick(category) %}
+
 <div class="flex flex-col px-1 gap-2">
   <div class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1">
     <a href="/" class="flex flex-row align-items-center gap-0.5">
@@ -18,16 +21,16 @@ layout: default
     <div class="flex flex-col flex-auto gap-1">
       <div class="flex flex-col flex-auto gap-1">
         <h1>{{title}}</h1>
-        {% if subtitle %}
-          <p>{% reviewType type, 'subtitle' %}: {{subtitle}}</p>
+        {% if category.subtitle %}
+          <p>{{category.subtitle}}: {{subtitle}}</p>
         {% endif %}
         {% if series %}
           <p>Series: {{series}}</p>
         {% endif %}
       </div>
       <div class="flex flex-row wrap gap-1 align-items-center">
-        <a href="/reviews/tags/{{type}}" class="tag flex flex-row gap-0.5 align-items-center">
-          {% reviewType type, 'tag' %}
+        <a href="/reviews/category/{{category.name}}" class="category-link flex flex-row gap-0.5 align-items-center">
+          {{category.icon}} {{category.name | capitalize}}
         </a>
       </div>
     </div>

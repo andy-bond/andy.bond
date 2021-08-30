@@ -1,5 +1,5 @@
 ---
-type: book
+category: book
 title: The Name of the Wind
 subtitle: Patrick Rothfuss
 image: the-name-of-the-wind.jpg

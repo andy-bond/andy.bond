@@ -1,4 +1,4 @@
-.tags {
+.category-list {
   ul {
     display: flex;
     flex-direction: row;
@@ -15,7 +15,7 @@
   }
 }
 
-a.tag {
+a.category-link {
   padding: 0.25em 0.5em;
   border-radius: var(--border-radius);
   background-color: var(--color-accent-darker);

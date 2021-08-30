@@ -1,5 +1,5 @@
 ---
-type: restaurant
+category: restaurant
 title: Royals Hot Chicken
 subtitle: Louisville, KY
 image: royals-hot-chicken.jpg

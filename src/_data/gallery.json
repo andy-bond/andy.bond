@@ -2,19 +2,23 @@
   "photos": [
     {
       "name": "University of Kentucky - Autumn",
-      "photo": "campus-autumn.jpg"
+      "photo": "campus-autumn.jpg",
+      "category": "scenic"
     },
     {
       "name": "Cardinal",
-      "photo": "cardinal.jpg"
+      "photo": "cardinal.jpg",
+      "category": "nature"
     },
     {
       "name": "Black Capped Chickadee",
-      "photo": "black-capped-chikadee.jpg"
+      "photo": "black-capped-chikadee.jpg",
+      "category": "nature"
     },
     {
       "name": "Lumineers #1",
-      "photo": "lumineers-orange-blue.jpg"
+      "photo": "lumineers-orange-blue.jpg",
+      "category": "event"
     }
   ]
 }

@@ -1,5 +1,5 @@
 ---
-type: book
+category: book
 title: The Wise Man's Fear
 subtitle: Patrick Rothfuss
 image: the-wise-mans-fear.jpg

@@ -1,0 +1,19 @@
+{# Should perform a set with the following data:
+  - allLink = { url: string, text: string } (like '/reviews/')
+  - items = collection
+#}
+
+<nav class="category-list mt-1">
+  <ul>
+    <li>
+      <a class="category-link" {% if page.url === allLink.url %} aria-current="page" {% endif %} href="{{allLink.url}}">{{allLink.text}}</a>
+    </li>
+    {% for item in items %}
+      <li>
+        <a class="category-link" {% if item.name in page.url %} aria-current="page" {% endif %} href="{{allLink.url}}category/{{item.name}}">
+          {{item.icon}} {{item.name | capitalize}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

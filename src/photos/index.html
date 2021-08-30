@@ -3,6 +3,10 @@ layout: listing
 title: Photos
 ---
 
+{% set allLink = { url: '/photos/', text: 'All Photos'} %}
+{% set items = categories.photos %}
+{% include 'partials/category-list.html' %}
+
 <section class="photos-grid gap-1 mt-2">
   {% for item in gallery.photos %}
     <img class="photo-item" src="{{item.photo}}" alt="{{item.name}}" loading="lazy">

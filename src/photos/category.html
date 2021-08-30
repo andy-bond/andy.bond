@@ -1,0 +1,31 @@
+---
+layout: listing
+pagination:
+  data: categories.photos
+  size: 1
+  alias: category
+permalink: "/photos/category/{{ category.name }}/"
+eleventyComputed:
+  title: "{{category.name | capitalize}} Photos"
+parent:
+  text: Photos
+  link: /photos
+eleventyExcludeFromCollections: true
+---
+
+{% set allLink = { url: '/photos/', text: 'All Photos'} %}
+{% set items = categories.photos %}
+{% include 'partials/category-list.html' %}
+
+{% set items = gallery.photos | pluck(category.name, 'category') | reverse %}
+{% if items.length > 0 %}
+  <section class="photos-grid gap-1 mt-2">
+    {% for item in items %}
+      <img class="photo-item" src="/photos/{{item.photo}}" alt="{{item.name}}" loading="lazy">
+    {% endfor %}
+  </section>
+{% else %}
+  <h3 class="no-photos mt-2">
+    No Photos tagged with {{category.name | capitalize}}
+  </h3>
+{% endif %}

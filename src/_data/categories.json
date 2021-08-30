@@ -1,0 +1,73 @@
+{
+  "reviews": [
+    {
+      "name": "movie",
+      "icon": "🎬",
+      "subtitle": "Director"
+    },
+    {
+      "name": "television",
+      "icon": "📺"
+    },
+    {
+      "name": "book",
+      "icon": "📚",
+      "subtitle": "Author"
+    },
+    {
+      "name": "podcast",
+      "icon": "🎙️"
+    },
+    {
+      "name": "music",
+      "icon": "🎵",
+      "subtitle": "Artist"
+    },
+    {
+      "name": "game",
+      "icon": "🕹️",
+      "subtitle": "Developer"
+    },
+    {
+      "name": "restaurant",
+      "icon": "🍴",
+      "subtitle": "Location"
+    }
+  ],
+  "photos": [
+    {
+      "name": "nature",
+      "icon": "🍂"
+    },
+    {
+      "name": "scenic",
+      "icon": "🏙️"
+    },
+    {
+      "name": "event",
+      "icon": "📅"
+    },
+    {
+      "name": "people",
+      "icon": "🧍"
+    },
+    {
+      "name": "pets",
+      "icon": "🐶"
+    }
+  ],
+  "posts": [
+    {
+      "name": "life",
+      "icon": "🏡"
+    },
+    {
+      "name": "technology",
+      "icon": "👨‍💻"
+    },
+    {
+      "name": "travel",
+      "icon": "🌎"
+    }
+  ]
+}
