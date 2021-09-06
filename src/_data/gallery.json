@@ -3,22 +3,32 @@
     {
       "name": "University of Kentucky - Autumn",
       "photo": "campus-autumn.jpg",
-      "category": "scenic"
+      "category": "scenic",
+      "size": "auto"
     },
     {
       "name": "Cardinal",
       "photo": "cardinal.jpg",
-      "category": "nature"
+      "category": "nature",
+      "size": "auto"
     },
     {
       "name": "Black Capped Chickadee",
       "photo": "black-capped-chikadee.jpg",
-      "category": "nature"
+      "category": "nature",
+      "size": "auto"
     },
     {
       "name": "Lumineers #1",
       "photo": "lumineers-orange-blue.jpg",
-      "category": "event"
+      "category": "event",
+      "size": "tall"
+    },
+    {
+      "name": "Snail in Karlsruhe",
+      "photo": "snail-karlsruhe.jpg",
+      "category": "nature",
+      "size": "auto"
     }
   ]
 }

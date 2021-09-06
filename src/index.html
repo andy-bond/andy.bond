@@ -75,8 +75,8 @@ path: home
       </a>
     </div>
     <div class="photos-grid px-1 gap-1">
-      {% for item in gallery.photos %}
-        <img class="photo-item" src="photos/{{item.photo}}" alt="{{item.name}}" loading="lazy">
+      {% for item in gallery.photos | reverse | limit(5) %}
+        <img class="photo-item {{item.size}}" src="photos/{{item.photo}}" alt="{{item.name}}" loading="lazy">
       {% endfor %}
     </div>
   </div>
@@ -91,7 +91,7 @@ path: home
       </a>
     </div>
     <div class="reviews-grid px-1 gap-1">
-      {% for item in collections.review | reverse | limit(8) %}
+      {% for item in collections.review | reverse | limit(4) %}
         {% review item %}
       {% endfor %}
     </div>

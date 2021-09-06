@@ -21,7 +21,7 @@ eleventyExcludeFromCollections: true
 {% if items.length > 0 %}
   <section class="photos-grid gap-1 mt-2">
     {% for item in items %}
-      <img class="photo-item" src="/photos/{{item.photo}}" alt="{{item.name}}" loading="lazy">
+      <img class="photo-item {{item.size}}" src="/photos/{{item.photo}}" alt="{{item.name}}" loading="lazy">
     {% endfor %}
   </section>
 {% else %}

@@ -30,8 +30,8 @@ collections:
           name: "category",
           widget: "relation",
           collection: "categories",
-          search_fields: ['posts.*.name'],
-          value_field: 'posts.*.name'
+          search_fields: ["posts.*.name"],
+          value_field: "posts.*.name",
         }
   - label: "Photos"
     name: "photos"
@@ -45,14 +45,27 @@ collections:
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Photo", name: "photo", widget: "image", media_folder: "/src/photos", public_folder: '' }
+              - {
+                  label: "Photo",
+                  name: "photo",
+                  widget: "image",
+                  media_folder: "/src/photos",
+                  public_folder: "",
+                }
               - {
                   label: "Category",
                   name: "category",
                   widget: "relation",
                   collection: "categories",
-                  search_fields: ['photos.*.name'],
-                  value_field: 'photos.*.name'
+                  search_fields: ["photos.*.name"],
+                  value_field: "photos.*.name",
+                }
+              - {
+                  label: "Size",
+                  name: "size",
+                  widget: "select",
+                  options: ["auto", "tall", "wide", "both"],
+                  default: ["auto"]
                 }
   - label: "Reviews"
     name: "reviews"
@@ -65,8 +78,8 @@ collections:
           name: "category",
           widget: "relation",
           collection: "categories",
-          search_fields: ['reviews.*.name'],
-          value_field: 'reviews.*.name'
+          search_fields: ["reviews.*.name"],
+          value_field: "reviews.*.name",
         }
       - { label: "Title", name: "title", widget: "string" }
       - {
