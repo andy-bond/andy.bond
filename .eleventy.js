@@ -51,6 +51,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/static/js");
 
   // Copy relative images to site
+  eleventyConfig.addPassthroughCopy("./src/posts/**/*.jpg");
   eleventyConfig.addPassthroughCopy("./src/reviews/**/*.jpg");
   eleventyConfig.addPassthroughCopy("./src/photos/*.jpg");
 
