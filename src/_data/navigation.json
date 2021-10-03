@@ -13,6 +13,10 @@
       "url": "/reviews"
     },
     {
+      "text": "Résumé",
+      "url": "/resume"
+    },
+    {
       "text": "Contact",
       "url": "/contact"
     }

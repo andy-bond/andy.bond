@@ -6,10 +6,8 @@ media_folder: "src/static/img"
 public_folder: "/static/img"
 
 site_url: https://andy.bond
-#logo_url: https://your-site.com/images/logo.svg
 
 local_backend: true
-publish_mode: editorial_workflow
 
 editor:
   preview: false

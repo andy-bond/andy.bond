@@ -11,7 +11,7 @@ Having traveled abroad twice now and hoping to travel to Europe again in the nea
 
 ![Karlsruhe Castle](karlsruhe-castle.jpg "Karlsruhe Castle")
 
-## "Study" Abroad
+## Study Abroad
 
 I was extremely lucky to be selected for a study abroad program to take Calculus III in Karlsruhe, Germany that was slated to start in June 2013 and last 5 weeks. Roughly 16 of my fellow students in the College of Engineering at the University of Kentucky and I were able to make this trip. 
 
