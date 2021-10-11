@@ -36,6 +36,8 @@ module.exports = function (eleventyConfig) {
 
   // Watch for SCSS
   eleventyConfig.addWatchTarget("./src/static/scss/");
+  eleventyConfig.addWatchTarget("./src/posts/");
+  eleventyConfig.addWatchTarget("./src/reviews/");
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -89,5 +91,6 @@ module.exports = function (eleventyConfig) {
       input: "src",
     },
     htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk"
   };
 };

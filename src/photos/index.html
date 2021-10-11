@@ -9,7 +9,7 @@ title: Photos
 
 <section class="photos-grid gap-1 mt-2">
   {% for item in gallery.photos | reverse %}
-    <img class="photo-item {{item.size}}" src="{{item.photo}}" alt="{{item.name}}" loading="lazy">
+    <img class="photo-item {{item.size}}" src="{{item.photo}}" alt="{{item.name}}" loading="lazy" decoding="async">
   {% endfor %}
 </section>
 

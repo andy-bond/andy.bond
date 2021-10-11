@@ -8,11 +8,14 @@
   top: -2em;
   left: -2em;
   width: 75px;
+  height: 75px;
   box-shadow: var(--default-shadow);
   @include mixins.default-transition(left);
 }
 
 #about-me-image img {
+  display: block;
+  height: auto;
   width: 100%;
 }
 
@@ -24,8 +27,6 @@
   padding-bottom: var(--wave-height);
   @include mixins.default-transition(background-color);
 }
-
-
 
 /* Medium Screens */
 
