@@ -21,7 +21,7 @@ eleventyExcludeFromCollections: true
 {% if items.length > 0 %}
   <section class="reviews-grid gap-1 mt-2">
     {% for item in items %}
-      {% review item %}
+      {% include "partials/review-card.html" %}
     {% endfor %}
   </section>
 {% else %}

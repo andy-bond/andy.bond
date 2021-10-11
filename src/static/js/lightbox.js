@@ -1,9 +1,10 @@
 function openLightbox(event) {
-  const image = document.getElementById('lightbox-image');
+  const area = document.getElementById('lightbox-image-area');
   const caption = document.getElementById('lightbox-caption');
 
-  image.src = event.target.src;
-  image.alt = event.target.alt;
+  console.log(event.target.parentElement);
+
+  area.innerHTML = event.target.parentElement.outerHTML;
   caption.innerHTML = event.target.alt;
 
   toggleLightbox();
@@ -15,11 +16,10 @@ function toggleLightbox() {
 }
 
 function closeLightbox() {
-  const image = document.getElementById('lightbox-image');
+  const area = document.getElementById('lightbox-image-area');
   const caption = document.getElementById('lightbox-caption');
 
-  image.removeAttribute('src');
-  image.alt = undefined;
+  area.innerHTML = undefined;
   caption.innerHTML = undefined;
 
   toggleLightbox();

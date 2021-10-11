@@ -2,6 +2,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 
 // Shortcode Imports
+const Image = require('./src/_shortcodes/image');
 const Review = require('./src/_shortcodes/review');
 const Icon = require('./src/_shortcodes/icon');
 const Waves = require('./src/_shortcodes/waves');
@@ -17,6 +18,7 @@ const ReadableDate = require('./src/_filters/readableDate');
 module.exports = function (eleventyConfig) {
 
   /* --- Shortcodes --- */
+  eleventyConfig.addShortcode("image", Image);
   eleventyConfig.addShortcode("review", Review);
   eleventyConfig.addShortcode("icon", Icon)
   eleventyConfig.addShortcode("waves", Waves);
@@ -49,13 +51,13 @@ module.exports = function (eleventyConfig) {
   });
 
   // Copy Items to Site
-  eleventyConfig.addPassthroughCopy("./src/static/img");
+  // eleventyConfig.addPassthroughCopy("./src/static/img");
   eleventyConfig.addPassthroughCopy("./src/static/js");
 
   // Copy relative images to site
-  eleventyConfig.addPassthroughCopy("./src/posts/**/*.jpg");
-  eleventyConfig.addPassthroughCopy("./src/reviews/**/*.jpg");
-  eleventyConfig.addPassthroughCopy("./src/photos/*.jpg");
+  // eleventyConfig.addPassthroughCopy("./src/posts/**/*.jpg");
+  // eleventyConfig.addPassthroughCopy("./src/reviews/**/*.jpg");
+  // eleventyConfig.addPassthroughCopy("./src/photos/*.jpg");
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");

@@ -21,7 +21,9 @@ eleventyExcludeFromCollections: true
 {% if items.length > 0 %}
   <section class="photos-grid gap-1 mt-2">
     {% for item in items %}
-      <img class="photo-item {{item.size}}" src="/photos/{{item.photo}}" alt="{{item.name}}" loading="lazy">
+      <div class="photo-item {{item.size}}">
+        {% image item.photo, item.name %}
+      </div>
     {% endfor %}
   </section>
 {% else %}
@@ -29,3 +31,5 @@ eleventyExcludeFromCollections: true
     No Photos tagged with {{category.name | capitalize}}
   </h3>
 {% endif %}
+
+{% include "partials/lightbox.html" %}

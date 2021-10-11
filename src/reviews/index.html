@@ -10,6 +10,6 @@ eleventyExcludeFromCollections: true
 
 <section class="reviews-grid gap-1 mt-2">
   {% for item in collections.review | reverse %}
-    {% review item %}
+    {% include "partials/review-card.html" %}
   {% endfor %}
 </section>

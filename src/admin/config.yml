@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "src/static/img"
-public_folder: "/static/img"
+public_folder: "src/static/img"
 
 site_url: https://andy.bond
 
@@ -16,7 +16,6 @@ collections:
   - label: "Posts"
     name: "posts"
     folder: "src/posts"
-    path: "{{slug}}/index"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -46,9 +45,7 @@ collections:
               - {
                   label: "Photo",
                   name: "photo",
-                  widget: "image",
-                  media_folder: "/src/photos",
-                  public_folder: "",
+                  widget: "image"
                 }
               - {
                   label: "Category",
@@ -68,7 +65,6 @@ collections:
   - label: "Reviews"
     name: "reviews"
     folder: "src/reviews"
-    path: "{{slug}}/index"
     create: true
     fields:
       - {
