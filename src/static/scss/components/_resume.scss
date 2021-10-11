@@ -46,9 +46,29 @@
         transform: translateX(-50%);
       }
 
+      ul {
+        padding-left: 1em;
+      }
+
       + .timeline-item {
         margin-top: 2em;
       }
+    }
+  }
+
+  .skill-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0 0;
+
+    li {
+      padding: 0.25em 0.75em;
+      border: 1px solid var(--color-accent);
+      border-radius: var(--border-radius);
     }
   }
 }
