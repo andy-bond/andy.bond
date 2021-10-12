@@ -1,142 +1,140 @@
 ---
 layout: default
 title: Résumé
+resume: true
 ---
 
-<div class="flex flex-col px-1">
-  <div class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2">
-    <a href="/" class="flex flex-row align-items-center gap-0.5">
-      {% icon 'home' %}
+<div class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2 print-hidden">
+  <a href="/" class="flex flex-row align-items-center gap-0.5">
+    {% icon 'home' %}
       Home
     </a>
-    <div>/</div>
-    <div>{{title}}</div>
-  </div>
+  <div>/</div>
+  <div>{{title}}</div>
+</div>
 
-  <article class="resume card">
-    <h1>
-      Andy Bond <em class="pronouns">(he/him)</em>
-    </h1>
-    <p class="lead">Software Engineer • Lexington, KY</p>
-    <p class="contact-information mt-0.5">
-      <a href="mailto:contact@andy.bond">{% icon 'mail' %} contact@andy.bond</a>
-      <span class="mx-0.5">•</span>
-      <a href="https://andy.bond">{% icon 'link' %} https://andy.bond</a>
-      <span class="mx-0.5">•</span>
-      <a href="https://github.com/andy-bond">
-        {% icon 'github' %}
+<article class="resume">
+  <h1>
+    Andy Bond <em class="pronouns">(he/him)</em>
+  </h1>
+  <p class="lead">Software Engineer • Lexington, KY</p>
+  <p class="contact-information mt-0.5">
+    <a href="mailto:contact@andy.bond">{% icon 'mail' %} contact@andy.bond</a>
+    <span class="mx-0.5">•</span>
+    <a href="https://andy.bond">{% icon 'link' %} https://andy.bond</a>
+    <span class="mx-0.5">•</span>
+    <a href="https://github.com/andy-bond">
+      {% icon 'github' %}
         @andy-bond
       </a>
-      <span class="mx-0.5">•</span>
-      <a href="https://www.linkedin.com/in/andybond/">
-        {% icon 'linkedin' %}
+    <span class="mx-0.5">•</span>
+    <a href="https://www.linkedin.com/in/andybond/">
+      {% icon 'linkedin' %}
         @andybond
       </a>
-    </p>
-    <section class="mt-2">
-      <h2>About Me</h2>
-      <p class="mt-1">
+  </p>
+  <section class="mt-2">
+    <h2>About Me</h2>
+    <p class="mt-1">
         Experienced Software Engineer with a demonstrated history of working in a non-partisan government role. Skilled in Angular, JavaScript, HTML5, CSS3, .NET Core, ASP.NET MVC, C#, WPF, Windows Forms, and always ready to learn more. Strong engineering professional with a Bachelor of Science (B.S.) focused in Computer Science from the University of Kentucky.
       </p>
-    </section>
-    <section class="mt-2">
-      <h2>Work Experience</h2>
-      <ol class="timeline mt-1">
-        <li class="timeline-item">
-          <div>
-            <small class="occurance">February 2016 - Present</small>
-            <h3 class="heading">Software Engineer</h3>
-            <p class="subheading">Legislative Research Commission • Frankfort, KY</p>
-            <ul class="mt-1">
-              <li>Created responsive web based applications with a strong focus on user experience using Angular to be used by LRC staff, legislators, and the general public</li>
-              <li>Worked directly with clients to develop new project features and migrate out-of-date applications to modern standards</li>
-              <li>Developed templates and libraries used in nearly every Angular application in the agency</li>
-              <li>Developed APIs using ASP.NET Core MVC to provide data to various applications and other APIs/microservices</li>
-              <li>Developed multiple Windows desktop applications to assist members of LRC staff in their various duties using both Windows Forms and WPF</li>
-              <li>Managed SQL tables, stored procedures, functions, users, and roles for use in the applications that were developed</li>
-            </ul>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div>
-            <small class="occurance">September 2012 - December 2015</small>
-            <h3 class="heading">Photographer</h3>
-            <p class="subheading">University of Kentucky • Lexington, KY</p>
-            <ul class="mt-1">
-              <li>Photographed banquets, concerts, student and faculty activities, sporting events, speeches, and many other functions</li>
-              <li>Organized group shots of 50+ people</li>
-            </ul>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div>
-            <small class="occurance">June 2015 - July 2015</small>
-            <h3 class="heading">Software Developer (Intern)</h3>
-            <p class="subheading">California Resource Corporation • Bakersfield, CA</p>
-            <ul class="mt-1">
-              <li>Developed a server application using C# that fetched and cached live images from IP based security cameras</li>
-              <li>Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML/CSS/JavaScript/ASP.NET</li>
-            </ul>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div>
-            <small class="occurance">May 2014 - August 2014</small>
-            <h3 class="heading">Software Developer (Intern)</h3>
-            <p class="subheading">Occidental Petroleum Corporation • Bakersfield, CA</p>
-            <ul class="mt-1">
-              <li>Created and edited over 200 human-machine interface pages for online viewing</li>
-              <li>Created a program to improve speed on human-machine interface development process using Visual Basic 6.0</li>
-            </ul>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div>
-            <small class="occurance">May 2012 - August 2013</small>
-            <h3 class="heading">Lifeguard</h3>
-            <p class="subheading">Starkville Country Club • Starkville, MS</p>
-            <ul class="mt-1">
-              <li>Observed the pool and surrounding area to ensure the safety of all swimmers and guests</li>
-              <li>Performed First Aid when necessary</li>
-              <li>Cleaned and maintained the pool and pool deck</li>
-              <li>Occasionally filled in for the Head Lifeguard when out of town by helping new lifeguards determine the right course of action for different situations</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
-    </section>
-    <section class="mt-2">
-      <h2>Education</h2>
-      <ol class="timeline mt-1">
-        <li class="timeline-item">
-          <div>
-            <small>2012 - 2015</small>
-            <h3>Bachelor of Science (B.S.), Computer Science</h3>
-            <p>University of Kentucky • Lexington, KY</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div>
-            <small>2008 - 2012</small>
-            <h3>High School Diploma</h3>
-            <p>Starkville High School • Starkville, MS</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-    <section class="mt-2">
-      <h2>Skills</h2>
-      <ul class="skill-grid">
-        <li>Angular</li>
-        <li>RxJs</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>TypeScript</li>
-        <li>JavaScript</li>
-        <li>C#</li>
-        <li>.NET Core</li>
-      </ul>
-    </section>
-  </article>
-
-</div>
+  </section>
+  <section class="mt-2">
+    <h2>Work Experience</h2>
+    <ol class="timeline">
+      <li class="timeline-item">
+        <div>
+          <small class="occurance">February 2016 - Present</small>
+          <h3 class="heading">Software Engineer</h3>
+          <p class="subheading">Legislative Research Commission • Frankfort, KY</p>
+          <ul class="mt-1">
+            <li>Created responsive web based applications with a strong focus on user experience using Angular to be used by LRC staff, legislators, and the general public</li>
+            <li>Worked directly with clients to develop new project features and migrate out-of-date applications to modern standards</li>
+            <li>Developed templates and libraries used in nearly every Angular application in the agency</li>
+            <li>Developed APIs using ASP.NET Core MVC to provide data to various applications and other APIs/microservices</li>
+            <li>Developed multiple Windows desktop applications to assist members of LRC staff in their various duties using both Windows Forms and WPF</li>
+            <li>Managed SQL tables, stored procedures, functions, users, and roles for use in the applications that were developed</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div>
+          <small class="occurance">September 2012 - December 2015</small>
+          <h3 class="heading">Photographer</h3>
+          <p class="subheading">University of Kentucky • Lexington, KY</p>
+          <ul class="mt-1">
+            <li>Photographed banquets, concerts, student and faculty activities, sporting events, speeches, and many other functions</li>
+            <li>Organized group shots of 50+ people</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div>
+          <small class="occurance">June 2015 - July 2015</small>
+          <h3 class="heading">Software Developer (Intern)</h3>
+          <p class="subheading">California Resource Corporation • Bakersfield, CA</p>
+          <ul class="mt-1">
+            <li>Developed a server application using C# that fetched and cached live images from IP based security cameras</li>
+            <li>Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML/CSS/JavaScript/ASP.NET</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div>
+          <small class="occurance">May 2014 - August 2014</small>
+          <h3 class="heading">Software Developer (Intern)</h3>
+          <p class="subheading">Occidental Petroleum Corporation • Bakersfield, CA</p>
+          <ul class="mt-1">
+            <li>Created and edited over 200 human-machine interface pages for online viewing</li>
+            <li>Created a program to improve speed on human-machine interface development process using Visual Basic 6.0</li>
+          </ul>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div>
+          <small class="occurance">May 2012 - August 2013</small>
+          <h3 class="heading">Lifeguard</h3>
+          <p class="subheading">Starkville Country Club • Starkville, MS</p>
+          <ul class="mt-1">
+            <li>Observed the pool and surrounding area to ensure the safety of all swimmers and guests</li>
+            <li>Performed First Aid when necessary</li>
+            <li>Cleaned and maintained the pool and pool deck</li>
+            <li>Occasionally filled in for the Head Lifeguard when out of town by helping new lifeguards determine the right course of action for different situations</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <section class="mt-2">
+    <h2>Education</h2>
+    <ol class="timeline mt-1">
+      <li class="timeline-item">
+        <div>
+          <small>2012 - 2015</small>
+          <h3>Bachelor of Science (B.S.), Computer Science</h3>
+          <p>University of Kentucky • Lexington, KY</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div>
+          <small>2008 - 2012</small>
+          <h3>High School Diploma</h3>
+          <p>Starkville High School • Starkville, MS</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <section class="mt-2">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Angular</li>
+      <li>RxJs</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>TypeScript</li>
+      <li>JavaScript</li>
+      <li>C#</li>
+      <li>.NET Core</li>
+    </ul>
+  </section>
+</article>

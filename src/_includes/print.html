@@ -21,39 +21,25 @@
     {% endif %}
 
     <link rel="stylesheet" href="{{ '/static/css/styles.css' | url }}"/>
-    {% if resume %}
-      <link rel="stylesheet" href="{{ '/static/css/resume.css' | url }}"/>
-    {% endif %}
 
-    {% if prism == true %}
-      <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css"/>
+    {% if path === 'resume' %}
+      <link rel="stylesheet" href="{{ '/static/css/resume.css' | url }}"/>
     {% endif %}
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/static/js/theme.js"></script>
-    <script type="text/javascript" src="/static/js/menu.js"></script>
     <script type="text/javascript" src="/static/js/scroll-to-top.js"></script>
-    <script type="text/javascript" src="/static/js/lightbox.js"></script>
   </head>
   <body class="relative">
     <div class="flex flex-col flex-auto relative">
       <div class="content-wrapper">
-        {% include "./partials/header.html" %}
-        <main class="full-bleed-wrapper my-2">
+        <main class="full-bleed-wrapper">
           {{ content | safe }}
         </main>
       </div>
-      {% include "./partials/footer.html" %}
-      {% include "./partials/menu.html" %}
       {% include "./partials/back-to-top.html" %}
     </div>
-
-    {% if path == "home" %}
-      <!-- Netlify Identity Widget -->
-      <!-- Needed only if you are using Netlify Identity feature -->
-      <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    {% endif %}
     <script type="text/javascript">
       window.addEventListener("scroll", handleScroll);
     </script>

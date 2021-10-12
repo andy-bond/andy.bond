@@ -1,0 +1,159 @@
+@use "./mixins" as mixins;
+
+.resume {
+  color: var(--color-text);
+  padding: 2em;
+  background-color: var(--color-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--default-shadow);
+  @include mixins.default-transition(background-color, color);
+
+  > h1:first-child {
+    margin-top: 0;
+  }
+
+  @media only screen and (max-width: 499px) {
+    padding: 2em 1em;
+  }
+
+  .pronouns {
+    font-size: 0.5em;
+  }
+
+  .lead {
+    font-size: 1.25em;
+    font-weight: 300;
+  }
+
+  .contact-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5em;
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-link);
+    }
+  }
+
+  .timeline {
+    list-style: none;
+    margin: 1em 0 0 1em;
+    padding: 0;
+    border-left: 1px solid var(--color-highlight);
+
+    .timeline-item {
+      page-break-inside: avoid;
+      position: relative;
+      padding-left: 2em;
+
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 1em;
+        width: 1em;
+        background-color: var(--color-accent);
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        transform: translateX(-50%);
+      }
+
+      ul {
+        padding-left: 1.2em;
+      }
+
+      + .timeline-item {
+        margin-top: 2em;
+      }
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0 0;
+
+    li {
+      padding: 0.25em 0.75em;
+      border: 1px solid var(--color-accent);
+      border-radius: var(--border-radius);
+    }
+  }
+}
+
+@media only print {
+  :root {
+    --color-background: white;
+  }
+
+  #site-header,
+  #footer {
+    display: none !important;
+  }
+
+  main {
+    margin: 0 !important;
+  }
+
+  .mt-2 {
+    margin-top: 1em !important;
+  }
+
+  .mt-1 {
+    margin-top: 0.5em !important;
+  }
+
+  .mt-0\.5 {
+    margin-top: 0.25em !important;
+  }
+
+  .resume {
+    background-color: transparent;
+    color: black;
+    padding: 0;
+    box-shadow: none;
+
+    .contact-information a {
+      color: black;
+      border-bottom-color: black;
+    }
+
+    .timeline {
+      margin: 0.5em 0 0 0;
+      border-left: none;
+
+      .timeline-item {
+        padding-left: 0;
+
+        + .timeline-item {
+          margin-top: 1em;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .skills {
+      display: initial;
+      list-style-type: circle;
+
+      li {
+        margin-left: 1.2em;
+        border: none;
+        padding: 0;
+      }
+    }
+  }
+}

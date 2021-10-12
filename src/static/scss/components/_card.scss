@@ -7,16 +7,12 @@
   border-radius: var(--border-radius);
   box-shadow: var(--default-shadow);
   @include mixins.default-transition(background-color, color);
-}
 
-.card > h1:first-child {
-  margin-top: 0;
-}
+  > h1:first-child {
+    margin-top: 0;
+  }
 
-/* Smaller Screens */
-
-@media screen and (max-width: 499px) {
-  .card {
+  @media screen and (max-width: 499px) {
     padding: 2em 1em;
   }
 }
