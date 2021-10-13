@@ -1,0 +1,114 @@
+{
+  "skills": [
+    {
+      "name": "Angular"
+    },
+    {
+      "name": "RxJS"
+    },
+    {
+      "name": "HTML"
+    },
+    {
+      "name": "CSS"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "C#"
+    },
+    {
+      "name": ".NET Core"
+    },
+    {
+      "name": "SQL"
+    },
+    {
+      "name": "Visual Basic"
+    }
+  ],
+  "github": {
+    "handle": "@andy-bond",
+    "link": "https://github.com/andy-bond"
+  },
+  "summary": "Experienced Software Engineer with a demonstrated history of working in a non-partisan government role. Skilled in Angular, JavaScript, HTML5, CSS3, .NET Core, ASP.NET MVC, C#, WPF, Windows Forms, and always ready to learn more. Strong engineering professional with a Bachelor of Science (B.S.) focused in Computer Science from the University of Kentucky.",
+  "education": [
+    {
+      "start": "2012-08-01T12:00:08.675Z",
+      "end": "2015-12-15T17:00:00.000Z",
+      "degree": "Bachelor of Science (B.S.), Computer Science",
+      "organization": "University of Kentucky",
+      "location": "Lexington, KY",
+      "print": true
+    },
+    {
+      "start": "2008-08-01T12:00:03.325Z",
+      "end": "2012-05-15T16:00:00.000Z",
+      "degree": "High School Diploma",
+      "organization": "Starkville High School",
+      "location": "Starkville, MS",
+      "print": false
+    }
+  ],
+  "experience": [
+    {
+      "start": "2016-02-01T13:00:40.525Z",
+      "end": "",
+      "position": "Software Engineer",
+      "organization": "Legislative Research Commission",
+      "location": "Frankfort, KY",
+      "summary": "<li>Created responsive web based applications with a strong focus on user experience using Angular to be used by LRC staff, legislators, and the general public</li>\n<li>Worked directly with clients to develop new project features and migrate out-of-date applications to modern standards</li>\n<li>Developed templates and libraries used in nearly every Angular application in the agency</li>\n<li>Developed APIs using ASP.NET Core MVC to provide data to various applications and other APIs/microservices</li>\n<li>Developed multiple Windows desktop applications to assist members of LRC staff in their various duties using both Windows Forms and WPF</li>\n<li>Managed SQL tables, stored procedures, functions, users, and roles for use in the applications that were developed</li>",
+      "print": true
+    },
+    {
+      "start": "2012-09-01T12:00:46.739Z",
+      "end": "2016-01-01T04:59:00.000Z",
+      "position": "Photographer",
+      "organization": "University of Kentucky",
+      "location": "Lexington, KY",
+      "summary": "<li>Photographed banquets, concerts, student and faculty activities, sporting events, speeches, and many other functions</li>\n<li>Organized group shots of 50+ people</li>",
+      "print": false
+    },
+    {
+      "start": "2015-06-01T12:00:29.514Z",
+      "end": "2015-08-01T03:59:00.000Z",
+      "position": "Software Developer (Intern)",
+      "organization": "California Resource Corporation",
+      "location": "Bakersfield, CA",
+      "summary": "<li>Developed a server application using C# that fetched and cached live images from IP based security cameras</li>\n<li>Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML/CSS/JavaScript/ASP.NET</li>",
+      "print": true
+    },
+    {
+      "start": "2014-05-01T12:00:48.354Z",
+      "end": "2014-09-01T03:59:00.000Z",
+      "summary": "<li>Created and edited over 200 human-machine interface pages for online viewing</li>\n<li>Created a program to improve speed on human-machine interface development process using Visual Basic 6.0</li>",
+      "position": "Software Developer (Intern)",
+      "organization": "Occidental Petroleum Corporation",
+      "location": "Bakersfield, CA",
+      "print": true
+    },
+    {
+      "start": "2012-05-01T12:00:02.612Z",
+      "end": "2013-09-01T03:59:00.000Z",
+      "position": "Lifeguard",
+      "organization": "Starkville Country Club",
+      "location": "Starkville, MS",
+      "summary": "<li>Observed the pool and surrounding area to ensure the safety of all swimmers and guests</li>\n<li>Performed First Aid when necessary</li>\n<li>Cleaned and maintained the pool and pool deck</li>\n<li>Occasionally filled in for the Head Lifeguard when out of town by helping new lifeguards determine the right course of action for different situations</li>",
+      "print": false
+    }
+  ],
+  "occupation": "Software Engineer",
+  "name": "Andy Bond",
+  "pronouns": "he/him",
+  "location": "Lexington, KY",
+  "website": "https://andy.bond",
+  "email": "contact@andy.bond",
+  "linkedin": {
+    "handle": "@andybond",
+    "link": "https://www.linkedin.com/in/andybond/"
+  }
+}

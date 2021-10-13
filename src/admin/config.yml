@@ -42,11 +42,7 @@ collections:
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - {
-                  label: "Photo",
-                  name: "photo",
-                  widget: "image"
-                }
+              - { label: "Photo", name: "photo", widget: "image" }
               - {
                   label: "Category",
                   name: "category",
@@ -60,7 +56,7 @@ collections:
                   name: "size",
                   widget: "select",
                   options: ["auto", "tall", "wide", "both"],
-                  default: ["auto"]
+                  default: ["auto"],
                 }
   - label: "Reviews"
     name: "reviews"
@@ -101,6 +97,76 @@ collections:
         }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Review", name: "body", widget: "markdown", required: false }
+  - label: "Résumé"
+    name: "resume"
+    files:
+      - label: "Résumé"
+        name: "resume"
+        file: "src/_data/resume.json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Occupation", name: "occupation", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Pronouns", name: "pronouns", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Website", name: "website", widget: "string" }
+          - label: "GitHub"
+            name: "github"
+            widget: "object"
+            fields:
+              - { label: "Handle", name: "handle", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+          - label: "LinkedIn"
+            name: "linkedin"
+            widget: "object"
+            fields:
+              - { label: "Handle", name: "handle", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+          - { label: "Summary", name: "summary", widget: "text" }
+          - label: "Experience"
+            name: "experience"
+            widget: "list"
+            fields:
+              - { label: "Position", name: "position", widget: "string" }
+              - { label: "Start Date", name: "start", widget: "datetime" }
+              - {
+                  label: "End Date",
+                  name: "end",
+                  widget: "datetime",
+                  required: false,
+                }
+              - {
+                  label: "Organization",
+                  name: "organization",
+                  widget: "string",
+                }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Print", name: "print", widget: "boolean" }
+              - { label: "Summary", name: "summary", widget: "text" }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Degree Earned", name: "degree", widget: "string" }
+              - { label: "Start Date", name: "start", widget: "datetime" }
+              - {
+                  label: "End Date",
+                  name: "end",
+                  widget: "datetime",
+                  required: false,
+                }
+              - {
+                  label: "Organization",
+                  name: "organization",
+                  widget: "string",
+                }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Print", name: "print", widget: "boolean" }
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
   - label: "Categories"
     name: "categories"
     files:

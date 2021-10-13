@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
         </a>
       </h2>
       <p class="byline">
-        {{ post.date | readableDate }}
+        {{ post.date | date }}
       </p>
       {% if post.data.description %}
         <p>{{ post.data.description }}</p>

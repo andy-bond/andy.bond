@@ -3,6 +3,7 @@
 .resume {
   color: var(--color-text);
   padding: 2em;
+  margin: 0em 1em;
   background-color: var(--color-card);
   border-radius: var(--border-radius);
   box-shadow: var(--default-shadow);
@@ -29,6 +30,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 1em;
 
     a {
       display: flex;
@@ -65,7 +67,7 @@
       }
 
       ul {
-        padding-left: 1.2em;
+        padding-left: 1.25em;
       }
 
       + .timeline-item {
@@ -118,9 +120,11 @@
   }
 
   .resume {
+    font-size: 12px;
     background-color: transparent;
     color: black;
     padding: 0;
+    margin: 0;
     box-shadow: none;
 
     .contact-information a {
@@ -148,6 +152,7 @@
     .skills {
       display: initial;
       list-style-type: circle;
+      margin-top: 0.5em !important;
 
       li {
         margin-left: 1.2em;

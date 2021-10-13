@@ -13,7 +13,7 @@ const Rating = require('./src/_shortcodes/rating');
 const Limit = require('./src/_filters/limit');
 const Pick = require('./src/_filters/pick');
 const Pluck = require('./src/_filters/pluck');
-const ReadableDate = require('./src/_filters/readableDate');
+const ReadableDate = require('./src/_filters/date');
 
 module.exports = function (eleventyConfig) {
 
@@ -29,7 +29,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("limit", Limit);
   eleventyConfig.addFilter("pick", Pick);
   eleventyConfig.addFilter("pluck", Pluck);
-  eleventyConfig.addFilter("readableDate", ReadableDate);
+  eleventyConfig.addFilter("date", ReadableDate);
 
   /* Eleventy Configuration */
 
