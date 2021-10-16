@@ -9,10 +9,12 @@
   /* Generic Colors */
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
+  --color-gray: 128, 128, 128;
+  --color-primary-rgb: 103, 58, 183;
 
-  --color-primary: rgb(103, 58, 183);
-  --color-primary-darker: rgb(81, 45, 168);
-  --color-primary-lighter: rgb(162, 128, 255);
+  --color-primary: #673ab7;
+  --color-primary-darker: #512da8;
+  --color-primary-lighter: #a280ff;
 
   --color-accent: rgb(0, 150, 136);
   --color-accent-darker: #00796b;

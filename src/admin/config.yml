@@ -141,7 +141,7 @@ collections:
                   widget: "string",
                 }
               - { label: "Location", name: "location", widget: "string" }
-              - { label: "Print", name: "print", widget: "boolean" }
+              - { label: "Display", name: "display", widget: "boolean" }
               - { label: "Summary", name: "summary", widget: "text" }
           - label: "Education"
             name: "education"
@@ -161,7 +161,7 @@ collections:
                   widget: "string",
                 }
               - { label: "Location", name: "location", widget: "string" }
-              - { label: "Print", name: "print", widget: "boolean" }
+              - { label: "Display", name: "display", widget: "boolean" }
           - label: "Skills"
             name: "skills"
             widget: "list"

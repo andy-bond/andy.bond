@@ -43,7 +43,7 @@
       "degree": "Bachelor of Science (B.S.), Computer Science",
       "organization": "University of Kentucky",
       "location": "Lexington, KY",
-      "print": true
+      "display": true
     },
     {
       "start": "2008-08-01T12:00:03.325Z",
@@ -51,7 +51,7 @@
       "degree": "High School Diploma",
       "organization": "Starkville High School",
       "location": "Starkville, MS",
-      "print": false
+      "display": false
     }
   ],
   "experience": [
@@ -62,7 +62,7 @@
       "organization": "Legislative Research Commission",
       "location": "Frankfort, KY",
       "summary": "<li>Created responsive web based applications with a strong focus on user experience using Angular to be used by LRC staff, legislators, and the general public</li>\n<li>Worked directly with clients to develop new project features and migrate out-of-date applications to modern standards</li>\n<li>Developed templates and libraries used in nearly every Angular application in the agency</li>\n<li>Developed APIs using ASP.NET Core MVC to provide data to various applications and other APIs/microservices</li>\n<li>Developed multiple Windows desktop applications to assist members of LRC staff in their various duties using both Windows Forms and WPF</li>\n<li>Managed SQL tables, stored procedures, functions, users, and roles for use in the applications that were developed</li>",
-      "print": true
+      "display": true
     },
     {
       "start": "2012-09-01T12:00:46.739Z",
@@ -71,7 +71,7 @@
       "organization": "University of Kentucky",
       "location": "Lexington, KY",
       "summary": "<li>Photographed banquets, concerts, student and faculty activities, sporting events, speeches, and many other functions</li>\n<li>Organized group shots of 50+ people</li>",
-      "print": false
+      "display": false
     },
     {
       "start": "2015-06-01T12:00:29.514Z",
@@ -79,8 +79,8 @@
       "position": "Software Developer (Intern)",
       "organization": "California Resource Corporation",
       "location": "Bakersfield, CA",
-      "summary": "<li>Developed a server application using C# that fetched and cached live images from IP based security cameras</li>\n<li>Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML/CSS/JavaScript/ASP.NET</li>",
-      "print": true
+      "summary": "<li>Developed a server application using C# that fetched and cached live images from IP based security cameras</li>\n<li>Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML, CSS, JavaScript, and ASP.NET</li>",
+      "display": true
     },
     {
       "start": "2014-05-01T12:00:48.354Z",
@@ -89,7 +89,7 @@
       "position": "Software Developer (Intern)",
       "organization": "Occidental Petroleum Corporation",
       "location": "Bakersfield, CA",
-      "print": true
+      "display": true
     },
     {
       "start": "2012-05-01T12:00:02.612Z",
@@ -98,7 +98,7 @@
       "organization": "Starkville Country Club",
       "location": "Starkville, MS",
       "summary": "<li>Observed the pool and surrounding area to ensure the safety of all swimmers and guests</li>\n<li>Performed First Aid when necessary</li>\n<li>Cleaned and maintained the pool and pool deck</li>\n<li>Occasionally filled in for the Head Lifeguard when out of town by helping new lifeguards determine the right course of action for different situations</li>",
-      "print": false
+      "display": false
     }
   ],
   "occupation": "Software Engineer",

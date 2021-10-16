@@ -7,13 +7,13 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  background-color: rgba(110, 110, 110, 0.65);
+  width: 12px;
+  background-color: var(--color-highlight);
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: rgb(128, 128, 128);
+  background-color: rgba(var(--color-gray), 1);
 }
 
 ::-webkit-scrollbar-track {
@@ -22,7 +22,7 @@
 }
 
 ::selection {
-  background-color: var(--color-title);
+  background-color: var(--color-primary-darker);
   color: white;
 }
 

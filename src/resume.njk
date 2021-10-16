@@ -31,8 +31,8 @@ resume: true
   <section class="mt-2">
     <h2>Experience</h2>
     <ol class="timeline">
-      {% for experience in resume.experience %}
-        <li class="timeline-item{{' print-hidden' if not experience.print}}">
+      {% for experience in resume.experience | pluck(true, 'display') %}
+        <li class="timeline-item">
           <div>
             <small class="occurance">{{experience.start | date('MMMM yyyy')}} - {% if experience.end %}{{experience.end | date('MMMM yyyy')}}{% else %}Present{% endif %}</small>
             <h3 class="heading">{{experience.position}}</h3>
@@ -48,8 +48,8 @@ resume: true
   <section class="mt-2">
     <h2>Education</h2>
     <ol class="timeline">
-      {% for education in resume.education %}
-        <li class="timeline-item{{' print-hidden' if not education.print}}">
+      {% for education in resume.education | pluck(true, 'display') %}
+        <li class="timeline-item">
           <div>
             <small class="occurance">{{education.start | date('MMMM yyyy')}} - {% if education.end %}{{education.end | date('MMMM yyyy')}}{% else %}Present{% endif %}</small>
             <h3 class="heading">{{education.degree}}</h3>
