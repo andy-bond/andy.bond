@@ -1,10 +1,10 @@
 ---
 layout: listing
 pagination:
-  data: categories.photos
+  data: collections.photosByCategory
   size: 1
   alias: category
-permalink: "/photos/category/{{ category.name }}/"
+permalink: "{{category.slug}}"
 eleventyComputed:
   title: "{{category.name | capitalize}} Photos"
 parent:
@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
 {% set items = categories.photos %}
 {% include 'partials/category-list.html' %}
 
-{% set items = gallery.photos | pluck(category.name, 'category') | reverse %}
+{% set items = category.items %}
 {% if items.length > 0 %}
   <section class="photos-grid gap-1 mt-2">
     {% for item in items %}
@@ -27,9 +27,12 @@ eleventyExcludeFromCollections: true
     {% endfor %}
   </section>
 {% else %}
-  <h3 class="no-photos mt-2">
+  <h3 class="no-reviews mt-2">
     No Photos tagged with {{category.name | capitalize}}
   </h3>
 {% endif %}
+
+{% set paginator = category %}
+{% include "partials/paginator.html" %}
 
 {% include "partials/lightbox.html" %}

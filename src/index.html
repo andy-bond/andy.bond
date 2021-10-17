@@ -32,33 +32,9 @@ path: home
         {% icon 'arrow-right' %}
       </a>
     </div>
-    <div class="flex flex-row align-items-center wrap px-1 gap-1">
-      {% set postslist = collections.post %}
-      {% for post in postslist | reverse %}
-        {% if loop.index <= 4 %}
-          <article class="postcard card flex flex-col gap-0.5">
-            <div class="flex flex-col">
-              <h2>
-                <a href="{{ post.url | url }}">
-                  {% if post.data.title %}
-                    {{ post.data.title }}
-                  {% else %}
-                    Untitled
-                  {% endif %}
-                </a>
-              </h2>
-              <p class="byline">
-                {{ post.date | date }}
-              </p>
-            </div>
-            {% if post.data.description %}
-              <p>{{ post.data.description }}</p>
-            {% endif %}
-            <p>
-              <a href="{{ post.url | url }}"> Read more →</a>
-            </p>
-          </article>
-        {% endif %}
+    <div class="posts-list px-1">
+      {% for item in collections.post | reverse | limit(4) %}
+        {% include "partials/post-card.html" %}
       {% endfor %}
     </div>
   </div>

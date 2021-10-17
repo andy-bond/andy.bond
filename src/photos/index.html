@@ -1,6 +1,12 @@
 ---
 layout: listing
+pagination:
+  data: gallery.photos
+  size: 24
+  alias: photos
+permalink: "/photos/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}"
 title: Photos
+eleventyExcludeFromCollections: true
 ---
 
 {% set allLink = { url: '/photos/', text: 'All Photos'} %}
@@ -8,12 +14,14 @@ title: Photos
 {% include 'partials/category-list.html' %}
 
 <section class="photos-grid gap-1 mt-2">
-  {% for item in gallery.photos | reverse %}
+  {% for item in photos %}
     <div class="photo-item {{item.size}}">
       {% image item.photo, item.name %}
     </div>
-    {# <img class="photo-item {{item.size}}" src="{{item.photo}}" alt="{{item.name}}" loading="lazy"> #}
   {% endfor %}
 </section>
+
+{% set paginator = pagination %}
+{% include "partials/paginator.html" %}
 
 {% include "partials/lightbox.html" %}

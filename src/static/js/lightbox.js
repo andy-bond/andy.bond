@@ -2,8 +2,6 @@ function openLightbox(event) {
   const area = document.getElementById('lightbox-image-area');
   const caption = document.getElementById('lightbox-caption');
 
-  console.log(event.target.parentElement);
-
   area.innerHTML = event.target.parentElement.outerHTML;
   caption.innerHTML = event.target.alt;
 

@@ -1,30 +1,24 @@
 ---
 layout: listing
+pagination:
+  data: collections.post
+  size: 10
+  alias: posts
+  reverse: true
+permalink: "/posts/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}"
 title: Posts
 eleventyExcludeFromCollections: true
 ---
 
-<section class="postlist">
-  {% for post in collections.post | reverse %}
-    <article class="postcard card">
-      <h2>
-        <a href="{{ post.url | url }}">
-          {% if post.data.title %}
-            {{ post.data.title }}
-          {% else %}
-            Untitled
-          {% endif %}
-        </a>
-      </h2>
-      <p class="byline">
-        {{ post.date | date }}
-      </p>
-      {% if post.data.description %}
-        <p>{{ post.data.description }}</p>
-      {% endif %}
-      <p>
-        <a href="{{ post.url | url }}"> Read more →</a>
-      </p>
-    </article>
+{% set allLink = {  url: '/posts/', text: 'All Posts'} %}
+{% set items = categories.posts %}
+{% include 'partials/category-list.html' %}
+
+<section class="posts-list mt-2">
+  {% for item in posts %}
+    {% include 'partials/post-card.html' %}
   {% endfor %}
 </section>
+
+{% set paginator = pagination %}
+{% include "partials/paginator.html" %}

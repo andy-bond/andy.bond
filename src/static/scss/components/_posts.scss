@@ -1,9 +1,63 @@
+@use "../mixins" as mixins;
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 1em;
+  border: 1px solid var(--color-highlight);
+  border-radius: var(--border-radius);
+  @include mixins.default-transition(border-color);
+
+  &:hover {
+    border: 1px solid var(--color-accent);
+
+    .post-information {
+      h2 {
+        text-decoration: underline var(--color-accent);
+        color: var(--color-link);
+      }
+    }
+  }
+
+  .post-information {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    h2 {
+      text-decoration-color: transparent;
+      color: var(--color-text);
+      @include mixins.default-transition(color, text-decoration-color);
+    }
+
+    .timestamp {
+      color: var(--color-text-secondary);
+    }
+
+    .category {
+      align-self: flex-start;
+      padding: 0.25em 0.5em;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--color-accent-darker);
+      color: rgb(var(--color-white));
+    }
+  }
+}
+
 .blogpost {
   .subtitle {
     font-style: italic;
   }
-
-
 
   .blogpost-content {
     img {

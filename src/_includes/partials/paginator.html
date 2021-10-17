@@ -1,0 +1,26 @@
+{#
+  Should perform a set with the following data:
+    - paginator = pagination type object
+#}
+
+{% if paginator.items.length > 0 %}
+  <nav class="paginator" aria-label="Pagination Links">
+    <div class="paginator-information">
+      Page {{paginator.pageNumber + 1}} of {{paginator.pages.length}}
+    </div>
+    <ol>
+      <li>
+        <a {% if page.url != paginator.href.first %} title="First Page" href="{{ paginator.href.first }}" {% endif %}>{% icon 'chevrons-left' %}</a>
+      </li>
+      <li>
+        <a {% if paginator.href.previous %} title="Previous Page" href="{{ paginator.href.previous }}" {% endif %}>{% icon 'chevron-left' %}</a>
+      </li>
+      <li>
+        <a {% if paginator.href.next %} title="Next Page" href="{{ paginator.href.next }}" {% endif %}>{% icon 'chevron-right' %}</a>
+      </li>
+      <li>
+        <a {% if page.url != paginator.href.last %} title="Last Page" href="{{ paginator.href.last }}" {% endif %}>{% icon 'chevrons-right' %}</a>
+      </li>
+    </ol>
+  </nav>
+{% endif %}

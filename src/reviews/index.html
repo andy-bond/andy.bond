@@ -1,15 +1,24 @@
 ---
 layout: listing
+pagination:
+  data: collections.review
+  size: 16
+  alias: reviews
+  reverse: true
+permalink: "/reviews/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}"
 title: Reviews
 eleventyExcludeFromCollections: true
 ---
 
-{% set allLink = { url: '/reviews/', text: 'All Reviews'} %}
+{% set allLink = {  url: '/reviews/', text: 'All Reviews'} %}
 {% set items = categories.reviews %}
 {% include 'partials/category-list.html' %}
 
 <section class="reviews-grid gap-1 mt-2">
-  {% for item in collections.review | reverse %}
+  {% for item in reviews %}
     {% include "partials/review-card.html" %}
   {% endfor %}
 </section>
+
+{% set paginator = pagination %}
+{% include "partials/paginator.html" %}

@@ -1,0 +1,75 @@
+@use "../mixins" as mixins;
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2em;
+  color: var(--color-text);
+  background-color: rgba(var(--color-gray), 0.125);
+  border: 2px solid var(--color-highlight);
+  border-radius: var(--border-radius);
+  @include mixins.default-transition(background-color, color, border-color);
+
+  @media only screen and (max-width: 399px) {
+    flex-direction: column;
+  }
+
+  .paginator-information {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    line-height: 1em;
+    padding: 1em;
+    color: var(--color-text-secondary);
+    border-right: 1px solid var(--color-highlight);
+
+    @media only screen and (max-width: 399px) {
+      justify-content: center;
+      border-right: none;
+      border-bottom: 1px solid var(--color-highlight);
+      width: 100%;
+    }
+  }
+
+  ol {
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    li {
+      padding: 1em;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0;
+
+      + li {
+        border-left: 1px solid var(--color-highlight);
+      }
+
+      a {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        &:not([href]) {
+          color: var(--color-text-secondary);
+        }
+      }
+    }
+  }
+}

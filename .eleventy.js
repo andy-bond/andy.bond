@@ -15,6 +15,11 @@ const Pick = require('./src/_filters/pick');
 const Pluck = require('./src/_filters/pluck');
 const ReadableDate = require('./src/_filters/date');
 
+// Collection Imports
+const ReviewsByCategory = require("./src/_collections/reviews");
+const PostsByCategory = require("./src/_collections/posts");
+const PhotosByCategory = require("./src/_collections/photos");
+
 module.exports = function (eleventyConfig) {
 
   /* --- Shortcodes --- */
@@ -31,12 +36,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("pluck", Pluck);
   eleventyConfig.addFilter("date", ReadableDate);
 
+  /* Collections */
+  eleventyConfig.addCollection("reviewsByCategory", ReviewsByCategory);
+  eleventyConfig.addCollection("postsByCategory", PostsByCategory);
+  eleventyConfig.addCollection("photosByCategory", PhotosByCategory);
+
   /* Eleventy Configuration */
 
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.setDataDeepMerge(true);
 
-  // Watch for SCSS
+  // Watch for Changes
   eleventyConfig.addWatchTarget("./src/static/scss/");
   eleventyConfig.addWatchTarget("./src/posts/");
   eleventyConfig.addWatchTarget("./src/reviews/");
