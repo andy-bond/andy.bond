@@ -42,6 +42,37 @@
 }
 
 .view-all-link {
+  color: var(--color-text);
   text-decoration: none;
-  border-bottom: 1px solid var(--color-link);
+  border-bottom: 1px solid var(--color-text);
+  @include mixins.default-transition(color, border-color);
+
+  svg {
+    color: var(--color-text);
+    transform: translateX(-2px);
+    @include mixins.default-transition(color, transform);
+  }
+
+  &:hover,
+  &:focus-within {
+    color: var(--color-link);
+    border-color: var(--color-link);
+
+    svg {
+      color: var(--color-link);
+      transform: translateX(2px);
+    }
+  }
+}
+
+@media screen and (hover: none) {
+  .view-all-link {
+    color: var(--color-link);
+    border-color: var(--color-link);
+
+    svg {
+      color: var(--color-link);
+      transform: translateX(0px);
+    }
+  }
 }

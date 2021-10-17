@@ -1,10 +1,9 @@
 ---
 layout: listing
 pagination:
-  data: collections.review
+  data: collections.reviews
   size: 16
   alias: reviews
-  reverse: true
 permalink: "/reviews/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}"
 title: Reviews
 eleventyExcludeFromCollections: true

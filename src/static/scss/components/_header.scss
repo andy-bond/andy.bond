@@ -76,7 +76,8 @@
         width: 24px;
       }
 
-      &:hover {
+      &:hover,
+      &:focus-within {
         background-color: var(--color-highlight);
       }
     }

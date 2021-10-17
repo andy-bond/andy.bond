@@ -16,6 +16,15 @@ layout: default
     <div>{{title}}</div>
   </div>
 
+  {% if draft %}
+    <div class="alert-card card flex flex-row align-items-center wrap">
+      {% icon 'alert-triangle' %}
+      <strong class="ml-1">DRAFT</strong>
+      <span class="mx-0.5">&mdash;</span>
+      This post is a work in progress!
+    </div>
+  {% endif %}
+
   <article class="flex flex-col gap-2">
     <div class="flex flex-col gap-1">
       <h1>{{title}}</h1>

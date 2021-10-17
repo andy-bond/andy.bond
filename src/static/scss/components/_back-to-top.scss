@@ -41,7 +41,8 @@
     transform: translateY(0);
   }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     background-color: var(--color-accent-darker);
   }
 }

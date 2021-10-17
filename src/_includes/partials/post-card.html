@@ -1,4 +1,4 @@
-<a class="post-card card" href="{{ item.url | url }}">
+<a class="post-card card{{' with-image' if item.data.image}}" href="{{ item.url | url }}">
   {% if item.data.image %}
     <div class="post-image">
       {% image item.data.image, item.data.title %}
@@ -13,9 +13,7 @@
         {{ item.date | date('MMMM d, yyyy') }}
       </small>
     </div>
-    {% if item.data.description %}
-      <p>{{ item.data.description }}</p>
-    {% endif %}
+    <p class="post-description">{{ item.data.description }}</p>
     <div class="category">
       {% set category = categories.posts | pick(item.data.category) %}
       {{category.icon}} {{category.name | capitalize}}

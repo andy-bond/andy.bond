@@ -5,8 +5,8 @@ layout: default
 {# Relations #}
 {% set category = categories.reviews | pick(category) %}
 
-<div class="flex flex-col px-1 gap-2">
-  <div class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1">
+<div class="review flex flex-col px-1">
+  <div class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2">
     <a href="/" class="flex flex-row align-items-center gap-0.5">
       {% icon 'home' %}
     </a>
@@ -15,39 +15,50 @@ layout: default
     <div>/</div>
     <div>{{title}}</div>
   </div>
-  <div class="review-card flex flex-row gap-2">
-    {% image image, title %}
-    {# <img src="{{image}}" alt=""> #}
-    <div class="flex flex-col flex-auto gap-1">
-      <div class="flex flex-col flex-auto gap-1">
-        <h1>{{title}}</h1>
-        {% if category.subtitle %}
-          <p>{{category.subtitle}}: {{subtitle}}</p>
-        {% endif %}
-        {% if series %}
-          <p>Series: {{series}}</p>
-        {% endif %}
-      </div>
-      <div class="flex flex-row wrap gap-1 align-items-center">
-        <a href="/reviews/category/{{category.name}}" class="category-link flex flex-row gap-0.5 align-items-center">
-          {{category.icon}} {{category.name | capitalize}}
-        </a>
-      </div>
-    </div>
+
+  <div class="flex flex-col gap-0.5 mb-2">
+    <h1>{{title}}</h1>
+    <a href="/reviews/category/{{category.name}}" class="review-type category-link flex flex-row gap-0.5 align-items-center">
+      {{category.icon}}
+      {{category.name | capitalize}}
+    </a>
   </div>
 
-  <div class="rating-score flex flex-row align-items-center p-1 gap-1">
-    <div class="rating-text flex-auto">
-      {% rating rating %}
+  <div class="review-card-container flex flex-row gap-1">
+    <div class="review-image">
+      {% image image,
+      title %}
     </div>
-    {% set rating_scaled = rating * 10 %}
-    {% set rating_fraction = rating + ' / 10' %}
-    {% circularChart rating_scaled, rating_fraction %}
+    <div class="review-information flex flex-col flex-auto">
+      {% if category.subtitle %}
+        <div class="information-item">
+          <div class="information-item-heading">{{category.subtitle | upper}}</div>
+          {{subtitle}}
+        </div>
+      {% endif %}
+      {% if series %}
+        <div class="information-item">
+          <div class="information-item-heading">SERIES</div>
+          {{series}}
+        </div>
+      {% endif %}
+      <div class="information-item">
+        <div class="information-item-heading">RATING</div>
+        {% rating rating %}
+        <span class="mx-0.5">&mdash;</span>
+        {{ rating }} / 10
+      </div>
+      {% if content.length > 0 %}
+        <a href="#review-content" class="mt-1 ml-1 see-review flex flex-row align-items-center gap-0.5">
+          See review below {% icon 'chevron-down' %}
+        </a>
+      {% endif %}
+    </div>
   </div>
 
   {% if content.length > 0 %}
-    <hr class="w-full">
-    <div class="review-content">
+    <hr class="w-full my-2">
+    <div id="review-content" class="review-content">
       {{ content | safe }}
     </div>
   {% endif %}

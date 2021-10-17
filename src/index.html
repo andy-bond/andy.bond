@@ -28,12 +28,12 @@ path: home
     <div class="flex flex-row align-items-center px-1 gap-1">
       <h1>Posts</h1>
       <a href="/posts" class="view-all-link flex flex-row align-items-center gap-0.5">
-        <div>View All</div>
+        View All
         {% icon 'arrow-right' %}
       </a>
     </div>
     <div class="posts-list px-1">
-      {% for item in collections.post | reverse | limit(4) %}
+      {% for item in collections.posts | limit(4) %}
         {% include "partials/post-card.html" %}
       {% endfor %}
     </div>
@@ -46,12 +46,12 @@ path: home
     <div class="flex flex-row align-items-center px-1 gap-1">
       <h1>Photos</h1>
       <a href="/photos" class="view-all-link flex flex-row align-items-center gap-0.5">
-        <div>View All</div>
+        View All
         {% icon 'arrow-right' %}
       </a>
     </div>
     <div class="photos-grid px-1 gap-1">
-      {% for item in gallery.photos | reverse | limit(5) %}
+      {% for item in collections.photos | limit(5) %}
         <div class="photo-item {{item.size}}">
           {% image item.photo, item.name %}
         </div>
@@ -64,12 +64,12 @@ path: home
     <div class="flex flex-row align-items-center px-1 gap-1">
       <h1>Reviews</h1>
       <a href="/reviews" class="view-all-link flex flex-row align-items-center gap-0.5">
-        <div>View All</div>
+        View All
         {% icon 'arrow-right' %}
       </a>
     </div>
     <div class="reviews-grid px-1 gap-1">
-      {% for item in collections.review | reverse | limit(4) %}
+      {% for item in collections.reviews | limit(4) %}
         {% include "partials/review-card.html" %}
       {% endfor %}
     </div>

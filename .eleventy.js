@@ -16,9 +16,12 @@ const Pluck = require('./src/_filters/pluck');
 const ReadableDate = require('./src/_filters/date');
 
 // Collection Imports
-const ReviewsByCategory = require("./src/_collections/reviews");
-const PostsByCategory = require("./src/_collections/posts");
-const PhotosByCategory = require("./src/_collections/photos");
+const Reviews = require("./src/_collections/reviews");
+const Posts = require("./src/_collections/posts");
+const Photos = require("./src/_collections/photos");
+const ReviewsByCategory = require("./src/_collections/reviews-by-category");
+const PostsByCategory = require("./src/_collections/posts-by-category");
+const PhotosByCategory = require("./src/_collections/photos-by-category");
 
 module.exports = function (eleventyConfig) {
 
@@ -37,6 +40,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("date", ReadableDate);
 
   /* Collections */
+  eleventyConfig.addCollection("reviews", Reviews);
+  eleventyConfig.addCollection("posts", Posts);
+  eleventyConfig.addCollection("photos", Photos);
   eleventyConfig.addCollection("reviewsByCategory", ReviewsByCategory);
   eleventyConfig.addCollection("postsByCategory", PostsByCategory);
   eleventyConfig.addCollection("photosByCategory", PhotosByCategory);
@@ -50,6 +56,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/static/scss/");
   eleventyConfig.addWatchTarget("./src/posts/");
   eleventyConfig.addWatchTarget("./src/reviews/");
+  eleventyConfig.setWatchJavaScriptDependencies(false)
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
