@@ -3,7 +3,7 @@ title: Study Abroad in Karlsruhe, Germany
 description: Eight years later, I reminisce about Germany and my first
   experience traveling abroad.
 date: 2021-09-25T14:08:33.987Z
-image: src/static/img/karlsruhe-castle.jpg
+image: src/static/img/post-karlsruhe-castle.jpg
 category: travel
 ---
 
@@ -11,7 +11,7 @@ category: travel
 
 Having traveled abroad twice now and hoping to travel to Europe again in the near future, I am frequently reminded of my first experience traveling across the Atlantic in the summer of 2013. This first adventure to Germany & Great Britain has sparked a passion for exploration and a desire to learn about the culture, traditions, and especially the food of other countries. My memories of traveling to Germany and Great Britain have only grown fonder over the last 8 years and I wanted to reminisce and record my favorite parts.
 
-{% image "src/static/img/karlsruhe-castle.jpg", "Karlsruhe Castle" %}
+{% image "src/static/img/post-karlsruhe-castle.jpg", "Karlsruhe Castle" %}
 
 ## Study Abroad
 

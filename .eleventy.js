@@ -68,25 +68,8 @@ module.exports = function (eleventyConfig) {
   });
 
   // Copy Items to Site
-  // eleventyConfig.addPassthroughCopy("./src/static/img");
   eleventyConfig.addPassthroughCopy("./src/static/js");
-
-  // Copy relative images to site
-  // eleventyConfig.addPassthroughCopy("./src/posts/**/*.jpg");
-  // eleventyConfig.addPassthroughCopy("./src/reviews/**/*.jpg");
-  // eleventyConfig.addPassthroughCopy("./src/photos/*.jpg");
-
-  // Copy favicon to route of /_site
-  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
-  eleventyConfig.addPassthroughCopy("./src/android-chrome-192x192.png");
-  eleventyConfig.addPassthroughCopy("./src/android-chrome-256x256.png");
-  eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
-  eleventyConfig.addPassthroughCopy("./src/browserconfig.xml");
-  eleventyConfig.addPassthroughCopy("./src/favicon-16x16.png");
-  eleventyConfig.addPassthroughCopy("./src/favicon-32x32.png");
-  eleventyConfig.addPassthroughCopy("./src/mstile-150x150.png");
-  eleventyConfig.addPassthroughCopy("./src/safari-pinned-tab.svg");
-  eleventyConfig.addPassthroughCopy("./src/site.webmanifest");
+  eleventyConfig.addPassthroughCopy("./src/static/favicon");
 
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {

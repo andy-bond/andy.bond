@@ -18,21 +18,43 @@ collections:
     folder: "src/posts"
     create: true
     fields:
-      - { label: "Draft", name: "draft", widget: "boolean", required: false }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Image", name: "image", widget: "image", choose_url: false, required: false }
-      - { label: "Contains Code Blocks", name: "prism", widget: "boolean", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - {
+      [
+        { label: "Draft", name: "draft", widget: "boolean", required: false },
+        { label: "Title", name: "title", widget: "string" },
+        { label: "Description", name: "description", widget: "string" },
+        {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          time_format: false,
+          picker_utc: true,
+          format: "YYYY-MM-DD",
+          date_format: "MM/DD/YYYY",
+        },
+        {
+          label: "Image",
+          name: "image",
+          widget: "image",
+          choose_url: false,
+          required: false,
+        },
+        {
+          label: "Contains Code Blocks",
+          name: "prism",
+          widget: "boolean",
+          required: false,
+        },
+        { label: "Body", name: "body", widget: "markdown", required: false },
+        {
           label: "Category",
           name: "category",
           widget: "relation",
           collection: "categories",
           search_fields: ["posts.*.name"],
           value_field: "posts.*.name",
-        }
+          default: "",
+        },
+      ]
   - label: "Photos"
     name: "photos"
     files:
@@ -61,36 +83,29 @@ collections:
                   options: ["auto", "tall", "wide", "both"],
                   default: ["auto"],
                 }
-  - label: "Reviews"
-    name: "reviews"
-    folder: "src/reviews"
+  - label: "Book Reviews"
+    name: "bookReviews"
+    folder: "src/reviews/books"
     create: true
     fields:
-      - { label: "Draft", name: "draft", widget: "boolean", required: false }
-      - {
-          label: "Category",
-          name: "category",
-          widget: "relation",
-          collection: "categories",
-          search_fields: ["reviews.*.name"],
-          value_field: "reviews.*.name",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - {
+      [
+        { label: "Draft", name: "draft", widget: "boolean", required: false },
+        { label: "Title", name: "title", widget: "string" },
+        {
           label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)",
           name: "subtitle",
           widget: "string",
           required: false,
-        }
-      - { label: "Image", name: "image", widget: "image", choose_url: false }
-      - { label: "Series", name: "series", widget: "string", required: false }
-      - {
-          label: "External Link",
-          name: "externalLink",
-          widget: "string",
+        },
+        { label: "Series", name: "series", widget: "string", required: false },
+        {
+          label: "Series Index",
+          name: "seriesIndex",
+          widget: "number",
+          value_type: "float",
           required: false,
-        }
-      - {
+        },
+        {
           label: "Rating",
           name: "rating",
           widget: "number",
@@ -98,9 +113,389 @@ collections:
           hint: "1 - Unbearable, 2 - Painful, 3 - Awful, 4 - Bad, 5 - Mediocre, 6 - Okay, 7 - Good, 8 - Great, 9 - Amazing, 10 - Masterpiece",
           min: 1,
           max: 10,
-        }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Review", name: "body", widget: "markdown", required: false }
+        },
+        {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          time_format: false,
+          picker_utc: true,
+          format: "YYYY-MM-DD",
+          date_format: "MM/DD/YYYY",
+        },
+        {
+          label: "External Link",
+          name: "externalLink",
+          widget: "string",
+          required: false,
+        },
+        { label: "Image", name: "image", widget: "image", choose_url: false },
+        { label: "Body", name: "body", widget: "markdown", required: false },
+
+        {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ["reviews.*.name"],
+          value_field: "reviews.*.name",
+          default: "book",
+        },
+      ]
+  - label: "Game Reviews"
+    name: "gameReviews"
+    folder: "src/reviews/games"
+    create: true
+    fields:
+      [
+        { label: "Draft", name: "draft", widget: "boolean", required: false },
+        { label: "Title", name: "title", widget: "string" },
+        {
+          label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        },
+        { label: "Series", name: "series", widget: "string", required: false },
+        {
+          label: "Series Index",
+          name: "seriesIndex",
+          widget: "number",
+          value_type: "float",
+          required: false,
+        },
+        {
+          label: "Rating",
+          name: "rating",
+          widget: "number",
+          value_type: "int",
+          hint: "1 - Unbearable, 2 - Painful, 3 - Awful, 4 - Bad, 5 - Mediocre, 6 - Okay, 7 - Good, 8 - Great, 9 - Amazing, 10 - Masterpiece",
+          min: 1,
+          max: 10,
+        },
+        {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          time_format: false,
+          picker_utc: true,
+          format: "YYYY-MM-DD",
+          date_format: "MM/DD/YYYY",
+        },
+        {
+          label: "External Link",
+          name: "externalLink",
+          widget: "string",
+          required: false,
+        },
+        { label: "Image", name: "image", widget: "image", choose_url: false },
+        { label: "Body", name: "body", widget: "markdown", required: false },
+
+        {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ["reviews.*.name"],
+          value_field: "reviews.*.name",
+          default: "game",
+        },
+      ]
+  - label: "Movie Reviews"
+    name: "movieReviews"
+    folder: "src/reviews/movies"
+    create: true
+    fields:
+      [
+        { label: "Draft", name: "draft", widget: "boolean", required: false },
+        { label: "Title", name: "title", widget: "string" },
+        {
+          label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        },
+        { label: "Series", name: "series", widget: "string", required: false },
+        {
+          label: "Series Index",
+          name: "seriesIndex",
+          widget: "number",
+          value_type: "float",
+          required: false,
+        },
+        {
+          label: "Rating",
+          name: "rating",
+          widget: "number",
+          value_type: "int",
+          hint: "1 - Unbearable, 2 - Painful, 3 - Awful, 4 - Bad, 5 - Mediocre, 6 - Okay, 7 - Good, 8 - Great, 9 - Amazing, 10 - Masterpiece",
+          min: 1,
+          max: 10,
+        },
+        {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          time_format: false,
+          picker_utc: true,
+          format: "YYYY-MM-DD",
+          date_format: "MM/DD/YYYY",
+        },
+        {
+          label: "External Link",
+          name: "externalLink",
+          widget: "string",
+          required: false,
+        },
+        { label: "Image", name: "image", widget: "image", choose_url: false },
+        { label: "Body", name: "body", widget: "markdown", required: false },
+
+        {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ["reviews.*.name"],
+          value_field: "reviews.*.name",
+          default: "movie",
+        },
+      ]
+  - label: "Music Reviews"
+    name: "musicReviews"
+    folder: "src/reviews/music"
+    create: true
+    fields:
+      [
+        { label: "Draft", name: "draft", widget: "boolean", required: false },
+        { label: "Title", name: "title", widget: "string" },
+        {
+          label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        },
+        { label: "Series", name: "series", widget: "string", required: false },
+        {
+          label: "Series Index",
+          name: "seriesIndex",
+          widget: "number",
+          value_type: "float",
+          required: false,
+        },
+        {
+          label: "Rating",
+          name: "rating",
+          widget: "number",
+          value_type: "int",
+          hint: "1 - Unbearable, 2 - Painful, 3 - Awful, 4 - Bad, 5 - Mediocre, 6 - Okay, 7 - Good, 8 - Great, 9 - Amazing, 10 - Masterpiece",
+          min: 1,
+          max: 10,
+        },
+        {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          time_format: false,
+          picker_utc: true,
+          format: "YYYY-MM-DD",
+          date_format: "MM/DD/YYYY",
+        },
+        {
+          label: "External Link",
+          name: "externalLink",
+          widget: "string",
+          required: false,
+        },
+        { label: "Image", name: "image", widget: "image", choose_url: false },
+        { label: "Body", name: "body", widget: "markdown", required: false },
+
+        {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ["reviews.*.name"],
+          value_field: "reviews.*.name",
+          default: "music",
+        },
+      ]
+  - label: "Podcast Reviews"
+    name: "podcastReviews"
+    folder: "src/reviews/podcasts"
+    create: true
+    fields:
+      [
+        { label: "Draft", name: "draft", widget: "boolean", required: false },
+        { label: "Title", name: "title", widget: "string" },
+        {
+          label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        },
+        { label: "Series", name: "series", widget: "string", required: false },
+        {
+          label: "Series Index",
+          name: "seriesIndex",
+          widget: "number",
+          value_type: "float",
+          required: false,
+        },
+        {
+          label: "Rating",
+          name: "rating",
+          widget: "number",
+          value_type: "int",
+          hint: "1 - Unbearable, 2 - Painful, 3 - Awful, 4 - Bad, 5 - Mediocre, 6 - Okay, 7 - Good, 8 - Great, 9 - Amazing, 10 - Masterpiece",
+          min: 1,
+          max: 10,
+        },
+        {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          time_format: false,
+          picker_utc: true,
+          format: "YYYY-MM-DD",
+          date_format: "MM/DD/YYYY",
+        },
+        {
+          label: "External Link",
+          name: "externalLink",
+          widget: "string",
+          required: false,
+        },
+        { label: "Image", name: "image", widget: "image", choose_url: false },
+        { label: "Body", name: "body", widget: "markdown", required: false },
+
+        {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ["reviews.*.name"],
+          value_field: "reviews.*.name",
+          default: "podcast",
+        },
+      ]
+  - label: "Restaurant Reviews"
+    name: "restaurantReviews"
+    folder: "src/reviews/restaurants"
+    create: true
+    fields:
+      [
+        { label: "Draft", name: "draft", widget: "boolean", required: false },
+        { label: "Title", name: "title", widget: "string" },
+        {
+          label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        },
+        { label: "Series", name: "series", widget: "string", required: false },
+        {
+          label: "Series Index",
+          name: "seriesIndex",
+          widget: "number",
+          value_type: "float",
+          required: false,
+        },
+        {
+          label: "Rating",
+          name: "rating",
+          widget: "number",
+          value_type: "int",
+          hint: "1 - Unbearable, 2 - Painful, 3 - Awful, 4 - Bad, 5 - Mediocre, 6 - Okay, 7 - Good, 8 - Great, 9 - Amazing, 10 - Masterpiece",
+          min: 1,
+          max: 10,
+        },
+        {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          time_format: false,
+          picker_utc: true,
+          format: "YYYY-MM-DD",
+          date_format: "MM/DD/YYYY",
+        },
+        {
+          label: "External Link",
+          name: "externalLink",
+          widget: "string",
+          required: false,
+        },
+        { label: "Image", name: "image", widget: "image", choose_url: false },
+        { label: "Body", name: "body", widget: "markdown", required: false },
+
+        {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ["reviews.*.name"],
+          value_field: "reviews.*.name",
+          default: "restaurant",
+        },
+      ]
+  - label: "Television Reviews"
+    name: "televisionReviews"
+    folder: "src/reviews/television"
+    create: true
+    fields:
+      [
+        { label: "Draft", name: "draft", widget: "boolean", required: false },
+        { label: "Title", name: "title", widget: "string" },
+        {
+          label: "Author (book) / Artist (music) / Developer (game) / Location (restaurant)",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        },
+        { label: "Series", name: "series", widget: "string", required: false },
+        {
+          label: "Series Index",
+          name: "seriesIndex",
+          widget: "number",
+          value_type: "float",
+          required: false,
+        },
+        {
+          label: "Rating",
+          name: "rating",
+          widget: "number",
+          value_type: "int",
+          hint: "1 - Unbearable, 2 - Painful, 3 - Awful, 4 - Bad, 5 - Mediocre, 6 - Okay, 7 - Good, 8 - Great, 9 - Amazing, 10 - Masterpiece",
+          min: 1,
+          max: 10,
+        },
+        {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          time_format: false,
+          picker_utc: true,
+          format: "YYYY-MM-DD",
+          date_format: "MM/DD/YYYY",
+        },
+        {
+          label: "External Link",
+          name: "externalLink",
+          widget: "string",
+          required: false,
+        },
+        { label: "Image", name: "image", widget: "image", choose_url: false },
+        { label: "Body", name: "body", widget: "markdown", required: false },
+
+        {
+          label: "Category",
+          name: "category",
+          widget: "relation",
+          collection: "categories",
+          search_fields: ["reviews.*.name"],
+          value_field: "reviews.*.name",
+          default: "television",
+        },
+      ]
   - label: "Résumé"
     name: "resume"
     files:
