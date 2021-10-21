@@ -8,5 +8,3 @@ date: 2020-07-01
 image: src/static/img/book-harry-potter-philosophers-stone.jpg
 category: book
 ---
-
-{{date | date}}

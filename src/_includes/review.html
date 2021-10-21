@@ -39,7 +39,7 @@ layout: default
       {% if series %}
         <div class="information-item">
           <div class="information-item-heading">SERIES</div>
-          {{series}}
+          {{series}} - #{{seriesIndex}}
         </div>
       {% endif %}
       <div class="information-item">
@@ -48,17 +48,36 @@ layout: default
         <span class="mx-0.5">&mdash;</span>
         {{ rating }} / 10
       </div>
+      {% set related = collections.reviews | pluck(series, 'series') | sortBy(true, 'seriesIndex') %}
+      {% if related.length > 1 %}
+        <div class="information-item">
+          <div class="information-item-heading">RELATED</div>
+          <ul class="related-items">
+            {% for item in related %}
+              {% if item.data.page.url !== page.url %}
+                <li>
+                  <a href="{{item.data.page.url}}">{{item.data.title}}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
       {% if content.length > 0 %}
-        <a href="#review-content" class="mt-1 ml-1 see-review flex flex-row align-items-center gap-0.5">
+        <a href="#review" class="mt-1 ml-1 see-review flex flex-row align-items-center gap-0.5">
           See review below {% icon 'chevron-down' %}
         </a>
+      {% else %}
+        <p class="mt-1 ml-1 no-review flex flex-row align-items-center gap-0.5">
+          No Review Yet {% icon 'frown' %}
+        </p>
       {% endif %}
     </div>
   </div>
 
   {% if content.length > 0 %}
     <hr class="w-full my-2">
-    <div id="review-content" class="review-content">
+    <div id="review" class="review-content">
       {{ content | safe }}
     </div>
   {% endif %}

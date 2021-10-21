@@ -14,6 +14,7 @@ const Limit = require('./src/_filters/limit');
 const Pick = require('./src/_filters/pick');
 const Pluck = require('./src/_filters/pluck');
 const ReadableDate = require('./src/_filters/date');
+const SortBy = require('./src/_filters/sortBy');
 
 // Collection Imports
 const Reviews = require("./src/_collections/reviews");
@@ -38,6 +39,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("pick", Pick);
   eleventyConfig.addFilter("pluck", Pluck);
   eleventyConfig.addFilter("date", ReadableDate);
+  eleventyConfig.addFilter("sortBy", SortBy);
 
   /* Collections */
   eleventyConfig.addCollection("reviews", Reviews);

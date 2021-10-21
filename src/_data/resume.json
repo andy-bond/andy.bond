@@ -77,7 +77,7 @@
       "start": "2015-06-01T12:00:29.514Z",
       "end": "2015-08-01T03:59:00.000Z",
       "position": "Software Developer (Intern)",
-      "organization": "California Resource Corporation",
+      "organization": "California Resources Corporation",
       "location": "Bakersfield, CA",
       "summary": "<li>Developed a server application using C# that fetched and cached live images from IP based security cameras</li>\n<li>Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML, CSS, JavaScript, and ASP.NET</li>",
       "display": true
