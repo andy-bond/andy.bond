@@ -13,6 +13,9 @@ parent:
 eleventyExcludeFromCollections: true
 ---
 
+{% set searchItems = collections.reviews | pluck(category.name, 'category') | sort(false, false, 'data.title') %}
+{% include 'partials/search.html' %}
+
 {% set allLink = { url: '/reviews/', text: 'All Reviews'} %}
 {% set items = categories.reviews %}
 {% include 'partials/category-list.html' %}

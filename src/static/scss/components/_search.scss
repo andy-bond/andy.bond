@@ -1,0 +1,112 @@
+@use "../mixins" as mixins;
+
+.search-wrapper {
+  position: relative;
+
+  &:focus-within {
+    #search-items {
+      display: flex;
+    }
+  }
+
+  #search-input {
+    font-family: inherit;
+    font-size: 1em;
+    width: clamp(100%, 1200px, 100%);
+    border: none;
+    padding: 0.5em 1em;
+    background-color: var(--color-highlight);
+    color: inherit;
+    border-radius: var(--border-radius);
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    transition: border-color var(--default-transition-timing) ease-in-out,
+      background-color var(--default-transition-timing) ease-in-out;
+
+    &:focus,
+    &:focus-within {
+      outline: none;
+      border: 2px solid var(--color-title);
+    }
+  }
+
+  #search-items {
+    flex-direction: column;
+    max-height: 30vh;
+    overflow: auto;
+    display: none;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    background-color: var(--color-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--default-shadow);
+    z-index: 5;
+
+    .search-item {
+      margin: 0;
+      padding: 0;
+
+      + .search-item {
+        border-top: 1px solid var(--color-highlight);
+      }
+
+      a {
+        display: inline-block;
+        width: 100%;
+
+        @include mixins.default-transition(color, background-color);
+
+        padding: 0.5em 1em;
+        color: var(--color-text);
+        text-decoration: none;
+
+        svg {
+          vertical-align: middle;
+          opacity: 0;
+          color: var(--color-text);
+          transform: translateX(-2px);
+          @include mixins.default-transition(color, transform, opacity);
+        }
+
+        .category {
+          margin: 0 0.5em;
+          color: var(--color-text-secondary);
+          font-size: 0.8em;
+          background-color: var(--color-highlight);
+          padding: 0.2em 0.75em;
+          border-radius: var(--border-radius);
+
+          @include mixins.default-transition(color, background-color);
+        }
+
+        &:hover,
+        &:focus-visible {
+          outline: none;
+          background-color: var(--color-highlight);
+          color: var(--color-link);
+
+          .category {
+            color: var(--color-card);
+            background-color: var(--color-link);
+          }
+
+          svg {
+            opacity: 1;
+            color: var(--color-link);
+            transform: translateX(2px);
+          }
+        }
+
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<nav class="search-wrapper" aria-label="Search Navigation">
+  <input id="search-input" type="text" placeholder="Search" role="searchbox" aria-haspopup="true">
+  <ul id="search-items" aria-label="submenu">
+    {% for item in searchItems %}
+      <li class="search-item">
+        <a href="{{item.data.page.url}}">
+          {{item.data.title}}
+          <span class="category">{{item.data.category | capitalize}}</span>
+          {% icon 'arrow-right' %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<script type="text/javascript">
+  const search = document.getElementById('search-input');
+  search.addEventListener('input', searchFilter);
+
+  function searchFilter(event) {
+    const searchTerm = event
+      .target
+      .value
+      .toLowerCase()
+      .trim();
+    const searchItems = document.getElementsByClassName('search-item');
+
+    for (let i = 0; i < searchItems.length; i++) {
+      let item = searchItems[i];
+
+      if (searchTerm !== '') {
+        if (item.innerText.trim().toLowerCase().includes(searchTerm)) {
+          item
+            .classList
+            .remove('hidden');
+        } else {
+          item
+            .classList
+            .add('hidden');
+        }
+      } else {
+        item
+          .classList
+          .remove('hidden');
+      }
+    }
+  }
+</script>

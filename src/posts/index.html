@@ -9,6 +9,9 @@ title: Posts
 eleventyExcludeFromCollections: true
 ---
 
+{% set searchItems = collections.posts | sort(false, false, 'data.title') %}
+{% include 'partials/search.html' %}
+
 {% set allLink = {  url: '/posts/', text: 'All Posts'} %}
 {% set items = categories.posts %}
 {% include 'partials/category-list.html' %}

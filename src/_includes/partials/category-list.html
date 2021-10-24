@@ -4,6 +4,8 @@
     - items = collection
 #}
 
+{% set items = items | sort(false, false, 'name')%}
+
 <nav class="category-list">
   <ul>
     <li>
