@@ -5,7 +5,7 @@
 
   &:focus-within {
     #search-items {
-      display: flex;
+      display: block;
     }
   }
 
@@ -22,7 +22,6 @@
     transition: border-color var(--default-transition-timing) ease-in-out,
       background-color var(--default-transition-timing) ease-in-out;
 
-    &:focus,
     &:focus-within {
       outline: none;
       border: 2px solid var(--color-title);
@@ -30,7 +29,6 @@
   }
 
   #search-items {
-    flex-direction: column;
     max-height: 30vh;
     overflow: auto;
     display: none;
@@ -46,7 +44,7 @@
     background-color: var(--color-card);
     border-radius: var(--border-radius);
     box-shadow: var(--default-shadow);
-    z-index: 5;
+    z-index: 25;
 
     .search-item {
       margin: 0;
@@ -56,9 +54,31 @@
         border-top: 1px solid var(--color-highlight);
       }
 
+      &:active,
+      &:hover,
+      &:focus-within {
+        a {
+          outline: none;
+          background-color: var(--color-highlight);
+          color: var(--color-link);
+
+          .category {
+            color: var(--color-card);
+            background-color: var(--color-link);
+          }
+
+          svg {
+            opacity: 1;
+            color: var(--color-link);
+            transform: translateX(2px);
+          }
+        }
+      }
+
       a {
         display: inline-block;
         width: 100%;
+        z-index: 26;
 
         @include mixins.default-transition(color, background-color);
 
@@ -83,28 +103,6 @@
           border-radius: var(--border-radius);
 
           @include mixins.default-transition(color, background-color);
-        }
-
-        &:hover,
-        &:focus-visible {
-          outline: none;
-          background-color: var(--color-highlight);
-          color: var(--color-link);
-
-          .category {
-            color: var(--color-card);
-            background-color: var(--color-link);
-          }
-
-          svg {
-            opacity: 1;
-            color: var(--color-link);
-            transform: translateX(2px);
-          }
-        }
-
-        &.hidden {
-          display: none;
         }
       }
     }
