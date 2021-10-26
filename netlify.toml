@@ -4,4 +4,4 @@
 [[plugins]]
   package = "netlify-plugin-11ty"
   [plugins.inputs]
-    cache_img = './static/img'
+    cache_img = false
