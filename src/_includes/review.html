@@ -26,8 +26,7 @@ layout: default
 
   <div class="review-card-container flex flex-row gap-1">
     <div class="review-image">
-      {% image image,
-      title %}
+      {% image image, title, "(max-width: 600px) 100vw, 600px", [300, 600] %}
     </div>
     <div class="review-information flex flex-col flex-auto">
       {% if category.subtitle %}
@@ -48,7 +47,7 @@ layout: default
         <span class="mx-0.5">&mdash;</span>
         {{ rating }} / 10
       </div>
-      {% set related = collections.reviews | pluck(series, 'series') | sortBy(true, 'seriesIndex') %}
+      {% set related = collections.reviews | pluck(series, 'series') | sortBy('seriesIndex') %}
       {% if related.length > 1 %}
         <div class="information-item">
           <div class="information-item-heading">RELATED</div>

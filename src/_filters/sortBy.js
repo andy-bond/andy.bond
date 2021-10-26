@@ -1,13 +1,18 @@
-module.exports = (arr, reverse, property) => {
-  const filtered = arr.filter((item) => {
+module.exports = (arr, property) => {
+  const copy = arr.slice();
+
+  const filtered = copy.filter((item) => {
     const obj = item.data ? item.data : item;
     return obj[property] !== null;
   });
 
-  const isNum = val => val == +val;
-  const sorter = (a, b) => isNum(a[property]) && isNum(b[property]) ? +a[property] - b[property] : a[property] < b[property];
+  return filtered.sort((a, b) => {
+    const objA = a.data ? a.data : a;
+    const objB = b.data ? b.data : b;
 
-  filtered.sort(sorter);
+    const propA = objA[property];
+    const propB = objB[property];
 
-  return reverse ? filtered.reverse() : filtered;
+    return propA - propB;
+  });
 }

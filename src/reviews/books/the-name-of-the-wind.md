@@ -8,7 +8,3 @@ date: 2020-07-22
 image: src/static/img/book-kingkiller-chronicle-name-wind.jpg
 category: book
 ---
-
-## Review
-
-One of my favorite books of all time.

@@ -1,18 +1,16 @@
 const Image = require("@11ty/eleventy-img");
 
-module.exports = (src, alt) => {
+module.exports = (src, alt, sizes = "(max-width: 1200px) 100vw, 1200px", widths = [300, 600, 1200]) => {
   let options = {
-    widths: [300, 600, 1200],
+    widths,
     formats: ["avif", "webp", "jpeg"],
     urlPath: "/static/img/",
     outputDir: "_site/static/img/"
   };
 
-  Image(src, options);
-
   let imageAttributes = {
     alt,
-    sizes: "100vw",
+    sizes,
     loading: "lazy",
     decoding: "async",
     whitespaceMode: 'inline'

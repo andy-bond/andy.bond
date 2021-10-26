@@ -1,5 +1,5 @@
 <div class="review-item">
-  {% image item.data.image, item.data.title %}
+  {% image item.data.image, item.data.title, "(max-width: 600px) 100vw, 600px", [300, 600] %}
   <div class="info">
     <h3>{{item.data.title}}</h3>
     {% if item.data.subtitle %}
