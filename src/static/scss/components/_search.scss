@@ -54,31 +54,9 @@
         border-top: 1px solid var(--color-highlight);
       }
 
-      &:active,
-      &:hover,
-      &:focus-within {
-        a {
-          outline: none;
-          background-color: var(--color-highlight);
-          color: var(--color-link);
-
-          .category {
-            color: var(--color-card);
-            background-color: var(--color-link);
-          }
-
-          svg {
-            opacity: 1;
-            color: var(--color-link);
-            transform: translateX(2px);
-          }
-        }
-      }
-
       a {
         display: inline-block;
         width: 100%;
-        z-index: 26;
 
         @include mixins.default-transition(color, background-color);
 
@@ -103,6 +81,24 @@
           border-radius: var(--border-radius);
 
           @include mixins.default-transition(color, background-color);
+        }
+
+        &:hover,
+        &:focus-within {
+          outline: none;
+          background-color: var(--color-highlight);
+          color: var(--color-link);
+
+          .category {
+            color: var(--color-card);
+            background-color: var(--color-link);
+          }
+
+          svg {
+            opacity: 1;
+            color: var(--color-link);
+            transform: translateX(2px);
+          }
         }
       }
     }

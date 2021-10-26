@@ -3,7 +3,7 @@
   <ul id="search-items" aria-label="submenu">
     {% for item in searchItems %}
       <li class="search-item">
-        <a class="search-links" href="{{item.data.page.url}}">
+        <a tabindex="0" href="{{item.data.page.url}}">
           {{item.data.title}}
           <span class="category">{{item.data.category | capitalize}}</span>
           {% icon 'arrow-right' %}
@@ -16,15 +16,6 @@
 <script type="text/javascript">
   const search = document.getElementById('search-input');
   search.addEventListener('input', searchFilter);
-  const searchLinks = document.getElementsByClassName('search-links');
-
-  for (let i = 0; i < searchLinks.length; i++) {
-    searchLinks[i].addEventListener('click', preventDefault);
-  }
-
-  function preventDefault(event) {
-    event.stopPropagation();
-  }
 
   function searchFilter(event) {
     const searchTerm = event
