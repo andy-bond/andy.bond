@@ -38,7 +38,7 @@ layout: default
       {% if series %}
         <div class="information-item">
           <div class="information-item-heading">SERIES</div>
-          {{category.name | capitalize}} #{{seriesIndex}} &mdash; {{series}}
+          {{(category.name if category.name !== 'television' else 'show') | capitalize}} #{{seriesIndex}} &mdash; {{series}}
         </div>
       {% endif %}
       <div class="information-item">
@@ -56,7 +56,7 @@ layout: default
               {% if item.data.page.url !== page.url %}
                 <li>
                   <a href="{{item.data.page.url}}">
-                    {{category.name | capitalize}} #{{item.data.seriesIndex}} &mdash; {{item.data.title}}
+                    {{(category.name if category.name !== 'television' else 'show') | capitalize}} #{{item.data.seriesIndex}} &mdash; {{item.data.title}}
                   </a>
                 </li>
               {% endif %}

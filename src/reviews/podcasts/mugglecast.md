@@ -1,8 +1,8 @@
 ---
-category: podcast
 title: Mugglecast
-image: src/static/img/podcast-mugglecast.jpg
 externalLink: https://www.mugglecast.com/
-rating: 8
-date: 2021-08-14T18:36:56.631Z
+rating: 9
+date: 2020-07-01
+image: src/static/img/podcast-mugglecast.jpg
+category: podcast
 ---
