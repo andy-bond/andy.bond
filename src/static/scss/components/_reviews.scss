@@ -170,6 +170,12 @@
     align-self: flex-start;
   }
 
+  .review-content {
+    h2 {
+      margin-bottom: 0.25em;
+    }
+  }
+
   .review-card-container {
     @media screen and (max-width: 599px) {
       flex-direction: column;
