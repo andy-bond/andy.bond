@@ -47,21 +47,12 @@ layout: default
         <span class="mx-0.5">&mdash;</span>
         {{ rating }} / 10
       </div>
-      {% set related = collections.reviews | pluck(series, 'series') | sortBy('seriesIndex') %}
+      {% set related = collections.reviews | pluck(series, 'series') %}
       {% if related.length > 1 %}
+        {% set placement = related | ratingPlacement(rating) %}
         <div class="information-item">
-          <div class="information-item-heading">RELATED</div>
-          <ul class="related-items">
-            {% for item in related %}
-              {% if item.data.page.url !== page.url %}
-                <li>
-                  <a href="{{item.data.page.url}}">
-                    {{(category.name if category.name !== 'television' else 'show') | capitalize}} #{{item.data.seriesIndex}} &mdash; {{item.data.title}}
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
+          <div class="information-item-heading">SERIES COMPARISON</div>
+          Ranked {{ placement | ordinal }} in {{ series }}
         </div>
       {% endif %}
       {% if content.length > 0 %}
@@ -81,5 +72,16 @@ layout: default
     <div id="review" class="review-content flex flex-col gap-1">
       {{ content | safe }}
     </div>
+  {% endif %}
+
+  {% set related = related | randomLimit(4, page.url) %}
+  {% if related.length > 0 %}
+    <hr class="w-full my-2">
+    <h2>Related Reviews</h2>
+    <section class="reviews-grid gap-1 mt-2">
+      {% for item in related %}
+        {% include "partials/review-card.html" %}
+      {% endfor %}
+    </section>
   {% endif %}
 </div>
