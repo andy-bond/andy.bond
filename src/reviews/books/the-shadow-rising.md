@@ -7,5 +7,4 @@ rating: 9
 date: 2021-11-01
 image: src/static/img/book-wheel-time-shadow-rising.jpg
 category: book
-draft: true
 ---
