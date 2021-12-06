@@ -83,6 +83,56 @@ collections:
                   options: ["auto", "tall", "wide", "both"],
                   default: ["auto"],
                 }
+              - {
+                  label: "Date",
+                  name: "date",
+                  widget: "datetime",
+                  time_format: false,
+                  picker_utc: true,
+                  format: "YYYY-MM-DD",
+                  date_format: "MM/DD/YYYY",
+                }
+              - label: "Metadata"
+                name: "metadata"
+                widget: "object"
+                required: false
+                fields:
+                  - {
+                      label: "Camera",
+                      name: "camera",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "F-Stop",
+                      name: "fstop",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Exposure Time",
+                      name: "exposure",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Focal Length",
+                      name: "focalLength",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "ISO Speed",
+                      name: "iso",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Location",
+                      name: "location",
+                      widget: "string",
+                      required: false,
+                    }
   - label: "Book Reviews"
     name: "bookReviews"
     folder: "src/reviews/books"

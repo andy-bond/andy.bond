@@ -56,8 +56,17 @@
   ],
   "experience": [
     {
-      "start": "2016-02-01T13:00:40.525Z",
+      "start": "2021-12-07T13:00:40.525Z",
       "end": "",
+      "position": "Software Engineer",
+      "organization": "Cisco",
+      "location": "Remote",
+      "summary": "",
+      "display": true
+    },
+    {
+      "start": "2016-02-01T13:00:40.525Z",
+      "end": "2021-12-03T13:00:40.525Z",
       "position": "Software Engineer",
       "organization": "Legislative Research Commission",
       "location": "Frankfort, KY",
@@ -71,7 +80,7 @@
       "organization": "University of Kentucky",
       "location": "Lexington, KY",
       "summary": "<li>Photographed banquets, concerts, student and faculty activities, sporting events, speeches, and many other functions</li>\n<li>Organized group shots of 50+ people</li>",
-      "display": false
+      "display": true
     },
     {
       "start": "2015-06-01T12:00:29.514Z",
@@ -80,7 +89,7 @@
       "organization": "California Resources Corporation",
       "location": "Bakersfield, CA",
       "summary": "<li>Developed a server application using C# that fetched and cached live images from IP based security cameras</li>\n<li>Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML, CSS, JavaScript, and ASP.NET</li>",
-      "display": true
+      "display": false
     },
     {
       "start": "2014-05-01T12:00:48.354Z",
@@ -89,7 +98,7 @@
       "position": "Software Developer (Intern)",
       "organization": "Occidental Petroleum Corporation",
       "location": "Bakersfield, CA",
-      "display": true
+      "display": false
     },
     {
       "start": "2012-05-01T12:00:02.612Z",

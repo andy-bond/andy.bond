@@ -1,5 +1,5 @@
 ---
-title: Skyrim
+title: Minecraft
 subtitle: Mojang Studios
 rating: 10
 date: 2011-11-18

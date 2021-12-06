@@ -4,7 +4,7 @@ const getCategoryChunks = require("./_utils");
 
 module.exports = (collection) => {
   const pagesize = 24;
-  const allItems = [...gallery.photos].reverse();
+  const allItems = [...gallery.photos].sort((a, b) => new Date(b.date) - new Date(a.date));
   const categoryNames = categories.photos.map(i => i.name);
   const result = getCategoryChunks(allItems, pagesize, categoryNames, 'photos');
   return result;

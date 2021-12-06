@@ -4,31 +4,561 @@
       "name": "University of Kentucky - Autumn",
       "photo": "src/static/img/photo-campus-autumn.jpg",
       "category": "scenic",
-      "size": "auto"
+      "size": "auto",
+      "date": "2012-10-15",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "10",
+        "exposure": "1/160",
+        "focalLength": "18",
+        "iso": "100",
+        "location": "Lexington, KY"
+      }
     },
     {
       "name": "Cardinal",
       "photo": "src/static/img/photo-cardinal.jpg",
       "category": "nature",
-      "size": "auto"
+      "size": "auto",
+      "date": "2011-12-24",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "5.6",
+        "exposure": "1/1000",
+        "focalLength": "300",
+        "iso": "320",
+        "location": "Frankfort, KY"
+      }
     },
     {
       "name": "Black Capped Chickadee",
       "photo": "src/static/img/photo-black-capped-chikadee.jpg",
       "category": "nature",
-      "size": "auto"
+      "size": "auto",
+      "date": "2011-12-24",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "5.6",
+        "exposure": "1/1000",
+        "focalLength": "300",
+        "iso": "125",
+        "location": "Frankfort, KY"
+      }
     },
     {
       "name": "Lumineers #1",
-      "photo": "src/static/img/photo-lumineers-orange-blue.jpg",
+      "photo": "src/static/img/photo-lumineers-1.jpg",
       "category": "events",
-      "size": "tall"
+      "size": "tall",
+      "date": "2021-12-05",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "5",
+        "exposure": "1/160",
+        "focalLength": "40",
+        "iso": "800",
+        "location": "Lexington, KY"
+      }
     },
     {
       "name": "Snail in Karlsruhe",
       "photo": "src/static/img/photo-snail-karlsruhe.jpg",
       "category": "nature",
-      "size": "auto"
+      "size": "auto",
+      "date": "2013-06-14",
+      "metadata": {
+        "camera": "Apple iPhone 4S",
+        "fstop": "2.4",
+        "exposure": "1/511",
+        "focalLength": "4.28",
+        "iso": "50",
+        "location": "Karlsruhe, Germany"
+      }
+    },
+    {
+      "name": "Capitol Doe",
+      "photo": "src/static/img/photo-capitol-doe.jpg",
+      "category": "nature",
+      "size": "auto",
+      "date": "2011-11-23",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "14",
+        "exposure": "1/80",
+        "focalLength": "205",
+        "iso": "200",
+        "location": "Frankfort, KY"
+      }
+    },
+    {
+      "name": "Backyard Bluebird",
+      "photo": "src/static/img/photo-backyard-bluebird.jpg",
+      "category": "nature",
+      "size": "auto",
+      "date": "2012-02-02",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "5.6",
+        "exposure": "1/2000",
+        "focalLength": "300",
+        "iso": "500",
+        "location": "Starkville, MS"
+      }
+    },
+    {
+      "name": "Railroad at Midway",
+      "photo": "src/static/img/photo-midway.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2012-03-14",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "9",
+        "exposure": "1/320",
+        "focalLength": "27",
+        "iso": "125",
+        "location": "Midway, KY"
+      }
+    },
+    {
+      "name": "Lumineers #2",
+      "photo": "src/static/img/photo-lumineers-2.jpg",
+      "category": "events",
+      "size": "auto",
+      "date": "2013-10-11",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "5.6",
+        "exposure": "1/60",
+        "focalLength": "47",
+        "iso": "800",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "UK Football",
+      "photo": "src/static/img/photo-football-1.jpg",
+      "category": "events",
+      "size": "auto",
+      "date": "2013-11-02",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "3.5",
+        "exposure": "1/250",
+        "focalLength": "70",
+        "iso": "800",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Bowman",
+      "photo": "src/static/img/photo-bowman.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2014-02-02",
+      "metadata": {
+        "camera": "Canon EOS 5D Mark II",
+        "fstop": "3.2",
+        "exposure": "1/640",
+        "focalLength": "50",
+        "iso": "100",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "State Street #1",
+      "photo": "src/static/img/photo-state-street-1.jpg",
+      "category": "events",
+      "size": "auto",
+      "date": "2014-03-28",
+      "metadata": {
+        "camera": "Canon EOS 5D Mark II",
+        "fstop": "1.4",
+        "exposure": "1/60",
+        "focalLength": "50",
+        "iso": "6400",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "UK Students #1",
+      "photo": "src/static/img/photo-uk-students-1.jpg",
+      "category": "people",
+      "size": "auto",
+      "date": "2014-04-17",
+      "metadata": {
+        "camera": "Canon EOS 5D Mark II",
+        "fstop": "6.3",
+        "exposure": "1/400",
+        "focalLength": "50",
+        "iso": "100",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Adam - Senior Portrait",
+      "photo": "src/static/img/photo-adam-1.jpg",
+      "category": "people",
+      "size": "auto",
+      "date": "2014-08-08",
+      "metadata": {
+        "camera": "Canon EOS 5D Mark II",
+        "location": "San Francisco, CA"
+      }
+    },
+    {
+      "name": "Grand Canyon",
+      "photo": "src/static/img/photo-grand-canyon.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2014-08-15",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "7.1",
+        "exposure": "1/50",
+        "focalLength": "18",
+        "location": "Grand Canyon, AZ"
+      }
+    },
+    {
+      "name": "Chance the Rapper",
+      "photo": "src/static/img/photo-chance-the-rapper.jpg",
+      "category": "events",
+      "size": "auto",
+      "date": "2014-10-13",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "7.14",
+        "exposure": "1/100",
+        "focalLength": "28",
+        "iso": "1600",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Chinatown",
+      "photo": "src/static/img/photo-chinatown-san-francisco.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2014-08-08",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "location": "San Francisco, CA"
+      }
+    },
+    {
+      "name": "Danceblue #1",
+      "photo": "src/static/img/photo-danceblue-1.jpg",
+      "category": "events",
+      "size": "auto",
+      "date": "2015-02-14",
+      "metadata": {
+        "camera": "Canon EOS 5D Mark II",
+        "fstop": "1.8",
+        "exposure": "1/200",
+        "focalLength": "50",
+        "iso": "6400",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Danceblue #2",
+      "photo": "src/static/img/photo-danceblue-2.jpg",
+      "category": "events",
+      "size": "auto",
+      "date": "2015-02-15",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "5.6",
+        "exposure": "1/1",
+        "focalLength": "30",
+        "iso": "100",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Florence #1",
+      "photo": "src/static/img/photo-florence-1.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2019-10-28",
+      "metadata": {
+        "camera": "Apple iPhone 8",
+        "fstop": "1.8",
+        "exposure": "1/1600",
+        "focalLength": "3.99",
+        "iso": "20",
+        "location": "Florence, Italy"
+      }
+    },
+    {
+      "name": "Lanikai Pilbox Hike",
+      "photo": "src/static/img/photo-hawaii-pilbox.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2018-12-17",
+      "metadata": {
+        "camera": "Apple iPhone 8",
+        "fstop": "1.8",
+        "exposure": "1/150",
+        "focalLength": "3.99",
+        "iso": "20",
+        "location": "Oahu, HI"
+      }
+    },
+    {
+      "name": "Hawaii Tree",
+      "photo": "src/static/img/photo-hawaii-tree.jpg",
+      "category": "nature",
+      "size": "auto",
+      "date": "2018-12-14",
+      "metadata": {
+        "camera": "Apple iPhone 8",
+        "fstop": "1.8",
+        "exposure": "1/30",
+        "focalLength": "3.99",
+        "iso": "20",
+        "location": "Oahu, HI"
+      }
+    },
+    {
+      "name": "Kern Canyon",
+      "photo": "src/static/img/photo-kern-canyon.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2014-07-03",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "10",
+        "exposure": "1/4",
+        "focalLength": "18",
+        "location": "Kern Canyon, CA"
+      }
+    },
+    {
+      "name": "Pacific Coast Highway #1",
+      "photo": "src/static/img/photo-pacific-coast-highway-1.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2014-08-09",
+      "metadata": {
+        "camera": "Apple iPhone 5S",
+        "fstop": "2.2",
+        "exposure": "1/1642",
+        "focalLength": "4.12",
+        "iso": "32",
+        "location": "Highway 1, CA"
+      }
+    },
+    {
+      "name": "Rome #1",
+      "photo": "src/static/img/photo-rome-1.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2019-10-30",
+      "metadata": {
+        "camera": "Apple iPhone 8",
+        "fstop": "1.8",
+        "exposure": "1/1297",
+        "focalLength": "3.99",
+        "iso": "20",
+        "location": "Rome, Italy"
+      }
+    },
+    {
+      "name": "Trevi Fountain",
+      "photo": "src/static/img/photo-rome-2.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2019-10-30",
+      "metadata": {
+        "camera": "Apple iPhone 8",
+        "fstop": "1.8",
+        "exposure": "1/403",
+        "focalLength": "3.99",
+        "iso": "20",
+        "location": "Rome, Italy"
+      }
+    },
+    {
+      "name": "Vatican City #1",
+      "photo": "src/static/img/photo-rome-vatican-1.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2019-10-31",
+      "metadata": {
+        "camera": "Apple iPhone 8",
+        "fstop": "1.8",
+        "exposure": "1/17",
+        "focalLength": "3.99",
+        "iso": "100",
+        "location": "Vatican City, Italy"
+      }
+    },
+    {
+      "name": "Sky #1",
+      "photo": "src/static/img/photo-sky-1.jpg",
+      "category": "pets",
+      "size": "auto",
+      "date": "2016-11-26",
+      "metadata": {
+        "camera": "Canon EOS 5D Mark II",
+        "fstop": "5.6",
+        "exposure": "1/400",
+        "focalLength": "300",
+        "iso": "320",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Sky #2",
+      "photo": "src/static/img/photo-sky-2.jpg",
+      "category": "pets",
+      "size": "auto",
+      "date": "2016-11-30",
+      "metadata": {
+        "camera": "Apple iPhone 6S",
+        "fstop": "2.2",
+        "exposure": "1/15",
+        "focalLength": "4.15",
+        "iso": "250",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Sky #3",
+      "photo": "src/static/img/photo-sky-3.jpg",
+      "category": "pets",
+      "size": "auto",
+      "date": "2017-04-26",
+      "metadata": {
+        "camera": "Canon EOS 5D Mark II",
+        "fstop": "2.5",
+        "exposure": "1/1250",
+        "focalLength": "50",
+        "iso": "200",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Sky #4",
+      "photo": "src/static/img/photo-sky-4.jpg",
+      "category": "pets",
+      "size": "auto",
+      "date": "2018-12-26",
+      "metadata": {
+        "camera": "Canon EOS 5D Mark II",
+        "fstop": "1.6",
+        "exposure": "1/100",
+        "focalLength": "50",
+        "iso": "2000",
+        "location": "Louisville, KY"
+      }
+    },
+    {
+      "name": "Sky #5",
+      "photo": "src/static/img/photo-sky-5.jpg",
+      "category": "pets",
+      "size": "auto",
+      "date": "2020-12-12",
+      "metadata": {
+        "camera": "Apple iPhone 12 Pro",
+        "fstop": "2",
+        "exposure": "1/122",
+        "focalLength": "6",
+        "iso": "100",
+        "location": "Louisville, KY"
+      }
+    },
+    {
+      "name": "Sky #6",
+      "photo": "src/static/img/photo-sky-6.jpg",
+      "category": "pets",
+      "size": "auto",
+      "date": "2020-12-15",
+      "metadata": {
+        "camera": "Apple iPhone 12 Pro",
+        "fstop": "2",
+        "exposure": "1/62",
+        "focalLength": "6",
+        "iso": "250",
+        "location": "Louisville, KY"
+      }
+    },
+    {
+      "name": "Sky #7",
+      "photo": "src/static/img/photo-sky-7.jpg",
+      "category": "pets",
+      "size": "auto",
+      "date": "2021-04-08",
+      "metadata": {
+        "camera": "Apple iPhone 12 Pro",
+        "fstop": "1.6",
+        "exposure": "1/121",
+        "focalLength": "4.2",
+        "iso": "32",
+        "location": "Louisville, KY"
+      }
+    },
+    {
+      "name": "Venice #1",
+      "photo": "src/static/img/photo-venice-1.jpg",
+      "category": "scenic",
+      "size": "tall",
+      "date": "2019-10-26",
+      "metadata": {
+        "camera": "Apple iPhone 8",
+        "fstop": "1.8",
+        "exposure": "1/120",
+        "focalLength": "3.99",
+        "iso": "25",
+        "location": "Venice, Italy"
+      }
+    },
+    {
+      "name": "William T Young Library",
+      "photo": "src/static/img/photo-william-t-young-library.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2013-04-13",
+      "metadata": {
+        "camera": "Canon EOS Rebel T3",
+        "fstop": "10",
+        "exposure": "1/125",
+        "focalLength": "30",
+        "iso": "100",
+        "location": "Lexington, KY"
+      }
+    },
+    {
+      "name": "Gaboon Viper",
+      "photo": "src/static/img/photo-zoo-1.jpg",
+      "category": "nature",
+      "size": "auto",
+      "date": "2021-11-27",
+      "metadata": {
+        "camera": "Apple iPhone 12 Pro",
+        "fstop": "1.6",
+        "exposure": "1/60",
+        "focalLength": "4.2",
+        "iso": "400",
+        "location": "Atlanta Zoo, GA"
+      }
+    },
+    {
+      "name": "Snek",
+      "photo": "src/static/img/photo-zoo-2.jpg",
+      "category": "nature",
+      "size": "auto",
+      "date": "2021-11-27",
+      "metadata": {
+        "camera": "Apple iPhone 12 Pro",
+        "fstop": "1.6",
+        "exposure": "1/60",
+        "focalLength": "4.2",
+        "iso": "200",
+        "location": "Atlanta Zoo, GA"
+      }
     }
   ]
 }
