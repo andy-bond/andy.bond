@@ -1,6 +1,6 @@
 const Image = require("@11ty/eleventy-img");
 
-module.exports = (src, alt, sizes, widths) => {
+module.exports = (src, alt, metadata, sizes, widths) => {
   if (!widths) {
     widths = [300, 600, 1200]
   }
@@ -23,11 +23,17 @@ module.exports = (src, alt, sizes, widths) => {
     sizes,
     loading: "lazy",
     decoding: "async",
-    whitespaceMode: 'inline'
+    whitespaceMode: "inline",
+    camera: metadata?.camera,
+    fstop: metadata?.fstop,
+    exposure: metadata?.exposure,
+    focalLength: metadata?.focalLength,
+    iso: metadata?.iso,
+    location: metadata?.location
   };
 
-  let metadata = Image.statsSync(src, options);
+  let stats = Image.statsSync(src, options);
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return Image.generateHTML(metadata, imageAttributes);
+  return Image.generateHTML(stats, imageAttributes);
 }

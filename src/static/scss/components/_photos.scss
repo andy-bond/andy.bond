@@ -70,7 +70,6 @@
   #lightbox-content {
     display: flex;
     flex-direction: column;
-    gap: 2em;
     align-items: center;
     padding: 1em;
   }
@@ -87,6 +86,19 @@
   #lightbox-caption {
     color: rgb(var(--color-white));
     text-align: center;
+    margin-top: 1em;
+  }
+
+  #lightbox-metadata {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    color: rgba(var(--color-white), 0.6);
+
+    .metadata-item {
+      margin-top: 0.5em;
+    }
   }
 
   #lightbox-close {

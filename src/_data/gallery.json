@@ -50,7 +50,7 @@
       "photo": "src/static/img/photo-lumineers-1.jpg",
       "category": "events",
       "size": "tall",
-      "date": "2021-12-05",
+      "date": "2013-10-11",
       "metadata": {
         "camera": "Canon EOS Rebel T3",
         "fstop": "5",
@@ -109,7 +109,7 @@
       "name": "Railroad at Midway",
       "photo": "src/static/img/photo-midway.jpg",
       "category": "scenic",
-      "size": "auto",
+      "size": "wide",
       "date": "2012-03-14",
       "metadata": {
         "camera": "Canon EOS Rebel T3",
@@ -489,7 +489,7 @@
       "name": "Sky #7",
       "photo": "src/static/img/photo-sky-7.jpg",
       "category": "pets",
-      "size": "auto",
+      "size": "tall",
       "date": "2021-04-08",
       "metadata": {
         "camera": "Apple iPhone 12 Pro",

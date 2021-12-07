@@ -53,7 +53,7 @@ path: home
     <div class="photos-grid px-1 gap-1">
       {% for item in collections.photos | limit(5) %}
         <div class="photo-item {{item.size}}">
-          {% image item.photo, item.name %}
+          {% image item.photo, item.name, item.metadata %}
         </div>
       {% endfor %}
     </div>

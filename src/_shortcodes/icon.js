@@ -1,5 +1,5 @@
-const feather = require('feather-icons');
-
 module.exports = (name, options) => {
-  return feather.icons[name].toSvg(options);
+  const icon = require(`lucide-static/lib/icons/${name}.js`);
+  const iconAsString = `${icon}`;
+  return `${iconAsString.slice(0, 4)} class="lucide-icon lucide-${name}" ${iconAsString.slice(4)}`;
 }

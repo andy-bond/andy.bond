@@ -170,16 +170,16 @@ body pre[class*="language-"] {
   }
 }
 
-/* Feather Icons */
+/* Lucide Icons */
 
-.feather {
+.lucide-icon {
   width: 1em;
   height: 1em;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 
-  &:not(.feather-override) {
+  &:not(.lucide-override) {
     stroke: currentColor;
     fill: none;
   }

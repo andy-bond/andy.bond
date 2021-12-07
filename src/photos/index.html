@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
 <section class="photos-grid gap-1 mt-2">
   {% for item in photos %}
     <div class="photo-item {{item.size}}">
-      {% image item.photo, item.name %}
+      {% image item.photo, item.name, item.metadata %}
     </div>
   {% endfor %}
 </section>

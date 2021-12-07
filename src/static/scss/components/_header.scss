@@ -84,10 +84,10 @@
   }
 
   #theme-btn {
-    .feather-sun {
+    .lucide-sun {
       display: block;
     }
-    .feather-moon {
+    .lucide-moon {
       display: none;
     }
   }
@@ -124,10 +124,10 @@
 }
 
 html.dark #site-header #theme-btn {
-  .feather-sun {
+  .lucide-sun {
     display: none;
   }
-  .feather-moon {
+  .lucide-moon {
     display: block;
   }
 }
