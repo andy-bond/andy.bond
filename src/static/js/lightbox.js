@@ -1,49 +1,56 @@
+var lightbox = [
+  {
+    attribute: 'camera',
+    container: 'metadata-camera',
+    text: 'metadata-camera-text'
+  },
+  {
+    attribute: 'fstop',
+    container: 'metadata-fstop',
+    text: 'metadata-fstop-text',
+    prefix: 'ƒ/'
+  },
+  {
+    attribute: 'exposure',
+    container: 'metadata-exposure',
+    text: 'metadata-exposure-text'
+  },
+  {
+    attribute: 'focalLength',
+    container: 'metadata-focalLength',
+    text: 'metadata-focalLength-text',
+    suffix: 'mm'
+  },
+  {
+    attribute: 'iso',
+    container: 'metadata-iso',
+    text: 'metadata-iso-text',
+    prefix: 'ISO'
+  },
+  {
+    attribute: 'location',
+    container: 'metadata-location',
+    text: 'metadata-location-text'
+  }
+];
+
 function openLightbox(event) {
   const area = document.getElementById('lightbox-image-area');
   const caption = document.getElementById('lightbox-caption');
-
-  const camera = document.getElementById('metadata-camera');
-  const fstop = document.getElementById('metadata-fstop');
-  const exposure = document.getElementById('metadata-exposure');
-  const focalLength = document.getElementById('metadata-focalLength');
-  const iso = document.getElementById('metadata-iso');
-  const location = document.getElementById('metadata-location');
-
   const target = event.target;
 
   area.innerHTML = target.parentElement.outerHTML;
   caption.innerHTML = target.alt;
 
-  const cameraAttribute = target.getAttribute('camera');
-  const fstopAttribute = target.getAttribute('fstop');
-  const exposureAttribute = target.getAttribute('exposure');
-  const focalLengthAttribute = target.getAttribute('focallength');
-  const isoAttribute = target.getAttribute('iso');
-  const locationAttribute = target.getAttribute('location');
-
-  if (cameraAttribute !== 'undefined') {
-    camera.innerHTML = cameraAttribute;
-  }
-
-  if (fstopAttribute !== 'undefined') {
-    fstop.innerHTML = `ƒ/${fstopAttribute}`;
-  }
-
-  if (exposureAttribute !== 'undefined') {
-    exposure.innerHTML = exposureAttribute;
-  }
-
-  if (focalLengthAttribute !== 'undefined') {
-    focalLength.innerHTML = `${focalLengthAttribute}mm`;
-  }
-
-  if (isoAttribute !== 'undefined') {
-    iso.innerHTML = `ISO${isoAttribute}`;
-  }
-
-  if (locationAttribute !== 'undefined') {
-    location.innerHTML = locationAttribute;
-  }
+  lightbox.forEach((item) => {
+    const attribute = target.getAttribute(item.attribute);
+    if (attribute !== 'undefined') {
+      const textElement = document.getElementById(item.text);
+      const containerElement = document.getElementById(item.container);
+      textElement.innerHTML = `${item?.prefix ?? ''}${attribute}${item?.suffix ?? ''}`;
+      containerElement.classList.remove('hidden');
+    }
+  })
 
   toggleLightbox();
 }
@@ -57,21 +64,15 @@ function closeLightbox() {
   const area = document.getElementById('lightbox-image-area');
   const caption = document.getElementById('lightbox-caption');
 
-  const camera = document.getElementById('metadata-camera');
-  const fstop = document.getElementById('metadata-fstop');
-  const exposure = document.getElementById('metadata-exposure');
-  const focalLength = document.getElementById('metadata-focalLength');
-  const iso = document.getElementById('metadata-iso');
-  const location = document.getElementById('metadata-location');
-
   area.innerHTML = '';
   caption.innerHTML = '';
-  camera.innerHTML = '';
-  fstop.innerHTML = '';
-  exposure.innerHTML = '';
-  focalLength.innerHTML = '';
-  iso.innerHTML = '';
-  location.innerHTML = '';
+
+  lightbox.forEach((item) => {
+    const textElement = document.getElementById(item.text);
+    const containerElement = document.getElementById(item.container);
+    textElement.innerHTML = '';
+    containerElement.classList.add('hidden');
+  });
 
   toggleLightbox();
 }

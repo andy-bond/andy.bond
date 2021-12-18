@@ -5,6 +5,6 @@ series: Marvel Cinematic Universe
 seriesIndex: 23
 rating: 8
 date: 2019-07-02
-image: src/static/img/movie-spider-man-2.jpg
+image: src/static/img/movie-spider-man-far-from-home.jpg
 category: movie
 ---

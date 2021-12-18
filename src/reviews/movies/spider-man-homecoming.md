@@ -5,6 +5,6 @@ series: Marvel Cinematic Universe
 seriesIndex: 16
 rating: 8
 date: 2017-07-07
-image: src/static/img/movie-spider-man-1.jpg
+image: src/static/img/movie-spider-man-homecoming.jpg
 category: movie
 ---
