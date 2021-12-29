@@ -1,6 +1,6 @@
 ---
 title: "Avatar: The Legend of Korra"
-subtitle: Nickelodeon
+subtitle: Michael Dante DiMartino & Bryan Konietzko
 series: Avatar
 seriesIndex: 2
 rating: 9

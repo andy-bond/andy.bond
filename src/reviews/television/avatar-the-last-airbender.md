@@ -1,6 +1,6 @@
 ---
 title: "Avatar: The Last Airbender"
-subtitle: Nickelodeon
+subtitle: Michael Dante DiMartino & Bryan Konietzko
 series: Avatar
 seriesIndex: 1
 rating: 10
