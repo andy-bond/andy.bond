@@ -5,3 +5,7 @@
   package = "netlify-plugin-11ty"
   [plugins.inputs]
     cache_img = './static/img'
+[[redirects]]
+  from = "/apps/quick-snips/*"
+  to = "https://quick-snips.netlify.app/:splat"
+  status = 200
