@@ -59,4 +59,10 @@
       }
     }
   }
+
+  @media screen and (min-width: 399px) {
+    #apps-nav-link {
+      display: none;
+    }
+  }
 }

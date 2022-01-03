@@ -121,6 +121,12 @@
       max-width: 100px;
     }
   }
+
+  @media screen and (max-width: 399px) {
+    #apps-link {
+      display: none;
+    }
+  }
 }
 
 html.dark #site-header #theme-btn {

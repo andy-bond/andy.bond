@@ -9,6 +9,9 @@
           {{ item.text }}
         </a>
       {% endfor %}
+      <a id="apps-nav-link" {% if '/apps' in page.url %} aria-current="page" {% endif %} href="/apps">
+        Applications
+      </a>
     {% endif %}
   </nav>
   <button id="close-menu" onclick="toggleMenu()">

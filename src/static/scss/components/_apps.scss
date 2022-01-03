@@ -1,0 +1,119 @@
+@use "../mixins" as mixins;
+
+.apps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: row;
+  padding: 0 !important;
+  gap: 1em;
+
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 1em;
+  border-radius: var(--border-radius);
+
+  &:hover,
+  &:focus-within {
+    .app-information {
+      h2 {
+        color: var(--color-link) !important;
+        text-decoration: underline var(--color-link) !important;
+      }
+    }
+  }
+
+  .app-image {
+    img {
+      height: 100%;
+      width: 250px;
+      object-fit: cover;
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
+    }
+  }
+
+  .app-information {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+
+    h2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5em;
+      text-decoration: underline transparent;
+      align-self: flex-start;
+      color: var(--color-text);
+      @include mixins.default-transition(color, text-decoration-color);
+    }
+
+    .app-description {
+      flex-grow: 1;
+    }
+  }
+
+  @media screen and (max-width: 699px) {
+    position: relative;
+    flex-direction: column;
+
+    &.with-image {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius);
+        background: rgba(var(--color-black), 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 2;
+        transition: opacity 0.4s ease-in-out;
+        opacity: 1;
+      }
+
+      .app-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: var(--border-radius);
+        }
+      }
+
+      .app-information {
+        z-index: 10;
+        color: rgba(var(--color-white), 1);
+
+        h2 {
+          color: rgba(var(--color-white), 1);
+          text-decoration-color: rgba(var(--color-white), 1);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (hover: none) {
+  .app-card {
+    .app-information {
+      h2 {
+        color: var(--color-accent-lighter) !important;
+        text-decoration-color: var(--color-accent-lighter) !important;
+      }
+    }
+  }
+}
