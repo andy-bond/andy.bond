@@ -34,6 +34,5 @@ module.exports = (src, alt, metadata, sizes, widths) => {
 
   let stats = Image.statsSync(src, options);
 
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
   return Image.generateHTML(stats, imageAttributes);
 }

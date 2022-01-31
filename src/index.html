@@ -1,24 +1,27 @@
 ---
 layout: default
 title: Home
+description: "Andy Bond's personal website. Blog posts, photos, and more!"
 path: home
 ---
 
 <section id="about-me" class="full-bleed my-2">
   <div class="container">
-    <div class="card relative flex flex-col mx-1 gap-2">
-      <h1>👋 Hi, I'm Andy Bond - Welcome to my blog!</h1>
-      <p>
-        On this blog, I hope to write about my life, my
-        travels, and some of my work - as well as have a place to put some of the
-        photos I've taken over the years.
-      </p>
-      <p>
-        If you want to leave me a comment or just want to reach out, please do so using the form on the <a href="contact">contact page</a>.
-      </p>
-      <p>Thanks for stopping by!</p>
-      <div id="about-me-image" class="flex flex-col align-items-center justify-content-center">
-        {% image "./src/static/img/andy-memoji.png", "Cartoonized Apple Memoji of Andy" %}
+    <div id="about-me-card" class="flex flex-row mx-1 gap-2">
+      <div id="about-me-image">
+        {% image "./src/static/img/andy-kayla.jpg", "Selfie of Andy & Kayla" %}
+      </div>
+      <div id="about-me-information" class="flex flex-col gap-1 px-1">
+        <h1>👋 Hi, I'm Andy Bond</h1>
+        <ul>
+          <li>I'm a Software Engineer at Cisco&nbsp;🤓</li>
+          <li>I love to travel with my fiance,&nbsp;Kayla&nbsp;😍</li>
+          <li>My hobbies include reading&nbsp;📚, playing video games&nbsp;🎮, and watching movies&nbsp;🍿</li>
+        </ul>
+        <p>
+          If you want to leave me a comment or just want to reach out, please do so using the form on the <a href="contact">contact page</a>.
+        </p>
+        <p>Thanks for stopping by!</p>
       </div>
     </div>
   </div>
@@ -53,7 +56,9 @@ path: home
     <div class="photos-grid px-1 gap-1">
       {% for item in collections.photos | limit(5) %}
         <div class="photo-item {{item.size}}">
-          {% image item.photo, item.name, item.metadata %}
+          {% image item.photo,
+          item.name,
+          item.metadata %}
         </div>
       {% endfor %}
     </div>

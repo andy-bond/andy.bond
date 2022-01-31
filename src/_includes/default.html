@@ -9,15 +9,33 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon/favicon-32x32.png' | url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon/favicon-16x16.png' | url }}">
     <link rel="manifest" href="{{ '/static/favicon/site.webmanifest' | url }}">
-    <link rel="mask-icon" color="#5bbad5" href="{{ '/static/favicon/safari-pinned-tab.svg' | url }}">
     <meta name="apple-mobile-web-app-title" content="andy.bond">
     <meta name="application-name" content="andy.bond">
     <meta name="msapplication-TileColor" content="#15273d">
     <meta name="theme-color" content="#0d1b2a">
 
     <title>{{title}} • Andy Bond</title>
-    {% if description %}
-      <meta name="description" content="{{description}}"/>
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{title}} • Andy Bond">
+    <meta property="og:url" content="{{page.url | url}}">
+    <meta property="og:description" content="{{description}}">
+
+    <!-- Twitter Meta Tags -->
+
+    <meta property="twitter:domain" content="andy.bond">
+    <meta property="twitter:url" content="{{page.url | url}}">
+    <meta name="twitter:title" content="{{title}} • Andy Bond">
+    <meta name="twitter:description" content="{{description}}">
+
+    {% if image %}
+      {% set retrievedImageUrl %}{% imageUrl image %}{% endset %}
+      <meta name="twitter:card" content="summary_large_image">
+      <meta property="og:image" content="{{- retrievedImageUrl | url -}}">
+      <meta name="twitter:image" content="{{- retrievedImageUrl | url -}}">
+    {% else %}
+      <meta name="twitter:card" content="summary">
     {% endif %}
 
     <link rel="stylesheet" href="{{ '/static/css/styles.css' | url }}"/>

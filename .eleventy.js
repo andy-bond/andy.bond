@@ -3,6 +3,7 @@ const htmlmin = require("html-minifier");
 
 // Shortcode Imports
 const Image = require('./src/_shortcodes/image');
+const ImageUrl = require('./src/_shortcodes/imageUrl');
 const Icon = require('./src/_shortcodes/icon');
 const Waves = require('./src/_shortcodes/waves');
 const Rating = require('./src/_shortcodes/rating');
@@ -29,6 +30,7 @@ module.exports = function (eleventyConfig) {
 
   /* --- Shortcodes --- */
   eleventyConfig.addShortcode("image", Image);
+  eleventyConfig.addShortcode("imageUrl", ImageUrl);
   eleventyConfig.addShortcode("icon", Icon)
   eleventyConfig.addShortcode("waves", Waves);
   eleventyConfig.addShortcode("rating", Rating);
