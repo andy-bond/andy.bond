@@ -74,6 +74,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Copy Items to Site
+  eleventyConfig.addPassthroughCopy("./src/static/fonts");
   eleventyConfig.addPassthroughCopy("./src/static/js");
   eleventyConfig.addPassthroughCopy("./src/static/favicon");
 
