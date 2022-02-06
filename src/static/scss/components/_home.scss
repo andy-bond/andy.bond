@@ -2,15 +2,14 @@
 
 #about-me-card {
   #about-me-image {
-    border-radius: var(--border-radius);
-    min-width: 250px;
+    display: flex;
+    justify-content: center;
 
     img {
       height: 100%;
       width: 250px;
       object-fit: cover;
       border-radius: var(--border-radius);
-      z-index: 1;
     }
   }
 
@@ -39,8 +38,21 @@
     flex-direction: column;
 
     #about-me-image {
-      margin-top: -1em;
-      align-self: center;
+      --dot-space: 24px;
+      --dot-size: 4px;
+      --computed: calc(var(--dot-space) - var(--dot-size));
+      padding: 1em;
+      margin-top: -2em;
+      background: linear-gradient(
+            90deg,
+            var(--color-background) var(--computed),
+            transparent 1%
+          )
+          center,
+        linear-gradient(var(--color-background) var(--computed), transparent 1%)
+          center,
+        var(--color-title);
+      background-size: var(--dot-space) var(--dot-space);
     }
   }
 }
