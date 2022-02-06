@@ -92,12 +92,11 @@
   #lightbox-metadata {
     display: flex;
     align-items: center;
-    gap: 1em;
     flex-wrap: wrap;
     color: rgba(var(--color-white), 0.6);
 
     .metadata-item {
-      margin-top: 0.5em;
+      margin: 0.35em;
     }
   }
 
