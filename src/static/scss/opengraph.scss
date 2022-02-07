@@ -1,0 +1,86 @@
+#opengraph-container {
+  overflow: hidden;
+  z-index: 0;
+  background-color: #0d1c2b;
+  color: white;
+  font-weight: 500;
+
+  .image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .image-right {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--default-shadow);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+    }
+  }
+
+  .z-1 {
+    z-index: 1;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+  .bg-text {
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0 8px;
+  }
+
+  .text-large {
+    font-size: 3.5em;
+  }
+
+  .text-medium {
+    font-size: 1.5em;
+  }
+
+  #opengraph-icon {
+    height: 48px;
+    width: 48px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+
+  &.bg-dots {
+    --dot-space: 24px;
+    --dot-size: 2px;
+    --computed: calc(var(--dot-space) - var(--dot-size));
+    background: linear-gradient(90deg, #0d1c2b var(--computed), transparent 1%)
+        center,
+      linear-gradient(#0d1c2b var(--computed), transparent 1%) center,
+      var(--color-primary-lighter);
+    background-size: var(--dot-space) var(--dot-space);
+  }
+}

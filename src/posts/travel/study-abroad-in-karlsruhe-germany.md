@@ -3,8 +3,8 @@ title: Study Abroad in Karlsruhe, Germany
 description: Eight years later, I reminisce about Germany and my first
   experience traveling abroad.
 date: 2021-09-25T14:08:33.987Z
-image: src/static/img/post-karlsruhe-castle.jpg
 category: travel
+image: src/static/img/post-karlsruhe-castle.jpg
 ---
 
 ## Looking Back

@@ -1,5 +1,7 @@
 ---
 layout: default
+eleventyComputed:
+  opengraphImageUrl: "{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph{{ page.url | urlencode }}/opengraph"
 ---
 
 {# Relations #}

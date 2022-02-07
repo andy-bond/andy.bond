@@ -3,5 +3,9 @@
   "author": "Andy Bond",
   "url": "https://andy.bond",
   "copyright": 2022,
-  "repository": "https://github.com/andy-bond"
+  "repository": "https://github.com/andy-bond",
+  "description": "Andy Bond's personal website. Blog posts, photos, review, and more!",
+  "api": {
+    "screenshot": "https://screenshot.andy.bond"
+  }
 }

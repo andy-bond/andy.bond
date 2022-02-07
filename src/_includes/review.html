@@ -2,6 +2,7 @@
 layout: default
 eleventyComputed:
   description: "Review of {{title}}"
+  opengraphImageUrl: "{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph{{ page.url | urlencode }}/opengraph"
 ---
 
 {# Relations #}

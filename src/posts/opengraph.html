@@ -1,0 +1,39 @@
+---
+layout: opengraph-image
+pagination:
+  data: collections.posts
+  size: 1
+  alias: post
+permalink: "/opengraph{{post.url}}"
+eleventyComputed:
+  title: "{{post.data.title}}"
+eleventyExcludeFromCollections: true
+opengraph: true
+---
+
+{% if post.data.image %}
+  <div class="image-background">
+    {% image post.data.image, "" %}
+  </div>
+{% endif %}
+<div class="h-full w-full p-2 flex flex-col flex-auto z-1">
+  <div class="align-self-start">
+    <span class="bg-primary bg-text text-large bold">{{post.data.title}}</span>
+  </div>
+  <div class="flex-auto"></div>
+  <div class="flex flex-row align-items-center gap-1">
+    <div id="opengraph-icon">
+      <img src="/static/favicon/apple-touch-icon.png" alt="">
+    </div>
+    <div class="text-medium bg-accent px-0.5">
+      {{metadata.author}}
+    </div>
+    <div class="flex-auto"></div>
+    <div class="text-medium bg-accent px-0.5">
+      {{post.data.category | capitalize}}
+    </div>
+    <div class="text-medium bg-accent px-0.5">
+      {{post.data.date | date('MMMM d, yyyy')}}
+    </div>
+  </div>
+</div>

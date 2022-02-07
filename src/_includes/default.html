@@ -1,71 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/favicon/apple-touch-icon.png' | url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon/favicon-32x32.png' | url }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon/favicon-16x16.png' | url }}">
-    <link rel="manifest" href="{{ '/static/favicon/site.webmanifest' | url }}">
-    <meta name="apple-mobile-web-app-title" content="andy.bond">
-    <meta name="application-name" content="andy.bond">
-    <meta name="msapplication-TileColor" content="#15273d">
-    <meta name="theme-color" content="#0d1b2a">
-
-    <title>{{title}} • Andy Bond</title>
-
-    <!-- Facebook Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{title}} • Andy Bond">
-    <meta property="og:url" content="{{page.url | url}}">
-    <meta property="og:description" content="{{description}}">
-
-    <!-- Twitter Meta Tags -->
-
-    <meta property="twitter:domain" content="andy.bond">
-    <meta property="twitter:url" content="{{page.url | url}}">
-    <meta name="twitter:title" content="{{title}} • Andy Bond">
-    <meta name="twitter:description" content="{{description}}">
-
-    {% if image %}
-      {% set retrievedImageUrl %}{% imageUrl image %}{% endset %}
-      <meta name="twitter:card" content="summary_large_image">
-      <meta property="og:image" content="{{- retrievedImageUrl | url -}}">
-      <meta name="twitter:image" content="{{- retrievedImageUrl | url -}}">
-    {% else %}
-      <meta name="twitter:card" content="summary">
-    {% endif %}
-
-    <link rel="stylesheet" href="{{ '/static/css/styles.css' | url }}"/>
-    {% if resume %}
-      <link rel="stylesheet" href="{{ '/static/css/resume.css' | url }}"/>
-    {% endif %}
-
-    {% if prism == true %}
-      <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css"/>
-    {% endif %}
-
-    <script type="text/javascript" src="/static/js/theme.js"></script>
-    <script type="text/javascript" src="/static/js/menu.js"></script>
-    <script type="text/javascript" src="/static/js/scroll-to-top.js"></script>
-    <script type="text/javascript" src="/static/js/lightbox.js"></script>
-  </head>
-  <body class="relative">
-    <div class="flex flex-col flex-auto relative">
-      <div class="content-wrapper">
-        {% include "./partials/header.html" %}
-        <main class="full-bleed-wrapper my-2">
-          {{ content | safe }}
-        </main>
-      </div>
-      {% include "./partials/footer.html" %}
-      {% include "./partials/menu.html" %}
-      {% include "./partials/back-to-top.html" %}
-    </div>
-    <script type="text/javascript">
-      window.addEventListener("scroll", handleScroll);
-    </script>
-  </body>
-</html>
+---
+layout: base
+---
+<div class="flex flex-col flex-auto relative">
+  <div class="content-wrapper">
+    {% include "./partials/header.html" %}
+    <main class="full-bleed-wrapper my-2">
+      {{ content | safe }}
+    </main>
+  </div>
+  {% include "./partials/footer.html" %}
+  {% include "./partials/menu.html" %}
+  {% include "./partials/back-to-top.html" %}
+</div>
+<script type="text/javascript">
+  window.addEventListener("scroll", handleScroll);
+</script>
