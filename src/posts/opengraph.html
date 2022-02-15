@@ -17,7 +17,7 @@ opengraph: true
   </div>
 {% endif %}
 <div class="h-full w-full p-2 flex flex-col flex-auto z-1">
-  <div class="align-self-start">
+  <div>
     <span class="bg-primary bg-text text-large bold">{{post.data.title}}</span>
   </div>
   <div class="flex-auto"></div>
@@ -25,15 +25,15 @@ opengraph: true
     <div id="opengraph-icon">
       <img src="/static/favicon/apple-touch-icon.png" alt="">
     </div>
-    <div class="text-medium bg-accent px-0.5">
-      {{metadata.author}}
+    <div>
+      <span class="bg-text text-medium bg-accent">{{ metadata.author }}</span>
     </div>
     <div class="flex-auto"></div>
-    <div class="text-medium bg-accent px-0.5">
-      {{post.data.category | capitalize}}
+    <div>
+      <span class="bg-text text-medium bg-accent">{{ post.data.category | capitalize }}</span>
     </div>
-    <div class="text-medium bg-accent px-0.5">
-      {{post.data.date | date('MMMM d, yyyy')}}
+    <div>
+      <span class="bg-text text-medium bg-accent">{{ post.data.date | date('MMMM d, yyyy') }}</span>
     </div>
   </div>
 </div>

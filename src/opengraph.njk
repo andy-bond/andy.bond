@@ -6,19 +6,19 @@ opengraph: true
 
 <div class="h-full w-full flex flex-row gap-2 p-2">
   <div class="flex flex-col gap-1 flex-auto">
-    <div class="align-self-start">
+    <div>
       <span class="bg-primary bg-text text-large bold">{{metadata.url}}</span>
     </div>
-    <div class="align-self-start">
-      <span class="bg-text text-medium bg-accent px-0.5">{{ metadata.description }}</span>
+    <div>
+      <span class="bg-text text-medium bg-accent">{{ metadata.description }}</span>
     </div>
     <div class="flex-auto"></div>
     <div class="flex flex-row align-items-center gap-1">
       <div id="opengraph-icon">
         <img src="/static/favicon/apple-touch-icon.png" alt="">
       </div>
-      <div class="text-medium bg-accent px-0.5">
-        {{metadata.author}}
+      <div>
+        <span class="bg-text text-medium bg-accent">{{ metadata.author }}</span>
       </div>
     </div>
   </div>

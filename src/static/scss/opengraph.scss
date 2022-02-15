@@ -45,19 +45,21 @@
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     padding: 0 8px;
+    box-shadow: var(--default-shadow);
   }
 
   .text-large {
-    font-size: 3.5em;
+    font-size: 4em;
   }
 
   .text-medium {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
   #opengraph-icon {
-    height: 48px;
-    width: 48px;
+    height: 64px;
+    width: 64px;
+    box-shadow: var(--default-shadow);
 
     img {
       height: 100%;
@@ -74,13 +76,7 @@
   }
 
   &.bg-dots {
-    --dot-space: 24px;
-    --dot-size: 2px;
-    --computed: calc(var(--dot-space) - var(--dot-size));
-    background: linear-gradient(90deg, #0d1c2b var(--computed), transparent 1%)
-        center,
-      linear-gradient(#0d1c2b var(--computed), transparent 1%) center,
-      var(--color-primary-lighter);
-    background-size: var(--dot-space) var(--dot-space);
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23673ab7' fill-opacity='0.8' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: round;
   }
 }
