@@ -16,6 +16,10 @@ eleventyComputed:
     <div>/</div>
     <a href="/reviews">Reviews</a>
     <div>/</div>
+    <a href="/reviews/category/{{category.name}}">
+      {{ (category.name + 's') | capitalize }}
+    </a>
+    <div>/</div>
     <div>{{title}}</div>
   </div>
 

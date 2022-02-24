@@ -151,7 +151,20 @@
     font-style: italic;
   }
 
+  .blogpost-date {
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+
+  .blogpost-tag {
+    font-style: italic;
+    margin-right: 0.25em;
+  }
+
   .blogpost-content {
+    padding-top: 2em;
+    border-top: 1px solid var(--color-highlight);
+
     img {
       height: auto;
       width: 100%;
