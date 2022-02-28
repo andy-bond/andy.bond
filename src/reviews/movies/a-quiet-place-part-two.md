@@ -1,5 +1,5 @@
 ---
-title: A Quiet Place
+title: 'A Quiet Place Part II'
 subtitle: John Krasinski
 series: A Quiet Place
 seriesIndex: 2

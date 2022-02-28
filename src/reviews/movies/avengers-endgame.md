@@ -1,5 +1,5 @@
 ---
-title: "Avengers: Endgame"
+title: 'Avengers: Endgame'
 subtitle: Anthony and Joe Russo
 series: Marvel Cinematic Universe
 seriesIndex: 22

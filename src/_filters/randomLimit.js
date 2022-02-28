@@ -9,4 +9,4 @@ module.exports = (arr, limit, current) => {
 
   // Returns array items up to limit
   return pageArr.slice(0, limit);
-}
+};

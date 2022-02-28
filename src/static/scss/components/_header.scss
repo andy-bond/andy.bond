@@ -1,4 +1,4 @@
-@use "../mixins" as mixins;
+@use '../mixins' as mixins;
 
 #site-header {
   position: relative;
@@ -25,9 +25,10 @@
         color: inherit;
         font-weight: bold;
 
-        &[aria-current="page"] {
+        &[aria-current='page'] {
           text-decoration: underline;
-          text-decoration-color: var(--color-accent);
+          text-decoration-color: var(--color-link);
+          text-decoration-thickness: 3px;
         }
       }
     }

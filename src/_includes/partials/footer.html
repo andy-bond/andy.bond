@@ -1,8 +1,16 @@
-<footer id="footer" class="flex flex-row align-items-center justify-content-center p-1">
+<footer
+  id="footer"
+  class="flex flex-row align-items-center justify-content-center p-1"
+>
   <small>
-    Copyright © {{ metadata.copyright }} • {{metadata.author}} •
+    <span>Copyright © {{ metadata.copyright }}</span>
+    <span>•</span>
+    <span>{{metadata.author}}</span>
+    <span>•</span>
     <a href="{{metadata.repository}}" target="_blank" rel="noopener">
       Github
-    </a> • <a href="/disclaimer/">Disclaimer</a>
+    </a>
+    <span>•</span>
+    <a href="/disclaimer/">Disclaimer</a>
   </small>
 </footer>

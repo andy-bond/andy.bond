@@ -1,17 +1,27 @@
-<header id="site-header" class="container relative flex flex-row w-full p-1 overflow-hidden">
+<header
+  id="site-header"
+  class="container relative flex flex-row w-full p-1 overflow-hidden"
+>
   <div class="header-left flex flex-row align-items-center overflow-hidden">
-    <a id="title" href="/">Andy Bond</a>
-    <nav class="flex flex-row align-items-center gap-0.5">
-      {% if navigation.items %}
-        {% for item in navigation.items %}
-          <a {% if item.url in page.url %} aria-current="page" {% endif %} href="{{ item.url }}">
-            {{ item.text }}
-          </a>
-          {% if not loop.last %}
-            <span>•</span>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+    <a id="title" href="/"> {{ metadata.author }} </a>
+    <nav class="flex flex-row align-items-center gap-1">
+      {% if navigation.items %} {% for item in navigation.items %}
+      <a
+        {%
+        if
+        item.url
+        in
+        page.url
+        %}
+        aria-current="page"
+        {%
+        endif
+        %}
+        href="{{ item.url }}"
+      >
+        {{ item.text }}
+      </a>
+      {% endfor %} {% endif %}
     </nav>
   </div>
   <div class="icon-buttons flex flex-row gap-0.5 align-items-center">
@@ -19,8 +29,7 @@
       {% icon 'flask-conical' %}
     </a>
     <button id="theme-btn" onclick="toggleTheme()" title="Toggle Theme">
-      {% icon 'sun' %}
-      {% icon 'moon' %}
+      {% icon 'sun' %} {% icon 'moon' %}
     </button>
     <button id="menu-btn" onclick="toggleMenu()" title="Toggle Navigation">
       {% icon 'menu' %}

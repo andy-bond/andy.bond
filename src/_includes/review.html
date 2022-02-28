@@ -1,52 +1,55 @@
 ---
 layout: default
 eleventyComputed:
-  description: "Review of {{title}}"
-  opengraphImageUrl: "{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph{{ page.url | urlencode }}/opengraph"
+  description: 'Review of {{title}}'
+  opengraphImageUrl: '{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph{{ page.url | urlencode }}/opengraph'
 ---
 
-{# Relations #}
-{% set category = categories.reviews | pick(category) %}
+{# Relations #} {% set category = categories.reviews | pick(category) %}
 
 <div class="review flex flex-col px-1">
-  <div class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2">
+  <div
+    class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2"
+  >
     <a href="/" class="flex flex-row align-items-center gap-0.5">
       {% icon 'home' %}
     </a>
     <div>/</div>
     <a href="/reviews">Reviews</a>
     <div>/</div>
-    <a href="/reviews/category/{{category.name}}">
-      {{ (category.name + 's') | capitalize }}
+    <a href="/reviews/{{category.folder}}">
+      {{ category.folder | capitalize }}
     </a>
     <div>/</div>
     <div>{{title}}</div>
   </div>
 
-  <div class="flex flex-col gap-0.5 mb-2">
+  <div class="flex flex-row align-items-center wrap gap-1 mb-2">
     <h1>{{title}}</h1>
-    <a href="/reviews/category/{{category.name}}" class="review-type category-link flex flex-row gap-0.5 align-items-center">
-      {{category.icon}}
-      {{category.name | capitalize}}
-    </a>
+    {% set categoryItem = { name: category.name, emoji: category.emoji, svg:
+    category.svg, link: '/reviews/' + category.folder, current: false }%} {%
+    include './partials/category-chip.html' %}
   </div>
 
   <div class="review-card-container flex flex-row gap-1">
     <div class="review-image">
-      {% image image, title, undefined, "(max-width: 600px) 100vw, 600px", [300, 600] %}
+      {% image image, title, undefined, "(max-width: 600px) 100vw, 600px", [300,
+      600] %}
     </div>
     <div class="review-information flex flex-col flex-auto">
       {% if category.subtitle %}
-        <div class="information-item">
-          <div class="information-item-heading">{{category.subtitle | upper}}</div>
-          {{subtitle}}
+      <div class="information-item">
+        <div class="information-item-heading">
+          {{category.subtitle | upper}}
         </div>
-      {% endif %}
-      {% if series %}
-        <div class="information-item">
-          <div class="information-item-heading">SERIES</div>
-          {{(category.name if category.name !== 'television' else 'show') | capitalize}} #{{seriesIndex}} &mdash; {{series}}
-        </div>
+        {{subtitle}}
+      </div>
+      {% endif %} {% if series %}
+      <div class="information-item">
+        <div class="information-item-heading">SERIES</div>
+        {{(category.name if category.name !== 'television' else 'show') |
+        capitalize}} #{{seriesIndex}} &mdash; {{series}}
+      </div>
       {% endif %}
       <div class="information-item">
         <div class="information-item-heading">RATING</div>
@@ -54,41 +57,48 @@ eleventyComputed:
         <span class="mx-0.5">&mdash;</span>
         {{ rating }} / 10
       </div>
-      {% set related = collections.reviews | pluck(series, 'series') %}
-      {% if related.length > 1 %}
-        {% set placement = related | ratingPlacement(rating) %}
-        <div class="information-item">
-          <div class="information-item-heading">SERIES COMPARISON</div>
-          Ranked {{ placement | ordinal }} in {{ series }}
-        </div>
-      {% endif %}
-      {% if content.length > 0 %}
-        <a href="#review" class="mt-1 ml-1 see-review flex flex-row align-items-center gap-0.5">
-          See review below {% icon 'chevron-down' %}
-        </a>
+      {% set related = collections.reviews | pluck(series, 'series') %} {% if
+      related.length > 1 %} {% set placement = related | ratingPlacement(rating)
+      %}
+      <div class="information-item">
+        <div class="information-item-heading">SERIES COMPARISON</div>
+        Ranked {{ placement | ordinal }} in {{ series }}
+      </div>
+      {% endif %} {% if content.length > 0 %}
+      <a
+        href="#review"
+        class="mt-1 ml-1 see-review flex flex-row align-items-center gap-0.5"
+      >
+        See review below {% icon 'chevron-down' %}
+      </a>
+      {% elif seriesReview %}
+      <a
+        href="/reviews/{{category.folder}}/{{seriesReview}}"
+        class="mt-1 ml-1 see-review flex flex-row align-items-center gap-0.5"
+      >
+        <span>View Series Review for <em>{{series}}</em></span> {% icon 'link'
+        %}
+      </a>
       {% else %}
-        <p class="mt-1 ml-1 no-review flex flex-row align-items-center gap-0.5">
-          No Review Yet {% icon 'frown' %}
-        </p>
+      <p class="mt-1 ml-1 no-review flex flex-row align-items-center gap-0.5">
+        No Review Yet {% icon 'frown' %}
+      </p>
       {% endif %}
     </div>
   </div>
 
   {% if content.length > 0 %}
-    <hr class="w-full my-2">
-    <div id="review" class="review-content flex flex-col gap-1">
-      {{ content | safe }}
-    </div>
-  {% endif %}
-
-  {% set related = related | randomLimit(4, page.url) %}
-  {% if related.length > 0 %}
-    <hr class="w-full my-2">
-    <h2>Related Reviews</h2>
-    <section class="reviews-grid gap-1 mt-2">
-      {% for item in related %}
-        {% include "partials/review-card.html" %}
-      {% endfor %}
-    </section>
+  <hr class="w-full my-2" />
+  <div id="review" class="review-content flex flex-col gap-1">
+    {{ content | safe }}
+  </div>
+  {% endif %} {% set related = related | randomLimit(4, page.url) %} {% if
+  related.length > 0 %}
+  <hr class="w-full my-2" />
+  <h2>Related Reviews</h2>
+  <section class="reviews-grid gap-1 mt-2">
+    {% for item in related %} {% include "partials/review-card.html" %} {%
+    endfor %}
+  </section>
   {% endif %}
 </div>

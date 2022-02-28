@@ -4,17 +4,15 @@ pagination:
   data: collections.posts
   size: 1
   alias: post
-permalink: "/opengraph{{post.url}}"
+permalink: '/opengraph{{post.url}}'
 eleventyComputed:
-  title: "{{post.data.title}}"
+  title: '{{post.data.title}}'
 eleventyExcludeFromCollections: true
 opengraph: true
 ---
 
 {% if post.data.image %}
-  <div class="image-background">
-    {% image post.data.image, "" %}
-  </div>
+<div class="image-background">{% image post.data.image, "" %}</div>
 {% endif %}
 <div class="h-full w-full p-2 flex flex-col flex-auto z-1">
   <div>
@@ -23,17 +21,21 @@ opengraph: true
   <div class="flex-auto"></div>
   <div class="flex flex-row align-items-center gap-1">
     <div id="opengraph-icon">
-      <img src="/static/favicon/apple-touch-icon.png" alt="">
+      <img src="/static/favicon/apple-touch-icon.png" alt="" />
     </div>
     <div>
       <span class="bg-text text-medium bg-accent">{{ metadata.author }}</span>
     </div>
     <div class="flex-auto"></div>
     <div>
-      <span class="bg-text text-medium bg-accent">{{ post.data.category | capitalize }}</span>
+      <span class="bg-text text-medium bg-accent"
+        >{{ post.data.category | capitalize }}</span
+      >
     </div>
     <div>
-      <span class="bg-text text-medium bg-accent">{{ post.data.date | date('MMMM d, yyyy') }}</span>
+      <span class="bg-text text-medium bg-accent"
+        >{{ post.data.date | date('MMMM d, yyyy') }}</span
+      >
     </div>
   </div>
 </div>

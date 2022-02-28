@@ -1,17 +1,20 @@
-const lodash = require("lodash");
+const chunk = require('./_chunk');
 
-module.exports = (allItems, pageSize, categoryNames, prefix) => {
+module.exports = (allItems, pageSize, categories, prefix) => {
   const result = [];
 
-  categoryNames.forEach((category) => {
+  categories.forEach((category) => {
+    const categoryName = category.name;
+
     const itemsInCategory = allItems.filter((item) => {
       const obj = item.data ? item.data : item;
-      return obj.category === category;
+      return obj.category === categoryName;
     });
 
-    const chunks = itemsInCategory && itemsInCategory.length > 0 ? lodash.chunk(itemsInCategory, pageSize) : [[]];
+    const chunks =
+      itemsInCategory?.length > 0 ? chunk(itemsInCategory, pageSize) : [[]];
 
-    const categorySlug = `/${prefix}/category/${category}/`;
+    const categorySlug = `/${prefix}/${category.folder}/`;
     const slugs = [categorySlug];
     for (let i = 1; i < chunks.length; i++) {
       slugs.push(`${categorySlug}page-${i + 1}/`);
@@ -19,7 +22,7 @@ module.exports = (allItems, pageSize, categoryNames, prefix) => {
 
     chunks.forEach((items, index) => {
       result.push({
-        name: category,
+        name: categoryName,
         slug: slugs[index],
         items: items,
         pageNumber: index,
@@ -42,4 +45,4 @@ module.exports = (allItems, pageSize, categoryNames, prefix) => {
   });
 
   return result;
-}
+};

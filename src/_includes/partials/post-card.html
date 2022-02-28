@@ -1,22 +1,18 @@
-<a class="post-card card{{' with-image' if item.data.image}}" href="{{ item.url | url }}">
+<a
+  class="post-card card{{' with-image' if item.data.image}}"
+  href="{{ item.url | url }}"
+>
   {% if item.data.image %}
-    <div class="post-image">
-      {% image item.data.image, item.data.title %}
-    </div>
+  <div class="post-image">{% image item.data.image, item.data.title %}</div>
   {% endif %}
   <div class="post-information">
     <div class="flex flex-col">
-      <h2>
-        {{ item.data.title or 'Untitled' }}
-      </h2>
-      <small class="timestamp">
-        {{ item.date | date('MMMM d, yyyy') }}
-      </small>
+      <h2>{{ item.data.title or 'Untitled' }}</h2>
+      <small class="timestamp"> {{ item.date | date('MMMM d, yyyy') }} </small>
     </div>
     <p class="post-description">{{ item.data.description }}</p>
-    <div class="category">
-      {% set category = categories.posts | pick(item.data.category) %}
-      {{category.icon}} {{category.name | capitalize}}
-    </div>
+    {% set category = categories.posts | pick(item.data.category) %} {% set
+    categoryItem = { name: category.name, emoji: category.emoji, svg:
+    category.svg }%} {% include './category-chip.html' %}
   </div>
 </a>

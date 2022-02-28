@@ -2,74 +2,94 @@
   "reviews": [
     {
       "name": "movie",
-      "icon": "🎬",
+      "folder": "movies",
+      "emoji": "🎬",
       "subtitle": "Director"
     },
     {
       "name": "television",
-      "icon": "📺",
+      "folder": "television",
+      "emoji": "📺",
       "subtitle": "Created By"
     },
     {
       "name": "book",
-      "icon": "📚",
+      "folder": "books",
+      "emoji": "📚",
       "subtitle": "Author"
     },
     {
       "name": "podcast",
-      "icon": "🎙️",
+      "folder": "podcasts",
+      "emoji": "🎙️",
       "subtitle": "Created By"
     },
     {
       "name": "music",
-      "icon": "🎵",
+      "folder": "music",
+      "emoji": "🎵",
       "subtitle": "Artist"
     },
     {
       "name": "game",
-      "icon": "🕹️",
+      "folder": "games",
+      "emoji": "🕹️",
       "subtitle": "Developer"
     },
     {
       "name": "restaurant",
-      "icon": "🍴",
+      "folder": "restaurants",
+      "emoji": "🍴",
       "subtitle": "Location"
     }
   ],
   "photos": [
     {
       "name": "nature",
-      "icon": "🍂"
+      "folder": "nature",
+      "emoji": "🍂"
     },
     {
       "name": "scenic",
-      "icon": "🏙️"
+      "folder": "scenic",
+      "emoji": "🏙️"
     },
     {
       "name": "events",
-      "icon": "📅"
+      "folder": "events",
+      "emoji": "📅"
     },
     {
       "name": "people",
-      "icon": "🧍"
+      "folder": "people",
+      "emoji": "🧍"
     },
     {
       "name": "pets",
-      "icon": "🐶"
+      "folder": "pets",
+      "emoji": "🐶"
     }
   ],
   "posts": [
     {
       "name": "life",
-      "icon": "🏡"
+      "folder": "life",
+      "emoji": "🏡"
     },
     {
-      "name": "technology",
-      "icon": "👨‍💻"
+      "name": "angular",
+      "folder": "angular",
+      "svg": "angular"
+    },
+    {
+      "name": "eleventy",
+      "folder": "eleventy",
+      "svg": "eleventy"
     },
     {
       "name": "travel",
-      "icon": "🌎"
+      "folder": "travel",
+      "emoji": "🌎"
     }
   ]
 }

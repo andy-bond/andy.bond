@@ -9,8 +9,8 @@ module.exports = (arr, currentRating) => {
     return propB - propA;
   });
 
-  const ratings = copy.map(i => i.data.rating);
+  const ratings = copy.map((i) => i.data.rating);
   const unique = ratings.filter((x, i) => ratings.indexOf(x) === i);
 
   return unique.indexOf(currentRating) + 1;
-}
+};

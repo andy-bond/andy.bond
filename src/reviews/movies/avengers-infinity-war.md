@@ -1,5 +1,5 @@
 ---
-title: "Avengers: Infinity War"
+title: 'Avengers: Infinity War'
 subtitle: Anthony Russo
 series: Marvel Cinematic Universe
 seriesIndex: 19

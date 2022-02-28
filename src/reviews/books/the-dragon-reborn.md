@@ -6,5 +6,6 @@ seriesIndex: 3
 rating: 8
 date: 2021-10-11
 image: src/static/img/book-wheel-time-dragon-reborn.jpg
+seriesReview: the-eye-of-the-world
 category: book
 ---

@@ -15,4 +15,4 @@ module.exports = (arr, property) => {
 
     return propA - propB;
   });
-}
+};

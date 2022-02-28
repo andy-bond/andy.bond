@@ -1,4 +1,4 @@
-@use "../mixins" as mixins;
+@use '../mixins' as mixins;
 
 /* Resize Images to W: 350, H: 560 */
 
@@ -42,7 +42,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -166,10 +166,6 @@
 /* Review */
 
 .review {
-  .review-type {
-    align-self: flex-start;
-  }
-
   .review-content {
     h2 {
       margin-bottom: 0.25em;

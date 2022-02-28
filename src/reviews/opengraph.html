@@ -4,9 +4,9 @@ pagination:
   data: collections.reviews
   size: 1
   alias: review
-permalink: "/opengraph{{review.url}}"
+permalink: '/opengraph{{review.url}}'
 eleventyComputed:
-  title: "{{review.data.title}}"
+  title: '{{review.data.title}}'
 eleventyExcludeFromCollections: true
 opengraph: true
 ---
@@ -16,28 +16,33 @@ opengraph: true
 <div class="h-full w-full flex flex-row gap-2 p-2">
   <div class="flex flex-col gap-1 flex-auto">
     <div>
-      <span class="bg-primary bg-text text-large bold">{{review.data.title}}</span>
+      <span class="bg-primary bg-text text-large bold"
+        >{{review.data.title}}</span
+      >
     </div>
     <div>
-      <span class="bg-text text-medium bg-accent">{{category.name | capitalize}} Review</span>
+      <span class="bg-text text-medium bg-accent"
+        >{{category.name | capitalize}} Review</span
+      >
     </div>
     <div class="flex-auto"></div>
     <div class="flex flex-col gap-1">
       <div class="flex flex-row align-items-center gap-1">
         <div id="opengraph-icon">
-          <img src="/static/favicon/apple-touch-icon.png" alt="">
+          <img src="/static/favicon/apple-touch-icon.png" alt="" />
         </div>
         <div>
-          <span class="bg-text text-medium bg-accent">{{ metadata.author }}</span>
+          <span class="bg-text text-medium bg-accent"
+            >{{ metadata.author }}</span
+          >
         </div>
       </div>
       <div>
-        <span class="bg-text text-medium bg-accent">{{ review.data.date | date('MMMM d, yyyy') }}</span>
+        <span class="bg-text text-medium bg-accent"
+          >{{ review.data.date | date('MMMM d, yyyy') }}</span
+        >
       </div>
     </div>
   </div>
-  <div class="flex image-right">
-    {% image review.data.image,
-    "" %}
-  </div>
+  <div class="flex image-right">{% image review.data.image, "" %}</div>
 </div>

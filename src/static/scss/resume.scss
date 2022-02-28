@@ -1,4 +1,4 @@
-@use "./mixins" as mixins;
+@use './mixins' as mixins;
 
 .resume {
   color: var(--color-text);
@@ -54,7 +54,7 @@
 
       &::before {
         position: absolute;
-        content: "";
+        content: '';
         display: block;
         height: 1em;
         width: 1em;

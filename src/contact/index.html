@@ -3,33 +3,54 @@ layout: default
 title: Contact
 ---
 
-<div class="breadcrumbs mx-1 px-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2">
+<div
+  class="breadcrumbs mx-1 px-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2"
+>
   <a href="/" class="flex flex-row align-items-center gap-0.5">
     {% icon 'home' %}
-    </a>
+  </a>
   <div>/</div>
   <div>{{title}}</div>
 </div>
 
 <div class="contact-form card flex flex-col mx-1 gap-1">
   <h1>{{title}}</h1>
-  <p>Use the form below to send me a message or send me an email at <a href="mailto:contact@andy.bond">contact@andy.bond</a>.</p>
-  <form name="contact" class="flex flex-col gap-1" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/contact/success">
+  <p>
+    Use the form below to send me a message or send me an email at
+    <a href="mailto:contact@andy.bond">contact@andy.bond</a>.
+  </p>
+  <form
+    name="contact"
+    class="flex flex-col gap-1"
+    method="POST"
+    netlify-honeypot="bot-field"
+    data-netlify="true"
+    action="/contact/success"
+  >
     <p style="display: none" class="contact-item flex flex-col gap-0.5">
       <label for="bot-field">Name</label>
-      <input type="text" name="bot-field" placeholder="Nice Try..."/>
+      <input type="text" name="bot-field" placeholder="Nice Try..." />
     </p>
     <p class="contact-item flex flex-col gap-0.5">
       <label for="name">Name</label>
-      <input type="text" name="name" placeholder="John Doe" required/>
+      <input type="text" name="name" placeholder="John Doe" required />
     </p>
     <p class="contact-item flex flex-col gap-0.5">
       <label for="email">Email</label>
-      <input type="email" name="email" placeholder="john.doe@gmail.com" required/>
+      <input
+        type="email"
+        name="email"
+        placeholder="john.doe@gmail.com"
+        required
+      />
     </p>
     <p class="contact-item flex flex-col gap-0.5">
       <label for="message">Message</label>
-      <textarea name="message" placeholder="Wow, what a great website!" required></textarea>
+      <textarea
+        name="message"
+        placeholder="Wow, what a great website!"
+        required
+      ></textarea>
     </p>
     <button type="submit">Submit</button>
   </form>

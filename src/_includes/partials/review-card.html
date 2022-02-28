@@ -1,15 +1,16 @@
 <div class="review-item">
-  {% image item.data.image, item.data.title, undefined, "(max-width: 600px) 100vw, 600px", [300, 600] %}
+  {% image item.data.image, item.data.title, undefined, "(max-width: 600px)
+  100vw, 600px", [300, 600] %}
   <div class="info">
     <h3>{{item.data.title}}</h3>
     {% if item.data.subtitle %}
-      <p class="subtitle">{{item.data.subtitle}}</p>
+    <p class="subtitle">{{item.data.subtitle}}</p>
     {% endif %}
     <p class="rating">{{item.data.rating}} / 10</p>
     <a href="{{item.url}}">Read Review {% icon 'arrow-right' %}</a>
   </div>
   <div class="category">
     {% set category = categories.reviews | pick(item.data.category) %}
-    {{category.icon}} {{category.name | capitalize}}
+    {{category.emoji}} {{category.name | capitalize}}
   </div>
 </div>

@@ -1,5 +1,5 @@
 ---
-title: "Alita: Battle Angel"
+title: 'Alita: Battle Angel'
 subtitle: Robert Rodriguez
 rating: 6
 date: 2019-02-14

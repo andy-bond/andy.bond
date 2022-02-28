@@ -1,17 +1,15 @@
 ---
 layout: base
 ---
+
 <div class="flex flex-col flex-auto relative">
   <div class="content-wrapper">
     {% include "./partials/header.html" %}
-    <main class="full-bleed-wrapper my-2">
-      {{ content | safe }}
-    </main>
+    <main class="full-bleed-wrapper my-2">{{ content | safe }}</main>
   </div>
-  {% include "./partials/footer.html" %}
-  {% include "./partials/menu.html" %}
-  {% include "./partials/back-to-top.html" %}
+  {% include "./partials/footer.html" %} {% include "./partials/menu.html" %} {%
+  include "./partials/back-to-top.html" %}
 </div>
 <script type="text/javascript">
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener('scroll', handleScroll);
 </script>

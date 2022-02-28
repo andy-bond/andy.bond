@@ -16,10 +16,14 @@ path: home
         <ul>
           <li>I'm a Software Engineer at Cisco&nbsp;🤓</li>
           <li>I love to travel with my fiance,&nbsp;Kayla&nbsp;😍</li>
-          <li>I enjoy reading&nbsp;📚, playing video games&nbsp;🎮, and watching movies&nbsp;🍿</li>
+          <li>
+            I enjoy reading&nbsp;📚, playing video games&nbsp;🎮, and watching
+            movies&nbsp;🍿
+          </li>
         </ul>
         <p>
-          If you want to leave me a comment or just want to reach out, please do so using the form on the <a href="contact">contact page</a>.
+          If you want to leave me a comment or just want to reach out, please do
+          so using the form on the <a href="contact">contact page</a>.
         </p>
         <p>Thanks for stopping by!</p>
       </div>
@@ -30,36 +34,36 @@ path: home
   <div class="container flex flex-col gap-1">
     <div class="flex flex-row align-items-center px-1 gap-1">
       <h1>Posts</h1>
-      <a href="/posts" class="view-all-link flex flex-row align-items-center gap-0.5">
-        View All
-        {% icon 'arrow-right' %}
+      <a
+        href="/posts"
+        class="view-all-link flex flex-row align-items-center gap-0.5"
+      >
+        View All {% icon 'arrow-right' %}
       </a>
     </div>
     <div class="posts-list px-1">
-      {% for item in collections.posts | limit(4) %}
-        {% include "partials/post-card.html" %}
-      {% endfor %}
+      {% for item in collections.posts | limit(4) %} {% include
+      "partials/post-card.html" %} {% endfor %}
     </div>
   </div>
-  {% waves 'top' %}
-  {% waves 'bottom' %}
+  {% waves 'top' %} {% waves 'bottom' %}
 </section>
 <section id="recent-photos" class="full-bleed my-2">
   <div class="container flex flex-col gap-1">
     <div class="flex flex-row align-items-center px-1 gap-1">
       <h1>Photos</h1>
-      <a href="/photos" class="view-all-link flex flex-row align-items-center gap-0.5">
-        View All
-        {% icon 'arrow-right' %}
+      <a
+        href="/photos"
+        class="view-all-link flex flex-row align-items-center gap-0.5"
+      >
+        View All {% icon 'arrow-right' %}
       </a>
     </div>
     <div class="photos-grid px-1 gap-1">
-      {% for item in collections.photos | limit(5) %}
-        <div class="photo-item {{item.size}}">
-          {% image item.photo,
-          item.name,
-          item.metadata %}
-        </div>
+      {% for item in collections.photos | limit(6) %}
+      <div class="photo-item auto">
+        {% image item.photo, item.name, item.metadata %}
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -68,19 +72,19 @@ path: home
   <div class="container flex flex-col gap-1">
     <div class="flex flex-row align-items-center px-1 gap-1">
       <h1>Reviews</h1>
-      <a href="/reviews" class="view-all-link flex flex-row align-items-center gap-0.5">
-        View All
-        {% icon 'arrow-right' %}
+      <a
+        href="/reviews"
+        class="view-all-link flex flex-row align-items-center gap-0.5"
+      >
+        View All {% icon 'arrow-right' %}
       </a>
     </div>
     <div class="reviews-grid px-1 gap-1">
-      {% for item in collections.reviews | limit(4) %}
-        {% include "partials/review-card.html" %}
-      {% endfor %}
+      {% for item in collections.reviews | limit(4) %} {% include
+      "partials/review-card.html" %} {% endfor %}
     </div>
   </div>
-  {% waves 'top' %}
-  {% waves 'bottom' %}
+  {% waves 'top' %} {% waves 'bottom' %}
 </section>
 
 {% include "partials/lightbox.html" %}

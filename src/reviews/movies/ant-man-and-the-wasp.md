@@ -1,5 +1,5 @@
 ---
-title: Ant Man
+title: 'Ant Man and the Wasp'
 subtitle: Peyton Reed
 series: Marvel Cinematic Universe
 seriesIndex: 20

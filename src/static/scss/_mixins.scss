@@ -1,30 +1,30 @@
-@use "sass:string";
+@use 'sass:string';
 
 @mixin generate-sided($name, $prefix, $sizes...) {
-  $variants: "", "x", "y", "t", "r", "b", "l";
+  $variants: '', 'x', 'y', 't', 'r', 'b', 'l';
   @each $size in $sizes {
     @each $variant in $variants {
       $sizeString: #{$size};
-      $index: string.index($sizeString, ".");
+      $index: string.index($sizeString, '.');
       @if ($index) {
-        $sizeString: string.insert($sizeString, "\\", $index);
+        $sizeString: string.insert($sizeString, '\\', $index);
       }
       .#{$prefix}#{$variant}-#{$sizeString} {
-        @if ($variant == "") {
+        @if ($variant == '') {
           #{$name}: #{$size}em;
-        } @else if ($variant == "x") {
+        } @else if ($variant == 'x') {
           #{$name}-left: #{$size}em;
           #{$name}-right: #{$size}em;
-        } @else if ($variant == "y") {
+        } @else if ($variant == 'y') {
           #{$name}-top: #{$size}em;
           #{$name}-bottom: #{$size}em;
-        } @else if ($variant == "t") {
+        } @else if ($variant == 't') {
           #{$name}-top: #{$size}em;
-        } @else if ($variant == "r") {
+        } @else if ($variant == 'r') {
           #{$name}-right: #{$size}em;
-        } @else if ($variant == "b") {
+        } @else if ($variant == 'b') {
           #{$name}-bottom: #{$size}em;
-        } @else if ($variant == "l") {
+        } @else if ($variant == 'l') {
           #{$name}-left: #{$size}em;
         }
       }

@@ -1,49 +1,39 @@
 ---
 layout: default
 eleventyComputed:
-  opengraphImageUrl: "{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph{{ page.url | urlencode }}/opengraph"
+  opengraphImageUrl: '{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph{{ page.url | urlencode }}/opengraph'
 ---
 
-{# Relations #}
-{% set category = categories.posts | pick(category) %}
+{# Relations #} {% set category = categories.posts | pick(category) %}
 
 <div class="blogpost flex flex-col px-1 gap-2">
-  <div class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1">
+  <div
+    class="breadcrumbs px-1 py-0.5 flex flex-row wrap align-items-center gap-1"
+  >
     <a href="/" class="flex flex-row align-items-center gap-0.5">
       {% icon 'home' %}
     </a>
     <div>/</div>
     <a href="/posts">Posts</a>
     <div>/</div>
-    <a href="/posts/category/{{category.name}}">
-      {{ category.name | capitalize }}
-    </a>
+    <a href="/posts/{{category.folder}}"> {{ category.name | capitalize }} </a>
     <div>/</div>
     <div>{{title}}</div>
   </div>
 
-  {% if draft %}
-    <div class="alert-card card flex flex-row align-items-center wrap">
-      {% icon 'alert-triangle' %}
-      <strong class="ml-1">DRAFT</strong>
+  <article class="flex flex-col">
+    <div class="flex flex-row align-items-center wrap gap-1">
+      <h1>{{title}}</h1>
+      {% set categoryItem = { name: category.name, emoji: category.emoji, svg:
+      category.svg, link: '/posts/' + category.folder, current: false }%} {%
+      include './partials/category-chip.html' %}
+    </div>
+    <div class="blogpost-metadata">
+      <span>{{ date | date('MMMM d, yyyy') }}</span>
       <span class="mx-0.5">&mdash;</span>
-      This post is a work in progress!
+      <span>Time to Read: ~{{ content | readingTime }}</span>
     </div>
-  {% endif %}
-
-  <article class="flex flex-col gap-2">
-    <div class="flex flex-col gap-2">
-      <div class="flex flex-col gap-0.5">
-        <h1>{{title}}</h1>
-        <div>
-          <span class="blogpost-date mr-1">{{ date | date('MMMM d, yyyy') }}</span>
-          <a class="blogpost-tag" href="/posts/category/{{category.name}}">#{{ category.name }}</a>
-        </div>
-      </div>
-      <p class="subtitle">{{description}}</p>
-    </div>
-    <div class="blogpost-content flex flex-col gap-1">
-      {{content | safe}}
-    </div>
+    <p class="subtitle mt-2">{{description}}</p>
+    <div class="blogpost-content flex flex-col mt-2">{{content | safe}}</div>
   </article>
 </div>

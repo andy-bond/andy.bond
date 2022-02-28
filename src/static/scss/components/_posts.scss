@@ -1,4 +1,4 @@
-@use "../mixins" as mixins;
+@use '../mixins' as mixins;
 
 .posts-list {
   display: flex;
@@ -76,7 +76,7 @@
 
     &.with-image {
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -146,19 +146,13 @@
     color: rgba(var(--color-black), 1);
   }
 
-
   .subtitle {
     font-style: italic;
   }
 
-  .blogpost-date {
+  .blogpost-metadata {
     font-style: italic;
     color: var(--color-text-secondary);
-  }
-
-  .blogpost-tag {
-    font-style: italic;
-    margin-right: 0.25em;
   }
 
   .blogpost-content {
@@ -170,8 +164,16 @@
       width: 100%;
     }
 
-    h2 {
-      margin-bottom: 0.25em;
+    h2:not(:first-of-type) {
+      margin-top: 2em;
+    }
+
+    h2 + p {
+      margin-top: 1em;
+    }
+
+    p {
+      margin-top: 2em;
     }
   }
 }

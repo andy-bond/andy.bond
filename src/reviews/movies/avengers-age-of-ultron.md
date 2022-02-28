@@ -1,5 +1,5 @@
 ---
-title: "Avengers: Age of Ultron"
+title: 'Avengers: Age of Ultron'
 subtitle: Joss Whedon
 series: Marvel Cinematic Universe
 seriesIndex: 11

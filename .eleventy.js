@@ -1,10 +1,10 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const htmlmin = require("html-minifier");
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const htmlmin = require('html-minifier');
 
 // Shortcode Imports
 const Image = require('./src/_shortcodes/image');
-const ImageUrl = require('./src/_shortcodes/imageUrl');
 const Icon = require('./src/_shortcodes/icon');
+const SvgIcon = require('./src/_shortcodes/svgIcon');
 const Waves = require('./src/_shortcodes/waves');
 const Rating = require('./src/_shortcodes/rating');
 
@@ -17,41 +17,42 @@ const ReadableDate = require('./src/_filters/date');
 const SortBy = require('./src/_filters/sortBy');
 const Ordinal = require('./src/_filters/ordinal');
 const RatingPlacement = require('./src/_filters/rating-placement');
+const ReadingTime = require('./src/_filters/reading-time');
 
 // Collection Imports
-const Reviews = require("./src/_collections/reviews");
-const Posts = require("./src/_collections/posts");
-const Photos = require("./src/_collections/photos");
-const ReviewsByCategory = require("./src/_collections/reviews-by-category");
-const PostsByCategory = require("./src/_collections/posts-by-category");
-const PhotosByCategory = require("./src/_collections/photos-by-category");
+const Reviews = require('./src/_collections/reviews');
+const Posts = require('./src/_collections/posts');
+const Photos = require('./src/_collections/photos');
+const ReviewsByCategory = require('./src/_collections/reviews-by-category');
+const PostsByCategory = require('./src/_collections/posts-by-category');
+const PhotosByCategory = require('./src/_collections/photos-by-category');
 
 module.exports = function (eleventyConfig) {
-
   /* --- Shortcodes --- */
-  eleventyConfig.addShortcode("image", Image);
-  eleventyConfig.addShortcode("imageUrl", ImageUrl);
-  eleventyConfig.addShortcode("icon", Icon)
-  eleventyConfig.addShortcode("waves", Waves);
-  eleventyConfig.addShortcode("rating", Rating);
+  eleventyConfig.addShortcode('image', Image);
+  eleventyConfig.addShortcode('icon', Icon);
+  eleventyConfig.addShortcode('svgIcon', SvgIcon);
+  eleventyConfig.addShortcode('waves', Waves);
+  eleventyConfig.addShortcode('rating', Rating);
 
   /* --- Filters --- */
-  eleventyConfig.addFilter("limit", Limit);
-  eleventyConfig.addFilter("randomLimit", RandomLimit);
-  eleventyConfig.addFilter("pick", Pick);
-  eleventyConfig.addFilter("pluck", Pluck);
-  eleventyConfig.addFilter("date", ReadableDate);
-  eleventyConfig.addFilter("sortBy", SortBy);
-  eleventyConfig.addFilter("ordinal", Ordinal);
-  eleventyConfig.addFilter("ratingPlacement", RatingPlacement);
+  eleventyConfig.addFilter('limit', Limit);
+  eleventyConfig.addFilter('randomLimit', RandomLimit);
+  eleventyConfig.addFilter('pick', Pick);
+  eleventyConfig.addFilter('pluck', Pluck);
+  eleventyConfig.addFilter('date', ReadableDate);
+  eleventyConfig.addFilter('sortBy', SortBy);
+  eleventyConfig.addFilter('ordinal', Ordinal);
+  eleventyConfig.addFilter('ratingPlacement', RatingPlacement);
+  eleventyConfig.addFilter('readingTime', ReadingTime);
 
   /* Collections */
-  eleventyConfig.addCollection("reviews", Reviews);
-  eleventyConfig.addCollection("posts", Posts);
-  eleventyConfig.addCollection("photos", Photos);
-  eleventyConfig.addCollection("reviewsByCategory", ReviewsByCategory);
-  eleventyConfig.addCollection("postsByCategory", PostsByCategory);
-  eleventyConfig.addCollection("photosByCategory", PhotosByCategory);
+  eleventyConfig.addCollection('reviews', Reviews);
+  eleventyConfig.addCollection('posts', Posts);
+  eleventyConfig.addCollection('photos', Photos);
+  eleventyConfig.addCollection('reviewsByCategory', ReviewsByCategory);
+  eleventyConfig.addCollection('postsByCategory', PostsByCategory);
+  eleventyConfig.addCollection('photosByCategory', PhotosByCategory);
 
   /* Eleventy Configuration */
 
@@ -59,33 +60,34 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   // Watch for Changes
-  eleventyConfig.addWatchTarget("./src/static/scss/");
-  eleventyConfig.addWatchTarget("./src/posts/");
-  eleventyConfig.addWatchTarget("./src/reviews/");
-  eleventyConfig.setWatchJavaScriptDependencies(false)
+  eleventyConfig.addWatchTarget('./src/static/scss/');
+  eleventyConfig.addWatchTarget('./src/posts/');
+  eleventyConfig.addWatchTarget('./src/reviews/');
+  eleventyConfig.setWatchJavaScriptDependencies(false);
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
 
   // Copy Static Files to /_Site
   eleventyConfig.addPassthroughCopy({
-    "./src/admin/config.yml": "./admin/config.yml",
-    "./node_modules/prismjs/themes/prism-tomorrow.css": "./static/css/prism-tomorrow.css",
+    './src/admin/config.js': './admin/config.js',
+    './node_modules/prismjs/themes/prism-tomorrow.css':
+      './static/css/prism-tomorrow.css',
   });
 
   // Copy Items to Site
-  eleventyConfig.addPassthroughCopy("./src/static/fonts");
-  eleventyConfig.addPassthroughCopy("./src/static/js");
-  eleventyConfig.addPassthroughCopy("./src/static/favicon");
+  eleventyConfig.addPassthroughCopy('./src/static/fonts');
+  eleventyConfig.addPassthroughCopy('./src/static/js');
+  eleventyConfig.addPassthroughCopy('./src/static/favicon');
 
   // Minify HTML
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if (outputPath.endsWith(".html")) {
+    if (outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       });
       return minified;
     }
@@ -97,9 +99,9 @@ module.exports = function (eleventyConfig) {
   // So that we can use .html instead of .njk
   return {
     dir: {
-      input: "src",
+      input: 'src',
     },
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
   };
 };

@@ -1,4 +1,4 @@
-@use "../mixins" as mixins;
+@use '../mixins' as mixins;
 
 .apps-list {
   display: flex;
@@ -65,7 +65,7 @@
 
     &.with-image {
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;

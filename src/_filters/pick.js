@@ -3,4 +3,4 @@ module.exports = (arr, value) => {
     const obj = item.data ? item.data : item;
     return obj.name === value ? obj : null;
   });
-}
+};
