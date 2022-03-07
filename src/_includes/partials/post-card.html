@@ -3,16 +3,25 @@
   href="{{ item.url | url }}"
 >
   {% if item.data.image %}
-  <div class="post-image">{% image item.data.image, item.data.title %}</div>
+    <div class="post-image">
+      {% image item.data.image,
+      item.data.title %}
+    </div>
   {% endif %}
   <div class="post-information">
     <div class="flex flex-col">
       <h2>{{ item.data.title or 'Untitled' }}</h2>
-      <small class="timestamp"> {{ item.date | date('MMMM d, yyyy') }} </small>
+      <small class="timestamp">
+        {{ item.date | date('MMMM d, yyyy') }}
+      </small>
     </div>
     <p class="post-description">{{ item.data.description }}</p>
-    {% set category = categories.posts | pick(item.data.category) %} {% set
-    categoryItem = { name: category.name, emoji: category.emoji, svg:
-    category.svg }%} {% include './category-chip.html' %}
+    {% set category = categories.posts | pick(item.data.category) %}
+    {% set categoryItem = {
+      name: category.name,
+      emoji: category.emoji,
+      svg: category.svg
+    } %}
+    {% include './category-chip.html' %}
   </div>
 </a>

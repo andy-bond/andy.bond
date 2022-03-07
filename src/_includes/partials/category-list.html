@@ -1,19 +1,28 @@
 {# Should perform a set with the following data: - allLink = { url: string,
-text: string } (like '/reviews/') - items = collection #} {% set items = items |
-sort(false, false, 'name')%}
+text: string } (like '/reviews/') - items = collection #}
+{% set items = items | sort(false, false, 'name') %}
 
 <nav class="category-list">
   <ul>
     <li>
-      {% set categoryItem = { name: allLink.text, link: allLink.url, current:
-      allLink.url === page.url } %} {% include "./category-chip.html" %}
+      {% set categoryItem = {
+        name: allLink.text,
+        link: allLink.url,
+        current: allLink.url === page.url
+      } %}
+      {% include "./category-chip.html" %}
     </li>
     {% for item in items %}
-    <li>
-      {% set categoryItem = { name: item.name, emoji: item.emoji, svg: item.svg,
-      link: allLink.url + item.folder, current: item.folder in page.url } %} {%
-      include "./category-chip.html" %}
-    </li>
+      <li>
+        {% set categoryItem = {
+          name: item.name,
+          emoji: item.emoji,
+          svg: item.svg,
+          link: allLink.url + item.folder,
+          current: item.folder in page.url
+        } %}
+        {% include "./category-chip.html" %}
+      </li>
     {% endfor %}
   </ul>
 </nav>

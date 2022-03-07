@@ -13,17 +13,28 @@ parent:
 eleventyExcludeFromCollections: true
 ---
 
-{% set searchItems = collections.reviews | pluck(category.name, 'category') |
-sort(false, false, 'data.title') %} {% include 'partials/search.html' %} {% set
-allLink = { url: '/reviews/', text: 'All Reviews'} %} {% set items =
-categories.reviews %} {% include 'partials/category-list.html' %} {% set items =
-category.items %} {% if items.length > 0 %}
-<section class="reviews-grid gap-1 mt-2">
-  {% for item in items %} {% include "partials/review-card.html" %} {% endfor %}
-</section>
+{% set searchItems = collections.reviews | pluck(category.name, 'category') | sort(false, false, 'data.title') %}
+{% include 'partials/search.html' %}
+
+{% set allLink = {
+  url: '/reviews/',
+  text: 'All Reviews'
+} %}
+{% set items = categories.reviews %}
+{% include 'partials/category-list.html' %}
+
+{% set items = category.items %}
+{% if items.length > 0 %}
+  <section class="reviews-grid gap-1 mt-2">
+    {% for item in items %}
+      {% include "partials/review-card.html" %}
+    {% endfor %}
+  </section>
 {% else %}
-<h3 class="no-reviews mt-2">
-  No Reviews tagged with {{category.name | capitalize}}
-</h3>
-{% endif %} {% set paginator = category %} {% include "partials/paginator.html"
-%}
+  <h3 class="no-reviews mt-2">
+    No Reviews tagged with {{category.name | capitalize}}
+  </h3>
+{% endif %}
+
+{% set paginator = category %}
+{% include "partials/paginator.html" %}

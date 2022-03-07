@@ -22,7 +22,7 @@
       @include mixins.default-transition(margin, max-width, max-height);
 
       a {
-        color: inherit;
+        color: var(--color-text);
         font-weight: bold;
 
         &[aria-current='page'] {

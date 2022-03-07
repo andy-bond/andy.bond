@@ -193,6 +193,7 @@
         height: auto;
         object-fit: cover;
         border-radius: var(--border-radius);
+        box-shadow: var(--default-shadow);
       }
     }
 
@@ -205,7 +206,8 @@
       color: var(--color-text-secondary);
     }
 
-    .see-review {
+    .see-review,
+    .series-review {
       align-self: flex-start;
       color: var(--color-text-secondary);
       text-decoration: none;

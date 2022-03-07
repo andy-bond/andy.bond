@@ -4,13 +4,14 @@
   <div class="info">
     <h3>{{item.data.title}}</h3>
     {% if item.data.subtitle %}
-    <p class="subtitle">{{item.data.subtitle}}</p>
+      <p class="subtitle">{{item.data.subtitle}}</p>
     {% endif %}
     <p class="rating">{{item.data.rating}} / 10</p>
     <a href="{{item.url}}">Read Review {% icon 'arrow-right' %}</a>
   </div>
   <div class="category">
     {% set category = categories.reviews | pick(item.data.category) %}
-    {{category.emoji}} {{category.name | capitalize}}
+    {{category.emoji}}
+    {{category.name | capitalize}}
   </div>
 </div>

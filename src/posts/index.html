@@ -9,13 +9,20 @@ title: Posts
 eleventyExcludeFromCollections: true
 ---
 
-{% set searchItems = collections.posts | sort(false, false, 'data.title') %} {%
-include 'partials/search.html' %} {% set allLink = { url: '/posts/', text: 'All
-Posts' } %} {% set items = categories.posts %} {% include
-'partials/category-list.html' %}
+{% set searchItems = collections.posts | sort(false, false, 'data.title') %}
+{% include 'partials/search.html' %}
+{% set allLink = {
+  url: '/posts/',
+  text: 'All
+ Posts ' } %}
+{% set items = categories.posts %}
+{% include 'partials/category-list.html' %}
 
 <section class="posts-list mt-2">
-  {% for item in posts %} {% include 'partials/post-card.html' %} {% endfor %}
+  {% for item in posts %}
+    {% include 'partials/post-card.html' %}
+  {% endfor %}
 </section>
 
-{% set paginator = pagination %} {% include "partials/paginator.html" %}
+{% set paginator = pagination %}
+{% include "partials/paginator.html" %}

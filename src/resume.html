@@ -15,21 +15,27 @@ resume: true
 </div>
 
 <article class="resume">
-  <h1>{{resume.name}} <em class="pronouns">({{resume.pronouns}})</em></h1>
+  <h1>{{resume.name}}
+    <em class="pronouns">({{resume.pronouns}})</em>
+  </h1>
   <p class="lead">{{resume.occupation}} • {{resume.location}}</p>
   <p class="contact-information mt-0.5">
-    <a href="mailto:{{resume.email}}" target="_blank"
-      >{% icon 'mail' %} {{resume.email}}</a
-    >
-    <a href="{{resume.website}}" target="_blank"
-      >{% icon 'link' %} {{resume.website}}</a
-    >
-    <a href="{{resume.github.link}}" target="_blank"
-      >{% icon 'github' %} {{resume.github.handle}}</a
-    >
-    <a href="{{resume.linkedin.link}}" target="_blank"
-      >{% icon 'linkedin' %} {{resume.linkedin.handle}}</a
-    >
+    <a href="mailto:{{resume.email}}" target="_blank">
+      {% icon 'mail' %}
+      {{resume.email}}
+    </a>
+    <a href="{{resume.website}}" target="_blank">
+      {% icon 'link' %}
+      {{resume.website}}
+    </a>
+    <a href="{{resume.github.link}}" target="_blank">
+      {% icon 'github' %}
+      {{resume.github.handle}}
+    </a>
+    <a href="{{resume.linkedin.link}}" target="_blank" >
+      {% icon 'linkedin' %}
+      {{resume.linkedin.handle}}
+    </a>
   </p>
   <section class="mt-2">
     <h2>About Me</h2>
@@ -39,22 +45,25 @@ resume: true
     <h2>Experience</h2>
     <ol class="timeline">
       {% for experience in resume.experience | pluck(true, 'display') %}
-      <li class="timeline-item">
-        <div>
-          <small class="occurance"
-            >{{experience.start | date('MMMM yyyy')}} - {% if experience.end
-            %}{{experience.end | date('MMMM yyyy')}}{% else %}Present{% endif
-            %}</small
-          >
-          <h3 class="heading">{{experience.position}}</h3>
-          <p class="subheading">
-            {{experience.organization}} • {{experience.location}}
-          </p>
-          <ul class="mt-1">
-            {{experience.summary | safe}}
-          </ul>
-        </div>
-      </li>
+        <li class="timeline-item">
+          <div>
+            <small class="occurance">
+              {{experience.start | date('MMMM yyyy')}} -
+              {% if experience.end %}
+                {{experience.end | date('MMMM yyyy')}}
+              {% else %}
+                Present
+              {% endif %}
+            </small>
+            <h3 class="heading">{{experience.position}}</h3>
+            <p class="subheading">
+              {{experience.organization}} • {{experience.location}}
+            </p>
+            <ul class="mt-1">
+              {{experience.summary | safe}}
+            </ul>
+          </div>
+        </li>
       {% endfor %}
     </ol>
   </section>
@@ -62,22 +71,26 @@ resume: true
     <h2>Education</h2>
     <ol class="timeline">
       {% for education in resume.education | pluck(true, 'display') %}
-      <li class="timeline-item">
-        <div>
-          <small class="occurance"
-            >{{education.start | date('MMMM yyyy')}} - {% if education.end
-            %}{{education.end | date('MMMM yyyy')}}{% else %}Present{% endif
-            %}</small
+        <li class="timeline-item">
+          <div>
+            <small class="occurance">
+              {{education.start | date('MMMM yyyy')}} -
+              {% if education.end %}
+                {{education.end | date('MMMM yyyy')}}
+              {% else %}
+                Present
+              {% endif %}
+            </small
           >
-          <h3 class="heading">{{education.degree}}</h3>
-          <p class="subheading">
-            {{education.organization}} • {{education.location}}
-          </p>
-          <ul class="mt-1">
-            {{education.summary | safe}}
-          </ul>
-        </div>
-      </li>
+            <h3 class="heading">{{education.degree}}</h3>
+            <p class="subheading">
+              {{education.organization}} • {{education.location}}
+            </p>
+            <ul class="mt-1">
+              {{education.summary | safe}}
+            </ul>
+          </div>
+        </li>
       {% endfor %}
     </ol>
   </section>
@@ -85,7 +98,7 @@ resume: true
     <h2>Skills</h2>
     <ul class="skills">
       {% for skill in resume.skills %}
-      <li>{{skill.name}}</li>
+        <li>{{skill.name}}</li>
       {% endfor %}
     </ul>
   </section>

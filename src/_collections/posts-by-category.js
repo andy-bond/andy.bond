@@ -5,7 +5,6 @@ module.exports = (collection) => {
   const pagesize = 10;
   const allItems = collection
     .getFilteredByGlob('./src/posts/**/*.md')
-    .filter((post) => post.data.draft !== true)
     .reverse();
   const result = getCategoryChunks(
     allItems,

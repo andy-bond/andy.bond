@@ -48,12 +48,4 @@
   </div>
 </div>
 
-<script type="text/javascript">
-  const photoItems = document.getElementsByClassName('photo-item');
-  for (let i = 0; i < photoItems.length; i++) {
-    photoItems[i].addEventListener('click', openLightbox, false);
-  }
-
-  const closeLightboxButton = document.getElementById('lightbox-close');
-  closeLightboxButton.addEventListener('click', closeLightbox, false);
-</script>
+<script type="module" src="/static/js/lightbox.mjs"></script>

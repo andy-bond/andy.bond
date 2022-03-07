@@ -9,16 +9,23 @@ title: Photos
 eleventyExcludeFromCollections: true
 ---
 
-{% set allLink = { url: '/photos/', text: 'All Photos' } %} {% set items =
-categories.photos %} {% include 'partials/category-list.html' %}
+{% set allLink = {
+  url: '/photos/',
+  text: 'All Photos'
+} %}
+{% set items = categories.photos %}
+{% include 'partials/category-list.html' %}
 
 <section class="photos-grid gap-1 mt-2">
   {% for item in photos %}
-  <div class="photo-item {{item.size}}">
-    {% image item.photo, item.name, item.metadata %}
-  </div>
+    <div class="photo-item {{item.size}}">
+      {% image item.photo,
+      item.name,
+      item.metadata %}
+    </div>
   {% endfor %}
 </section>
 
-{% set paginator = pagination %} {% include "partials/paginator.html" %} {%
-include "partials/lightbox.html" %}
+{% set paginator = pagination %}
+{% include "partials/paginator.html" %}
+{% include "partials/lightbox.html" %}

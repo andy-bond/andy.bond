@@ -42,11 +42,13 @@ path: home
       </a>
     </div>
     <div class="posts-list px-1">
-      {% for item in collections.posts | limit(4) %} {% include
-      "partials/post-card.html" %} {% endfor %}
+      {% for item in collections.posts | limit(4) %}
+        {% include "partials/post-card.html" %}
+      {% endfor %}
     </div>
   </div>
-  {% waves 'top' %} {% waves 'bottom' %}
+  {% waves 'top' %}
+  {% waves 'bottom' %}
 </section>
 <section id="recent-photos" class="full-bleed my-2">
   <div class="container flex flex-col gap-1">
@@ -61,9 +63,11 @@ path: home
     </div>
     <div class="photos-grid px-1 gap-1">
       {% for item in collections.photos | limit(6) %}
-      <div class="photo-item auto">
-        {% image item.photo, item.name, item.metadata %}
-      </div>
+        <div class="photo-item auto">
+          {% image item.photo,
+          item.name,
+          item.metadata %}
+        </div>
       {% endfor %}
     </div>
   </div>
@@ -80,11 +84,13 @@ path: home
       </a>
     </div>
     <div class="reviews-grid px-1 gap-1">
-      {% for item in collections.reviews | limit(4) %} {% include
-      "partials/review-card.html" %} {% endfor %}
+      {% for item in collections.reviews | limit(4) %}
+        {% include "partials/review-card.html" %}
+      {% endfor %}
     </div>
   </div>
-  {% waves 'top' %} {% waves 'bottom' %}
+  {% waves 'top' %}
+  {% waves 'bottom' %}
 </section>
 
 {% include "partials/lightbox.html" %}

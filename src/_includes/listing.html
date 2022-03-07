@@ -10,8 +10,10 @@ layout: default
       {% icon 'home' %}
     </a>
     {% if parent %}
-    <div>/</div>
-    <a href="{{parent.link}}"> {{parent.text}} </a>
+      <div>/</div>
+      <a href="{{parent.link}}">
+        {{parent.text}}
+      </a>
     {% endif %}
     <div>/</div>
     <div>{{title}}</div>

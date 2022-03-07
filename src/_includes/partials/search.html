@@ -16,29 +16,44 @@
       </a>
     </li>
     {% endfor %}
+    <li id="no-search-items" class="search-item{{ ' hidden' if searchItems | length > 0 }}">
+      <a> No Items Found </a>
+    </li>
   </ul>
 </nav>
 
 <script type="text/javascript">
+  const noSearchItems = document.getElementById('no-search-items');
   const search = document.getElementById('search-input');
   search.addEventListener('input', searchFilter);
 
   function searchFilter(event) {
     const searchTerm = event.target.value.toLowerCase().trim();
-    const searchItems = document.getElementsByClassName('search-item');
+    const searchItems = Array.from(
+      document.getElementsByClassName('search-item')
+    )?.filter((i) => i !== noSearchItems);
 
+    let visible = 0;
     for (let i = 0; i < searchItems.length; i++) {
       let item = searchItems[i];
 
       if (searchTerm !== '') {
         if (item.innerText.trim().toLowerCase().includes(searchTerm)) {
           item.classList.remove('hidden');
+          visible++;
         } else {
           item.classList.add('hidden');
         }
       } else {
         item.classList.remove('hidden');
+        visible++;
       }
+    }
+
+    if (visible === 0) {
+      noSearchItems.classList.remove('hidden');
+    } else {
+      noSearchItems.classList.add('hidden');
     }
   }
 </script>

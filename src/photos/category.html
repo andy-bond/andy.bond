@@ -13,19 +13,28 @@ parent:
 eleventyExcludeFromCollections: true
 ---
 
-{% set allLink = { url: '/photos/', text: 'All Photos' } %} {% set items =
-categories.photos %} {% include 'partials/category-list.html' %} {% set items =
-category.items %} {% if items.length > 0 %}
-<section class="photos-grid gap-1 mt-2">
-  {% for item in items %}
-  <div class="photo-item {{item.size}}">
-    {% image item.photo, item.name, item.metadata %}
-  </div>
-  {% endfor %}
-</section>
+{% set allLink = {
+  url: '/photos/',
+  text: 'All Photos'
+} %}
+{% set items = categories.photos %}
+{% include 'partials/category-list.html' %}
+{% set items = category.items %}
+{% if items.length > 0 %}
+  <section class="photos-grid gap-1 mt-2">
+    {% for item in items %}
+      <div class="photo-item {{item.size}}">
+        {% image item.photo,
+        item.name,
+        item.metadata %}
+      </div>
+    {% endfor %}
+  </section>
 {% else %}
-<h3 class="no-reviews mt-2">
-  No Photos tagged with {{category.name | capitalize}}
-</h3>
-{% endif %} {% set paginator = category %} {% include "partials/paginator.html"
-%} {% include "partials/lightbox.html" %}
+  <h3 class="no-reviews mt-2">
+    No Photos tagged with {{category.name | capitalize}}
+  </h3>
+{% endif %}
+{% set paginator = category %}
+{% include "partials/paginator.html" %}
+{% include "partials/lightbox.html" %}

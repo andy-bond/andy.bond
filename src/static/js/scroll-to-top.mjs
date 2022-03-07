@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 function handleScroll() {
   const scrollingElement = document.documentElement;
   const scrollToTopBtn = document.getElementById('back-to-top-btn');
@@ -11,8 +10,12 @@ function handleScroll() {
   }
 }
 
-// eslint-disable-next-line no-unused-vars
 function scrollToTop() {
   const scrollingElement = document.documentElement;
   scrollingElement.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+window.addEventListener('scroll', handleScroll, false);
+
+const backToTopButton = document.getElementById('back-to-top-btn');
+backToTopButton.addEventListener('click', scrollToTop, false);

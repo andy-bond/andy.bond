@@ -4,7 +4,8 @@ eleventyComputed:
   opengraphImageUrl: '{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph{{ page.url | urlencode }}/opengraph'
 ---
 
-{# Relations #} {% set category = categories.posts | pick(category) %}
+{# Relations #}
+{% set category = categories.posts | pick(category) %}
 
 <div class="blogpost flex flex-col px-1 gap-2">
   <div
@@ -16,22 +17,27 @@ eleventyComputed:
     <div>/</div>
     <a href="/posts">Posts</a>
     <div>/</div>
-    <a href="/posts/{{category.folder}}"> {{ category.name | capitalize }} </a>
+    <a href="/posts/{{category.folder}}">
+      {{ category.name | capitalize }}
+    </a>
     <div>/</div>
     <div>{{title}}</div>
   </div>
 
   <article class="flex flex-col">
-    <div class="flex flex-row align-items-center wrap gap-1">
-      <h1>{{title}}</h1>
-      {% set categoryItem = { name: category.name, emoji: category.emoji, svg:
-      category.svg, link: '/posts/' + category.folder, current: false }%} {%
-      include './partials/category-chip.html' %}
-    </div>
-    <div class="blogpost-metadata">
-      <span>{{ date | date('MMMM d, yyyy') }}</span>
-      <span class="mx-0.5">&mdash;</span>
-      <span>Time to Read: ~{{ content | readingTime }}</span>
+    <h1>{{title}}</h1>
+    <div class="flex flex-row align-items-center wrap gap-1 mt-0.5">
+      {% set categoryItem = {
+        name: category.name,
+        emoji: category.emoji,
+        svg: category.svg,
+        link: '/posts/' + category.folder,
+        current: false
+      } %}
+      {% include './partials/category-chip.html' %}
+      <span class="blogpost-metadata">{{ date | date('MMMM d, yyyy') }}</span>
+      <span class="blogpost-metadata">&mdash;</span>
+      <span class="blogpost-metadata">Time to Read: ~{{ content | readingTime }}</span>
     </div>
     <p class="subtitle mt-2">{{description}}</p>
     <div class="blogpost-content flex flex-col mt-2">{{content | safe}}</div>

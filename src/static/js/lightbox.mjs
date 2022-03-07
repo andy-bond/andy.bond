@@ -1,4 +1,9 @@
-var lightboxElements = [
+const LIGHTBOX_ELEMENT = document.getElementById('lightbox');
+const LIGHTBOX_IMAGE_AREA_ELEMENT = document.getElementById(
+  'lightbox-image-area'
+);
+const LIGHTBOX_CAPTION_ELEMENT = document.getElementById('lightbox-caption');
+const LIGHTBOX_METADATA_ELEMENTS = [
   {
     attribute: 'camera',
     container: 'metadata-camera',
@@ -34,16 +39,13 @@ var lightboxElements = [
   },
 ];
 
-// eslint-disable-next-line no-unused-vars
 function openLightbox(event) {
-  const area = document.getElementById('lightbox-image-area');
-  const caption = document.getElementById('lightbox-caption');
   const target = event.target;
 
-  area.innerHTML = target.parentElement.outerHTML;
-  caption.innerHTML = target.alt;
+  LIGHTBOX_IMAGE_AREA_ELEMENT.innerHTML = target.parentElement.outerHTML;
+  LIGHTBOX_CAPTION_ELEMENT.innerHTML = target.alt;
 
-  lightboxElements.forEach((item) => {
+  LIGHTBOX_METADATA_ELEMENTS.forEach((item) => {
     const attribute = target.getAttribute(item.attribute);
     if (attribute !== 'undefined') {
       const textElement = document.getElementById(item.text);
@@ -59,21 +61,15 @@ function openLightbox(event) {
 }
 
 function toggleLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.classList.toggle('open');
+  LIGHTBOX_ELEMENT.classList.toggle('open');
 }
 
 function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
+  if (LIGHTBOX_ELEMENT?.classList?.contains('open')) {
+    LIGHTBOX_IMAGE_AREA_ELEMENT.innerHTML = '';
+    LIGHTBOX_CAPTION_ELEMENT.innerHTML = '';
 
-  if (lightbox?.classList?.contains('open')) {
-    const area = document.getElementById('lightbox-image-area');
-    const caption = document.getElementById('lightbox-caption');
-
-    area.innerHTML = '';
-    caption.innerHTML = '';
-
-    lightboxElements.forEach((item) => {
+    LIGHTBOX_METADATA_ELEMENTS.forEach((item) => {
       const textElement = document.getElementById(item.text);
       const containerElement = document.getElementById(item.container);
       textElement.innerHTML = '';
@@ -103,3 +99,11 @@ window.addEventListener(
   },
   false
 );
+
+const photoItems = document.getElementsByClassName('photo-item');
+for (let i = 0; i < photoItems.length; i++) {
+  photoItems[i].addEventListener('click', openLightbox, false);
+}
+
+const closeLightboxButton = document.getElementById('lightbox-close');
+closeLightboxButton.addEventListener('click', closeLightbox, false);

@@ -1,3 +1,5 @@
+// Storage
+
 function storageAvailable(type) {
   var storage;
   try {
@@ -25,30 +27,56 @@ function storageAvailable(type) {
   }
 }
 
-const themeKey = 'andy.bond-theme';
-const available = storageAvailable('localStorage');
-const system = window.matchMedia('(prefers-color-scheme: dark)').matches;
-let dark = system;
+const STORAGE_PREFIX = 'andy.bond';
+const LOCALSTORE_AVAILABLE = storageAvailable('localStorage');
 
-if (available) {
-  dark = localStorage.getItem(themeKey) === 'dark';
+// Utilities
+
+function isNotNullOrUndefined(value) {
+  return value !== null && value !== undefined;
 }
 
-if (dark) {
-  document.documentElement.classList.add('dark');
-} else {
-  document.documentElement.classList.remove('dark');
+// Constants & Elements
+
+const DOCUMENT_ELEMENT = document.documentElement;
+const THEME_KEY = `${STORAGE_PREFIX}-theme`;
+const THEME_CLASS_DARK = 'dark';
+const THEME_CLASS_LIGHT = 'light';
+
+// Theme Functions
+
+function setThemeKey(value) {
+  if (LOCALSTORE_AVAILABLE) {
+    localStorage.setItem(THEME_KEY, value);
+  }
 }
 
-if (available) {
-  localStorage.setItem(themeKey, dark ? 'dark' : 'light');
+function getThemeFromStorage() {
+  if (LOCALSTORE_AVAILABLE) {
+    return localStorage.getItem(THEME_KEY);
+  }
+  return undefined;
 }
 
 // eslint-disable-next-line no-unused-vars
 function toggleTheme() {
-  document.documentElement.classList.toggle('dark');
-  if (available) {
-    const current = localStorage.getItem(themeKey);
-    localStorage.setItem(themeKey, current === 'dark' ? 'light' : 'dark');
-  }
+  DOCUMENT_ELEMENT.classList.toggle(THEME_CLASS_DARK);
+  setThemeKey(
+    getThemeFromStorage() === THEME_CLASS_DARK
+      ? THEME_CLASS_LIGHT
+      : THEME_CLASS_DARK
+  );
 }
+
+// Initialization
+
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initalThemeFromStorage = getThemeFromStorage();
+const initialThemeIsDark = isNotNullOrUndefined(initalThemeFromStorage) ? initalThemeFromStorage === 'dark' : systemTheme;
+
+if (initialThemeIsDark) {
+  DOCUMENT_ELEMENT.classList.add(THEME_CLASS_DARK);
+} else {
+  DOCUMENT_ELEMENT.classList.remove(THEME_CLASS_DARK);
+}
+setThemeKey(initialThemeIsDark ? THEME_CLASS_DARK : THEME_CLASS_LIGHT);

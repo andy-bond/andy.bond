@@ -7,6 +7,10 @@
 
   label {
     font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color-text-secondary);
+    margin-left: 0.25em;
   }
 
   input,
@@ -16,10 +20,10 @@
     width: clamp(100%, 1200px, 100%);
     border: none;
     padding: 1em;
-    background-color: var(--color-highlight);
+    background-color: rgba(var(--color-gray), 0.05);
     color: inherit;
-    border-radius: 4px;
-    border: 2px solid rgba(128, 128, 128, 0.5);
+    border-radius: var(--border-radius);
+    border: 2px solid rgba(var(--color-gray), 0.5);
     transition: border-color var(--default-transition-timing) ease-in-out,
       background-color var(--default-transition-timing) ease-in-out;
 
@@ -41,7 +45,7 @@
     background-color: var(--color-accent-darker);
     color: rgb(var(--color-white));
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: 0.5em 2em;
     font-size: 1.2em;
     text-transform: uppercase;

@@ -15,10 +15,10 @@
     width: clamp(100%, 1200px, 100%);
     border: none;
     padding: 0.5em 1em;
-    background-color: var(--color-highlight);
+    background-color: rgba(var(--color-gray), 0.05);
     color: inherit;
     border-radius: var(--border-radius);
-    border: 2px solid rgba(128, 128, 128, 0.5);
+    border: 2px solid rgba(var(--color-gray), 0.5);
     transition: border-color var(--default-transition-timing) ease-in-out,
       background-color var(--default-transition-timing) ease-in-out;
 
@@ -26,6 +26,11 @@
       outline: none;
       border: 2px solid var(--color-title);
     }
+  }
+
+  #no-search-items > a {
+    color: var(--color-text-secondary) !important;
+    font-style: italic;
   }
 
   #search-items {
@@ -83,21 +88,23 @@
           @include mixins.default-transition(color, background-color);
         }
 
-        &:hover,
-        &:focus-within {
-          outline: none;
-          background-color: var(--color-highlight);
-          color: var(--color-link);
-
-          .category {
-            color: var(--color-card);
-            background-color: var(--color-link);
-          }
-
-          svg {
-            opacity: 1;
+        &[href] {
+          &:hover,
+          &:focus-within {
+            outline: none;
+            background-color: var(--color-highlight);
             color: var(--color-link);
-            transform: translateX(2px);
+
+            .category {
+              color: var(--color-card);
+              background-color: var(--color-link);
+            }
+
+            svg {
+              opacity: 1;
+              color: var(--color-link);
+              transform: translateX(2px);
+            }
           }
         }
       }

@@ -1,81 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="{{ '/static/favicon/apple-touch-icon.png' | url }}"
-    />
+      href="{{ '/static/favicon/apple-touch-icon.png' | url }}"/>
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="{{ '/static/favicon/favicon-32x32.png' | url }}"
-    />
+      href="{{ '/static/favicon/favicon-32x32.png' | url }}"/>
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="{{ '/static/favicon/favicon-16x16.png' | url }}"
-    />
+      href="{{ '/static/favicon/favicon-16x16.png' | url }}"/>
     <link
       rel="manifest"
-      href="{{ '/static/favicon/site.webmanifest' | url }}"
-    />
-    <meta name="apple-mobile-web-app-title" content="andy.bond" />
-    <meta name="application-name" content="andy.bond" />
-    <meta name="msapplication-TileColor" content="#15273d" />
-    <meta name="theme-color" content="#0d1b2a" />
+      href="{{ '/static/favicon/site.webmanifest' | url }}"/>
+    <meta name="apple-mobile-web-app-title" content="andy.bond"/>
+    <meta name="application-name" content="andy.bond"/>
+    <meta name="msapplication-TileColor" content="#15273d"/>
+    <meta name="theme-color" content="#0d1b2a"/>
 
     <title>{{title}} • Andy Bond</title>
 
     <!-- Open Graph Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{title}} • Andy Bond" />
-    <meta property="og:url" content="{{page.url | url}}" />
-    <meta property="og:description" content="{{description}}" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{title}} • Andy Bond"/>
+    <meta property="og:url" content="{{page.url | url}}"/>
+    <meta property="og:description" content="{{description}}"/>
     {% if opengraphImageUrl %}
-    <meta property="og:image" content="{{ opengraphImageUrl }}" />
+      <meta property="og:image" content="{{ opengraphImageUrl }}"/>
     {% else %}
-    <meta
+      <meta
       property="og:image"
-      content="{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph/opengraph"
-    />
+      content="{{ metadata.api.screenshot }}/{{ metadata.url | urlencode }}%2Fopengraph/opengraph"/>
     {% endif %}
 
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{ '/static/css/styles.css' | url }}"
-    />
+      href="{{ '/static/css/styles.css' | url }}"/>
     {% if resume %}
-    <link
+      <link
       rel="stylesheet"
       type="text/css"
-      href="{{ '/static/css/resume.css' | url }}"
-    />
-    {% endif %} {% if prism %}
-    <link
+      href="{{ '/static/css/resume.css' | url }}"/>
+    {% endif %}
+    {% if prism %}
+      <link
       rel="stylesheet"
       type="text/css"
-      href="{{ '/static/css/prism-tomorrow.css' | url }}"
-    />
-    {% endif %} {% if opengraph %}
-    <link
+      href="{{ '/static/css/prism-tomorrow.css' | url }}"/>
+    {% endif %}
+    {% if opengraph %}
+      <link
       rel="stylesheet"
       type="text/css"
-      href="{{ '/static/css/opengraph.css' | url }}"
-    />
+      href="{{ '/static/css/opengraph.css' | url }}"/>
     {% endif %}
 
     <script src="/static/js/theme.js"></script>
-    <script src="/static/js/menu.js"></script>
-    <script src="/static/js/scroll-to-top.js"></script>
-    <script src="/static/js/lightbox.js"></script>
+    <script type="module" src="/static/js/menu.mjs"></script>
 
     <!-- Cloudflare Web Analytics -->
     <script
