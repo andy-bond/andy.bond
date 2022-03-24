@@ -1,6 +1,6 @@
 const Image = require('@11ty/eleventy-img');
 
-module.exports = (src, alt, metadata, sizes, widths) => {
+module.exports = async (src, alt, metadata, sizes, widths) => {
   if (!widths) {
     widths = [300, 600, 1200];
   }
@@ -16,7 +16,7 @@ module.exports = (src, alt, metadata, sizes, widths) => {
     outputDir: '_site/static/img/',
   };
 
-  Image(src, options);
+  let stats = await Image(src, options);
 
   let imageAttributes = {
     alt,
@@ -32,7 +32,7 @@ module.exports = (src, alt, metadata, sizes, widths) => {
     location: metadata?.location,
   };
 
-  let stats = Image.statsSync(src, options);
+  // let stats = Image.statsSync(src, options);
 
   return Image.generateHTML(stats, imageAttributes);
 };

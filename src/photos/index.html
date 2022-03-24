@@ -17,13 +17,13 @@ eleventyExcludeFromCollections: true
 {% include 'partials/category-list.html' %}
 
 <section class="photos-grid gap-1 mt-2">
-  {% for item in photos %}
+  {% asyncEach item in photos %}
     <div class="photo-item {{item.size}}">
       {% image item.photo,
       item.name,
       item.metadata %}
     </div>
-  {% endfor %}
+  {% endeach %}
 </section>
 
 {% set paginator = pagination %}

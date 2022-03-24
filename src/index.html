@@ -42,9 +42,9 @@ path: home
       </a>
     </div>
     <div class="posts-list px-1">
-      {% for item in collections.posts | limit(4) %}
+      {% asyncEach item in collections.posts | limit(4) %}
         {% include "partials/post-card.html" %}
-      {% endfor %}
+      {% endeach %}
     </div>
   </div>
   {% waves 'top' %}
@@ -62,13 +62,13 @@ path: home
       </a>
     </div>
     <div class="photos-grid px-1 gap-1">
-      {% for item in collections.photos | limit(6) %}
+      {% asyncEach item in collections.photos | limit(6) %}
         <div class="photo-item auto">
           {% image item.photo,
           item.name,
           item.metadata %}
         </div>
-      {% endfor %}
+      {% endeach %}
     </div>
   </div>
 </section>
@@ -84,9 +84,9 @@ path: home
       </a>
     </div>
     <div class="reviews-grid px-1 gap-1">
-      {% for item in collections.reviews | limit(4) %}
+      {% asyncEach item in collections.reviews | limit(4) %}
         {% include "partials/review-card.html" %}
-      {% endfor %}
+      {% endeach %}
     </div>
   </div>
   {% waves 'top' %}

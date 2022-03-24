@@ -19,9 +19,9 @@ eleventyExcludeFromCollections: true
 {% include 'partials/category-list.html' %}
 
 <section class="posts-list mt-2">
-  {% for item in posts %}
+  {% asyncEach item in posts %}
     {% include 'partials/post-card.html' %}
-  {% endfor %}
+  {% endeach %}
 </section>
 
 {% set paginator = pagination %}

@@ -22,13 +22,13 @@ eleventyExcludeFromCollections: true
 {% set items = category.items %}
 {% if items.length > 0 %}
   <section class="photos-grid gap-1 mt-2">
-    {% for item in items %}
+    {% asyncEach item in items %}
       <div class="photo-item {{item.size}}">
         {% image item.photo,
         item.name,
         item.metadata %}
       </div>
-    {% endfor %}
+    {% endeach %}
   </section>
 {% else %}
   <h3 class="no-reviews mt-2">

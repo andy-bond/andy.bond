@@ -107,9 +107,9 @@ eleventyComputed:
     <hr class="w-full my-2"/>
     <h2>Related Reviews</h2>
     <section class="reviews-grid gap-1 mt-2">
-      {% for item in related %}
+      {% asyncEach item in related %}
         {% include "partials/review-card.html" %}
-      {% endfor %}
+      {% endeach %}
     </section>
   {% endif %}
 </div>

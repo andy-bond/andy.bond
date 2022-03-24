@@ -20,9 +20,9 @@ eleventyExcludeFromCollections: true
 {% include 'partials/category-list.html' %}
 
 <section class="reviews-grid gap-1 mt-2">
-  {% for item in reviews %}
+  {% asyncEach item in reviews %}
     {% include "partials/review-card.html" %}
-  {% endfor %}
+  {% endeach %}
 </section>
 
 {% set paginator = pagination %}

@@ -29,7 +29,7 @@ const PhotosByCategory = require('./src/_collections/photos-by-category');
 
 module.exports = function (eleventyConfig) {
   /* --- Shortcodes --- */
-  eleventyConfig.addShortcode('image', Image);
+  eleventyConfig.addNunjucksAsyncShortcode('image', Image);
   eleventyConfig.addShortcode('icon', Icon);
   eleventyConfig.addShortcode('svgIcon', SvgIcon);
   eleventyConfig.addShortcode('waves', Waves);
@@ -71,8 +71,6 @@ module.exports = function (eleventyConfig) {
   // Copy Static Files to /_Site
   eleventyConfig.addPassthroughCopy({
     './src/admin/config.js': './admin/config.js',
-    './node_modules/prismjs/themes/prism-tomorrow.css':
-      './static/css/prism-tomorrow.css',
   });
 
   // Copy Items to Site

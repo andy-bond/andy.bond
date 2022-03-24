@@ -27,10 +27,15 @@
     a#{&} {
       background-color: var(--color-accent-darker);
       color: rgb(var(--color-white));
-      box-shadow: var(--default-shadow);
+      box-shadow: var(--medium-shadow);
       text-decoration: none;
+      transition: transform ease 0.2s;
       &[aria-current='page'] {
         background-color: var(--color-primary-darker);
+      }
+
+      &:hover {
+        transform: translateY(-2px);
       }
     }
 

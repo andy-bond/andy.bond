@@ -7,21 +7,26 @@ image: src/static/img/post-lazy-load-component-1.jpg
 prism: true
 category: angular
 ---
+
 ## TLDR;
 
-In a hurry? Check out the [Widget Dashboard - GitHub Repository]() that I explain in detail below! 
+In a hurry? Check out the [Widget Dashboard - GitHub Repository]() that I explain in detail below!
 
-The interesting bits of code are the <code class="language-">lazy-widget.directive.ts</code> that you can find in the <code class="language-">src/app/widgets/utilities/directives/</code> folder.
+The interesting bits of code are the `lazy-widget.directive.ts` that you can find in the `src/app/widgets/utilities/directives/` folder.
 
 ## The Problem
 
-Angular makes it super easy to lazy load a module using the <code class="language-">RouterModule</code>, but what about the times where you only want a component to appear under certain conditions? 
+Angular makes it super easy to lazy load a module using the `RouterModule`, but what about the times where you only want a component to appear under certain conditions?
 
-Obviously the quick and dirty solution is to just use <code class="language-">*ngIf</code> or <code class="language-css">display: none</code> to prevent the component from appearing on the screen, but unfortunately that means that the component will be loaded into the application regardless of whether it is being used or not. This isn't always a big deal - but if there are large dependencies in the component, you could be adding megabytes to your bundle for something that few people will ever see!
+Obviously the quick and dirty solution is to just use `*ngIf` or `display: none` to prevent the component from appearing on the screen, but unfortunately that means that the component will be loaded in the app's bundle regardless of whether it is being used or not. This isn't always a big deal - but if there are large dependencies in the component, you could be adding megabytes to your bundle for something that few people will ever see!
 
 ## The Solution
 
+Take a quick look at the `lazyWidget` directive - we'll go through it in-depth below!
+
 ```ts
+// Use like <ng-template [lazyWidget]="WIDGET_NAME_HERE"></ng-template>
+// Where WIDGET_NAME_HERE is a key in the injected WIDGET_CONFIGURATION token
 @Directive({
   selector: '[lazyWidget]',
 })
@@ -31,7 +36,8 @@ export class LazyWidgetDirective implements AfterViewInit {
   constructor(
     private compiler: Compiler,
     private viewContainerRef: ViewContainerRef,
-    @Inject(WIDGET_CONFIGURATION) private widgetConfiguration: WidgetConfiguration
+    @Inject(WIDGET_CONFIGURATION)
+    private widgetConfiguration: WidgetConfiguration
   ) {
     this.viewContainerRef.createComponent(WidgetLoadingComponent);
   }
@@ -61,9 +67,7 @@ export class LazyWidgetDirective implements AfterViewInit {
         this.viewContainerRef.clear();
 
         // Load the component in the container
-        const componentRef = this.viewContainerRef.createComponent(
-          component
-        );
+        const componentRef = this.viewContainerRef.createComponent(component);
 
         // Mark for Check
         componentRef.changeDetectorRef.markForCheck();
@@ -73,6 +77,106 @@ export class LazyWidgetDirective implements AfterViewInit {
       this.viewContainerRef.clear();
       this.viewContainerRef.createComponent(WidgetNotFoundComponent);
     }
+  }
+}
+```
+
+## Explanation
+
+In the snippet below, we have some of the basic items needed to create our directive as well as some injected services that we'll need. We also have one lifecycle hook that we use to ensure we load our component after the ViewContainer is available in `ngAfterViewInit`.
+
+Notice that the `@Input` is named the same as the selector for our directive - this allows us to pass our input string and apply the directive in a more concise way.
+
+The only other things of note here are the injected services.
+- `compiler` will be used to compile the module that our component is declared in.
+- `viewContainerRef` is the view that our component will be placed in.
+- `widgetConfiguration` is a token of our own making that will contain a map to the lazy loaded components. 
+
+Finally, the `this.viewContainerRef.createComponent(WidgetLoadingComponent);` simply creates a loading spinner component to start us out with.
+
+```ts
+@Directive({
+  selector: '[lazyWidget]',
+})
+export class LazyWidgetDirective implements AfterViewInit {
+  @Input() lazyWidget!: string;
+
+  constructor(
+    private compiler: Compiler,
+    private viewContainerRef: ViewContainerRef,
+    @Inject(WIDGET_CONFIGURATION) private widgetConfiguration: WidgetConfiguration
+  ) {
+    this.viewContainerRef.createComponent(WidgetLoadingComponent);
+  }
+
+  ngAfterViewInit() {
+    this.load(this.lazyWidget);
+  }
+...
+```
+
+When `ngAfterViewInit` is triggered, we enter the interesting part - our `load` function.
+
+The [Widget Dashboard - GitHub Repository]() contains all of the code needed to fully understand what is going on here, including the utility classes & functions I've used such as `isWidgetModule`.
+
+Most of the code below has been commented for clarity, but the interesting part is the compilation of the module our component is declared in. This version of Angular requires that a component be declared in a module, so that is where our process must begin. Our module may contain many other components & providers, but the important part for our "WidgetModule" is that it must contain a property that points to the component we want to load - I've named this property `entry` (similar to the old `entryComponents`).
+
+Our `load` function above will check that the widget we've selected conforms to the `WidgetModule` class and grab the `entry` property. After that we just clear the container, load our component using `createComponent`, before finally ensuring we call `markForCheck` to ensure that Angular's change detection picks up that our view has changed.
+
+```ts
+async load(id: string) {
+  // Check if widget exists
+  if (id && this.widgetConfiguration.hasOwnProperty(id)) {
+    // Get widget from configuration
+    const widget = this.widgetConfiguration[id];
+
+    // Import the module
+    const module = await widget.import();
+
+    // Compile the Module
+    const moduleFactory = await this.compiler.compileModuleAsync(module);
+
+    // Check that the module extends our LazyWidget class
+    if (isWidgetModule(moduleFactory.moduleType)) {
+      // Get the component to load
+      const component = moduleFactory.moduleType.entry;
+
+      // Clear the container
+      this.viewContainerRef.clear();
+
+      // Load the component in the container
+      const componentRef = this.viewContainerRef.createComponent(component);
+
+      // Mark for Check
+      componentRef.changeDetectorRef.markForCheck();
+    }
+  } else { // Widget doesn't exist in our configuration
+    // Clear Spinner & Show Not Found
+    this.viewContainerRef.clear();
+    this.viewContainerRef.createComponent(WidgetNotFoundComponent);
+  }
+}
+```
+
+## Even Better News?
+
+Angular 14 will make a lot of this code no longer necessary! The introduction of standalone components in Angular 14 will enable us to load a component through a much simpler API without having to invoke the compiler to compile our module. 
+
+Example code below taken from the [RFC on Standalone Components](https://github.com/angular/angular/discussions/43784#:~:text=Components%3A%20lazy%20loading%20and%20instantiation).
+
+```ts
+@Component({
+  selector: 'app-component',  
+  template: 'dynamically loaded: '
+})
+export class AppComponent {
+  
+  constructor(private vcRef: ViewContainerRef) { }
+  
+  ngOnInit() {
+    import('./path/to/component').then(m => {
+       this.vcRef.createComponent(m.StandaloneComponent);    
+    });
   }
 }
 ```

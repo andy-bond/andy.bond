@@ -26,9 +26,9 @@ eleventyExcludeFromCollections: true
 {% set items = category.items %}
 {% if items.length > 0 %}
   <section class="reviews-grid gap-1 mt-2">
-    {% for item in items %}
+    {% asyncEach item in items %}
       {% include "partials/review-card.html" %}
-    {% endfor %}
+    {% endeach %}
   </section>
 {% else %}
   <h3 class="no-reviews mt-2">
