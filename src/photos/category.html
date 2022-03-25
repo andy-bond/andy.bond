@@ -23,11 +23,10 @@ eleventyExcludeFromCollections: true
 {% if items.length > 0 %}
   <section class="photos-grid gap-1 mt-2">
     {% asyncEach item in items %}
-      <div class="photo-item {{item.size}}">
-        {% image item.photo,
-        item.name,
-        item.metadata %}
-      </div>
+    <div class="photo-item {{item.size}}">
+      {% image item.photo,
+      item.name, {metadata: item.metadata} %}
+    </div>
     {% endeach %}
   </section>
 {% else %}

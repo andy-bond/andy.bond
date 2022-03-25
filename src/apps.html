@@ -4,16 +4,17 @@ title: Applications
 ---
 
 <section class="apps-list mt-2">
-  <a class="app-card card with-image" href="quick-snips" target="_blank">
+  {% asyncEach app in apps %}
+  <a class="app-card card with-image" href="{{app.href}}" target="_blank">
     <div class="app-image">
-      {% image "./src/static/img/app-quick-snips.png", "Quick Snips Application" %}
+      {% image app.image, "{{app.name}} Application" %}
     </div>
     <div class="app-information">
-      <h2>Quick Snips</h2>
+      <h2>{{ app.name }}</h2>
       <p class="app-description">
-        Application that allows the user to quickly jot down notes and copy to
-        clipboard for external use.
+        {{ app.description }}
       </p>
     </div>
   </a>
+  {% endeach %}
 </section>

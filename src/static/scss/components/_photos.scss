@@ -26,6 +26,11 @@
   box-shadow: var(--default-shadow);
   cursor: zoom-in;
   border-radius: var(--border-radius);
+  overflow: hidden;
+
+  &:hover img {
+    transform: scale(1.1);
+  }
 
   img {
     min-height: var(--photos-image-tile-width);
@@ -34,6 +39,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: var(--border-radius);
+    @include mixins.default-transition(transform);
   }
 
   &.tall {

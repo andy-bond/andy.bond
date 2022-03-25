@@ -10,7 +10,7 @@ category: angular
 
 ## TLDR;
 
-In a hurry? Check out the [Widget Dashboard - GitHub Repository]() that I explain in detail below!
+In a hurry? Check out the [Widget Dashboard GitHub Repository](https://github.com/andy-bond/widget-dashboard-demo) or [View the Widget Dashboard Demo](https://andy.bond/apps/widget-dashboard) that I explain in detail below!
 
 The interesting bits of code are the `lazy-widget.directive.ts` that you can find in the `src/app/widgets/utilities/directives/` folder.
 
@@ -81,6 +81,10 @@ export class LazyWidgetDirective implements AfterViewInit {
 }
 ```
 
+> Here's a quick GIF to prove this concept works! 😉
+>
+> {% image "src/static/img/post-lazy-load-component-2.gif", "Screenshare showing modules loading lazily" %}
+
 ## Explanation
 
 In the snippet below, we have some of the basic items needed to create our directive as well as some injected services that we'll need. We also have one lifecycle hook that we use to ensure we load our component after the ViewContainer is available in `ngAfterViewInit`.
@@ -117,7 +121,7 @@ export class LazyWidgetDirective implements AfterViewInit {
 
 When `ngAfterViewInit` is triggered, we enter the interesting part - our `load` function.
 
-The [Widget Dashboard - GitHub Repository]() contains all of the code needed to fully understand what is going on here, including the utility classes & functions I've used such as `isWidgetModule`.
+The [Widget Dashboard - GitHub Repository](https://github.com/andy-bond/widget-dashboard-demo) contains all of the code needed to fully understand what is going on here, including the utility classes & functions I've used such as `isWidgetModule`.
 
 Most of the code below has been commented for clarity, but the interesting part is the compilation of the module our component is declared in. This version of Angular requires that a component be declared in a module, so that is where our process must begin. Our module may contain many other components & providers, but the important part for our "WidgetModule" is that it must contain a property that points to the component we want to load - I've named this property `entry` (similar to the old `entryComponents`).
 

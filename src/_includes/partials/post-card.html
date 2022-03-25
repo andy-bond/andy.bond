@@ -4,8 +4,7 @@
 >
   {% if item.data.image %}
     <div class="post-image">
-      {% image item.data.image,
-      item.data.title %}
+      {% image item.data.image, item.data.title, { widths: [300] } %}
     </div>
   {% endif %}
   <div class="post-information">

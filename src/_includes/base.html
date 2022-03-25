@@ -29,6 +29,7 @@
     <meta name="theme-color" content="#0d1b2a"/>
 
     <title>{{title}} • Andy Bond</title>
+    <meta name="description" content="{{description}}"/>
 
     <!-- Open Graph Tags -->
     <meta property="og:type" content="website"/>
@@ -47,7 +48,7 @@
       rel="stylesheet"
       type="text/css"
       href="{{ '/static/css/styles.css' | url }}"/>
-    {% if resume %}
+    {% if loadResumeStylesheet %}
       <link
       rel="stylesheet"
       type="text/css"

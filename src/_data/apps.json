@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Quick Snips",
+    "image": "src/static/img/app-quick-snips.png",
+    "href": "quick-snips",
+    "description": "Application that allows the user to quickly jot down notes and copy to clipboard for external use."
+  },
+  {
+    "name": "Widget Dashboard (demo)",
+    "image": "src/static/img/app-widget-dashboard.png",
+    "href": "widget-dashboard",
+    "description": "Demo application to show how it is possible to lazy load components dynamically (without routing)."
+  }
+]

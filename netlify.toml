@@ -9,3 +9,7 @@
   from = "/apps/quick-snips/*"
   to = "https://quick-snips.netlify.app/:splat"
   status = 200
+[[redirects]]
+  from = "/apps/widget-dashboard/*"
+  to = "https://widget-dashboard-demo.netlify.app/:splat"
+  status = 200

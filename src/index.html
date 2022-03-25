@@ -9,7 +9,7 @@ path: home
   <div class="container">
     <div id="about-me-card" class="flex flex-row mx-1 gap-2">
       <div id="about-me-image">
-        {% image "./src/static/img/andy-kayla.jpg", "Selfie of Andy & Kayla" %}
+        {% image "src/static/img/andy-kayla.jpg", "Selfie of Andy & Kayla", { preload: true, widths: [300] } %}
       </div>
       <div id="about-me-information" class="flex flex-col gap-1 px-1">
         <h1>👋 Hi, I'm Andy Bond</h1>
@@ -43,7 +43,7 @@ path: home
     </div>
     <div class="posts-list px-1">
       {% asyncEach item in collections.posts | limit(4) %}
-        {% include "partials/post-card.html" %}
+      {% include "partials/post-card.html" %}
       {% endeach %}
     </div>
   </div>
@@ -63,11 +63,10 @@ path: home
     </div>
     <div class="photos-grid px-1 gap-1">
       {% asyncEach item in collections.photos | limit(6) %}
-        <div class="photo-item auto">
-          {% image item.photo,
-          item.name,
-          item.metadata %}
-        </div>
+      <div class="photo-item auto">
+        {% image item.photo,
+        item.name, {metadata: item.metadata} %}
+      </div>
       {% endeach %}
     </div>
   </div>
@@ -85,7 +84,7 @@ path: home
     </div>
     <div class="reviews-grid px-1 gap-1">
       {% asyncEach item in collections.reviews | limit(4) %}
-        {% include "partials/review-card.html" %}
+      {% include "partials/review-card.html" %}
       {% endeach %}
     </div>
   </div>

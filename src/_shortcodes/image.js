@@ -1,38 +1,42 @@
 const Image = require('@11ty/eleventy-img');
 
-module.exports = async (src, alt, metadata, sizes, widths) => {
-  if (!widths) {
-    widths = [300, 600, 1200];
+module.exports = async (src, alt, config = {}) => {
+  if (!config.widths) {
+    config.widths = [300, 600, 1200];
   }
 
-  if (!sizes) {
-    sizes = '(max-width: 1200px) 100vw, 1200px';
+  if (!config.sizes) {
+    config.sizes = '(max-width: 1200px) 100vw, 1200px';
   }
 
   let options = {
-    widths,
-    formats: ['avif', 'webp', 'jpeg'],
+    widths: config.widths,
+    formats: ['webp', 'jpeg'],
     urlPath: '/static/img/',
     outputDir: '_site/static/img/',
   };
+
+  if (src.toLowerCase().endsWith('.gif')) {
+    options.formats = ['webp', 'gif'];
+    options.sharpOptions = {
+      animated: true,
+    };
+  }
 
   let stats = await Image(src, options);
 
   let imageAttributes = {
     alt,
-    sizes,
+    sizes: config.sizes,
     loading: 'lazy',
     decoding: 'async',
     whitespaceMode: 'inline',
-    camera: metadata?.camera,
-    fstop: metadata?.fstop,
-    exposure: metadata?.exposure,
-    focalLength: metadata?.focalLength,
-    iso: metadata?.iso,
-    location: metadata?.location,
+    ...config?.metadata,
   };
 
-  // let stats = Image.statsSync(src, options);
+  if (config.preload) {
+    delete imageAttributes.loading;
+  }
 
   return Image.generateHTML(stats, imageAttributes);
 };

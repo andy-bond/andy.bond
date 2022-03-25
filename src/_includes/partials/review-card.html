@@ -1,8 +1,7 @@
 <div class="review-item">
-  {% image item.data.image, item.data.title, undefined, "(max-width: 600px)
-  100vw, 600px", [300, 600] %}
+  {% image item.data.image, item.data.title, { widths: [300] } %}
   <div class="info">
-    <h3>{{item.data.title}}</h3>
+    <div class="review-title">{{item.data.title}}</div>
     {% if item.data.subtitle %}
       <p class="subtitle">{{item.data.subtitle}}</p>
     {% endif %}

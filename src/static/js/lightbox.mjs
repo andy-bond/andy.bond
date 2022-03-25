@@ -47,7 +47,7 @@ function openLightbox(event) {
 
   LIGHTBOX_METADATA_ELEMENTS.forEach((item) => {
     const attribute = target.getAttribute(item.attribute);
-    if (attribute !== 'undefined') {
+    if (attribute) {
       const textElement = document.getElementById(item.text);
       const containerElement = document.getElementById(item.container);
       textElement.innerHTML = `${item?.prefix ?? ''}${attribute}${

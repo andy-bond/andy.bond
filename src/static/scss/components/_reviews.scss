@@ -81,6 +81,11 @@
     opacity: 0;
     @include mixins.default-transition(opacity);
 
+    .review-title {
+      font-size: 1.17em;
+      font-weight: bold;
+    }
+
     .rating {
       padding: 0.25em 0.5em;
       color: rgba(var(--color-white, 1));
