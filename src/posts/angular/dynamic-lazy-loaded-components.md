@@ -8,11 +8,17 @@ prism: true
 category: angular
 ---
 
+## Update 3/27/2022
+
+Removed the compiler dependency in the `lazyWidget` directive - Thanks to [@profanis on GitHub](https://github.com/andy-bond/widget-dashboard-demo/issues/1) for pointing this out!
+
+Also added a "fancy" dashboard to show how you can make a user customizable dashboard using this technique - just add the ability for a user to save their configuration and you'll have a pretty sweet setup! 😎
+
 ## TLDR;
 
 In a hurry? Check out the [Widget Dashboard GitHub Repository](https://github.com/andy-bond/widget-dashboard-demo) or [View the Widget Dashboard Demo](https://andy.bond/apps/widget-dashboard) that I explain in detail below!
 
-The interesting bits of code are the `lazy-widget.directive.ts` that you can find in the `src/app/widgets/utilities/directives/` folder.
+The interesting bits of code are the `lazy-widget.directive.ts` that you can find in the [in the repository here](https://github.com/andy-bond/widget-dashboard-demo/blob/main/src/app/widgets/utilities/directives/lazy-widget.directive.ts).
 
 ## The Problem
 
@@ -34,10 +40,8 @@ export class LazyWidgetDirective implements AfterViewInit {
   @Input() lazyWidget!: string;
 
   constructor(
-    private compiler: Compiler,
     private viewContainerRef: ViewContainerRef,
-    @Inject(WIDGET_CONFIGURATION)
-    private widgetConfiguration: WidgetConfiguration
+    @Inject(WIDGET_CONFIGURATION) private widgetConfiguration: WidgetConfiguration
   ) {
     this.viewContainerRef.createComponent(WidgetLoadingComponent);
   }
@@ -55,19 +59,18 @@ export class LazyWidgetDirective implements AfterViewInit {
       // Import the module
       const module = await widget.import();
 
-      // Compile the Module
-      const moduleFactory = await this.compiler.compileModuleAsync(module);
-
       // Check that the module extends our LazyWidget class
-      if (isWidgetModule(moduleFactory.moduleType)) {
+      if (isWidgetModule(module)) {
         // Get the component to load
-        const component = moduleFactory.moduleType.entry;
+        const component = module.entry;
 
         // Clear the container
         this.viewContainerRef.clear();
 
         // Load the component in the container
-        const componentRef = this.viewContainerRef.createComponent(component);
+        const componentRef = this.viewContainerRef.createComponent(
+          component
+        );
 
         // Mark for Check
         componentRef.changeDetectorRef.markForCheck();
@@ -92,7 +95,6 @@ In the snippet below, we have some of the basic items needed to create our direc
 Notice that the `@Input` is named the same as the selector for our directive - this allows us to pass our input string and apply the directive in a more concise way.
 
 The only other things of note here are the injected services.
-- `compiler` will be used to compile the module that our component is declared in.
 - `viewContainerRef` is the view that our component will be placed in.
 - `widgetConfiguration` is a token of our own making that will contain a map to the lazy loaded components. 
 
@@ -106,7 +108,6 @@ export class LazyWidgetDirective implements AfterViewInit {
   @Input() lazyWidget!: string;
 
   constructor(
-    private compiler: Compiler,
     private viewContainerRef: ViewContainerRef,
     @Inject(WIDGET_CONFIGURATION) private widgetConfiguration: WidgetConfiguration
   ) {
@@ -137,13 +138,10 @@ async load(id: string) {
     // Import the module
     const module = await widget.import();
 
-    // Compile the Module
-    const moduleFactory = await this.compiler.compileModuleAsync(module);
-
     // Check that the module extends our LazyWidget class
-    if (isWidgetModule(moduleFactory.moduleType)) {
+    if (isWidgetModule(module)) {
       // Get the component to load
-      const component = moduleFactory.moduleType.entry;
+      const component = module.entry;
 
       // Clear the container
       this.viewContainerRef.clear();
@@ -184,3 +182,11 @@ export class AppComponent {
   }
 }
 ```
+
+## Update: Fancier Dashboard
+
+I added a fancier dashboard just for fun - [check it out here](https://andy.bond/apps/widget-dashboard/#/fancy)!
+
+This fancier dashboard lets you drag around widgets (grab the header) and resize them. If you were going to use this for a "real" dashboard, you'd probably want to save the user's preferences after they arrange the dashboard to suit their needs!
+
+> {% image "src/static/img/post-lazy-load-component-3.gif", "Screenshare showing draggable widgets" %}

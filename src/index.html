@@ -42,7 +42,7 @@ path: home
       </a>
     </div>
     <div class="posts-list px-1">
-      {% asyncEach item in collections.posts | limit(4) %}
+      {% asyncEach item in collections.posts | limit(6) %}
       {% include "partials/post-card.html" %}
       {% endeach %}
     </div>
@@ -62,7 +62,7 @@ path: home
       </a>
     </div>
     <div class="photos-grid px-1 gap-1">
-      {% asyncEach item in collections.photos | limit(6) %}
+      {% asyncEach item in collections.photos | limit(9) %}
       <div class="photo-item auto">
         {% image item.photo,
         item.name, {metadata: item.metadata} %}
@@ -83,7 +83,7 @@ path: home
       </a>
     </div>
     <div class="reviews-grid px-1 gap-1">
-      {% asyncEach item in collections.reviews | limit(4) %}
+      {% asyncEach item in collections.reviews | limit(8) %}
       {% include "partials/review-card.html" %}
       {% endeach %}
     </div>

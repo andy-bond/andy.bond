@@ -9,9 +9,9 @@ category: movie
 
 ## Review
 
-*Last Night in Soho* was a surprisingly strange and peppy horror/thriller that kept me guessing througout the entire film.
+_Last Night in Soho_ was a surprisingly strange and peppy horror/thriller that kept me guessing througout the entire film.
 
-*Anya Taylor-Joy* may have stolen a bit of the show from *Thomasin McKenzie* with the moments set in 60's Soho. Overall, my only disappointment in the casting department is that *Matt Smith* wasn't given much screen time.
+_Anya Taylor-Joy_ may have stolen a bit of the show from _Thomasin McKenzie_ with the moments set in 60's Soho. Overall, my only disappointment in the casting department is that _Matt Smith_ wasn't given much screen time.
 
 I saw the movie poster and expected a love story and instead got a paranormal, time-traveling, thriller. The only gripe I have is that the "rules" of the paranormal events weren't entirely nailed down - at one point, the main character wakes up with a hickey from one of the events she was witness to. Other than that one instance, however, the paranormal events seem to be occurring entirely in her head.
 
