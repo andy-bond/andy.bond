@@ -2,23 +2,18 @@
 string, current?: boolean } #}
 {% set categoryItemContent %}
 {% if categoryItem.svg %}
-  {% svgIcon categoryItem.svg %}
+{% svgIcon categoryItem.svg %}
 {% elif categoryItem.emoji %}
-  <span>{{ categoryItem.emoji }}</span>
+<span>{{ categoryItem.emoji }}</span>
 {% endif %}
 <span>{{ categoryItem.name | title }}</span>
 {% endset %}
 {% set categoryItemClass = 'category-chip flex flex-row align-items-center gap-0.5' %}
 {% if categoryItem.link %}
-  <a
-    class="{{categoryItemClass}}"
-    href="{{categoryItem.link}}"
-    {% if categoryItem.current %}
-    aria-current="page"
-    {% endif %}
-  >
-    {{ categoryItemContent | safe }}
-  </a>
+<a class="{{categoryItemClass}}" href="{{categoryItem.link}}" {% if categoryItem.current %} aria-current="page" {% endif
+  %}>
+  {{ categoryItemContent | safe }}
+</a>
 {% else %}
-  <div class="{{categoryItemClass}}">{{ categoryItemContent | safe }}</div>
+<div class="{{categoryItemClass}}">{{ categoryItemContent | safe }}</div>
 {% endif %}

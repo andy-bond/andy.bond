@@ -1,5 +1,5 @@
 ---
-title: The Matrix Revolutions
+title: The Matrix Resurrections
 subtitle: Lana Wachowski
 series: The Matrix
 seriesIndex: 4

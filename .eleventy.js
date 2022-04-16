@@ -27,7 +27,7 @@ const ReviewsByCategory = require('./src/_collections/reviews-by-category');
 const PostsByCategory = require('./src/_collections/posts-by-category');
 const PhotosByCategory = require('./src/_collections/photos-by-category');
 
-module.exports = function (eleventyConfig) {
+module.exports = (eleventyConfig) => {
   /* --- Shortcodes --- */
   eleventyConfig.addNunjucksAsyncShortcode('image', Image);
   eleventyConfig.addShortcode('icon', Icon);
@@ -56,14 +56,10 @@ module.exports = function (eleventyConfig) {
 
   /* Eleventy Configuration */
 
-  eleventyConfig.setUseGitIgnore(false);
-  eleventyConfig.setDataDeepMerge(true);
-
   // Watch for Changes
   eleventyConfig.addWatchTarget('./src/static/scss/');
   eleventyConfig.addWatchTarget('./src/posts/');
   eleventyConfig.addWatchTarget('./src/reviews/');
-  eleventyConfig.setWatchJavaScriptDependencies(false);
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -79,7 +75,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/static/favicon');
 
   // Minify HTML
-  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+  eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
     if (outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {

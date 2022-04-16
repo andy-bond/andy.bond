@@ -4,9 +4,7 @@ title: Résumé
 loadResumeStylesheet: true
 ---
 
-<div
-  class="breadcrumbs px-1 mx-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2 print-hidden"
->
+<div class="breadcrumbs px-1 mx-1 py-0.5 flex flex-row wrap align-items-center gap-1 mb-2 print-hidden">
   <a href="/" class="flex flex-row align-items-center gap-0.5">
     {% icon 'home' %}
   </a>
@@ -32,7 +30,7 @@ loadResumeStylesheet: true
       {% icon 'github' %}
       {{resume.github.handle}}
     </a>
-    <a href="{{resume.linkedin.link}}" target="_blank" >
+    <a href="{{resume.linkedin.link}}" target="_blank">
       {% icon 'linkedin' %}
       {{resume.linkedin.handle}}
     </a>
@@ -45,25 +43,25 @@ loadResumeStylesheet: true
     <h2>Experience</h2>
     <ol class="timeline">
       {% for experience in resume.experience | pluck(true, 'display') %}
-        <li class="timeline-item">
-          <div>
-            <small class="occurance">
-              {{experience.start | date('MMMM yyyy')}} -
-              {% if experience.end %}
-                {{experience.end | date('MMMM yyyy')}}
-              {% else %}
-                Present
-              {% endif %}
-            </small>
-            <h3 class="heading">{{experience.position}}</h3>
-            <p class="subheading">
-              {{experience.organization}} • {{experience.location}}
-            </p>
-            <ul class="mt-1">
-              {{experience.summary | safe}}
-            </ul>
-          </div>
-        </li>
+      <li class="timeline-item">
+        <div>
+          <small class="occurance">
+            {{experience.start | date('MMMM yyyy')}} -
+            {% if experience.end %}
+            {{experience.end | date('MMMM yyyy')}}
+            {% else %}
+            Present
+            {% endif %}
+          </small>
+          <h3 class="heading">{{experience.position}}</h3>
+          <p class="subheading">
+            {{experience.organization}} • {{experience.location}}
+          </p>
+          <ul class="mt-1">
+            {{experience.summary | safe}}
+          </ul>
+        </div>
+      </li>
       {% endfor %}
     </ol>
   </section>
@@ -71,26 +69,25 @@ loadResumeStylesheet: true
     <h2>Education</h2>
     <ol class="timeline">
       {% for education in resume.education | pluck(true, 'display') %}
-        <li class="timeline-item">
-          <div>
-            <small class="occurance">
-              {{education.start | date('MMMM yyyy')}} -
-              {% if education.end %}
-                {{education.end | date('MMMM yyyy')}}
-              {% else %}
-                Present
-              {% endif %}
-            </small
-          >
-            <h3 class="heading">{{education.degree}}</h3>
-            <p class="subheading">
-              {{education.organization}} • {{education.location}}
-            </p>
-            <ul class="mt-1">
-              {{education.summary | safe}}
-            </ul>
-          </div>
-        </li>
+      <li class="timeline-item">
+        <div>
+          <small class="occurance">
+            {{education.start | date('MMMM yyyy')}} -
+            {% if education.end %}
+            {{education.end | date('MMMM yyyy')}}
+            {% else %}
+            Present
+            {% endif %}
+          </small>
+          <h3 class="heading">{{education.degree}}</h3>
+          <p class="subheading">
+            {{education.organization}} • {{education.location}}
+          </p>
+          <ul class="mt-1">
+            {{education.summary | safe}}
+          </ul>
+        </div>
+      </li>
       {% endfor %}
     </ol>
   </section>
@@ -98,7 +95,7 @@ loadResumeStylesheet: true
     <h2>Skills</h2>
     <ul class="skills">
       {% for skill in resume.skills %}
-        <li>{{skill.name}}</li>
+      <li>{{skill.name}}</li>
       {% endfor %}
     </ul>
   </section>
