@@ -23,7 +23,7 @@ path: home
         </ul>
         <p>
           If you want to leave me a comment or just want to reach out, please do
-          so using the form on the <a href="contact">contact page</a>.
+          so using the form on the <a href="/contact">contact page</a>.
         </p>
         <p>Thanks for stopping by!</p>
       </div>
@@ -74,7 +74,7 @@ path: home
       </a>
     </div>
     <div class="reviews-grid px-1 gap-1">
-      {% asyncEach item in collections.reviews | limit(8) %}
+      {% asyncEach item in collections.reviews | limit(12) %}
       {% include "partials/review-card.html" %}
       {% endeach %}
     </div>
