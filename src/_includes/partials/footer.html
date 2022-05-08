@@ -1,12 +1,10 @@
 <footer
   id="footer"
-  class="flex flex-row align-items-center justify-content-center p-1"
+  class="flex flex-row align-items-center justify-content-center p-1 mt-2"
 >
   <small>
-    <span>Copyright © {{ metadata.copyright }}</span>
-    <span>•</span>
-    <span>{{metadata.author}}</span>
-    <span>•</span>
+    <span>Copyright&nbsp;©&nbsp;{{ metadata.copyright }}&nbsp;•</span>
+    <span>{{metadata.author | nbsp | safe}}&nbsp;•</span>
     <a href="{{metadata.repository}}" target="_blank" rel="noopener">
       Github
     </a>

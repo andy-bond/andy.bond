@@ -10,6 +10,7 @@ const Rating = require('./src/_shortcodes/rating');
 
 // Filter Imports
 const Limit = require('./src/_filters/limit');
+const Nbsp = require('./src/_filters/nbsp');
 const RandomLimit = require('./src/_filters/randomLimit');
 const Pick = require('./src/_filters/pick');
 const Pluck = require('./src/_filters/pluck');
@@ -37,6 +38,7 @@ module.exports = (eleventyConfig) => {
 
   /* --- Filters --- */
   eleventyConfig.addFilter('limit', Limit);
+  eleventyConfig.addFilter('nbsp', Nbsp);
   eleventyConfig.addFilter('randomLimit', RandomLimit);
   eleventyConfig.addFilter('pick', Pick);
   eleventyConfig.addFilter('pluck', Pluck);

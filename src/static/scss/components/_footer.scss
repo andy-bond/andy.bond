@@ -2,4 +2,8 @@
   a {
     color: var(--color-text);
   }
+
+  @media screen and (max-width: 599px) {
+    margin-right: 4em;
+  }
 }
