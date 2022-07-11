@@ -559,6 +559,51 @@
         "iso": "200",
         "location": "Atlanta Zoo, GA"
       }
+    },
+    {
+      "name": "Cancún #1",
+      "photo": "src/static/img/post-cancun-1.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2022-07-06",
+      "metadata": {
+        "camera": "Apple iPhone 12 Pro",
+        "fstop": "2",
+        "exposure": "1/2660",
+        "focalLength": "6",
+        "iso": "25",
+        "location": "Cancún, Quintana Roo, Mexico"
+      }
+    },
+    {
+      "name": "Cancún #2",
+      "photo": "src/static/img/post-cancun-2.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2022-07-06",
+      "metadata": {
+        "camera": "Apple iPhone 12 Pro",
+        "fstop": "2",
+        "exposure": "1/3195",
+        "focalLength": "6",
+        "iso": "25",
+        "location": "Cancún, Quintana Roo, Mexico"
+      }
+    },
+    {
+      "name": "Cancún #3",
+      "photo": "src/static/img/post-cancun-3.jpg",
+      "category": "scenic",
+      "size": "auto",
+      "date": "2022-07-02",
+      "metadata": {
+        "camera": "Apple iPhone 12 Pro",
+        "fstop": "1.6",
+        "exposure": "1/6135",
+        "focalLength": "4.2",
+        "iso": "32",
+        "location": "Cancún, Quintana Roo, Mexico"
+      }
     }
   ]
 }

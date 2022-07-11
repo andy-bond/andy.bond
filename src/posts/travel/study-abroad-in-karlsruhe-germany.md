@@ -23,7 +23,7 @@ While at KIT, we spent long hours in the classroom with a few 15 minute breaks a
 
 ## Life in the Village
 
-Accomodations during this study abroad program were provided by host families located in Karlsruhe, Germany. I was hosted by a lovely family of four who made me feel like I was at home. My host family introduced me to German traditions & food as well as took me to visit various sights around the area. My host mom frequently brought fresh fruit, bread, and cheese from a local market for our lunches. I distinctly remember Käsebrot (literally cheese & bread) being introduced to me as a traditional German lunch.
+Accommodations during this study abroad program were provided by host families located in Karlsruhe, Germany. I was hosted by a lovely family of four who made me feel like I was at home. My host family introduced me to German traditions & food as well as took me to visit various sights around the area. My host mom frequently brought fresh fruit, bread, and cheese from a local market for our lunches. I distinctly remember Käsebrot (literally cheese & bread) being introduced to me as a traditional German lunch.
 
 I lived at my host family's home in Grötzingen - a suburb of Karlsruhe. I was reminded often during my stay how old the history of Europe is - the idea of walking past buildings older than America is still quite awe inspiring.
 
