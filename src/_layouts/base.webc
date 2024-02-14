@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" :content="eleventy.generator" />
+
+		<title webc:is="meta-title"></title>
+		<meta webc:is="meta-favicons" />
+		<meta webc:is="meta-social" />
+
+		<!-- Base Styles -->
+		<link
+			webc:keep
+			rel="stylesheet"
+			type="text/css"
+			:href="url('/static/css/styles.css')"
+		/>
+
+		<!-- Cloudflare Web Analytics -->
+		<script
+			webc:keep
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon="{'token': '8b5d2593d31444bc81a17f0523ab387c'}"
+		></script>
+
+		<style @raw="getBundle('css')" webc:keep></style>
+		<script @raw="getBundle('js')" webc:keep></script>
+	</head>
+	<body>
+		<template webc:nokeep @raw="content"></template>
+
+		<!-- `defer` bucket -->
+		<style @raw="getBundle('css', 'defer')" webc:keep></style>
+		<script @raw="getBundle('js', 'defer')" webc:keep></script>
+	</body>
+</html>

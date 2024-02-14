@@ -1,0 +1,48 @@
+---
+layout: default
+title: Now
+---
+
+<article>
+	<breadcrumbs></breadcrumbs>
+
+	<section>
+		<h2>Books</h2>
+		<media-grid>
+			<media webc:for="book of $data.dynamic.books" :@media="book"></media>
+		</media-grid>
+	</section>
+
+	<section>
+		<h2>Movies</h2>
+		<media-grid>
+			<media webc:for="movie of $data.dynamic.movies" :@media="movie"></media>
+		</media-grid>
+	</section>
+
+	<section>
+		<h2>TV</h2>
+		<media-grid>
+			<media webc:for="show of $data.dynamic.shows" :@media="show"></media>
+		</media-grid>
+	</section>
+
+	<section>
+		<h2>Games</h2>
+		<media-grid>
+			<media webc:for="game of $data.dynamic.games" :@media="game"></media>
+		</media-grid>
+	</section>
+</article>
+
+<style webc:scoped>
+	h2 {
+		margin-bottom: 0.5em;
+	}
+
+	section + section {
+		border-top: 1px solid var(--theme-color-highlight);
+		padding-top: 1em;
+		margin-top: 2em;
+	}
+</style>

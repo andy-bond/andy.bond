@@ -1,0 +1,27 @@
+---
+layout: default
+title: Home
+description: "Andy Bond's personal website. Blog posts, photos, and more!"
+---
+
+<article>
+  <!-- Intro -->
+  <introduction></introduction>
+
+  <!-- Now Page - Small -->
+  <section class="now"></section>
+
+  <!-- Posts List -->
+  <section class="posts"></section>
+
+  <!-- Photos from Pixelfed -->
+  <photos></photos>
+</article>
+
+<style webc:scoped>
+  :host {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+</style>

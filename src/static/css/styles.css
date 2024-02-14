@@ -1,0 +1,303 @@
+@layer reset, typography, tokens, layout, theme;
+
+@layer reset {
+	*,
+	::before,
+	::after {
+		box-sizing: border-box;
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	::-webkit-scrollbar {
+		width: 12px;
+		background-color: var(--theme-color-highlight);
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background-color: var(--theme-color-title);
+	}
+
+	::-webkit-scrollbar-track {
+		border-radius: 2px;
+		background-color: transparent;
+	}
+
+	::selection {
+		background-color: var(--color-purple-darker);
+		color: white;
+	}
+
+	article,
+	aside,
+	details,
+	figcaption,
+	figure,
+	footer,
+	header,
+	hgroup,
+	menu,
+	nav,
+	section {
+		display: block;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	li,
+	figure,
+	figcaption,
+	blockquote {
+		margin: 0;
+	}
+
+	article h1 {
+		font-size: 2em;
+	}
+
+	hr {
+		border: none;
+		border-top: 1px solid var(--theme-color-highlight);
+		margin: 0;
+	}
+}
+
+@layer typography {
+	/* poppins-regular - latin */
+	@font-face {
+		font-family: 'Poppins';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: local(''),
+			url('../fonts/poppins-v19-latin-regular.woff2') format('woff2'),
+			url('../fonts/poppins-v19-latin-regular.woff') format('woff');
+	}
+	/* poppins-italic - latin */
+	@font-face {
+		font-family: 'Poppins';
+		font-style: italic;
+		font-weight: 400;
+		font-display: swap;
+		src: local(''),
+			url('../fonts/poppins-v19-latin-italic.woff2') format('woff2'),
+			url('../fonts/poppins-v19-latin-italic.woff') format('woff');
+	}
+	/* poppins-500 - latin */
+	@font-face {
+		font-family: 'Poppins';
+		font-style: normal;
+		font-weight: 500;
+		font-display: swap;
+		src: local(''), url('../fonts/poppins-v19-latin-500.woff2') format('woff2'),
+			url('../fonts/poppins-v19-latin-500.woff') format('woff');
+	}
+	/* poppins-500italic - latin */
+	@font-face {
+		font-family: 'Poppins';
+		font-style: italic;
+		font-weight: 500;
+		font-display: swap;
+		src: local(''),
+			url('../fonts/poppins-v19-latin-500italic.woff2') format('woff2'),
+			url('../fonts/poppins-v19-latin-500italic.woff') format('woff');
+	}
+	/* poppins-700 - latin */
+	@font-face {
+		font-family: 'Poppins';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: local(''), url('../fonts/poppins-v19-latin-700.woff2') format('woff2'),
+			url('../fonts/poppins-v19-latin-700.woff') format('woff');
+	}
+	/* poppins-700italic - latin */
+	@font-face {
+		font-family: 'Poppins';
+		font-style: italic;
+		font-weight: 700;
+		font-display: swap;
+		src: local(''),
+			url('../fonts/poppins-v19-latin-700italic.woff2') format('woff2'),
+			url('../fonts/poppins-v19-latin-700italic.woff') format('woff');
+	}
+}
+
+@layer tokens {
+	:root {
+		/* Typography */
+		--default-font-sans-serif: 'Poppins', -apple-system, BlinkMacSystemFont,
+			'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+			'Helvetica Neue', sans-serif;
+
+		/* Layout */
+		--default-spacing: 1em;
+		--default-container-size: 999px;
+		--default-border-radius: 10px;
+
+		/* Transitions */
+		--default-transition-timing: 250ms;
+		--default-transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+		--default-transition: var(--default-transition-timing)
+			var(--default-transition-curve);
+
+		/* Colors */
+		--color-white: white;
+		--color-black: black;
+		--color-purple: rgb(162, 128, 255);
+	}
+}
+
+@layer layout {
+	html,
+	body {
+		height: 100%;
+		max-height: 100%;
+		margin: 0;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	/* Layout */
+
+	.default-page-wrapper {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		position: relative;
+	}
+
+	.content-wrapper {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		min-height: -webkit-fill-available;
+	}
+
+	.full-bleed-wrapper {
+		display: grid;
+		grid-template-columns:
+			1fr
+			min(var(--default-container-size), 100%)
+			1fr;
+
+		> * {
+			grid-column: 2;
+			margin-left: var(--default-spacing);
+			margin-right: var(--default-spacing);
+		}
+
+		.full-bleed {
+			grid-column: 1 / -1;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	/* Constrain Container */
+	.container {
+		width: min(var(--default-container-size), 100%);
+		margin: 0 auto;
+	}
+
+	/* Lucide Icons */
+	.lucide {
+		width: 1em;
+		height: 1em;
+		stroke-width: 2;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+
+		&:not(.lucide-override) {
+			stroke: currentColor;
+			fill: none;
+		}
+	}
+
+	svg:not(.lucide) {
+		width: 1em;
+		height: 1em;
+
+		fill: currentColor;
+	}
+
+	/* Hidden */
+	.hidden {
+		display: none !important;
+	}
+
+	.print-hidden {
+		@media only print {
+			display: none !important;
+		}
+	}
+}
+
+@layer theme {
+	:root {
+		--theme-color-background: var(--color-background-light);
+		--theme-color-background-secondary: var(--color-background-light-secondary);
+		--theme-color-card: var(--color-card-light);
+		--theme-color-text: var(--color-text-light);
+		--theme-color-text-secondary: var(--color-text-light-secondary);
+		--theme-color-title: var(--color-purple);
+		--theme-color-highlight: var(--color-highlight-light);
+		--theme-color-link: var(--color-teal-darker);
+
+		--theme-color-overlay-background: var(--color-overlay-background);
+		--theme-color-overlay-text: var(--color-overlay-text);
+		--theme-color-overlay-highlight: var(--color-overlay-highlight);
+
+		--theme-font-weight-medium: 500;
+	}
+
+	.theme-dark {
+		--theme-color-background: var(--color-background-dark);
+		--theme-color-background-secondary: var(--color-background-dark-secondary);
+		--theme-color-card: var(--color-card-dark);
+		--theme-color-text: var(--color-text-dark);
+		--theme-color-text-secondary: var(--color-text-dark-secondary);
+		--theme-color-title: var(--color-purple-lighter);
+		--theme-color-highlight: var(--color-highlight-dark);
+		--theme-color-link: var(--color-teal);
+
+		--theme-color-overlay-background: var(--color-overlay-background);
+		--theme-color-overlay-text: var(--color-overlay-text);
+		--theme-color-overlay-highlight: var(--color-overlay-highlight);
+
+		--theme-font-weight-medium: 400;
+	}
+
+	/* Everything */
+	html,
+	body {
+		font-family: var(--default-font-sans-serif);
+		font-weight: var(--theme-font-weight-medium);
+
+		color: var(--theme-color-text);
+		background-color: var(--theme-color-background);
+		transition: background-color var(--default-transition),
+			color var(--default-transition);
+	}
+
+	/* Links */
+	a {
+		color: var(--theme-color-link);
+	}
+
+	/* Syntax Highlighting*/
+	body :not(pre) > code[class*='language-'],
+	body pre[class*='language-'] {
+		border: none;
+	}
+}

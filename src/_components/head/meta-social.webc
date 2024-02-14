@@ -1,0 +1,20 @@
+<script webc:type="js">
+  const author = this.$data.metadata.author;
+  const title = `${this.$data.title} • ${author}`;
+  const description = this.description ?? '';
+
+  const opengraphFallbackImage = encodeURIComponent(
+    `${this.$data.metadata.url}/opengraph`
+  );
+  const opengraph =
+    this.opengraphImageUrl ?? `${opengraphFallbackImage}/opengraph`;
+
+  `
+    <meta property="og:title" content="${title}">
+  	<meta name="description" property="og:description" content="${description}">
+  	<meta name="author" content="${author}">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="${this.page.url}"/>
+    <meta property="og:image" content="${opengraph}"/>
+  `;
+</script>

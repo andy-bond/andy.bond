@@ -4,4 +4,5 @@ _tmp/
 node_modules/
 .vscode/
 *git/
-.env
+.env.local
+.cache

@@ -1,0 +1,62 @@
+<button webc:root="override" id="theme-btn" title="Toggle Theme">
+	<icon name="sun"></icon>
+	<icon name="moon"></icon>
+</button>
+
+<style webc:scoped>
+	.lucide-sun {
+		display: block;
+	}
+
+	.lucide-moon {
+		display: none;
+	}
+
+	:host-context(.theme-dark) .lucide-moon {
+		display: block;
+	}
+
+	:host-context(.theme-dark) .lucide-sun {
+		display: none;
+	}
+</style>
+
+<script>
+	// Constants & Elements
+	const STORAGE_PREFIX = 'andy.bond';
+	const DOCUMENT_ELEMENT = document.documentElement;
+	const THEME_BUTTON_ELEMENT_ID = 'theme-btn';
+	const THEME_KEY = `${STORAGE_PREFIX}-theme`;
+	const THEME_CLASS_DARK = 'theme-dark';
+	const THEME_CLASS_LIGHT = 'theme-light';
+
+	// Theme Functions
+	function toggleTheme() {
+		DOCUMENT_ELEMENT.classList.toggle(THEME_CLASS_DARK);
+		const nextTheme = DOCUMENT_ELEMENT.classList.contains(THEME_CLASS_DARK)
+			? THEME_CLASS_DARK
+			: THEME_CLASS_LIGHT;
+
+		localStorage.setItem(THEME_KEY, nextTheme);
+	}
+
+	// Init Theme
+	const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	const initialThemeFromStorage = localStorage.getItem(THEME_KEY);
+	const initialThemeIsDark = initialThemeFromStorage
+		? initialThemeFromStorage === THEME_CLASS_DARK
+		: systemTheme;
+	const initialTheme = initialThemeIsDark
+		? THEME_CLASS_DARK
+		: THEME_CLASS_LIGHT;
+	const isAlreadyDark = DOCUMENT_ELEMENT.classList.contains(THEME_CLASS_DARK);
+
+	if (initialThemeIsDark && !isAlreadyDark) {
+		toggleTheme();
+	}
+</script>
+
+<script webc:bucket="defer">
+	const themeButton = document.getElementById(THEME_BUTTON_ELEMENT_ID);
+	themeButton.addEventListener('click', toggleTheme, false);
+</script>

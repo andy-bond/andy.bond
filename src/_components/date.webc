@@ -1,0 +1,5 @@
+<script webc:type="js">
+	const date = new Date(this.value);
+	const format = this.format ?? 'dd LLL yyyy';
+	new Intl.DateTimeFormat('en-US').format(date);
+</script>

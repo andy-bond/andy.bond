@@ -1,0 +1,73 @@
+<button title="Back to Top" id="back-to-top-btn">
+  <icon name="arrow-up"></icon>
+</button>
+
+<style webc:scoped>
+  :host {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--color-teal);
+    color: var(--color-text-dark);
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    opacity: 0;
+    box-shadow: var(--default-shadow-medium);
+    pointer-events: painted;
+    transform: translateY(100px);
+    transition: transform var(--default-transition),
+      opacity var(--default-transition), background-color var(--default-transition);
+  }
+
+  button > svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  button.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  button:hover,
+  button:focus-within {
+    background-color: var(--color-teal-darker);
+  }
+</style>
+
+<script webc:bucket="defer">
+  function handleScroll() {
+    const scrollingElement = document.documentElement;
+    const scrollToTopBtn = document.getElementById('back-to-top-btn');
+    const scrollTotal =
+      scrollingElement.scrollHeight - scrollingElement.clientHeight;
+    if (scrollingElement.scrollTop / scrollTotal > 0.5) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  }
+
+  function scrollToTop() {
+    const scrollingElement = document.documentElement;
+    scrollingElement.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.addEventListener('scroll', handleScroll, false);
+
+  const backToTopButton = document.getElementById('back-to-top-btn');
+  backToTopButton.addEventListener('click', scrollToTop, false);
+</script>

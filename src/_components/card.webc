@@ -1,0 +1,21 @@
+<slot></slot>
+
+<style webc:scoped>
+	:host {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+
+		color: var(--theme-color-text);
+		padding: 2em;
+		background-color: var(--theme-color-card);
+		border-radius: var(--default-border-radius);
+		box-shadow: var(--default-shadow-large);
+		transition: background-color var(--default-transition),
+			color var(--default-transition);
+
+		@media screen and (max-width: 499px) {
+			padding: 2em 1em;
+		}
+	}
+</style>

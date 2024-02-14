@@ -1,0 +1,10 @@
+<script webc:type="js">
+	const title = this.$data.title;
+	const author = this.$data.metadata.author;
+
+	if (!title) {
+		`<title>${author}</title>`;
+	} else {
+		`<title>${title} • ${author}</title>`;
+	}
+</script>

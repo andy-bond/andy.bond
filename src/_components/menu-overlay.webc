@@ -1,0 +1,129 @@
+<script webc:setup>
+	const home = `<a href="/">Home</a>`;
+	const currentHome = `<a href="/" aria-current="page">Home</a>`;
+	const apps = `<a href="/apps">Applications</a>`;
+	const currentApps = `<a href="/apps" aria-current="page">Applications</a>`;
+</script>
+
+<template webc:root id="menu">
+	<nav id="menu-nav">
+		<ul>
+			<li>
+				<template
+					webc:if="$data.page.url === '/'"
+					webc:nokeep
+					@html="currentHome"
+				></template>
+				<template webc:else webc:nokeep @html="home"></template>
+			</li>
+			<li webc:for="item of $data.navigation">
+				<a
+					webc:if="$data.page.url.includes(item.url)"
+					aria-current="page"
+					:href="item.url"
+					@text="item.text"
+				></a>
+				<a webc:else :href="item.url" @text="item.text"></a>
+			</li>
+			<li>
+				<template
+					webc:if="$data.page.url.includes('/apps')"
+					webc:nokeep
+					@html="currentApps"
+				></template>
+				<template webc:else webc:nokeep @html="apps"></template>
+			</li>
+		</ul>
+	</nav>
+	<button id="close-menu" title="Close Navigation">
+		<icon name="x"></icon>
+	</button>
+</template>
+
+<style webc:scoped>
+	:host {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		max-height: 100%;
+		background-color: var(--theme-color-overlay-background);
+		color: var(--theme-color-overlay-text);
+		backdrop-filter: blur(8px);
+		visibility: hidden;
+		z-index: 999;
+
+		display: grid;
+		place-items: center;
+	}
+
+	:host.open {
+		visibility: visible;
+	}
+
+	#close-menu {
+		position: absolute;
+		top: var(--default-spacing);
+		right: var(--default-spacing);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+		padding: 0.5em;
+		border-radius: 50%;
+		height: 48px;
+		width: 48px;
+		transition: background-color var(--default-transition);
+		color: inherit;
+
+		& svg {
+			height: 24px;
+			width: 24px;
+		}
+
+		&:is(:hover, :focus-within) {
+			background-color: var(--theme-color-overlay-highlight);
+		}
+	}
+
+	#menu-nav > ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--default-spacing);
+	}
+
+	#menu-nav > ul a {
+		font-size: 2em;
+		text-decoration: none;
+		font-weight: bold;
+		color: inherit;
+
+		&[aria-current='page'] {
+			text-decoration: underline;
+			text-decoration-color: var(--theme-color-link);
+		}
+	}
+</style>
+
+<script webc:bucket="defer">
+	function toggleMenu() {
+		const menu = document.getElementById('menu');
+		menu.classList.toggle('open');
+	}
+
+	const openMenuButton = document.getElementById('menu-btn');
+	const closeMenuButton = document.getElementById('close-menu');
+	openMenuButton.addEventListener('click', toggleMenu, false);
+	closeMenuButton.addEventListener('click', toggleMenu, false);
+</script>

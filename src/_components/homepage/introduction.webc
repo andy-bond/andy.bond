@@ -1,0 +1,53 @@
+<section webc:root="override" class="introduction">
+	<div class="intro-image">
+		<img
+			src="/static/img/andy-kayla-cropped.jpg"
+			alt="Picture of Andy & Kayla"
+		/>
+	</div>
+	<div class="intro-contents">
+		<h1>👋 Hi, I'm Andy Bond!</h1>
+		<ul>
+			<li>I'm a Senior Software Engineer at Cisco</li>
+			<li>I love to travel with my wife, Kayla</li>
+			<li>I enjoy reading, playing video games, and watching movies</li>
+		</ul>
+	</div>
+</section>
+
+<style webc:scoped>
+	:host {
+		display: flex;
+		flex-direction: row;
+		gap: 2em;
+
+		@media screen and (max-width: 599px) {
+			flex-direction: column;
+		}
+	}
+
+	.intro-image {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+		border-radius: var(--default-border-radius);
+
+		picture {
+			height: 100%;
+		}
+
+		img {
+			height: 100%;
+			width: 250px;
+			object-fit: cover;
+			border-radius: var(--default-border-radius);
+		}
+	}
+
+	.intro-contents {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+</style>

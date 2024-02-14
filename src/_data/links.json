@@ -1,0 +1,37 @@
+[
+  {
+    "url": "mailto:contact@andy.bond",
+    "text": "contact@andy.bond",
+    "icon": "mail",
+    "type": "contact",
+    "label": "Email"
+  },
+  {
+    "url": "https://andy.bond",
+    "text": "https://andy.bond",
+    "icon": "globe",
+    "type": "website",
+    "label": "Website"
+  },
+  {
+    "url": "https://github.com/andy-bond",
+    "text": "@andy-bond",
+    "icon": "custom-github",
+    "type": "profile",
+    "label": "GitHub"
+  },
+  {
+    "url": "https://mastodon.social/@andybond",
+    "text": "@andybond",
+    "icon": "custom-mastodon",
+    "type": "contact",
+    "label": "Mastodon"
+  },
+  {
+    "url": "https://www.linkedin.com/in/andybond/",
+    "text": "@andybond",
+    "icon": "custom-linkedin",
+    "type": "contact",
+    "label": "LinkedIn"
+  }
+]

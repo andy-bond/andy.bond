@@ -1,12 +1,33 @@
 {
-  "name": "andy.bond.redux",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "andy.bond",
+	"version": "0.0.1",
+	"description": "Personal website & blog of Andy Bond.",
+	"homepage": "https://github.com/andy-bond/andy.bond#readme",
+	"author": "Andy Bond",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"watch:eleventy": "eleventy --serve",
+		"build:eleventy": "eleventy"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "3.0.0-alpha.5",
+		"@11ty/eleventy-fetch": "^4.0.0",
+		"@11ty/eleventy-img": "^4.0.2",
+		"@11ty/eleventy-plugin-bundle": "^1.0.5",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@11ty/eleventy-plugin-webc": "^0.11.2",
+		"browserslist": "^4.22.3",
+		"dotenv-flow": "^4.1.0",
+		"html-minifier": "^4.0.0",
+		"jsdom": "^24.0.0",
+		"lightningcss": "^1.23.0",
+		"lucide-static": "^0.324.0",
+		"rss-parser": "^3.13.0",
+		"uglify-js": "^3.17.4"
+	},
+	"browserslist": [
+		"> 0.2%",
+		"not dead"
+	]
 }

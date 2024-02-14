@@ -1,0 +1,19 @@
+<a webc:root="override" @attributes>
+	<icon webc:if="icon" :name="icon"></icon>
+	<div webc:if="!minimal" class="anchor-text">
+		<slot></slot>
+	</div>
+	<icon webc:if="target === '_blank' && !minimal" name="external-link"></icon>
+</a>
+
+<style webc:scoped>
+	:host {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25em;
+	}
+
+	.anchor-text:empty {
+		display: none;
+	}
+</style>
