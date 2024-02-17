@@ -110,7 +110,9 @@
 		color: inherit;
 
 		&[aria-current='page'] {
-			text-decoration: underline;
+			text-decoration-line: underline;
+			text-decoration-style: solid;
+			text-decoration-thickness: 4px;
 			text-decoration-color: var(--theme-color-link);
 		}
 	}

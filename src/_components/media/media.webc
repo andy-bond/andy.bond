@@ -14,8 +14,12 @@
 		overflow: hidden;
 	}
 
-	:host:is(:hover, :focus-visible) .media-cover {
-		transform: scale(1.2);
+	:host:is(:hover, :focus-visible) {
+		outline-offset: 0px;
+
+		.media-cover {
+			transform: scale(1.2);
+		}
 	}
 
 	.media-cover {

@@ -1,152 +1,153 @@
 <script webc:setup>
-  const title = `<a id="title" href="/">${this.metadata.author}</a>`;
-  const currentTitle = `<a id="title" href="/" aria-current="page">${this.metadata.author}</a>`;
+	const title = `<a id="title" href="/">${this.metadata.author}</a>`;
+	const currentTitle = `<a id="title" href="/" aria-current="page">${this.metadata.author}</a>`;
 </script>
 
 <header webc:root="override" class="container">
-  <div id="header-left-area">
-    <template
-      webc:if="$data.page.url === '/'"
-      webc:nokeep
-      @html="currentTitle"
-    ></template>
-    <template webc:else @html="title" webc:nokeep></template>
-    <nav>
-      <ul>
-        <li webc:for="item of $data.navigation">
-          <a
-            webc:if="$data.page.url.includes(item.url)"
-            aria-current="page"
-            :href="item.url"
-            @text="item.text"
-          ></a>
-          <a webc:else :href="item.url" @text="item.text"></a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <div id="icon-buttons">
-    <a href="/apps" title="Applications">
-      <icon name="flask-conical"></icon>
-    </a>
-    <theme-toggle></theme-toggle>
-    <button id="menu-btn" title="Open Navigation">
-      <icon name="menu"></icon>
-    </button>
-  </div>
+	<div id="header-left-area">
+		<template
+			webc:if="$data.page.url === '/'"
+			webc:nokeep
+			@html="currentTitle"
+		></template>
+		<template webc:else @html="title" webc:nokeep></template>
+		<nav>
+			<ul>
+				<li webc:for="item of $data.navigation">
+					<a
+						webc:if="$data.page.url.includes(item.url)"
+						aria-current="page"
+						:href="item.url"
+						@text="item.text"
+					></a>
+					<a webc:else :href="item.url" @text="item.text"></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div id="icon-buttons">
+		<a href="/apps" title="Applications">
+			<icon name="flask-conical"></icon>
+		</a>
+		<theme-toggle></theme-toggle>
+		<button id="menu-btn" title="Open Navigation">
+			<icon name="menu"></icon>
+		</button>
+	</div>
 </header>
 
 <style webc:scoped>
-  :host {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--theme-color-highlight);
-    padding: var(--default-spacing);
-    margin-bottom: calc(2 * var(--default-spacing));
-    color: var(--theme-color-text);
-    background-color: var(--theme-color-background);
-    transition: background-color var(--default-transition),
-      color var(--default-transition);
+	:host {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid var(--theme-color-highlight);
+		padding: var(--default-spacing);
+		margin-bottom: var(--default-spacing-dbl);
+		color: var(--theme-color-text);
+		background-color: var(--theme-color-background);
+		transition: background-color var(--default-transition),
+			color var(--default-transition);
 
-    @media screen and (max-width: 999px) {
-      position: sticky;
-      top: 0;
-      z-index: 500;
-    }
-  }
+		@media screen and (max-width: 999px) {
+			position: sticky;
+			top: 0;
+			z-index: 500;
+		}
+	}
 
-  #title {
-    font-weight: bold;
-    font-size: 1.5em;
-    line-height: 48px;
-    color: var(--theme-color-title);
-    white-space: nowrap;
-    text-decoration: none;
-  }
+	#title {
+		font-weight: bold;
+		font-size: 1.5em;
+		line-height: 48px;
+		color: var(--theme-color-title);
+		white-space: nowrap;
+		text-decoration: none;
+	}
 
-  #header-left-area {
-    display: flex;
-    align-items: center;
-    gap: calc(2 * var(--default-spacing));
+	#header-left-area {
+		display: flex;
+		align-items: center;
+		gap: calc(2 * var(--default-spacing));
 
-    @media screen and (max-width: 699px) {
-      align-items: start;
-      flex-direction: column;
-      gap: 0;
-    }
-  }
+		@media screen and (max-width: 699px) {
+			align-items: start;
+			flex-direction: column;
+			gap: 0;
+		}
+	}
 
-  #header-left-area > nav {
-    @media screen and (max-width: 515px) {
-      display: none;
-    }
-  }
+	#header-left-area > nav {
+		@media screen and (max-width: 515px) {
+			display: none;
+		}
+	}
 
-  #header-left-area > nav > ul {
-    display: flex;
-    align-items: center;
-    gap: var(--default-spacing);
+	#header-left-area > nav > ul {
+		display: flex;
+		align-items: center;
+		gap: var(--default-spacing);
 
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
 
-  #header-left-area > nav a {
-    color: var(--theme-color-text);
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-decoration-color: transparent;
-    transition: color var(--default-transition),
-      text-decoration-color var(--default-transition);
-  }
+	#header-left-area > nav a {
+		color: var(--theme-color-text);
+		font-weight: bold;
+		text-decoration: underline;
+		text-decoration-thickness: 3px;
+		text-decoration-color: transparent;
+		transition: color var(--default-transition),
+			text-decoration-color var(--default-transition);
+	}
 
-  #header-left-area > nav a:is(:hover, :focus-within) {
-    color: var(--theme-color-link);
-    text-decoration-color: var(--theme-color-title);
-  }
+	#header-left-area > nav a:is(:hover, :focus-within) {
+		color: var(--theme-color-link);
+		text-decoration-color: var(--theme-color-title);
+	}
 
-  #header-left-area > nav a[aria-current='page'] {
-    text-decoration-color: var(--theme-color-link);
-  }
+	#header-left-area > nav a[aria-current='page'] {
+		text-decoration-color: var(--theme-color-link);
+	}
 
-  #icon-buttons {
-    display: flex;
-    gap: calc(0.5 * var(--default-spacing));
+	#icon-buttons {
+		display: flex;
+		gap: calc(0.5 * var(--default-spacing));
 
-    :is(button, a) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+		:is(button, a) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
-      border: none;
-      background-color: inherit;
-      color: inherit;
-      cursor: pointer;
+			border: none;
+			background-color: inherit;
+			transition: background-color var(--default-transition);
+			color: inherit;
+			cursor: pointer;
 
-      padding: calc(0.5 * var(--default-spacing));
-      border-radius: 50%;
-      height: 48px;
-      width: 48px;
+			padding: calc(0.5 * var(--default-spacing));
+			border-radius: 50%;
+			height: 48px;
+			width: 48px;
 
-      & svg {
-        height: 24px;
-        width: 24px;
-      }
+			& svg {
+				height: 24px;
+				width: 24px;
+			}
 
-      &:is(:hover, :focus-within) {
-        background-color: var(--theme-color-highlight);
-      }
-    }
+			&:is(:hover, :focus-within) {
+				background-color: var(--theme-color-highlight);
+			}
+		}
 
-    #menu-btn {
-      display: none;
+		#menu-btn {
+			display: none;
 
-      @media screen and (max-width: 515px) {
-        display: flex;
-      }
-    }
-  }
+			@media screen and (max-width: 515px) {
+				display: flex;
+			}
+		}
+	}
 </style>
