@@ -24,23 +24,10 @@
 <svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<style type="text/css">
-			/* poppins-500 - latin */
-			@font-face {
-				font-family: 'Poppins';
-				font-style: normal;
-				font-weight: 500;
-				font-display: swap;
-				src: local(''), url('../../fonts/poppins-v19-latin-500.woff2') format('woff2'),
-					url('../../fonts/poppins-v19-latin-500.woff') format('woff');
-			}
-			/* poppins-700 - latin */
-			@font-face {
-				font-family: 'Poppins';
-				font-style: normal;
-				font-weight: 700;
-				font-display: swap;
-				src: local(''), url('../../fonts/poppins-v19-latin-700.woff2') format('woff2'),
-					url('../../fonts/poppins-v19-latin-700.woff') format('woff');
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&amp;display=swap");
+
+			text {
+				font-family: 'Poppins', sans-serif;
 			}
 		</style>
 	</defs>
@@ -57,7 +44,7 @@
   <path d="M 0.018 617.018 L 22.218 611.027 C 44.318 605.037 88.718 593.056 133.218 587.764 C 177.718 582.373 222.318 583.77 266.818 582.872 C 311.318 582.073 355.718 579.078 400.018 582.073 C 444.318 585.068 488.718 594.054 533.218 600.045 C 577.718 606.035 622.318 609.03 666.818 610.827 C 711.318 612.724 755.718 613.323 800.018 607.333 C 844.318 601.342 888.718 588.763 933.218 587.564 C 977.718 586.366 1022.318 596.75 1066.818 598.547 C 1111.318 600.344 1155.718 593.755 1177.818 590.36 L 1200.018 587.065 L 1200.018 628 L 1177.818 628 C 1155.718 628 1111.318 628 1066.818 628 C 1022.318 628 977.718 628 933.218 628 C 888.718 628 844.318 628 800.018 628 C 755.718 628 711.318 628 666.818 628 C 622.318 628 577.718 628 533.218 628 C 488.718 628 444.318 628 400.018 628 C 355.718 628 311.318 628 266.818 628 C 222.318 628 177.718 628 133.218 628 C 88.718 628 44.318 628 22.218 628 L 0.018 628 L 0.018 617.018 Z" fill="#e0aaff"></path>
 
 	<!-- Text -->
-  <text style="font-family: Poppins; font-size: 20px; font-weight: 500; white-space: pre;" x="160" y="616">{{ metadata.author }} • {{ metadata.url }}</text>
-  <text style="fill: rgb(255, 255, 255); font-family: Poppins; font-size: 24px; font-weight: 500; white-space: pre;" x="160" y="120">{{ formattedDate }}</text>
-  <text style="fill: rgb(255, 255, 255); font-family: Poppins; font-size: 40px; font-weight: 700; white-space: pre;" x="160" y="200">{{ preview.data.title }}</text>
+  <text style="font-size: 20px; font-weight: 500; white-space: pre;" x="160" y="616">{{ metadata.author }} • {{ metadata.url }}</text>
+  <text style="fill: rgb(255, 255, 255); font-size: 24px; font-weight: 500; white-space: pre;" x="160" y="120">{{ formattedDate }}</text>
+  <text style="fill: rgb(255, 255, 255); font-size: 40px; font-weight: 700; white-space: pre;" x="160" y="200">{{ preview.data.title }}</text>
 </svg>
