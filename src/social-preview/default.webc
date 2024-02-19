@@ -40,5 +40,5 @@
 
 	<!-- Image -->
 	<rect style="fill: #0d1c2b" x="690" y="104" width="420" height="420" rx="10" />
-	<image href="{{ '/static/img/andy-kayla-cropped-1200w.jpeg' | url }}" x="700" y="114" height="400" width="400" />
+	<image href="https://andy.bond/static/img/andy-kayla-cropped-1200w.jpeg" x="700" y="114" height="400" width="400" />
 </svg>

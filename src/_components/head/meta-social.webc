@@ -7,19 +7,18 @@
 	const isPost = this.$data.tags?.includes('posts');
 	const slug = url.slice(1, -1).replaceAll('/', '-');
 
-	const path = isPost
-		? `/static/img/social-preview/${slug}-preview.svg`
-		: `/static/img/social-preview/default-preview.svg`;
+	const domain = this.$data.metadata.url;
 
-	const urlIfied = this.helpers.url(url);
-	const urlIfiedPath = this.helpers.url(path);
+	const path = isPost
+		? `${domain}/static/img/social-preview/${slug}-preview.svg`
+		: `${domain}/static/img/social-preview/default-preview.svg`;
 
 	`
     <meta property="og:title" content="${title}">
   	<meta name="description" property="og:description" content="${description}">
   	<meta name="author" content="${author}">
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="${urlIfied}"/>
-    <meta property="og:image" content="${urlIfiedPath}"/>
+    <meta property="og:url" content="${domain}${url}"/>
+    <meta property="og:image" content="${path}"/>
   `;
 </script>
