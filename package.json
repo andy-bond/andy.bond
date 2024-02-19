@@ -7,8 +7,8 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"watch:eleventy": "eleventy --serve",
-		"build:eleventy": "eleventy"
+		"serve": "eleventy --serve",
+		"build": "eleventy"
 	},
 	"devDependencies": {
 		"@11ty/eleventy": "3.0.0-alpha.5",
