@@ -1,6 +1,6 @@
 [build]
 publish = "_site"
-command = "npm run build"
+command = "npm run build:eleventy"
 
 [[plugins]]
 package = "netlify-plugin-cache"
