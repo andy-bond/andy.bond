@@ -7,10 +7,10 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"serve": "eleventy --serve",
-		"eleventy": "eleventy"
+		"eleventy:serve": "eleventy --serve",
+		"eleventy:build": "eleventy"
 	},
-	"devDependencies": {
+	"dependencies": {
 		"@11ty/eleventy": "3.0.0-alpha.5",
 		"@11ty/eleventy-fetch": "^4.0.0",
 		"@11ty/eleventy-img": "^4.0.2",

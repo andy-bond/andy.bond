@@ -1,6 +1,11 @@
 [build]
 publish = "_site"
-command = "DEBUG=* eleventy"
+command = "npm run eleventy:build"
+
+[[plugins]]
+package = "netlify-plugin-cache"
+[plugins.inputs]
+paths = [".cache"]
 
 [[redirects]]
 from = "/apps/quick-snips/*"
