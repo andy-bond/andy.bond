@@ -11,10 +11,6 @@
 		<style type="text/css">
 			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&amp;display=swap");
 
-			image {
-				clip-path: inset(0% round 10px);
-			}
-
 			text {
 				font-family: 'Poppins', sans-serif;
 			}
@@ -37,8 +33,4 @@
   <text style="font-size: 20px; font-weight: 500; white-space: pre;" x="160" y="616">{{ metadata.author }} • {{ metadata.url }}</text>
   <text style="fill: #e0aaff; font-size: 40px; font-weight: 700; white-space: pre;" x="160" y="120">{{ metadata.author }}</text>
 	<text style="fill: rgb(255, 255, 255); font-size: 24px; font-weight: 700; white-space: pre;" x="160" y="200">Andy Bond's personal website &amp; blog</text>
-
-	<!-- Image -->
-	<rect style="fill: #0d1c2b" x="690" y="104" width="420" height="420" rx="10" />
-	<image href="https://andy.bond/static/img/andy-kayla-cropped-1200w.jpeg" x="700" y="114" height="400" width="400" />
 </svg>
