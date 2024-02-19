@@ -11,12 +11,15 @@
 		? `/static/img/social-preview/${slug}-preview.svg`
 		: `/static/img/social-preview/default-preview.svg`;
 
+	const urlIfied = this.helpers.url(url);
+	const urlIfiedPath = this.helpers.url(path);
+
 	`
     <meta property="og:title" content="${title}">
   	<meta name="description" property="og:description" content="${description}">
   	<meta name="author" content="${author}">
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="${url}"/>
-    <meta property="og:image" content="${path}"/>
+    <meta property="og:url" content="${urlIfied}"/>
+    <meta property="og:image" content="${urlIfiedPath}"/>
   `;
 </script>
