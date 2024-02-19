@@ -1,0 +1,48 @@
+<a webc:root="override" :href="post.page.url" :aria-label="post.data.title">
+	<card class="post-card">
+		<div class="heading">
+			<h2 @text="post.data.title"></h2>
+			<small>
+				<date :@value="post.data.date"></date>
+			</small>
+		</div>
+
+		<p @text="post.data.description"></p>
+
+		<category-chip :@name="post.data.category"></category-chip>
+	</card>
+</a>
+
+<style webc:scoped>
+	:host {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing);
+		border-radius: var(--default-border-radius);
+
+		text-decoration: none;
+	}
+
+	:host:is(:hover, :focus-visible) h2 {
+		text-decoration: underline;
+	}
+
+	.post-card {
+		padding: var(--default-spacing-plus-qtr);
+	}
+
+	h2 {
+		align-self: flex-start;
+		color: var(--theme-color-link);
+	}
+
+	.heading {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing-qtr);
+	}
+
+	small {
+		color: var(--theme-color-text-secondary);
+	}
+</style>

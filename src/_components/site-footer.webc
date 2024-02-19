@@ -1,12 +1,8 @@
-<script webc:setup>
-	const year = new Date().getFullYear();
-</script>
-
 <footer webc:root="override">
 	<ul>
 		<li>
-			<icon name="copyright"></icon>
-			<template webc:nokeep @text="year"></template>
+			<icon name="copyright"></icon>&nbsp;
+			<template webc:nokeep @text="new Date().getFullYear()"></template>
 			<template webc:nokeep @text="$data.metadata.author"></template>
 		</li>
 		<li>
@@ -34,8 +30,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 1em;
-		margin-top: 2em;
+		padding: var(--default-spacing);
+		margin-top: var(--default-spacing-dbl);
 	}
 
 	ul {
@@ -46,8 +42,7 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		row-gap: 0.25em;
-		column-gap: 0.5em;
+		row-gap: var(--default-spacing-qtr);
 	}
 
 	ul li {
@@ -57,12 +52,12 @@
 	}
 
 	ul li:not(:last-of-type)::after {
-		content: '—';
-		margin: 0 0.5em;
+		content: '•';
+		margin: 0 var(--default-spacing-half);
 	}
 
 	.footer-socials {
-		gap: 1em;
+		gap: var(--default-spacing);
 	}
 
 	.footer-socials li:not(:last-of-type)::after {
@@ -75,7 +70,7 @@
 		}
 
 		.footer-socials {
-			margin-top: 0.5em;
+			margin-top: var(--default-spacing-half);
 		}
 
 		ul li:not(:last-of-type)::after {

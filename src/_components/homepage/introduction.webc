@@ -19,7 +19,7 @@
 	:host {
 		display: flex;
 		flex-direction: row;
-		gap: 2em;
+		gap: var(--default-spacing-dbl);
 
 		@media screen and (max-width: 599px) {
 			flex-direction: column;
@@ -48,6 +48,6 @@
 	.intro-contents {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5em;
+		gap: var(--default-spacing-half);
 	}
 </style>

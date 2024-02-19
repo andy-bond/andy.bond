@@ -30,7 +30,7 @@ export default async function () {
 
 		return {
 			link: feed.link,
-			gallery: photos,
+			gallery: photos.slice(0, 8),
 		};
 	} catch (error) {
 		console.log('Error: Failed to parse Pixelfed', error);

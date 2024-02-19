@@ -1,6 +1,6 @@
+import browserslist from 'browserslist';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import browserslist from 'browserslist';
 
 export function getBrowsersList() {
 	// Set default transpiling targets
@@ -47,4 +47,12 @@ export function isProduction() {
 		process.env.ELEVENTY_RUN_MODE === 'build' &&
 		process.env.NODE_ENV === 'production'
 	);
+}
+
+export function chunk(array, size) {
+	return array.reduce((arr, item, index) => {
+		return index % size === 0
+			? [...arr, [item]]
+			: [...arr.slice(0, -1), [...arr.slice(-1)[0], item]];
+	}, []);
 }

@@ -5,46 +5,46 @@ const appUrl = 'https://www.backloggd.com';
 const gamesUrl = `${appUrl}/u/LordGennai/games/`;
 
 function parseGameDom(gameNode) {
-  const image = gameNode
-    .querySelector('.overflow-wrapper > .card-img')
-    .getAttribute('src');
-  const link =
-    appUrl + gameNode.querySelector('.cover-link').getAttribute('href');
-  const label = gameNode.querySelector('.game-text-centered').textContent;
+	const image = gameNode
+		.querySelector('.overflow-wrapper > .card-img')
+		.getAttribute('src');
+	const link =
+		appUrl + gameNode.querySelector('.cover-link').getAttribute('href');
+	const label = gameNode.querySelector('.game-text-centered').textContent;
 
-  return {
-    label,
-    link,
-    image,
-  };
+	return {
+		label,
+		link,
+		image,
+	};
 }
 
 function parseGamesPageDom(text, current) {
-  const dom = new JSDOM(text);
-  const body = dom.window.document.body;
-  const games = [];
+	const dom = new JSDOM(text);
+	const body = dom.window.document.body;
+	const games = [];
 
-  const gameNodes = body.querySelectorAll('.game-cover[game_id]');
+	const gameNodes = body.querySelectorAll('.game-cover[game_id]');
 
-  gameNodes?.forEach((node) => {
-    games.push({ ...parseGameDom(node), current });
-  });
+	gameNodes?.forEach((node) => {
+		games.push({ ...parseGameDom(node), current });
+	});
 
-  return games.slice(0, 4);
+	return games.slice(0, 8);
 }
 
 export default async function () {
-  try {
-    const gamesText = await EleventyFetch(gamesUrl, {
-      duration: '1d',
-      type: 'text',
-    });
+	try {
+		const gamesText = await EleventyFetch(gamesUrl, {
+			duration: '1d',
+			type: 'text',
+		});
 
-    const games = parseGamesPageDom(gamesText);
+		const games = parseGamesPageDom(gamesText);
 
-    return games;
-  } catch (error) {
-    console.log('Error: Failed to parse Backloggd', error);
-    return [];
-  }
-};
+		return games;
+	} catch (error) {
+		console.log('Error: Failed to parse Backloggd', error);
+		return [];
+	}
+}

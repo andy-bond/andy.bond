@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<breadcrumbs></breadcrumbs>
+
+<article class="post-article">
+	<h1 class="post-heading" @text="title"></h1>
+
+	<div class="post-metadata">
+		<category-chip :@name="$data.category" @link="true"></category-chip>
+		<div class="post-date"><date :@value="$data.date"></date></div>
+	</div>
+
+	<p class="post-description" @text="description"></p>
+
+	<div class="post-content">
+		<template webc:nokeep @raw="content"></template>
+	</div>
+</article>
+
+<style webc:keep>
+	.post-heading {
+		margin-bottom: var(--default-spacing-half);
+	}
+
+	.post-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing);
+	}
+
+	.post-metadata {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: var(--default-spacing);
+		margin-bottom: var(--default-spacing);
+	}
+
+	.post-date {
+		color: var(--theme-color-text-secondary);
+	}
+
+	.post-description {
+		padding-bottom: var(--default-spacing-dbl);
+		margin-bottom: var(--default-spacing-dbl);
+		border-bottom: 1px solid var(--theme-color-highlight);
+	}
+</style>

@@ -3,13 +3,12 @@ layout: base
 ---
 
 <div class="default-page-wrapper">
-  <div class="content-wrapper">
-    <site-header></site-header>
-    <main class="full-bleed-wrapper">
-      <template webc:nokeep @raw="content"></template>
-    </main>
-  </div>
-  <site-footer></site-footer>
-  <back-to-top></back-to-top>
-  <menu-overlay></menu-overlay>
+	<div class="content-wrapper">
+		<site-header></site-header>
+		<main class="full-bleed-wrapper">
+			<template webc:nokeep @raw="content"></template>
+		</main>
+	</div>
+	<site-footer></site-footer>
+	<back-to-top></back-to-top>
 </div>

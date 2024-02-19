@@ -31,9 +31,9 @@ export default async function () {
 			});
 		});
 
-		return shows.slice(0, 4);
+		return shows.slice(0, 8);
 	} catch (error) {
 		console.log('Error: Failed to parse Trakt shows', error);
 		return [];
 	}
-};
+}

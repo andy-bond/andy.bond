@@ -1,0 +1,10 @@
+{
+	"angular": {
+		"name": "Angular",
+		"icon": "custom-angular"
+	},
+	"travel": {
+		"name": "Travel",
+		"icon": "plane"
+	}
+}

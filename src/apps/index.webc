@@ -1,0 +1,35 @@
+---
+layout: default
+title: Applications
+---
+
+<breadcrumbs></breadcrumbs>
+
+<h1 @text="title"></h1>
+
+<div class="application-grid">
+	<browser-window webc:for="app of $data.applications" :@url="app.href">
+		<iframe
+			:src="app.href"
+			sandbox="allow-same-origin allow-scripts"
+			scrolling="no"
+			style="pointer-events: none; width: 100%; height: 100%; border: none"
+		></iframe>
+	</browser-window>
+</div>
+
+<style webc:keep>
+	h1 {
+		margin-bottom: var(--default-spacing);
+	}
+
+	.application-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--default-spacing);
+
+		> * {
+			aspect-ratio: 16 / 9;
+		}
+	}
+</style>

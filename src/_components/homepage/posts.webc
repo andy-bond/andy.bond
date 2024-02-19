@@ -1,0 +1,30 @@
+<section webc:root="override" class="posts">
+	<div class="posts-header">
+		<h2>Posts</h2>
+		<anchor href="/posts/"> View All </anchor>
+	</div>
+
+	<post-card
+		webc:for="post of $data.collections.posts.reverse().slice(0, 3)"
+		:@post="post"
+	></post-card>
+</section>
+
+<style webc:scoped>
+	:host {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing);
+	}
+
+	.posts-header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: var(--default-spacing);
+	}
+
+	post-card + post-card {
+		margin-top: var(--default-spacing);
+	}
+</style>

@@ -2,19 +2,18 @@
 {
 	layout: "default",
 	pagination: {
-		data: 'collections.posts',
-		size: 10,
-		alias: "posts",
-		reverse: true,
+		data: 'collections.postsByCategory',
+		size: 1,
+		alias: "category",
 	},
 	permalink: (d) => {
-		let result = '/posts/';
-		if (d.pagination.pageNumber > 0) {
-			result += `page-${d.pagination.pageNumber}/`;
-		}
-		return result;
+		return d.category.slug;
 	},
-	title: "Posts",
+	eleventyComputed: {
+		title: (d) => {
+			return `${d.categories[d.category.name].name} Posts`
+		}
+	},
 	eleventyExcludeFromCollections: true
 }
 ---
@@ -26,7 +25,7 @@
 <category-list></category-list>
 
 <div class="post-container">
-	<post-card webc:for="post of posts" :@post="post"></post-card>
+	<post-card webc:for="post of category.items" :@post="post"></post-card>
 </div>
 
 <paginator :@paginator="$data.pagination"></paginator>

@@ -50,7 +50,7 @@ export default async function () {
 
 		const allBooks = [...currentBooks, ...finishedBooks];
 
-		return allBooks.slice(0, 4);
+		return allBooks.slice(0, 8);
 	} catch (error) {
 		console.log('Error: Failed to parse TheStoryGraph', error);
 		return [];

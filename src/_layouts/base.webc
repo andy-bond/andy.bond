@@ -12,6 +12,7 @@
 		<title webc:is="meta-title"></title>
 		<meta webc:is="meta-favicons" />
 		<meta webc:is="meta-social" />
+		<link rel="me" href="https://mastodon.social/@andybond" />
 
 		<!-- Base Styles -->
 		<link
@@ -19,6 +20,15 @@
 			rel="stylesheet"
 			type="text/css"
 			:href="url('/static/css/styles.css')"
+		/>
+
+		<!-- Syntax Highlighting Styles -->
+		<link
+			webc:if="$data.prism === true"
+			webc:keep
+			rel="stylesheet"
+			type="text/css"
+			:href="url('/static/css/prism.css')"
 		/>
 
 		<!-- Cloudflare Web Analytics -->

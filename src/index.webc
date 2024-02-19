@@ -4,24 +4,21 @@ title: Home
 description: "Andy Bond's personal website. Blog posts, photos, and more!"
 ---
 
-<article>
-  <!-- Intro -->
-  <introduction></introduction>
+<article class="homepage">
+	<!-- Intro -->
+	<introduction></introduction>
 
-  <!-- Now Page - Small -->
-  <section class="now"></section>
+	<!-- Posts List -->
+	<posts></posts>
 
-  <!-- Posts List -->
-  <section class="posts"></section>
-
-  <!-- Photos from Pixelfed -->
-  <photos></photos>
+	<!-- Photos from Pixelfed -->
+	<photos></photos>
 </article>
 
-<style webc:scoped>
-  :host {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-  }
+<style webc:keep>
+	.homepage {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing-dbl);
+	}
 </style>

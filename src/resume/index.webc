@@ -18,6 +18,7 @@ title: Résumé
 			<div class="contact-information">
 				<anchor
 					webc:for="item of $data.links"
+					webc:if="item.resume"
 					target="_blank"
 					:href="item.url"
 					:@icon="item.icon"

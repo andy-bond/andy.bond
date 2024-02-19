@@ -5,8 +5,8 @@
 <style webc:scoped>
 	:host {
 		position: fixed;
-		bottom: 1em;
-		right: 1em;
+		bottom: var(--default-spacing);
+		right: var(--default-spacing);
 		pointer-events: none;
 		z-index: 999;
 	}
@@ -20,7 +20,7 @@
 		background-color: var(--theme-color-link);
 		color: var(--theme-color-text-inverse);
 		cursor: pointer;
-		padding: 0.5em;
+		padding: var(--default-spacing-half);
 		border-radius: 50%;
 		height: 48px;
 		width: 48px;

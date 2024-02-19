@@ -1,0 +1,134 @@
+<nav webc:root="override" aria-label="Pagination">
+	<div class="paginator-information">
+		<script webc:type="js">
+			`Page ${this.paginator.pageNumber + 1} of ${this.paginator.pages.length}`;
+		</script>
+	</div>
+	<ol>
+		<script webc:type="js">
+			[
+				{
+					title: 'First Page',
+					href: this.paginator.href.first,
+					icon: 'chevrons-left',
+				},
+				{
+					title: 'Previous Page',
+					href: this.paginator.href.previous,
+					icon: 'chevron-left',
+				},
+				{
+					title: 'Next Page',
+					href: this.paginator.href.next,
+					icon: 'chevron-right',
+				},
+				{
+					title: 'Last Page',
+					href: this.paginator.href.last,
+					icon: 'chevrons-right',
+				},
+			]
+				.map((link) => {
+					const attr =
+						link.href && link.href !== this.$data.page.url
+							? `title="${link.title}" href="${link.href}"`
+							: '';
+					return `<li><a ${attr}><icon name="${link.icon}"></icon></a></li>`;
+				})
+				.join('');
+		</script>
+	</ol>
+</nav>
+
+<style webc:scoped>
+	:host {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		margin-top: var(--default-spacing-dbl);
+		color: var(--theme-color-text);
+		border-radius: var(--default-border-radius);
+		border: 2px solid var(--theme-color-highlight);
+		background-color: var(--theme-color-background-secondary);
+		transition: background-color var(--default-transition),
+			color var(--default-transition), border-color var(--default-transition);
+
+		@media screen and (max-width: 399px) {
+			flex-direction: column;
+		}
+	}
+
+	.paginator-information {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex-grow: 1;
+		justify-content: flex-end;
+
+		height: 100%;
+		line-height: var(--default-spacing);
+		padding: var(--default-spacing);
+
+		color: var(--theme-color-text-secondary);
+		border-right: 1px solid var(--theme-color-highlight);
+
+		@media only screen and (max-width: 399px) {
+			justify-content: center;
+			border-right: none;
+			border-bottom: 1px solid var(--theme-color-highlight);
+			width: 100%;
+		}
+	}
+
+	ol {
+		height: 100%;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@media only screen and (max-width: 399px) {
+			width: 100%;
+		}
+	}
+
+	li {
+		height: 100%;
+		margin: 0;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		+ li {
+			border-left: 1px solid var(--theme-color-highlight);
+		}
+
+		@media only screen and (max-width: 399px) {
+			flex-grow: 1;
+		}
+	}
+
+	a {
+		padding: var(--default-spacing);
+		display: flex;
+		flex-direction: row;
+		gap: var(--default-spacing-half);
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+
+		&:not([href]) {
+			color: var(--theme-color-text-secondary);
+		}
+
+		@media only screen and (max-width: 399px) {
+			width: 100%;
+		}
+	}
+</style>

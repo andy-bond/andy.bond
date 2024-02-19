@@ -1,21 +1,21 @@
 <slot></slot>
 
 <style webc:scoped>
-  :host {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.5em;
+	:host {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: var(--default-spacing-half);
 
-    > * {
-      aspect-ratio: 2 / 3;
-    }
+		> * {
+			aspect-ratio: 2 / 3;
+		}
 
-    &[square] > * {
-      aspect-ratio: 1;
-    }
+		&[square] > * {
+			aspect-ratio: 1;
+		}
 
-    @media screen and (max-width: 499px) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
+		@media screen and (max-width: 499px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
 </style>

@@ -1,25 +1,30 @@
 <section webc:root="override" class="photos">
-  <div class="photos-header">
-    <h2>Photos</h2>
-    <a :href="$data.dynamic.photos.link">View more on Pixelfed</a>
-  </div>
+	<div class="photos-header">
+		<h2>Photos</h2>
+		<anchor :href="$data.dynamic.photos.link" target="_blank">
+			View more on <em>Pixelfed</em>
+		</anchor>
+	</div>
 
-  <media-grid square>
-    <media webc:for="photo of $data.dynamic.photos.gallery" :@media="photo"></media>
-  </media-grid>
+	<media-grid square>
+		<media
+			webc:for="photo of $data.dynamic.photos.gallery"
+			:@media="photo"
+		></media>
+	</media-grid>
 </section>
 
 <style webc:scoped>
-  :host {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
+	:host {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing);
+	}
 
-  .photos-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1em;
-  }
+	.photos-header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: var(--default-spacing);
+	}
 </style>

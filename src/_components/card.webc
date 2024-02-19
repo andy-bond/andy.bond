@@ -4,17 +4,18 @@
 	:host {
 		display: flex;
 		flex-direction: column;
+		gap: var(--default-spacing);
 
 		color: var(--theme-color-text);
-		padding: 2em;
+		padding: var(--default-spacing-dbl);
 		background-color: var(--theme-color-card);
 		border-radius: var(--default-border-radius);
-		box-shadow: var(--default-shadow-large);
+		box-shadow: var(--default-shadow-medium);
 		transition: background-color var(--default-transition),
 			color var(--default-transition);
 
 		@media screen and (max-width: 499px) {
-			padding: 2em 1em;
+			padding: var(--default-spacing);
 		}
 	}
 </style>

@@ -1,5 +1,18 @@
 <script webc:type="js">
 	const date = new Date(this.value);
-	const format = this.format ?? 'dd LLL yyyy';
-	new Intl.DateTimeFormat('en-US').format(date);
+
+	let options = undefined;
+	switch (this.format) {
+		case 'MMMM yyyy':
+			options = {
+				month: 'long',
+				year: 'numeric',
+				timeZone: 'America/New_York',
+			};
+			break;
+		default:
+			break;
+	}
+
+	new Intl.DateTimeFormat('en-US', options).format(date);
 </script>

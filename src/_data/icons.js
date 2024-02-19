@@ -1,16 +1,19 @@
 import {
 	ArrowUp,
 	BoxSelect,
+	ChevronLeft,
+	ChevronRight,
+	ChevronsLeft,
+	ChevronsRight,
 	Copyright,
 	ExternalLink,
 	FlaskConical,
 	Globe,
 	Home,
 	Mail,
-	Menu,
 	Moon,
+	Plane,
 	Sun,
-	X,
 } from 'lucide-static';
 
 import { Angular } from '../static/icons/angular.js';
@@ -38,8 +41,11 @@ export default async function () {
 		['external-link']: ExternalLink,
 		['globe']: Globe,
 		['home']: Home,
-		['menu']: Menu,
-		['x']: X,
+		['chevrons-left']: ChevronsLeft,
+		['chevron-left']: ChevronLeft,
+		['chevron-right']: ChevronRight,
+		['chevrons-right']: ChevronsRight,
+		['plane']: Plane,
 		['box-select']: BoxSelect, // default icon
 	};
 

@@ -3,46 +3,109 @@ layout: default
 title: Now
 ---
 
-<article>
-	<breadcrumbs></breadcrumbs>
+<breadcrumbs></breadcrumbs>
 
-	<section>
-		<h2>Books</h2>
+<article>
+	<section class="now-section">
+		<div class="section-header">
+			<h2>Books</h2>
+			<anchor
+				href="https://app.thestorygraph.com/profile/andy_bond"
+				target="_blank"
+			>
+				View more on <em>The StoryGraph</em>
+			</anchor>
+		</div>
 		<media-grid>
 			<media webc:for="book of $data.dynamic.books" :@media="book"></media>
 		</media-grid>
 	</section>
 
-	<section>
-		<h2>Movies</h2>
+	<section class="now-section">
+		<div class="section-header">
+			<h2>Movies</h2>
+			<anchor
+				href="https://www.themoviedb.org/u/andy-bond/ratings"
+				target="_blank"
+			>
+				View more on <em>TMDB</em>
+			</anchor>
+		</div>
 		<media-grid>
 			<media webc:for="movie of $data.dynamic.movies" :@media="movie"></media>
 		</media-grid>
 	</section>
 
-	<section>
-		<h2>TV</h2>
+	<section class="now-section">
+		<div class="section-header">
+			<h2>TV</h2>
+			<anchor
+				href="https://www.themoviedb.org/u/andy-bond/ratings/tv"
+				target="_blank"
+			>
+				View more on <em>TMDB</em>
+			</anchor>
+		</div>
 		<media-grid>
 			<media webc:for="show of $data.dynamic.shows" :@media="show"></media>
 		</media-grid>
 	</section>
 
-	<section>
-		<h2>Games</h2>
+	<section class="now-section">
+		<div class="section-header">
+			<h2>Games</h2>
+			<anchor
+				href="https://www.backloggd.com/u/LordGennai/games/"
+				target="_blank"
+			>
+				View more on <em>Backloggd</em>
+			</anchor>
+		</div>
 		<media-grid>
 			<media webc:for="game of $data.dynamic.games" :@media="game"></media>
 		</media-grid>
 	</section>
+
+	<small class="what-is-this">
+		<div>
+			This is a
+			<anchor href="https://nownownow.com/about" target="_blank"
+				>now page</anchor
+			>, and if you have your own site,
+			<anchor href="https://nownownow.com/about" target="_blank"
+				>you should make one too</anchor
+			>.
+		</div>
+		<div>
+			Thanks to
+			<anchor href="https://coryd.dev/now" target="_blank"
+				>Cory Dransfeldt</anchor
+			>
+			for introducing me to this concept!
+		</div>
+	</small>
 </article>
 
-<style webc:scoped>
-	h2 {
-		margin-bottom: 0.5em;
+<style webc:keep>
+	.section-header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: var(--default-spacing);
+		margin-bottom: var(--default-spacing-half);
 	}
 
-	section + section {
+	.now-section + .now-section {
 		border-top: 1px solid var(--theme-color-highlight);
-		padding-top: 1em;
-		margin-top: 2em;
+		padding-top: var(--default-spacing);
+		margin-top: var(--default-spacing-dbl);
+	}
+
+	.what-is-this {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		margin-block-start: var(--default-spacing-dbl);
 	}
 </style>

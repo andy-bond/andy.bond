@@ -1,7 +1,7 @@
 <nav webc:root="override">
 	<ul>
 		<li>
-			<anchor href="/" @icon="home"></anchor>
+			<anchor href="/" @icon="home" @minimal="true"></anchor>
 		</li>
 		<script webc:type="js">
 			const url = this.$data.page.url;
@@ -33,11 +33,11 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		margin-bottom: 2em;
-		padding: 0.5em 1em;
+		margin-bottom: var(--default-spacing);
+		padding: var(--default-spacing-half) var(--default-spacing);
 		border-radius: var(--default-border-radius);
 		border: 2px solid var(--theme-color-highlight);
-		background-color: transparent;
+		background-color: var(--theme-color-background-secondary);
 		color: var(--theme-color-text);
 		transition: background-color var(--default-transition),
 			color var(--default-transition), border-color var(--default-transition);
@@ -49,7 +49,7 @@
 
 	ul {
 		display: flex;
-		gap: 0.5em;
+		gap: var(--default-spacing-half);
 
 		margin: 0;
 		padding: 0;
@@ -58,7 +58,7 @@
 
 	li {
 		display: flex;
-		gap: 0.5em;
+		gap: var(--default-spacing-half);
 		transition: color var(--default-transition);
 
 		&:last-of-type {

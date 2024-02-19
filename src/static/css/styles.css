@@ -9,26 +9,6 @@
 		-webkit-font-smoothing: antialiased;
 	}
 
-	::-webkit-scrollbar {
-		width: 12px;
-		background-color: var(--theme-color-highlight);
-	}
-
-	::-webkit-scrollbar-thumb {
-		border-radius: 4px;
-		background-color: var(--theme-color-title);
-	}
-
-	::-webkit-scrollbar-track {
-		border-radius: 2px;
-		background-color: transparent;
-	}
-
-	::selection {
-		background-color: var(--color-purple-400);
-		color: var(--color-white-000);
-	}
-
 	article,
 	aside,
 	details,
@@ -63,6 +43,12 @@
 		border: none;
 		border-top: 1px solid var(--theme-color-highlight);
 		margin: 0;
+	}
+
+	picture,
+	img {
+		height: auto;
+		width: 100%;
 	}
 }
 
@@ -135,8 +121,11 @@
 			'Helvetica Neue', sans-serif;
 
 		/* Spacing */
-		--default-spacing: 1em;
+		--default-spacing: 1rem;
+		--default-spacing-qtr: calc(var(--default-spacing) * 0.25);
 		--default-spacing-half: calc(var(--default-spacing) * 0.5);
+		--default-spacing-triqtr: calc(var(--default-spacing) * 0.75);
+		--default-spacing-plus-qtr: calc(var(--default-spacing) * 1.25);
 		--default-spacing-dbl: calc(var(--default-spacing) * 2);
 
 		/* Layout */
@@ -203,12 +192,34 @@
 }
 
 @layer layout {
+	::-webkit-scrollbar {
+		width: 12px;
+		background-color: var(--theme-color-highlight);
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background-color: var(--theme-color-title);
+	}
+
+	::-webkit-scrollbar-track {
+		border-radius: 2px;
+		background-color: transparent;
+	}
+
+	::selection {
+		background-color: var(--color-purple-400);
+		color: var(--color-white-000);
+	}
+
 	html,
 	body {
 		height: 100%;
 		max-height: 100%;
 		margin: 0;
 		scroll-behavior: smooth;
+
+		scrollbar-color: var(--theme-color-title) var(--theme-color-highlight);
 	}
 
 	body {

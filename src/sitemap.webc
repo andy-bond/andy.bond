@@ -1,12 +1,14 @@
 ---
 permalink: sitemap.xml
 eleventyExcludeFromCollections: true
+templateEngineOverride: njk
 ---
-
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url webc:for="page of $data.collections.all">
-    <loc @text="$data.metadata.url + page.url"></loc>
-    <lastmod @text="page.date.toISOString()"></lastmod>
-  </url>
+	{% for page in collections.all %}
+	<url>
+		<loc>{{ metadata.url }}{{ page.url | url }}</loc>
+		<lastmod>{{ page.date.toISOString() }}</lastmod>
+	</url>
+	{% endfor %}
 </urlset>

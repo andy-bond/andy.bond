@@ -1,4 +1,4 @@
-import { transform, browserslistToTargets } from 'lightningcss';
+import { browserslistToTargets, transform } from 'lightningcss';
 import { getBrowsersList, isProduction } from '../utilities/index.js';
 
 // LightningCSS
@@ -28,7 +28,7 @@ export async function transformCssBundle(content) {
 }
 
 export function lightningCssPlugin(eleventyConfig) {
-	// Recognize Sass as a "template languages"
+	// Recognize CSS as a "template languages"
 	eleventyConfig.addTemplateFormats('css');
 
 	// Compile Sass and process with LightningCSS

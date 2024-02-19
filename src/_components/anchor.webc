@@ -10,7 +10,7 @@
 	:host {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.25em;
+		gap: var(--default-spacing-qtr);
 	}
 
 	.anchor-text:empty {
