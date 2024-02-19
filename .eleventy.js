@@ -3,6 +3,7 @@ import pluginBundler from '@11ty/eleventy-plugin-bundle';
 import syntaxHighlightPlugin from '@11ty/eleventy-plugin-syntaxhighlight';
 import eleventyWebcPlugin from '@11ty/eleventy-plugin-webc';
 import dotenvFlow from 'dotenv-flow';
+import path from 'node:path';
 import {
 	lightningCssPlugin,
 	transformCssBundle,
@@ -42,6 +43,10 @@ export default async function (eleventyConfig) {
 			loading: 'lazy',
 			decoding: 'async',
 			sizes: '90vw',
+		},
+		filenameFormat: (id, src, width, format) => {
+			const { name } = path.parse(src);
+			return `${name}-${width}w.${format}`;
 		},
 	});
 	eleventyConfig.addTransform('htmlmin', transformHtmlFile);

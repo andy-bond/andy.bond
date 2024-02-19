@@ -31,5 +31,9 @@ title: Applications
 		> * {
 			aspect-ratio: 16 / 9;
 		}
+
+		@media screen and (max-width: 999px) {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

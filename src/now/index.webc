@@ -7,13 +7,18 @@ title: Now
 
 <article>
 	<section class="now-section">
+		<h1 class="section-header">Now</h1>
+		<p>Here's a bit of what I've been up to lately!</p>
+	</section>
+
+	<section class="now-section">
 		<div class="section-header">
 			<h2>Books</h2>
 			<anchor
 				href="https://app.thestorygraph.com/profile/andy_bond"
 				target="_blank"
 			>
-				View more on <em>The StoryGraph</em>
+				View more on <em>StoryGraph</em>
 			</anchor>
 		</div>
 		<media-grid>
@@ -92,7 +97,7 @@ title: Now
 		flex-direction: row;
 		align-items: center;
 		gap: var(--default-spacing);
-		margin-bottom: var(--default-spacing-half);
+		margin-bottom: var(--default-spacing);
 	}
 
 	.now-section + .now-section {
@@ -105,7 +110,12 @@ title: Now
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: var(--default-spacing-qtr);
 
 		margin-block-start: var(--default-spacing-dbl);
+
+		div {
+			text-align: center;
+		}
 	}
 </style>

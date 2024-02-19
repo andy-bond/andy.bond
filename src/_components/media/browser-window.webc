@@ -26,6 +26,7 @@
 
 		background-color: #33373f;
 		box-shadow: var(--default-shadow-medium);
+		border: 2px solid var(--theme-color-highlight);
 		border-radius: 8px;
 		overflow: hidden;
 	}

@@ -27,7 +27,7 @@ export const PostsByCategory = (collection) => {
 		const categorySlug = `/${POSTS_PATH}/${category}/`;
 
 		const slugs = [categorySlug];
-		for (let i = 0; i < chunks.length; i++) {
+		for (let i = 1; i < chunks.length; i++) {
 			slugs.push(`${categorySlug}page-${i + 1}/`);
 		}
 

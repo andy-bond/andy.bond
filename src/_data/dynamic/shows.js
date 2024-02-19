@@ -33,7 +33,7 @@ export default async function () {
 
 		return shows.slice(0, 8);
 	} catch (error) {
-		console.log('Error: Failed to parse Trakt shows', error);
+		console.log('Error: Failed to parse TMDB shows', error);
 		return [];
 	}
 }

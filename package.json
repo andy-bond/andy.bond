@@ -23,6 +23,7 @@
 		"jsdom": "^24.0.0",
 		"lightningcss": "^1.23.0",
 		"lucide-static": "^0.324.0",
+		"netlify-plugin-cache": "^1.0.3",
 		"rss-parser": "^3.13.0",
 		"uglify-js": "^3.17.4"
 	},

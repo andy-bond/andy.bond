@@ -1,20 +1,22 @@
 <script webc:type="js">
-  const author = this.$data.metadata.author;
-  const title = `${this.$data.title} • ${author}`;
-  const description = this.description ?? '';
+	const author = this.$data.metadata.author;
+	const title = `${this.$data.title} • ${author}`;
+	const description = this.description ?? '';
 
-  const opengraphFallbackImage = encodeURIComponent(
-    `${this.$data.metadata.url}/opengraph`
-  );
-  const opengraph =
-    this.opengraphImageUrl ?? `${opengraphFallbackImage}/opengraph`;
+	const url = this.$data.page.url;
+	const isPost = this.$data.tags?.includes('posts');
+	const slug = url.slice(1, -1).replaceAll('/', '-');
 
-  `
+	const path = isPost
+		? `/static/img/social-preview/${slug}-preview.svg`
+		: `/static/img/social-preview/default-preview.svg`;
+
+	`
     <meta property="og:title" content="${title}">
   	<meta name="description" property="og:description" content="${description}">
   	<meta name="author" content="${author}">
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="${this.page.url}"/>
-    <meta property="og:image" content="${opengraph}"/>
+    <meta property="og:url" content="${url}"/>
+    <meta property="og:image" content="${path}"/>
   `;
 </script>

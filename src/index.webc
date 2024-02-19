@@ -4,21 +4,41 @@ title: Home
 description: "Andy Bond's personal website. Blog posts, photos, and more!"
 ---
 
-<article class="homepage">
-	<!-- Intro -->
-	<introduction></introduction>
+<div class="homepage-section full-bleed">
+	<div class="container">
+		<introduction class="mx-1"></introduction>
+	</div>
+	<wavy-divider class="top"></wavy-divider>
+</div>
 
-	<!-- Posts List -->
-	<posts></posts>
+<div class="homepage-section alternate full-bleed">
+	<div class="container">
+		<posts class="mx-1"></posts>
+	</div>
+</div>
 
-	<!-- Photos from Pixelfed -->
-	<photos></photos>
-</article>
+<div class="homepage-section full-bleed">
+	<wavy-divider class="bottom"></wavy-divider>
+	<div class="container">
+		<photos class="mx-1"></photos>
+	</div>
+</div>
 
 <style webc:keep>
-	.homepage {
-		display: flex;
-		flex-direction: column;
-		gap: var(--default-spacing-dbl);
+	.homepage-section .container {
+		padding-block: var(--default-spacing-dbl);
+	}
+
+	.homepage-section.alternate {
+		background-color: var(--theme-color-background-secondary);
+		transition: background-color var(--default-transition);
+
+		.container {
+			padding-block: calc(var(--default-spacing-dbl) + 4rem);
+		}
+	}
+
+	.mx-1 {
+		margin-inline: var(--default-spacing);
 	}
 </style>

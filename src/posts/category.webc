@@ -28,7 +28,7 @@
 	<post-card webc:for="post of category.items" :@post="post"></post-card>
 </div>
 
-<paginator :@paginator="$data.pagination"></paginator>
+<paginator :@paginator="category"></paginator>
 
 <style webc:keep>
 	.post-container {
