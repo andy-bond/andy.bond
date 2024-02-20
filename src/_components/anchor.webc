@@ -3,6 +3,9 @@
 	<div webc:if="!minimal" class="anchor-text">
 		<slot></slot>
 	</div>
+	<div webc:if="minimal" class="visually-hidden">
+		<slot></slot>
+	</div>
 	<icon webc:if="target === '_blank' && !minimal" name="external-link"></icon>
 </a>
 

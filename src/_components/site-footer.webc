@@ -15,7 +15,7 @@
 						target="_blank"
 						:href="item.url"
 						:@icon="item.icon"
-						@text="item.text"
+						@text="item.label + ' link: ' + item.text"
 						@minimal="true"
 					>
 					</anchor>

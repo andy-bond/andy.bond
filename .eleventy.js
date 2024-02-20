@@ -42,7 +42,7 @@ export default async function (eleventyConfig) {
 		defaultAttributes: {
 			loading: 'lazy',
 			decoding: 'async',
-			sizes: '90vw',
+			sizes: '100vw',
 		},
 		filenameFormat: (id, src, width, format) => {
 			const { name } = path.parse(src);

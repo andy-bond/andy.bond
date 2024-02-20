@@ -29,11 +29,12 @@
 				},
 			]
 				.map((link) => {
-					const attr =
-						link.href && link.href !== this.$data.page.url
-							? `title="${link.title}" href="${link.href}"`
-							: '';
-					return `<li><a ${attr}><icon name="${link.icon}"></icon></a></li>`;
+					const isLink = link.href && link.href !== this.$data.page.url;
+					const tag = isLink ? 'a' : 'div';
+					const attr = isLink
+						? `title="${link.title}" href="${link.href}"`
+						: '';
+					return `<li><${tag} ${attr}><icon name="${link.icon}"></icon></${tag}></li>`;
 				})
 				.join('');
 		</script>
@@ -112,23 +113,23 @@
 		@media only screen and (max-width: 399px) {
 			flex-grow: 1;
 		}
-	}
 
-	a {
-		padding: var(--default-spacing);
-		display: flex;
-		flex-direction: row;
-		gap: var(--default-spacing-half);
-		align-items: center;
-		justify-content: center;
-		height: 100%;
+		:is(a, div) {
+			padding: var(--default-spacing);
+			display: flex;
+			flex-direction: row;
+			gap: var(--default-spacing-half);
+			align-items: center;
+			justify-content: center;
+			height: 100%;
 
-		&:not([href]) {
-			color: var(--theme-color-text-secondary);
-		}
+			&:not([href]) {
+				color: var(--theme-color-text-secondary);
+			}
 
-		@media only screen and (max-width: 399px) {
-			width: 100%;
+			@media only screen and (max-width: 399px) {
+				width: 100%;
+			}
 		}
 	}
 </style>

@@ -1,6 +1,11 @@
 <a webc:root="override" @attributes="({ href: media.link, target: '_blank' })">
 	<div class="media-cover">
-		<img :src="media.image" :title="media.label" :alt="media.label" />
+		<img
+			sizes="(max-width: 499px) 1200px, 600px"
+			:src="media.image"
+			:title="media.label"
+			:alt="media.label"
+		/>
 	</div>
 </a>
 

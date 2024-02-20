@@ -1,8 +1,10 @@
 <section webc:root="override" class="introduction">
 	<div class="intro-image">
 		<img
+			sizes="(max-width: 499px) 1200px, 600px"
 			src="/static/img/andy-kayla-cropped.jpg"
 			alt="Picture of Andy & Kayla"
+			loading="eager"
 		/>
 	</div>
 	<div class="intro-contents">
@@ -31,6 +33,7 @@
 		flex-direction: column;
 		align-items: center;
 		align-self: center;
+		flex-shrink: 0;
 
 		overflow: hidden;
 		border-radius: var(--default-border-radius);

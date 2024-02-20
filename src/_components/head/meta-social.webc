@@ -1,7 +1,8 @@
 <script webc:type="js">
 	const author = this.$data.metadata.author;
 	const title = `${this.$data.title} • ${author}`;
-	const description = this.description ?? '';
+	const description =
+		this.description ?? `Andy Bond's personal website and blog.`;
 
 	const url = this.$data.page.url;
 	const isPost = this.$data.tags?.includes('posts');
