@@ -45,7 +45,7 @@ export function getBrowsersList() {
 export function isProduction() {
 	return (
 		process.env.ELEVENTY_RUN_MODE === 'build' &&
-		process.env.NODE_ENV === 'production'
+		process.env.SITE_ENV === 'production'
 	);
 }
 

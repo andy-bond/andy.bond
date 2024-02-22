@@ -3,6 +3,8 @@ import pluginBundler from '@11ty/eleventy-plugin-bundle';
 import syntaxHighlightPlugin from '@11ty/eleventy-plugin-syntaxhighlight';
 import eleventyWebcPlugin from '@11ty/eleventy-plugin-webc';
 import dotenvFlow from 'dotenv-flow';
+import EleventyPluginOgImage from 'eleventy-plugin-og-image';
+import fs from 'node:fs';
 import path from 'node:path';
 import {
 	lightningCssPlugin,
@@ -50,6 +52,27 @@ export default async function (eleventyConfig) {
 		},
 	});
 	eleventyConfig.addTransform('htmlmin', transformHtmlFile);
+
+	eleventyConfig.addPlugin(EleventyPluginOgImage, {
+		outputDir: '_site/static/img/social-preview',
+		urlPath: '/static/img/social-preview',
+		satoriOptions: {
+			fonts: [
+				{
+					name: 'Poppins',
+					data: fs.readFileSync('src/static/fonts/poppins-v19-latin-700.woff'),
+					weight: 700,
+					style: 'normal',
+				},
+				{
+					name: 'Poppins',
+					data: fs.readFileSync('src/static/fonts/poppins-v19-latin-500.woff'),
+					weight: 500,
+					style: 'normal',
+				},
+			],
+		},
+	});
 
 	return {
 		dir: {

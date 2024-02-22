@@ -10,7 +10,7 @@
 		"eleventy:serve": "eleventy --serve",
 		"eleventy:build": "eleventy"
 	},
-	"dependencies": {
+	"devDependencies": {
 		"@11ty/eleventy": "3.0.0-alpha.5",
 		"@11ty/eleventy-fetch": "^4.0.0",
 		"@11ty/eleventy-img": "^4.0.2",
@@ -19,6 +19,7 @@
 		"@11ty/eleventy-plugin-webc": "^0.11.2",
 		"browserslist": "^4.22.3",
 		"dotenv-flow": "^4.1.0",
+		"eleventy-plugin-og-image": "^3.2.0-beta.4",
 		"html-minifier": "^4.0.0",
 		"jsdom": "^24.0.0",
 		"lightningcss": "^1.23.0",

@@ -1,5 +1,6 @@
 ---
 layout: default
+socialPreviewTemplate: 'social-preview/post.og.njk'
 ---
 
 <breadcrumbs></breadcrumbs>

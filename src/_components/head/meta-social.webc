@@ -10,16 +10,29 @@
 
 	const domain = this.$data.metadata.url;
 
-	const path = isPost
-		? `${domain}/static/img/social-preview/${slug}-preview.svg`
-		: `${domain}/static/img/social-preview/default-preview.svg`;
+	let date;
+	if (this.$data.date) {
+		const pageDate = new Date(this.$data.page.date);
+		const formatter = new Intl.DateTimeFormat('en-US', {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+		});
+		date = formatter.format(date);
+	}
 
-	`
+	const ogTemplate =
+		this.$data.socialPreviewTemplate ?? 'social-preview/default.og.njk';
+	const ogData = { title: this.$data.title, date };
+
+	this.ogImage(ogTemplate, ogData).then((img) => {
+		return `
     <meta property="og:title" content="${title}">
   	<meta name="description" property="og:description" content="${description}">
   	<meta name="author" content="${author}">
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="${domain}${url}"/>
-    <meta property="og:image" content="${path}"/>
+		${img}
   `;
+	});
 </script>
