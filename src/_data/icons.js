@@ -19,13 +19,16 @@ import {
 import { Angular } from '../static/icons/angular.js';
 import { CSharp } from '../static/icons/csharp.js';
 import { CSS } from '../static/icons/css.js';
+import { Cypress } from '../static/icons/cypress.js';
 import { DotNetCore } from '../static/icons/dotnet-core.js';
 import { Eleventy } from '../static/icons/eleventy.js';
 import { GitHub } from '../static/icons/github.js';
 import { HTML } from '../static/icons/html.js';
 import { JavaScript } from '../static/icons/javascript.js';
+import { Jest } from '../static/icons/jest.js';
 import { LinkedIn } from '../static/icons/linkedin.js';
 import { Mastodon } from '../static/icons/mastodon.js';
+import { NgRx } from '../static/icons/ngrx.js';
 import { RxJs } from '../static/icons/rxjs.js';
 import { SQL } from '../static/icons/sql.js';
 import { TypeScript } from '../static/icons/typescript.js';
@@ -63,6 +66,9 @@ export default async function () {
 		['custom-rxjs']: RxJs,
 		['custom-sql']: SQL,
 		['custom-typescript']: TypeScript,
+		['custom-ngrx']: NgRx,
+		['custom-jest']: Jest,
+		['custom-cypress']: Cypress,
 	};
 
 	return {

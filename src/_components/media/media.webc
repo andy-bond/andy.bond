@@ -14,25 +14,45 @@
 		height: 100%;
 		width: 100%;
 
+		outline-offset: 0px;
 		border-radius: var(--default-border-radius);
 		box-shadow: var(--default-shadow-medium);
 		overflow: hidden;
 	}
 
 	:host:is(:hover, :focus-visible) {
-		outline-offset: 0px;
-
-		.media-cover {
-			transform: scale(1.2);
+		@media (prefers-reduced-motion: no-preference) {
+			.media-cover::after {
+				left: 120% !important;
+				opacity: 0.5 !important;
+			}
 		}
 	}
 
 	.media-cover {
-		transition: transform var(--default-transition);
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
 		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -120%;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			background: linear-gradient(
+				120deg,
+				transparent,
+				rgba(255, 255, 255, 0.4),
+				transparent
+			);
+			transform: skew(8deg);
+			transition: left 650ms;
+			pointer-events: none;
+		}
 	}
 
 	img {

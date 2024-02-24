@@ -1,6 +1,5 @@
 <!--- Inspired by Zach Leatherman's <browser-window> Component --->
 <!--- Source: https://www.zachleat.com/web/browser-window/ --->
-
 <div class="browser-title-bar">
 	<div class="browser-buttons">
 		<span class="red"></span>
@@ -64,7 +63,7 @@
 	.browser-url {
 		flex-grow: 1;
 		text-align: center;
-		margin-inline: 1em;
+		margin-inline: var(--default-spacing);
 		padding: 4px;
 		margin-block: -4px;
 		background-color: rgba(255, 255, 255, 0.063);

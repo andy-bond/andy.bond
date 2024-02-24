@@ -39,12 +39,6 @@
 		font-size: 2em;
 	}
 
-	hr {
-		border: none;
-		border-top: 1px solid var(--theme-color-highlight);
-		margin: 0;
-	}
-
 	picture,
 	img {
 		height: auto;
@@ -377,6 +371,13 @@
 	body :not(pre) > code[class*='language-'],
 	body pre[class*='language-'] {
 		border: none;
+	}
+
+	/* Horizontal Rules (for use in markdown) */
+	hr {
+		border: none;
+		border-top: 4px dotted var(--theme-color-highlight);
+		margin: var(--default-spacing-half) 0;
 	}
 
 	/* Outlines */

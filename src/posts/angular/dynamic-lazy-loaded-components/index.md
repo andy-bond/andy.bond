@@ -6,11 +6,21 @@ date: 2022-03-17
 prism: true
 ---
 
+## Update 2/24/2024
+
+Just wanted to call out that this article was written before Angular released the new Control Flow syntax & Defer syntax.
+
+If you are on a more modern version of Angular, you may find it easier to do a big `@switch` with `@defer` to load each of your widgets!
+
+---
+
 ## Update 3/27/2022
 
 Removed the compiler dependency in the `lazyWidget` directive - Thanks to [@profanis on GitHub](https://github.com/andy-bond/widget-dashboard-demo/issues/1) for pointing this out!
 
 Also added a "fancy" dashboard to show how you can make a user customizable dashboard using this technique - just add the ability for a user to save their configuration and you'll have a pretty sweet setup! 😎
+
+---
 
 ## TLDR;
 
@@ -99,7 +109,7 @@ export class LazyWidgetDirective implements AfterViewInit {
 
   constructor(
     private viewContainerRef: ViewContainerRef,
-    @Inject(WIDGET_CONFIGURATION) private widgetConfiguration: WidgetConfiguration
+		@Inject(WIDGET_CONFIGURATION) private widgetConfiguration: WidgetConfiguration
   ) {
     this.viewContainerRef.createComponent(WidgetLoadingComponent);
   }

@@ -6,7 +6,10 @@
 	<div webc:if="minimal" class="visually-hidden">
 		<slot></slot>
 	</div>
-	<icon webc:if="target === '_blank' && !minimal" name="external-link"></icon>
+	<icon
+		webc:if="target === '_blank' && !(inline || minimal)"
+		name="external-link"
+	></icon>
 </a>
 
 <style webc:scoped>
@@ -14,6 +17,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: var(--default-spacing-qtr);
+		flex-wrap: wrap;
 	}
 
 	.anchor-text:empty {

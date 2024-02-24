@@ -74,6 +74,11 @@ export default async function (eleventyConfig) {
 		},
 	});
 
+	/* Dev Server */
+	eleventyConfig.setServerOptions({
+		domDiff: false,
+	});
+
 	return {
 		dir: {
 			input: 'src',

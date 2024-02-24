@@ -35,6 +35,13 @@
 </script>
 
 <style webc:scoped>
+	:host:has(a) {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		align-self: flex-start;
+	}
+
 	:host:not(:has(a)),
 	:host:has(a) a {
 		display: flex;
@@ -45,10 +52,16 @@
 		padding: var(--default-spacing-qtr) var(--default-spacing-half);
 		border-radius: var(--default-border-radius);
 		border: 1px solid var(--theme-color-title);
+		transition: background-color var(--default-transition),
+			color var(--default-transition), border-color var(--default-transition);
 	}
 
 	:host:has(a) a {
 		text-decoration: none;
+
+		&:is(:hover, :focus-visible) {
+			box-shadow: var(--default-shadow-small);
+		}
 
 		&[aria-current='page'] {
 			background-color: var(--theme-color-title);

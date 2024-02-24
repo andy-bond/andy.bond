@@ -105,6 +105,10 @@
 			"icon": "custom-angular"
 		},
 		{
+			"name": "NgRx",
+			"icon": "custom-ngrx"
+		},
+		{
 			"name": "RxJS",
 			"icon": "custom-rxjs"
 		},
@@ -123,6 +127,14 @@
 		{
 			"name": "JavaScript",
 			"icon": "custom-javascript"
+		},
+		{
+			"name": "Jest",
+			"icon": "custom-jest"
+		},
+		{
+			"name": "Cypress",
+			"icon": "custom-cypress"
 		},
 		{
 			"name": "C#",

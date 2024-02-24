@@ -5,13 +5,18 @@ title: Now
 
 <breadcrumbs></breadcrumbs>
 
-<article>
-	<section class="now-section">
-		<h1 class="section-header">Now</h1>
+<section class="now-section full-bleed">
+	<div class="container">
+		<div class="section-header">
+			<h1>Now</h1>
+		</div>
 		<p>Here's a bit of what I've been up to lately!</p>
-	</section>
+	</div>
+	<wavy-divider class="top"></wavy-divider>
+</section>
 
-	<section class="now-section">
+<section class="now-section full-bleed alternate">
+	<div class="container">
 		<div class="section-header">
 			<h2>Books</h2>
 			<anchor
@@ -24,9 +29,12 @@ title: Now
 		<media-grid>
 			<media webc:for="book of $data.dynamic.books" :@media="book"></media>
 		</media-grid>
-	</section>
+	</div>
+</section>
 
-	<section class="now-section">
+<section class="now-section full-bleed">
+	<wavy-divider class="bottom"></wavy-divider>
+	<div class="container">
 		<div class="section-header">
 			<h2>Movies</h2>
 			<anchor
@@ -39,9 +47,12 @@ title: Now
 		<media-grid>
 			<media webc:for="movie of $data.dynamic.movies" :@media="movie"></media>
 		</media-grid>
-	</section>
+	</div>
+	<wavy-divider class="top"></wavy-divider>
+</section>
 
-	<section class="now-section">
+<section class="now-section alternate full-bleed">
+	<div class="container">
 		<div class="section-header">
 			<h2>TV</h2>
 			<anchor
@@ -54,9 +65,12 @@ title: Now
 		<media-grid>
 			<media webc:for="show of $data.dynamic.shows" :@media="show"></media>
 		</media-grid>
-	</section>
+	</div>
+</section>
 
-	<section class="now-section">
+<section class="now-section full-bleed">
+	<wavy-divider class="bottom"></wavy-divider>
+	<div class="container">
 		<div class="section-header">
 			<h2>Games</h2>
 			<anchor
@@ -69,41 +83,64 @@ title: Now
 		<media-grid>
 			<media webc:for="game of $data.dynamic.games" :@media="game"></media>
 		</media-grid>
-	</section>
+	</div>
+</section>
 
-	<small class="what-is-this">
-		<div>
-			This is a
-			<anchor href="https://nownownow.com/about" target="_blank"
-				>now page</anchor
-			>, and if you have your own site,
-			<anchor href="https://nownownow.com/about" target="_blank"
-				>you should make one too</anchor
-			>.
-		</div>
-		<div>
-			Thanks to
-			<anchor href="https://coryd.dev/now" target="_blank"
-				>Cory Dransfeldt</anchor
-			>
-			for introducing me to this concept!
-		</div>
-	</small>
-</article>
+<small class="what-is-this">
+	<div>
+		This is a
+		<anchor href="https://nownownow.com/about" target="_blank" @inline="true"
+			>now page</anchor
+		>, and if you have your own site
+		<anchor href="https://nownownow.com/about" target="_blank" @inline="true"
+			>you should make one too</anchor
+		>.
+	</div>
+	<div>
+		Thanks to
+		<anchor href="https://coryd.dev/now" target="_blank" @inline="true"
+			>Cory Dransfeldt</anchor
+		>
+		for introducing me to this concept!
+	</div>
+</small>
 
 <style webc:keep>
+	.now-section {
+		h1 {
+			font-size: 2em;
+		}
+
+		&:first-of-type {
+			.container {
+				padding-block-start: 0;
+			}
+		}
+
+		&.alternate {
+			background-color: var(--theme-color-background-secondary);
+			transition: background-color var(--default-transition);
+
+			.container {
+				padding-block: calc(var(--default-spacing-dbl) + 4rem);
+			}
+		}
+
+		.container {
+			padding-block: var(--default-spacing-dbl);
+
+			> * {
+				margin-inline: var(--default-spacing);
+			}
+		}
+	}
+
 	.section-header {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		gap: var(--default-spacing);
 		margin-bottom: var(--default-spacing);
-	}
-
-	.now-section + .now-section {
-		border-top: 1px solid var(--theme-color-highlight);
-		padding-top: var(--default-spacing);
-		margin-top: var(--default-spacing-dbl);
 	}
 
 	.what-is-this {

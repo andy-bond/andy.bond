@@ -30,11 +30,15 @@ title: Applications
 		gap: var(--default-spacing);
 
 		> * {
-			aspect-ratio: 16 / 9;
+			aspect-ratio: 16 / 12;
 		}
 
 		@media screen and (max-width: 999px) {
 			grid-template-columns: 1fr;
+
+			> * {
+				aspect-ratio: 1 / 1;
+			}
 		}
 	}
 </style>

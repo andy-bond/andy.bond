@@ -103,13 +103,13 @@ title: Résumé
 
 <style webc:scoped>
 	.resume {
-		gap: 2em;
+		gap: var(--default-spacing-dbl);
 	}
 
 	.heading {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5em;
+		gap: var(--default-spacing);
 	}
 
 	.pronouns {
@@ -125,26 +125,26 @@ title: Résumé
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		gap: 1em;
+		gap: var(--default-spacing);
 	}
 
 	section > h2 {
-		margin-bottom: 0.5em;
+		margin-bottom: var(--default-spacing-half);
 	}
 
 	.timeline {
 		list-style: none;
-		margin: 1em 0 0 1em;
+		margin: var(--default-spacing) 0 0 var(--default-spacing);
 		padding: 0;
 		border-left: 2px solid var(--theme-color-highlight);
 	}
 
 	.timeline-item {
 		position: relative;
-		padding-left: 2em;
+		padding-left: var(--default-spacing-dbl);
 
 		& + .timeline-item {
-			margin-top: 2em;
+			margin-top: var(--default-spacing-dbl);
 		}
 
 		& .occurrence {
@@ -152,16 +152,17 @@ title: Résumé
 		}
 
 		& .summary {
-			margin-top: 1em;
-			padding-left: 1.25em;
+			margin-top: var(--default-spacing);
+			padding-left: var(--default-spacing-plus-qtr);
 		}
 
 		&::before {
+			--marker-size: calc(var(--default-spacing) + 3px);
 			position: absolute;
 			content: '';
 			display: block;
-			height: 1em;
-			width: 1em;
+			height: var(--marker-size);
+			width: var(--marker-size);
 			background-color: var(--theme-color-title);
 			top: 0;
 			left: 0;
@@ -174,7 +175,7 @@ title: Résumé
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		gap: 0.5em;
+		gap: var(--default-spacing-half);
 		padding: 0;
 		list-style-type: none;
 
@@ -182,8 +183,8 @@ title: Résumé
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			gap: 0.5em;
-			padding: 0.5em;
+			gap: var(--default-spacing-half);
+			padding: var(--default-spacing-half);
 			border-radius: var(--default-border-radius);
 			border: 1px solid var(--theme-color-highlight);
 		}
@@ -210,7 +211,7 @@ title: Résumé
 			padding: 0;
 			background-color: white;
 			color: black;
-			gap: 1em !important;
+			gap: var(--default-spacing) !important;
 
 			& .contact-information a {
 				color: black;
@@ -222,14 +223,14 @@ title: Résumé
 			}
 
 			& .timeline {
-				margin: 0.5em 0 0 0;
+				margin: var(--default-spacing-half) 0 0 0;
 				border-left: none;
 
 				& .timeline-item {
 					padding-left: 0;
 
 					& + .timeline-item {
-						margin-top: 1em;
+						margin-top: var(--default-spacing);
 					}
 
 					&::before {
@@ -244,7 +245,7 @@ title: Résumé
 				list-style-type: circle;
 
 				& li {
-					margin-left: 1.25em;
+					margin-left: var(--default-spacing-plus-half);
 					border: none !important;
 					padding: 0 !important;
 				}

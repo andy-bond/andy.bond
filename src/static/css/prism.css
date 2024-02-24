@@ -61,7 +61,6 @@ pre[class*='language-'] {
 	background: var(--syntax-bg);
 	color: var(--syntax-fg);
 	border-radius: var(--default-border-radius);
-	box-shadow: var(--deafult-shadow-small);
 
 	text-shadow: var(--text-shadow);
 	font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono',
