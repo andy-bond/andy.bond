@@ -368,8 +368,8 @@
 	}
 
 	/* Syntax Highlighting*/
-	body :not(pre) > code[class*='language-'],
-	body pre[class*='language-'] {
+	:not(pre) > code[class*='language-'],
+	pre[class*='language-'] {
 		border: none;
 	}
 

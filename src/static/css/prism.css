@@ -1,15 +1,15 @@
 /* One Dark/Light Theme for Prism */
-:root pre {
+:root :is(pre, :not(pre) > code) {
 	--mono-1: hsl(230, 8%, 24%);
 	--mono-2: hsl(230, 6%, 44%);
-	--mono-3: hsl(230, 4%, 64%);
+	--mono-3: hsl(0, 0%, 44%);
 	--hue-1: hsl(198, 99%, 37%);
-	--hue-2: hsl(221, 87%, 60%);
+	--hue-2: hsl(221, 67%, 54%);
 	--hue-3: hsl(301, 63%, 40%);
-	--hue-4: hsl(119, 34%, 47%);
+	--hue-4: hsl(120, 31%, 33%);
 	--hue-5: hsl(5, 74%, 59%);
 	--hue-5-2: hsl(344, 84%, 43%);
-	--hue-6: hsl(35, 99%, 36%);
+	--hue-6: hsl(35, 98%, 32%);
 	--hue-6-2: hsl(35, 99%, 40%);
 	--syntax-fg: hsl(230, 8%, 24%);
 	--syntax-bg: hsl(230, 1%, 98%);
@@ -27,10 +27,10 @@
 	--diff-inserted-2: hsla(135, 73%, 55%, 0.25);
 }
 
-.theme-dark pre {
+.theme-dark :is(pre, :not(pre) > code) {
 	--mono-1: hsl(220, 14%, 71%);
 	--mono-2: hsl(220, 9%, 55%);
-	--mono-3: hsl(220, 10%, 40%);
+	--mono-3: hsl(224, 9%, 60%);
 	--hue-1: hsl(187, 47%, 55%);
 	--hue-2: hsl(207, 82%, 66%);
 	--hue-3: hsl(286, 60%, 67%);
@@ -40,7 +40,7 @@
 	--hue-6: hsl(29, 54%, 61%);
 	--hue-6-2: hsl(39, 67%, 69%);
 	--syntax-fg: hsl(220, 14%, 71%);
-	--syntax-bg: hsl(220, 13%, 18%);
+	--syntax-bg: hsl(224, 13%, 17%);
 	--syntax-gutter: hsl(220, 14%, 45%);
 	--syntax-guide: hsla(220, 14%, 71%, 0.15);
 	--syntax-accent: hsl(220, 100%, 66%);
@@ -73,6 +73,9 @@ pre[class*='language-'] {
 	line-height: 1.5;
 	tab-size: 2;
 	hyphens: none;
+
+	transition: background-color var(--default-transition),
+		color var(--default-transition);
 }
 
 /* Selection */
@@ -115,12 +118,14 @@ pre[class*='language-'] {
 .token.prolog,
 .token.cdata {
 	color: var(--mono-3);
+	transition: color var(--default-transition);
 }
 
 .token.doctype,
 .token.punctuation,
 .token.entity {
 	color: var(--syntax-fg);
+	transition: color var(--default-transition);
 }
 
 .token.attr-name,
@@ -130,10 +135,12 @@ pre[class*='language-'] {
 .token.number,
 .token.atrule {
 	color: var(--hue-6);
+	transition: color var(--default-transition);
 }
 
 .token.keyword {
 	color: var(--hue-3);
+	transition: color var(--default-transition);
 }
 
 .token.property,
@@ -142,6 +149,7 @@ pre[class*='language-'] {
 .token.deleted,
 .token.important {
 	color: var(--hue-5);
+	transition: color var(--default-transition);
 }
 
 .token.selector,
@@ -153,50 +161,60 @@ pre[class*='language-'] {
 .token.attr-value,
 .token.attr-value > .token.punctuation {
 	color: var(--hue-4);
+	transition: color var(--default-transition);
 }
 
 .token.variable,
 .token.operator,
 .token.function {
 	color: var(--hue-2);
+	transition: color var(--default-transition);
 }
 
 .token.url {
 	color: var(--hue-1);
+	transition: color var(--default-transition);
 }
 
 /* HTML overrides */
 .token.attr-value > .token.punctuation.attr-equals,
 .token.special-attr > .token.attr-value > .token.value.css {
 	color: var(--syntax-fg);
+	transition: color var(--default-transition);
 }
 
 /* CSS overrides */
 .language-css .token.selector {
 	color: var(--hue-5);
+	transition: color var(--default-transition);
 }
 
 .language-css .token.property {
 	color: var(--syntax-fg);
+	transition: color var(--default-transition);
 }
 
 .language-css .token.function,
 .language-css .token.url > .token.function {
 	color: var(--hue-1);
+	transition: color var(--default-transition);
 }
 
 .language-css .token.url > .token.string.url {
 	color: var(--hue-4);
+	transition: color var(--default-transition);
 }
 
 .language-css .token.important,
 .language-css .token.atrule .token.rule {
 	color: var(--hue-3);
+	transition: color var(--default-transition);
 }
 
 /* JS overrides */
 .language-javascript .token.operator {
 	color: var(--hue-3);
+	transition: color var(--default-transition);
 }
 
 .language-javascript
@@ -204,15 +222,18 @@ pre[class*='language-'] {
 	> .token.interpolation
 	> .token.interpolation-punctuation.punctuation {
 	color: var(--hue-5-2);
+	transition: color var(--default-transition);
 }
 
 /* JSON overrides */
 .language-json .token.operator {
 	color: var(--syntax-fg);
+	transition: color var(--default-transition);
 }
 
 .language-json .token.null.keyword {
 	color: var(--hue-6);
+	transition: color var(--default-transition);
 }
 
 /* MD overrides */
@@ -220,33 +241,40 @@ pre[class*='language-'] {
 .language-markdown .token.url > .token.operator,
 .language-markdown .token.url-reference.url > .token.string {
 	color: var(--syntax-fg);
+	transition: color var(--default-transition);
 }
 
 .language-markdown .token.url > .token.content {
 	color: var(--hue-2);
+	transition: color var(--default-transition);
 }
 
 .language-markdown .token.url > .token.url,
 .language-markdown .token.url-reference.url {
 	color: var(--hue-1);
+	transition: color var(--default-transition);
 }
 
 .language-markdown .token.blockquote.punctuation,
 .language-markdown .token.hr.punctuation {
 	color: var(--mono-3);
 	font-style: italic;
+	transition: color var(--default-transition);
 }
 
 .language-markdown .token.code-snippet {
 	color: var(--hue-4);
+	transition: color var(--default-transition);
 }
 
 .language-markdown .token.bold .token.content {
 	color: var(--hue-6);
+	transition: color var(--default-transition);
 }
 
 .language-markdown .token.italic .token.content {
 	color: var(--hue-3);
+	transition: color var(--default-transition);
 }
 
 .language-markdown .token.strike .token.content,
@@ -254,6 +282,7 @@ pre[class*='language-'] {
 .language-markdown .token.list.punctuation,
 .language-markdown .token.title.important > .token.punctuation {
 	color: var(--hue-5);
+	transition: color var(--default-transition);
 }
 
 /* General */
@@ -281,18 +310,22 @@ pre[class*='language-'] {
 /* Taken from https://github.com/atom/github/blob/master/styles/variables.less */
 .token.deleted:not(.prefix) {
 	background-color: var(--diff-removed-1);
+	transition: background-color var(--default-transition);
 }
 
 .token.deleted:not(.prefix)::selection,
 .token.deleted:not(.prefix) *::selection {
 	background-color: var(--diff-removed-2);
+	transition: background-color var(--default-transition);
 }
 
 .token.inserted:not(.prefix) {
 	background-color: var(--diff-inserted-1);
+	transition: background-color var(--default-transition);
 }
 
 .token.inserted:not(.prefix)::selection,
 .token.inserted:not(.prefix) *::selection {
 	background-color: var(--diff-inserted-2);
+	transition: background-color var(--default-transition);
 }
