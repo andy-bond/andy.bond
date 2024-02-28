@@ -36,7 +36,7 @@ function parseGamesPageDom(text, current) {
 export default async function () {
 	try {
 		const gamesText = await EleventyFetch(gamesUrl, {
-			duration: '1d',
+			duration: '4h',
 			type: 'text',
 		});
 

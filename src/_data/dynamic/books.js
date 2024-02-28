@@ -7,6 +7,12 @@ const finishedUrl = `${appUrl}/books-read/andy_bond`;
 
 function parseBookDom(bookNode) {
 	const cover = bookNode.querySelector('.book-cover > a');
+	const title = bookNode.querySelector(
+		'.book-title-author-and-series a[href^="/books/"]'
+	).textContent;
+	const author = bookNode.querySelector(
+		'.book-title-author-and-series a[href^="/authors/"]'
+	).textContent;
 	const imageNode = cover.querySelector('img');
 
 	const link = appUrl + cover.getAttribute('href');
@@ -17,6 +23,8 @@ function parseBookDom(bookNode) {
 		label,
 		link,
 		image,
+		title,
+		author,
 	};
 }
 
@@ -37,11 +45,11 @@ function parseBookPageDom(text, current) {
 export default async function () {
 	try {
 		const currentlyReadingText = await EleventyFetch(currentUrl, {
-			duration: '1d',
+			duration: '4h',
 			type: 'text',
 		});
 		const finishedReadingText = await EleventyFetch(finishedUrl, {
-			duration: '1d',
+			duration: '4h',
 			type: 'text',
 		});
 

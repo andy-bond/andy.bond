@@ -9,11 +9,30 @@
 	</div>
 	<div class="intro-contents">
 		<h1>👋 Hi, I'm Andy Bond!</h1>
-		<ul>
-			<li>I'm a Senior Software Engineer at Cisco</li>
-			<li>I love to travel with my wife, Kayla</li>
-			<li>I enjoy reading, playing video games, and watching movies</li>
-		</ul>
+		<div class="intro-contents-description">
+			<p>
+				I'm a Senior Software Engineer @ Cisco where I build top-notch user
+				experiences using Angular.
+			</p>
+			<p>
+				I live in Kissimmee, Florida with my lovely wife, Kayla, and my pup,
+				Nyx.
+			</p>
+			<hr />
+			<p>
+				<template
+					webc:nokeep
+					@text="$data.dynamic.books[0].current ? 'I am currently reading' : 'I just finished reading'"
+				></template>
+				<em @text="$data.dynamic.books[0].title"></em>, have recently watched
+				<em @text="$data.dynamic.movies[0].label"></em>, and gave
+				<em @text="$data.dynamic.games[0].label"></em> a shot!
+			</p>
+			<p>
+				If you want to see what else I've been up to, head over to my
+				<a href="/now">Now</a> page.
+			</p>
+		</div>
 	</div>
 </section>
 
@@ -23,7 +42,7 @@
 		flex-direction: row;
 		gap: var(--default-spacing-dbl);
 
-		@media screen and (max-width: 599px) {
+		@media screen and (max-width: 799px) {
 			flex-direction: column;
 		}
 	}
@@ -51,6 +70,28 @@
 	}
 
 	.intro-contents {
+		--intro-border-color: var(--theme-color-highlight);
+		--intro-border-spacing: var(--default-spacing-dbl);
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing);
+		border-left: 4px dotted var(--intro-border-color);
+		padding-left: var(--intro-border-spacing);
+
+		@media screen and (max-width: 799px) {
+			border-left: none;
+			padding-left: 0;
+			border-top: 4px dotted var(--intro-border-color);
+			padding-top: var(--intro-border-spacing);
+
+			h1 {
+				text-align: center;
+			}
+		}
+	}
+
+	.intro-contents-description {
 		display: flex;
 		flex-direction: column;
 		gap: var(--default-spacing-half);

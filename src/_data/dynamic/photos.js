@@ -6,7 +6,7 @@ export default async function () {
 
 	try {
 		const text = await EleventyFetch(url, {
-			duration: '2h',
+			duration: '4h',
 			type: 'text',
 		});
 

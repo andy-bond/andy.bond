@@ -6,7 +6,7 @@ export default async function () {
 
 	try {
 		const moviesResponse = await EleventyFetch(url, {
-			duration: '1d',
+			duration: '4h',
 			type: 'json',
 			fetchOptions: {
 				headers: {
