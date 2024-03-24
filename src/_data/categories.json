@@ -1,7 +1,7 @@
 {
 	"angular": {
 		"name": "Angular",
-		"icon": "custom-angular"
+		"icon": "simple-icons:angular"
 	},
 	"travel": {
 		"name": "Travel",

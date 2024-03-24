@@ -1,22 +1,22 @@
 <button id="theme-btn" title="Toggle Theme">
-	<icon name="sun"></icon>
-	<icon name="moon"></icon>
+	<icon @icon-name="sun"></icon>
+	<icon @icon-name="moon"></icon>
 </button>
 
 <style webc:scoped>
-	.lucide-sun {
+	.icon-sun {
 		display: block;
 	}
 
-	.lucide-moon {
+	.icon-moon {
 		display: none;
 	}
 
-	:host-context(.theme-dark) .lucide-moon {
+	:host-context(.theme-dark) .icon-moon {
 		display: block;
 	}
 
-	:host-context(.theme-dark) .lucide-sun {
+	:host-context(.theme-dark) .icon-sun {
 		display: none;
 	}
 </style>

@@ -21,7 +21,7 @@ title: Résumé
 					webc:if="item.resume"
 					target="_blank"
 					:href="item.url"
-					:@icon="item.icon"
+					:@icon-name="item.icon"
 					@text="item.text"
 				>
 				</anchor>
@@ -93,7 +93,7 @@ title: Résumé
 			<h2>Skills</h2>
 			<ul class="skills">
 				<li webc:for="skill of $data.resume.skills">
-					<icon webc:if="skill.icon" :name="skill.icon"></icon>
+					<icon :@icon-name="skill.icon"></icon>
 					<div @text="skill.name"></div>
 				</li>
 			</ul>

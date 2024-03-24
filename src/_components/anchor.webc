@@ -1,5 +1,5 @@
 <a webc:root="override" @attributes>
-	<icon webc:if="icon" :name="icon"></icon>
+	<icon webc:if="iconName" :@icon-name="iconName"></icon>
 	<div webc:if="!minimal" class="anchor-text">
 		<slot></slot>
 	</div>
@@ -8,7 +8,7 @@
 	</div>
 	<icon
 		webc:if="target === '_blank' && !(inline || minimal)"
-		name="external-link"
+		@icon-name="external-link"
 	></icon>
 </a>
 

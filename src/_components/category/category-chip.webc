@@ -2,27 +2,27 @@
 	let result = '';
 	const postsPath = '/posts/';
 
-	if (this.name === 'All Posts') {
+	if (this.categoryName === 'All Posts') {
 		const current = this.$data.page.url;
 		const aria = current === postsPath ? ' aria-current="page"' : '';
 
-		result = `<a href="${postsPath}"${aria}>${this.name}</a>`;
+		result = `<a href="${postsPath}"${aria}>${this.categoryName}</a>`;
 	} else {
-		if (!this.name) {
+		if (!this.categoryName) {
 			throw new Error('Error - <category> - @name is required');
 		}
 
-		const category = this.$data.categories[this.name];
+		const category = this.$data.categories[this.categoryName];
 
 		if (!category) {
 			throw new Error('Error - <category> - category not found');
 		}
 
-		const inner = `<icon @name="${category.icon}"></icon><div>${category.name}</div>`;
+		const inner = `<icon @icon-name="${category.icon}"></icon><div>${category.name}</div>`;
 
 		if (this.link === 'true') {
 			const current = this.$data.page.url;
-			const path = `${postsPath}${this.name}/`;
+			const path = `${postsPath}${this.categoryName}/`;
 			const aria = current === path ? ' aria-current="page"' : '';
 
 			result = `<a href="${path}"${aria}>${inner}</a>`;

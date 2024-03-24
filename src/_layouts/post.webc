@@ -9,7 +9,10 @@ socialPreviewTemplate: 'social-preview/post.og.njk'
 	<h1 class="post-heading" @text="title"></h1>
 
 	<div class="post-metadata">
-		<category-chip :@name="$data.category" @link="true"></category-chip>
+		<category-chip
+			:@category-name="$data.category"
+			@link="true"
+		></category-chip>
 		<div class="post-date"><date :@value="$data.date"></date></div>
 	</div>
 

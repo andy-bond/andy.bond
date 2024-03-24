@@ -102,51 +102,51 @@
 	"skills": [
 		{
 			"name": "Angular",
-			"icon": "custom-angular"
+			"icon": "simple-icons:angular"
 		},
 		{
 			"name": "NgRx",
-			"icon": "custom-ngrx"
+			"icon": "simple-icons:ngrx"
 		},
 		{
 			"name": "RxJS",
-			"icon": "custom-rxjs"
+			"icon": "simple-icons:reactivex"
 		},
 		{
 			"name": "HTML",
-			"icon": "custom-html"
+			"icon": "simple-icons:html5"
 		},
 		{
 			"name": "CSS",
-			"icon": "custom-css"
+			"icon": "simple-icons:css3"
 		},
 		{
 			"name": "TypeScript",
-			"icon": "custom-typescript"
+			"icon": "simple-icons:typescript"
 		},
 		{
 			"name": "JavaScript",
-			"icon": "custom-javascript"
+			"icon": "simple-icons:javascript"
 		},
 		{
 			"name": "Jest",
-			"icon": "custom-jest"
+			"icon": "simple-icons:jest"
 		},
 		{
 			"name": "Cypress",
-			"icon": "custom-cypress"
+			"icon": "simple-icons:cypress"
 		},
 		{
 			"name": "C#",
-			"icon": "custom-csharp"
+			"icon": "simple-icons:csharp"
 		},
 		{
 			"name": ".NET Core",
-			"icon": "custom-dotnet-core"
+			"icon": "simple-icons:dotnet"
 		},
 		{
 			"name": "SQL",
-			"icon": "custom-sql"
+			"icon": "simple-icons:microsoftsqlserver"
 		}
 	]
 }

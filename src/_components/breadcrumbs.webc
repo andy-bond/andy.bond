@@ -1,7 +1,9 @@
 <nav webc:root="override">
 	<ul>
 		<li>
-			<anchor href="/" @icon="home" @minimal="true">Link to homepage</anchor>
+			<anchor href="/" @icon-name="home" @minimal="true"
+				>Link to homepage</anchor
+			>
 		</li>
 		<script webc:type="js">
 			const url = this.$data.page.url;

@@ -1,12 +1,14 @@
 <script webc:type="js">
-	const items = [`<li><category-chip @name="All Posts"></category-chip></li>`];
+	const items = [
+		`<li><category-chip @category-name="All Posts"></category-chip></li>`,
+	];
 
 	const keys = Object.keys(this.$data.categories).sort((a, b) =>
 		a.localeCompare(b)
 	);
 	for (const key of keys) {
 		items.push(
-			`<li><category-chip @name="${key}" @link="true"></category-chip></li>`
+			`<li><category-chip @category-name="${key}" @link="true"></category-chip></li>`
 		);
 	}
 

@@ -1,7 +1,7 @@
 <footer webc:root="override">
 	<ul>
 		<li>
-			<icon name="copyright"></icon>&nbsp;
+			<icon @icon-name="copyright"></icon>&nbsp;
 			<template webc:nokeep @text="new Date().getFullYear()"></template>
 			<template webc:nokeep @text="$data.metadata.author"></template>
 		</li>
@@ -14,7 +14,7 @@
 					<anchor
 						target="_blank"
 						:href="item.url"
-						:@icon="item.icon"
+						:@icon-name="item.icon"
 						@text="item.label + ' link: ' + item.text"
 						@minimal="true"
 					>

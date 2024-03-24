@@ -27,7 +27,7 @@
 	</div>
 	<div id="icon-buttons">
 		<a href="/apps" title="Applications">
-			<icon name="flask-conical"></icon>
+			<icon @icon-name="flask-conical"></icon>
 		</a>
 		<theme-toggle></theme-toggle>
 	</div>

@@ -9,7 +9,7 @@
 
 		<p @text="post.data.description"></p>
 
-		<category-chip :@name="post.data.category"></category-chip>
+		<category-chip :@category-name="post.data.category"></category-chip>
 	</card>
 </a>
 

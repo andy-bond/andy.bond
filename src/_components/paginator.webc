@@ -34,7 +34,7 @@
 					const attr = isLink
 						? `title="${link.title}" href="${link.href}"`
 						: '';
-					return `<li><${tag} ${attr}><icon name="${link.icon}"></icon></${tag}></li>`;
+					return `<li><${tag} ${attr}><icon @icon-name="${link.icon}"></icon></${tag}></li>`;
 				})
 				.join('');
 		</script>

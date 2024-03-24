@@ -1,5 +1,5 @@
 <button title="Back to Top" id="back-to-top-btn">
-	<icon name="arrow-up"></icon>
+	<icon @icon-name="arrow-up"></icon>
 </button>
 
 <style webc:scoped>

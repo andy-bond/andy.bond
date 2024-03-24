@@ -18,7 +18,7 @@
 	{
 		"url": "https://github.com/andy-bond",
 		"text": "@andy-bond",
-		"icon": "custom-github",
+		"icon": "simple-icons:github",
 		"type": "profile",
 		"label": "GitHub",
 		"resume": true
@@ -26,7 +26,7 @@
 	{
 		"url": "https://mastodon.social/@andybond",
 		"text": "@andybond",
-		"icon": "custom-mastodon",
+		"icon": "simple-icons:mastodon",
 		"type": "contact",
 		"label": "Mastodon",
 		"resume": false
@@ -34,7 +34,7 @@
 	{
 		"url": "https://www.linkedin.com/in/andybond/",
 		"text": "@andybond",
-		"icon": "custom-linkedin",
+		"icon": "simple-icons:linkedin",
 		"type": "contact",
 		"label": "LinkedIn",
 		"resume": true
