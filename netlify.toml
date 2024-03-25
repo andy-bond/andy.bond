@@ -16,3 +16,15 @@ status = 200
 from = "/apps/widget-dashboard/*"
 to = "https://widget-dashboard-demo.netlify.app/:splat"
 status = 200
+
+[[redirects]]
+from = "/posts/travel/study-abroad-in-karlsruhe-germany/"
+to = "/posts/2021/study-abroad-in-karlsruhe-germany/"
+
+[[redirects]]
+from = "/posts/angular/dynamic-lazy-loaded-components/"
+to = "/2022/dynamic-lazy-loaded-components/"
+
+[[redirects]]
+from = "/posts/travel/trip-to-cancun/"
+to = "/posts/2022/trip-to-cancun/"

@@ -1,6 +1,7 @@
 ---
 title: Trip to Cancún, 2022
 description: Brief post documenting the short trip I took to an all inclusive resort in Cancún with Kayla's siblings.
+category: travel
 date: 2022-07-04T14:08:33.987Z
 ---
 
@@ -14,7 +15,7 @@ After arriving in Cancún, we quickly realized that I was on a separate terminal
 
 We stayed at the [Hotel Riu Palace Las Americas](https://www.riu.com/en/hotel/mexico/cancun/hotel-riu-palace-las-americas/) which I thought was a pretty nice place to stay. I don't have as much experience with all-inclusives as my (future) sibling-in-laws, but I was pretty happy with our resort.
 
-<img src="./cancun-2.jpg" alt="View of the infinity pool, some palm trees, and the ocean">
+<img src="./img/cancun-2.jpg" alt="View of the infinity pool, some palm trees, and the ocean">
 
 The all-inclusive hotel was truly all-inclusive, with tips included as well. None of the waiters, cleaning staff, or concierge pressured you for tips and provided us with great customer service during our stay.
 
@@ -22,10 +23,10 @@ The food was pretty solid - breakfast and dinner being a bit better than lunch. 
 
 The ocean was absolutely beautiful - crystal clear and the perfect cool temperature to swim in! The infinity pools were a bit warm, but were pretty nice to look out over the ocean.
 
-<img src="./cancun-1.jpg" alt="Statue in an infinity pool overlooking the ocean">
+<img src="./img/cancun-1.jpg" alt="Statue in an infinity pool overlooking the ocean">
 
 Other than that, we visited an old lighthouse and stayed up late watching really bad music videos on the giant projector that was set up near the main bar!
 
 Our hotel room was a bit dated, but that isn't super important to us. Overall, it was a nice place to recover from the heat and provided us with a breathtaking view of the "party pool" and the ocean below!
 
-<img src="./cancun-3.jpg" alt="View from the hotel room, overlooking the party pool and the bright blue ocean waves">
+<img src="./img/cancun-3.jpg" alt="View from the hotel room, overlooking the party pool and the bright blue ocean waves">

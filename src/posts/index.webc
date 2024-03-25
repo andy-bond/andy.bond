@@ -19,8 +19,6 @@
 }
 ---
 
-<breadcrumbs></breadcrumbs>
-
 <h1 @text="title"></h1>
 
 <category-list></category-list>

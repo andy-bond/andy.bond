@@ -5,13 +5,12 @@ permalink: 404.html
 ---
 
 <article>
-  <breadcrumbs></breadcrumbs>
-  <card>
-    <h1 @text="$data.title"></h1>
-    <p>
-      Sorry, the content you are looking for has either been moved or never
-      existed.
-    </p>
-    <p>Click <a href="/">here</a> to return to the home page.</p>
-  </card>
+	<card>
+		<h1 @text="$data.title"></h1>
+		<p>
+			Sorry, the content you are looking for has either been moved or never
+			existed.
+		</p>
+		<p>Click <a href="/">here</a> to return to the home page.</p>
+	</card>
 </article>

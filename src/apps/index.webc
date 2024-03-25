@@ -3,8 +3,6 @@ layout: default
 title: Applications
 ---
 
-<breadcrumbs></breadcrumbs>
-
 <h1 @text="title"></h1>
 
 <div class="application-grid">

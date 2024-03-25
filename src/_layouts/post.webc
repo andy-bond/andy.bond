@@ -3,8 +3,6 @@ layout: default
 socialPreviewTemplate: 'social-preview/post.og.njk'
 ---
 
-<breadcrumbs></breadcrumbs>
-
 <article class="post-article">
 	<h1 class="post-heading" @text="title"></h1>
 
@@ -17,6 +15,8 @@ socialPreviewTemplate: 'social-preview/post.og.njk'
 	</div>
 
 	<p class="post-description" @text="description"></p>
+
+	<hr class="post-header-divider" />
 
 	<div class="post-content">
 		<template webc:nokeep @raw="content"></template>
@@ -44,11 +44,14 @@ socialPreviewTemplate: 'social-preview/post.og.njk'
 
 	.post-date {
 		color: var(--theme-color-text-secondary);
+		transition: color var(--default-transition);
 	}
 
-	.post-description {
-		padding-bottom: var(--default-spacing-dbl);
+	.post-header-divider {
+		margin-top: var(--default-spacing-dbl);
 		margin-bottom: var(--default-spacing-dbl);
-		border-bottom: 1px solid var(--theme-color-highlight);
+
+		border-top: 8px double var(--theme-color-highlight);
+		transition: border-color var(--default-transition);
 	}
 </style>

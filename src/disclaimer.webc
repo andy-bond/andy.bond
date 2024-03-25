@@ -4,8 +4,6 @@ title: Disclaimer
 ---
 
 <article>
-	<breadcrumbs></breadcrumbs>
-
 	<h1 @text="$data.title"></h1>
 
 	<card>

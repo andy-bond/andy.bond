@@ -3,8 +3,6 @@ layout: default
 title: Now
 ---
 
-<breadcrumbs></breadcrumbs>
-
 <section class="now-section full-bleed">
 	<div class="container">
 		<div class="section-header">
