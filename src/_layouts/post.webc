@@ -7,6 +7,10 @@ socialPreviewTemplate: 'social-preview/post.og.njk'
 	<h1 class="post-heading" @text="title"></h1>
 
 	<div class="post-metadata">
+		<div webc:if="$data.draft" class="draft-icon">
+			<icon @icon-name="triangle-alert"></icon>
+			Draft Post
+		</div>
 		<category-chip
 			:@category-name="$data.category"
 			@link="true"
@@ -24,6 +28,20 @@ socialPreviewTemplate: 'social-preview/post.og.njk'
 </article>
 
 <style webc:keep>
+	.draft-icon {
+		display: flex;
+		align-items: center;
+		gap: var(--default-spacing-half);
+
+		padding: var(--default-spacing-qtr) var(--default-spacing-half);
+		border: 1px solid orange;
+		border-radius: var(--default-border-radius);
+
+		svg.icon {
+			flex-shrink: 0;
+		}
+	}
+
 	.post-heading {
 		margin-bottom: var(--default-spacing-half);
 	}

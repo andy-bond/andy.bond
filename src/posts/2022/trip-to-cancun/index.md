@@ -2,7 +2,7 @@
 title: Trip to Cancún, 2022
 description: Brief post documenting the short trip I took to an all inclusive resort in Cancún with Kayla's siblings.
 category: travel
-date: 2022-07-04T14:08:33.987Z
+date: 2022-07-04T12:00:00.000Z
 ---
 
 ## Flights ✈️

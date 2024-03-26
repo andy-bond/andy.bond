@@ -1,16 +1,20 @@
 <a webc:root="override" :href="post.page.url" :aria-label="post.data.title">
-	<card class="post-card">
-		<div class="heading">
-			<h2 @text="post.data.title"></h2>
-			<small>
-				<date :@value="post.data.date"></date>
-			</small>
-		</div>
+	<script webc:type="js">
+		const postClasses = !this.post.data.draft ? 'post-card' : 'post-card draft';
 
-		<p @text="post.data.description"></p>
+		`<card class="${postClasses}">
+			<div class="heading">
+				<h2 @text="post.data.title"></h2>
+				<small>
+					<date :@value="post.data.date"></date>
+				</small>
+			</div>
 
-		<category-chip :@category-name="post.data.category"></category-chip>
-	</card>
+			<p @text="post.data.description"></p>
+
+			<category-chip :@category-name="post.data.category"></category-chip>
+		</card>`;
+	</script>
 </a>
 
 <style webc:scoped>
@@ -29,6 +33,10 @@
 
 	.post-card {
 		padding: var(--default-spacing-plus-qtr);
+
+		&.draft {
+			border-right: 12px solid orange;
+		}
 	}
 
 	h2 {
