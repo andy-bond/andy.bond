@@ -4,8 +4,6 @@ export const Posts = (collection) => {
 	const posts = collection
 		.getFilteredByTag('blogpost')
 		.filter((post) => {
-			console.log([post.data.draft, displayDrafts()]);
-
 			if (displayDrafts()) {
 				return true;
 			}
