@@ -46,6 +46,10 @@ export function isProduction() {
 	return process.env.SITE_ENV === 'production';
 }
 
+export function displayDrafts() {
+	return process.env.BUILD_DRAFTS === 'true';
+}
+
 export function chunk(array, size) {
 	return array.reduce((arr, item, index) => {
 		return index % size === 0

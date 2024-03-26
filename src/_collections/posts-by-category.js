@@ -1,10 +1,17 @@
-import { chunk } from '../../utilities/index.js';
+import { chunk, displayDrafts } from '../../utilities/index.js';
 
 export const PostsByCategory = (collection) => {
 	const POSTS_PATH = `posts`;
 	const size = 10;
 
-	const posts = collection.getFilteredByTag('posts').reverse();
+	const posts = collection
+		.getFilteredByTag('blogpost')
+		.filter((post) => displayDrafts() || !post.data.draft)
+		.sort((a, b) => {
+			const aDate = new Date(a.date);
+			const bDate = new Date(b.date);
+			return bDate.getTime() - aDate.getTime();
+		});
 
 	const categories = new Map();
 	for (const post of posts) {
