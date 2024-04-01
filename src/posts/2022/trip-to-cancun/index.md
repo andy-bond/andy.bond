@@ -5,8 +5,6 @@ category: travel
 date: 2022-07-04T12:00:00.000Z
 ---
 
-## Flights ✈️
-
 Over the Fourth of July weekend, I met Kayla and her siblings for a short, relaxing vacation in Cancún.
 
 The flights were mostly uneventful though we flew separately as I am currently living in Florida while Kayla finishes up her pharmacy residency in Kentucky. I flew Frontier from Tampa and had a very short flight with no worries. I only brought a backpack which fits under the seat in front of me - easily the best way to travel!
