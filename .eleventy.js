@@ -1,5 +1,6 @@
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 import pluginBundler from '@11ty/eleventy-plugin-bundle';
+import eleventyRssPlugin from '@11ty/eleventy-plugin-rss';
 import syntaxHighlightPlugin from '@11ty/eleventy-plugin-syntaxhighlight';
 import eleventyWebcPlugin from '@11ty/eleventy-plugin-webc';
 import dotenvFlow from 'dotenv-flow';
@@ -32,6 +33,9 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: ['src/_components/**/*.webc'],
 	});
+
+	/* RSS */
+	eleventyConfig.addPlugin(eleventyRssPlugin);
 
 	/* Syntax Highlighting */
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);

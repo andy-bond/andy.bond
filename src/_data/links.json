@@ -1,11 +1,21 @@
 [
 	{
+		"url": "/feed.xml",
+		"text": "RSS Feed",
+		"icon": "rss",
+		"type": "website",
+		"label": "RSS Feed",
+		"resume": false,
+		"footer": true
+	},
+	{
 		"url": "mailto:contact@andy.bond",
 		"text": "contact@andy.bond",
 		"icon": "mail",
 		"type": "contact",
 		"label": "Email",
-		"resume": true
+		"resume": true,
+		"footer": true
 	},
 	{
 		"url": "https://andy.bond",
@@ -13,7 +23,8 @@
 		"icon": "globe",
 		"type": "website",
 		"label": "Website",
-		"resume": true
+		"resume": true,
+		"footer": false
 	},
 	{
 		"url": "https://github.com/andy-bond",
@@ -21,7 +32,8 @@
 		"icon": "simple-icons:github",
 		"type": "profile",
 		"label": "GitHub",
-		"resume": true
+		"resume": true,
+		"footer": true
 	},
 	{
 		"url": "https://mastodon.social/@andybond",
@@ -29,7 +41,8 @@
 		"icon": "simple-icons:mastodon",
 		"type": "contact",
 		"label": "Mastodon",
-		"resume": false
+		"resume": false,
+		"footer": true
 	},
 	{
 		"url": "https://www.linkedin.com/in/andybond/",
@@ -37,6 +50,7 @@
 		"icon": "simple-icons:linkedin",
 		"type": "contact",
 		"label": "LinkedIn",
-		"resume": true
+		"resume": true,
+		"footer": true
 	}
 ]

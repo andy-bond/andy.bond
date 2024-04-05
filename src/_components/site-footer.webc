@@ -10,7 +10,7 @@
 		</li>
 		<li>
 			<ul class="footer-socials">
-				<li webc:for="item of $data.links" webc:if="item.type !== 'website'">
+				<li webc:for="item of $data.links" webc:if="item.footer">
 					<anchor
 						target="_blank"
 						:href="item.url"
@@ -52,8 +52,8 @@
 	}
 
 	ul li:not(:last-of-type)::after {
-		content: '•';
-		margin: 0 var(--default-spacing-half);
+		content: '—';
+		margin: 0 var(--default-spacing);
 	}
 
 	.footer-socials {
