@@ -31,14 +31,6 @@
 			:href="url('/static/css/prism.css')"
 		/>
 
-		<!-- Cloudflare Web Analytics -->
-		<script
-			webc:keep
-			defer
-			src="https://static.cloudflareinsights.com/beacon.min.js"
-			data-cf-beacon="{'token': '8b5d2593d31444bc81a17f0523ab387c'}"
-		></script>
-
 		<style @raw="getBundle('css')" webc:keep></style>
 		<script @raw="getBundle('js')" webc:keep></script>
 	</head>

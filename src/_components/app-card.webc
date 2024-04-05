@@ -1,0 +1,86 @@
+<a
+	webc:root="override"
+	:href="app.href"
+	target="_blank"
+	:aria-label="app.title"
+>
+	<card class="app-card">
+		<div class="card-image">
+			<img :src="app.image" alt="" />
+		</div>
+		<div class="card-content">
+			<div class="heading">
+				<h2 @text="app.name"></h2>
+			</div>
+
+			<p @text="app.description"></p>
+		</div>
+	</card>
+</a>
+
+<style webc:scoped>
+	:host {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing);
+		border-radius: var(--default-border-radius);
+
+		text-decoration: none;
+	}
+
+	:host:is(:hover, :focus-visible) h2 {
+		text-decoration: underline;
+	}
+
+	.app-card {
+		display: flex;
+		flex-direction: row;
+		padding: 0;
+		border: 2px solid var(--theme-color-highlight);
+
+		.card-image {
+			flex: 1 0 250px;
+			overflow: hidden;
+			object-fit: contain;
+			border-top-left-radius: inherit;
+			border-bottom-left-radius: inherit;
+
+			picture,
+			img {
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		.card-content {
+			padding: var(--default-spacing-plus-qtr);
+			flex-grow: 3;
+
+			display: flex;
+			flex-direction: column;
+			gap: var(--default-spacing);
+		}
+
+		@media screen and (max-width: 599px) {
+			flex-direction: column;
+
+			.card-image {
+				border-top-left-radius: inherit;
+				border-top-right-radius: inherit;
+				border-bottom-left-radius: 0;
+				border-bottom: 2px solid var(--theme-color-highlight);
+			}
+		}
+	}
+
+	h2 {
+		align-self: flex-start;
+		color: var(--theme-color-link);
+	}
+
+	.heading {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing-qtr);
+	}
+</style>

@@ -2,11 +2,13 @@
 	{
 		"name": "Quick Snips",
 		"href": "https://andy.bond/apps/quick-snips",
-		"description": "Application that allows the user to quickly jot down notes and copy to clipboard for external use."
+		"description": "Application that allows the user to quickly jot down notes and copy to clipboard for external use.",
+		"image": "/static/img/apps/quick-snips.jpg"
 	},
 	{
 		"name": "Widget Dashboard (demo)",
 		"href": "https://andy.bond/apps/widget-dashboard",
-		"description": "Demo application to show how it is possible to lazy load components dynamically (without routing)."
+		"description": "Demo application to show how it is possible to lazy load components dynamically (without routing).",
+		"image": "/static/img/apps/widget-dashboard.jpg"
 	}
 ]
