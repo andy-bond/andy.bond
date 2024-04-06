@@ -1,0 +1,44 @@
+<section webc:root="override" class="wavy-section full-bleed">
+	<wavy-divider class="top"></wavy-divider>
+	<div class="wavy-section-container container">
+		<slot></slot>
+	</div>
+	<wavy-divider class="bottom"></wavy-divider>
+</section>
+
+<style webc:scoped>
+	:host {
+		.wavy-section-container {
+			padding-block: var(--default-spacing-dbl);
+
+			> * {
+				margin-inline: var(--default-spacing);
+			}
+		}
+
+		&:first-of-type {
+			.wavy-section-container {
+				padding-block-start: 0;
+			}
+		}
+
+		&:nth-of-type(odd) {
+			wavy-divider {
+				display: none;
+			}
+		}
+
+		&:nth-of-type(even) {
+			background-color: var(--theme-color-background-secondary);
+			transition: background-color var(--default-transition);
+
+			.wavy-section-container {
+				padding-block: calc(var(--default-spacing-dbl) + 4rem);
+			}
+
+			wavy-divider {
+				display: block;
+			}
+		}
+	}
+</style>

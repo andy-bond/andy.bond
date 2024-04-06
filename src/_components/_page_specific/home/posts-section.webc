@@ -4,10 +4,12 @@
 		<anchor href="/posts/"> View All </anchor>
 	</div>
 
-	<post-card
-		webc:for="post of $data.collections.posts.reverse().slice(0, 3)"
-		:@post="post"
-	></post-card>
+	<card-list>
+		<post-card
+			webc:for="post of $data.collections.posts.reverse().slice(0, 3)"
+			:@post="post"
+		></post-card>
+	</card-list>
 </section>
 
 <style webc:scoped>
@@ -22,9 +24,5 @@
 		flex-direction: row;
 		align-items: center;
 		gap: var(--default-spacing);
-	}
-
-	post-card + post-card {
-		margin-top: var(--default-spacing);
 	}
 </style>

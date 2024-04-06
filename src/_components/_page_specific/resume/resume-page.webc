@@ -1,0 +1,249 @@
+<article>
+	<card class="resume">
+		<section class="heading">
+			<h1>
+				<span @text="$data.resume.name"></span>
+				<em class="pronouns">(<span @text="$data.resume.pronouns"></span>)</em>
+			</h1>
+			<div class="occupation">
+				<span @text="$data.resume.occupation"></span> •
+				<span @text="$data.resume.location"></span>
+			</div>
+			<div class="contact-information">
+				<anchor
+					webc:for="item of $data.links"
+					webc:if="item.resume"
+					target="_blank"
+					:href="item.url"
+					:@icon-name="item.icon"
+					@text="item.text"
+				>
+				</anchor>
+			</div>
+		</section>
+		<section class="summary">
+			<h2>About Me</h2>
+			<div @text="$data.resume.summary"></div>
+		</section>
+		<section class="experience">
+			<h2>Experience</h2>
+			<ol class="timeline">
+				<li
+					class="timeline-item"
+					webc:for="experience of $data.resume.experience"
+					webc:if="experience.display"
+				>
+					<small class="occurrence">
+						<date :@value="experience.start" @format="MMMM yyyy"></date>
+						<span>-</span>
+						<date
+							webc:if="experience.end"
+							:@value="experience.end"
+							@format="MMMM yyyy"
+						></date>
+						<span webc:else>Present</span>
+					</small>
+					<h3 class="heading" @text="experience.position"></h3>
+					<div class="subheading">
+						<span @text="experience.organization"></span> •
+						<span @text="experience.location"></span>
+					</div>
+					<ul webc:if="experience.summary" class="summary">
+						<li webc:for="item of experience.summary" @text="item"></li>
+					</ul>
+				</li>
+			</ol>
+		</section>
+		<section class="education">
+			<h2>Education</h2>
+			<ol class="timeline">
+				<li
+					class="timeline-item"
+					webc:for="education of $data.resume.education"
+					webc:if="education.display"
+				>
+					<small class="occurrence">
+						<date :@value="education.start" @format="MMMM yyyy"></date>
+						<span>-</span>
+						<date
+							webc:if="education.end"
+							:@value="education.end"
+							@format="MMMM yyyy"
+						></date>
+						<span webc:else>Present</span>
+					</small>
+					<h3 class="heading" @text="education.degree"></h3>
+					<div class="subheading">
+						<span @text="education.organization"></span> •
+						<span @text="education.location"></span>
+					</div>
+					<ul webc:if="education.summary" class="summary">
+						<li webc:for="item of education.summary" @text="item"></li>
+					</ul>
+				</li>
+			</ol>
+		</section>
+		<section>
+			<h2>Skills</h2>
+			<ul class="skills">
+				<li webc:for="skill of $data.resume.skills">
+					<icon :@icon-name="skill.icon"></icon>
+					<div @text="skill.name"></div>
+				</li>
+			</ul>
+		</section>
+	</card>
+</article>
+
+<style webc:scoped>
+	.resume {
+		gap: var(--default-spacing-dbl);
+	}
+
+	.heading {
+		display: flex;
+		flex-direction: column;
+		gap: var(--default-spacing);
+	}
+
+	.pronouns {
+		font-size: 0.5em;
+	}
+
+	.occupation {
+		font-size: 1.25em;
+		font-weight: 300;
+	}
+
+	.contact-information {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--default-spacing);
+	}
+
+	section > h2 {
+		margin-bottom: var(--default-spacing-half);
+	}
+
+	.timeline {
+		list-style: none;
+		margin: var(--default-spacing) 0 0 var(--default-spacing);
+		padding: 0;
+		border-left: 2px solid var(--theme-color-highlight);
+	}
+
+	.timeline-item {
+		position: relative;
+		padding-left: var(--default-spacing-dbl);
+
+		& + .timeline-item {
+			margin-top: var(--default-spacing-dbl);
+		}
+
+		& .occurrence {
+			display: block;
+		}
+
+		& .summary {
+			margin-top: var(--default-spacing);
+			padding-left: var(--default-spacing-plus-qtr);
+		}
+
+		&::before {
+			--marker-size: calc(var(--default-spacing) + 3px);
+			position: absolute;
+			content: '';
+			display: block;
+			height: var(--marker-size);
+			width: var(--marker-size);
+			background-color: var(--theme-color-title);
+			top: 0;
+			left: 0;
+			border-radius: 50%;
+			transform: translateX(calc(-50% - 1px));
+		}
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--default-spacing-half);
+		padding: 0;
+		list-style-type: none;
+
+		& li {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: var(--default-spacing-half);
+			padding: var(--default-spacing-half);
+			border-radius: var(--default-border-radius);
+			border: 1px solid var(--theme-color-highlight);
+		}
+	}
+</style>
+
+<style>
+	@media only print {
+		html {
+			font-size: 12px;
+		}
+
+		body {
+			visibility: hidden;
+		}
+
+		.resume {
+			visibility: visible;
+			position: absolute;
+			top: 0;
+			left: 0;
+			box-shadow: none;
+			border-radius: 0;
+			padding: 0;
+			background-color: white;
+			color: black;
+			gap: var(--default-spacing) !important;
+
+			& .contact-information a {
+				color: black;
+				border-bottom-color: black;
+
+				& svg:last-of-type {
+					display: none;
+				}
+			}
+
+			& .timeline {
+				margin: var(--default-spacing-half) 0 0 0;
+				border-left: none;
+
+				& .timeline-item {
+					padding-left: 0;
+
+					& + .timeline-item {
+						margin-top: var(--default-spacing);
+					}
+
+					&::before {
+						display: none;
+					}
+				}
+			}
+
+			& .skills {
+				column-count: 3;
+				display: block;
+				list-style-type: circle;
+
+				& li {
+					margin-left: var(--default-spacing-plus-half);
+					border: none !important;
+					padding: 0 !important;
+				}
+			}
+		}
+	}
+</style>

@@ -1,0 +1,11 @@
+<wavy-section>
+	<intro-section></intro-section>
+</wavy-section>
+
+<wavy-section>
+	<posts-section></posts-section>
+</wavy-section>
+
+<wavy-section>
+	<photos-section></photos-section>
+</wavy-section>

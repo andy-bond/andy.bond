@@ -1,0 +1,20 @@
+<h1 @text="$data.title"></h1>
+
+<p>
+	The applications below are a random assortment of side-projects & demos that
+	I've created over the years.
+</p>
+
+<card-list>
+	<app-card webc:for="app of $data.applications" :@app="app"></app-card>
+</card-list>
+
+<style webc:scoped>
+	h1 {
+		margin-bottom: var(--default-spacing);
+	}
+
+	p {
+		margin-bottom: var(--default-spacing-dbl);
+	}
+</style>

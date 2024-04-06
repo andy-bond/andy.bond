@@ -3,29 +3,4 @@ layout: default
 title: Applications
 ---
 
-<h1 @text="title"></h1>
-
-<p>
-	The applications below are a random assortment of side-projects & demos that
-	I've created over the years.
-</p>
-
-<div class="application-grid">
-	<app-card webc:for="app of $data.applications" :@app="app"></app-card>
-</div>
-
-<style webc:keep>
-	h1 {
-		margin-bottom: var(--default-spacing);
-	}
-
-	p {
-		margin-bottom: var(--default-spacing-dbl);
-	}
-
-	.application-grid {
-		display: flex;
-		flex-direction: column;
-		gap: var(--default-spacing);
-	}
-</style>
+<apps-page></apps-page>

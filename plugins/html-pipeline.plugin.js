@@ -9,7 +9,9 @@ export async function transformHtmlFile(content, outputPath) {
 	let minified = minify(content, {
 		useShortDoctype: true,
 		removeComments: true,
-		collapseWhitespace: false,
+		collapseWhitespace: true,
+		conservativeCollapse: true,
 	});
+
 	return minified;
 }

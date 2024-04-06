@@ -13,7 +13,7 @@
 				<h2 @text="app.name"></h2>
 			</div>
 
-			<p @text="app.description"></p>
+			<p class="app-description" @text="app.description"></p>
 		</div>
 	</card>
 </a>
@@ -82,5 +82,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--default-spacing-qtr);
+	}
+
+	.app-description {
+		padding-bottom: var(--default-spacing);
 	}
 </style>
