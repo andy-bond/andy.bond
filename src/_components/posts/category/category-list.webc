@@ -3,9 +3,11 @@
 		`<li><category-chip @category-name="All Posts"></category-chip></li>`,
 	];
 
-	const keys = Object.keys(this.$data.categories).sort((a, b) =>
-		a.localeCompare(b)
-	);
+	const keys = Object.keys(this.$data.categories)
+		.filter((category) =>
+			this.$data.collections.posts.some((i) => i.data.category === category)
+		)
+		.sort((a, b) => a.localeCompare(b));
 	for (const key of keys) {
 		items.push(
 			`<li><category-chip @category-name="${key}" @link="true"></category-chip></li>`

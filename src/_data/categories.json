@@ -6,5 +6,9 @@
 	"travel": {
 		"name": "Travel",
 		"icon": "plane"
+	},
+	"life": {
+		"name": "Life",
+		"icon": "sprout"
 	}
 }
