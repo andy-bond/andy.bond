@@ -16,7 +16,9 @@
 		</anchor>
 	</div>
 	<media-grid>
-		<media webc:for="book of $data.dynamic.books" :@media="book"></media>
+		<media webc:for="book of $data.dynamic.books" :@media="book">
+			Currently Reading
+		</media>
 	</media-grid>
 </wavy-section>
 

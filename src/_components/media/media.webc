@@ -7,6 +7,9 @@
 			:alt="media.label"
 		/>
 	</div>
+	<div webc:if="media.current" class="media-overlay">
+		<slot></slot>
+	</div>
 </a>
 
 <style webc:scoped>
@@ -17,7 +20,7 @@
 		outline-offset: 0px;
 		border-radius: var(--default-border-radius);
 		box-shadow: var(--default-shadow-medium);
-		overflow: hidden;
+		position: relative;
 	}
 
 	:host:is(:hover, :focus-visible) {
@@ -32,6 +35,7 @@
 	.media-cover {
 		height: 100%;
 		width: 100%;
+		border-radius: var(--default-border-radius);
 		overflow: hidden;
 		position: relative;
 
@@ -53,6 +57,36 @@
 			transition: left 650ms;
 			pointer-events: none;
 		}
+	}
+
+	.media-overlay {
+		font-size: clamp(1em, 2vw, 1.2em);
+		font-weight: bold;
+		background-color: var(--theme-color-title);
+		color: var(--theme-color-text-inverse);
+
+		transition: background-color var(--default-transition),
+			color var(--default-transition);
+
+		--f: 0.5em; /* control the folded part*/
+		--r: 0.8em; /* control the ribbon shape */
+
+		position: absolute;
+		bottom: 20px;
+		left: calc(-1 * var(--f));
+		padding-inline: 0.25em;
+		line-height: 1.8;
+		border-top: var(--f) solid #0005;
+		border-right: var(--r) solid #0000;
+		clip-path: polygon(
+			0 100%,
+			0 var(--f),
+			var(--f) 0,
+			var(--f) var(--f),
+			100% var(--f),
+			calc(100% - var(--r)) calc(50% + var(--f) / 2),
+			100% 100%
+		);
 	}
 
 	img {
