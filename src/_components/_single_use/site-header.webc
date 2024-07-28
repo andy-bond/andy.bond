@@ -44,12 +44,6 @@
 		background-color: var(--theme-color-background);
 		transition: background-color var(--default-transition),
 			color var(--default-transition);
-
-		@media screen and (max-width: 999px) {
-			position: sticky;
-			top: 0;
-			z-index: 500;
-		}
 	}
 
 	#title {

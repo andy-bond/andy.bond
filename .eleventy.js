@@ -3,9 +3,11 @@ import pluginBundler from '@11ty/eleventy-plugin-bundle';
 import eleventyRssPlugin from '@11ty/eleventy-plugin-rss';
 import syntaxHighlightPlugin from '@11ty/eleventy-plugin-syntaxhighlight';
 import eleventyWebcPlugin from '@11ty/eleventy-plugin-webc';
+import pluginTOC from '@uncenter/eleventy-plugin-toc';
 import dotenvFlow from 'dotenv-flow';
 import EleventyPluginIcons from 'eleventy-plugin-icons';
 import EleventyPluginOgImage from 'eleventy-plugin-og-image';
+import markdownItAnchor from 'markdown-it-anchor';
 import fs from 'node:fs';
 import path from 'node:path';
 import {
@@ -32,6 +34,25 @@ export default async function (eleventyConfig) {
 	/* WebC */
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
 		components: ['src/_components/**/*.webc'],
+	});
+
+	/* Markdown */
+	eleventyConfig.amendLibrary('md', (mdLib) => {
+		mdLib.use(markdownItAnchor, {
+			permalink: markdownItAnchor.permalink.ariaHidden({
+				placement: 'before',
+				class: 'header-anchor',
+				symbol: '#',
+				ariaHidden: false,
+			}),
+			level: [2, 3, 4],
+			slugify: eleventyConfig.getFilter('slugify'),
+		});
+	});
+
+	eleventyConfig.addPlugin(pluginTOC, {
+		ul: true,
+		ignoredElements: ['a'],
 	});
 
 	/* RSS */

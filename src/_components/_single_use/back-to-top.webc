@@ -65,7 +65,7 @@
 					);
 					const scrollTotal =
 						scrollingElement.scrollHeight - scrollingElement.clientHeight;
-					if (scrollingElement.scrollTop / scrollTotal > 0.25) {
+					if (scrollingElement.scrollTop / scrollTotal > 0.05) {
 						scrollToTopBtn.classList.add('show');
 					} else {
 						scrollToTopBtn.classList.remove('show');

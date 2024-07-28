@@ -35,7 +35,7 @@ We walked around the entire city looking at the various locations that inspired 
 
 After Arles, we headed north to Paris where we would have a few more days before our travels for 2022 came to a close. As I mentioned before, the temperatures were absolutely off the charts - I truly think the first day in Paris was the hottest I've ever felt in my life (and yes, I live in Florida).
 
-> ### 🔥 Fun Fact
+> **🔥 Fun Fact**
 >
 > The day we arrived in Paris (July 19, 2022) was the city's third hottest day in recorded history ([source](https://www.extremeweatherwatch.com/cities/paris/highest-temperatures)).
 

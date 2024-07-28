@@ -367,6 +367,52 @@
 		text-underline-offset: 0.25em;
 	}
 
+	:is(h1, h2, h3, h4, h5, h6):has(a.header-anchor) {
+		position: relative;
+
+		&:is(:hover, :focus-visible) a.header-anchor {
+			color: var(--theme-color-text-secondary);
+		}
+	}
+
+	a.header-anchor {
+		color: transparent;
+		text-decoration: none;
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--default-spacing-half);
+		transform: translateX(calc(-100% - var(--default-spacing-qtr)));
+
+		transition: color var(--default-transition);
+		outline-offset: -0.125em;
+		outline-width: 2px;
+		border-radius: var(--default-border-radius);
+
+		&:is(:hover, :focus-visible) {
+			color: var(--theme-color-link) !important;
+		}
+	}
+
+	@media screen and (max-width: 1099px) {
+		a.header-anchor {
+			color: var(--theme-color-text-secondary);
+			position: relative;
+			left: unset;
+			top: unset;
+			bottom: unset;
+
+			padding: unset;
+			transform: unset;
+		}
+	}
+
 	/* Syntax Highlighting*/
 	:not(pre) > code[class*='language-'],
 	pre[class*='language-'] {

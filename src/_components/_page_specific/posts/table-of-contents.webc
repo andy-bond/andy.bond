@@ -1,0 +1,40 @@
+<script webc:type="js">
+	const toc = this.helpers.toc(this.$data.content);
+
+	if (!toc) {
+		``;
+	} else {
+		`<details><summary>Table of Contents</summary>${toc}</details>`;
+	}
+</script>
+
+<style webc:scoped>
+	:host {
+		display: none;
+	}
+
+	:host:has(details) {
+		display: block;
+	}
+
+	details {
+		border: 2px solid var(--theme-color-highlight);
+		padding: var(--default-spacing);
+		border-radius: var(--default-border-radius);
+		background-color: transparent;
+		transition: background-color var(--default-transition);
+
+		summary {
+			cursor: pointer;
+		}
+
+		&[open] {
+			background-color: var(--theme-color-card);
+
+			summary {
+				padding-bottom: var(--default-spacing);
+				border-bottom: 1px solid var(--theme-color-highlight);
+			}
+		}
+	}
+</style>

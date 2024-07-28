@@ -4,5 +4,6 @@ socialPreviewTemplate: 'social-preview/post.og.njk'
 ---
 
 <post-page>
+	<table-of-contents></table-of-contents>
 	<template webc:nokeep @raw="content"></template>
 </post-page>
