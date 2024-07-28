@@ -138,7 +138,7 @@
 		},
 		{
 			"name": "C#",
-			"icon": "simple-icons:csharp"
+			"icon": "code"
 		},
 		{
 			"name": ".NET Core",
@@ -146,7 +146,7 @@
 		},
 		{
 			"name": "SQL",
-			"icon": "simple-icons:microsoftsqlserver"
+			"icon": "database"
 		}
 	]
 }

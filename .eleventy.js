@@ -42,7 +42,7 @@ export default async function (eleventyConfig) {
 
 	/* OpenGraph Images */
 	eleventyConfig.addPlugin(EleventyPluginOgImage, {
-		outputDir: '_site/static/img/social-preview',
+		outputDir: 'static/img/social-preview',
 		urlPath: '/static/img/social-preview',
 		satoriOptions: {
 			fonts: [
