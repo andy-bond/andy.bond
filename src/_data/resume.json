@@ -133,6 +133,10 @@
 			"icon": "simple-icons:jest"
 		},
 		{
+			"name": "Playwright",
+			"icon": "custom:playwright"
+		},
+		{
 			"name": "Cypress",
 			"icon": "simple-icons:cypress"
 		},

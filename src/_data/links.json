@@ -47,7 +47,7 @@
 	{
 		"url": "https://www.linkedin.com/in/andybond/",
 		"text": "@andybond",
-		"icon": "simple-icons:linkedin",
+		"icon": "custom:linkedin",
 		"type": "contact",
 		"label": "LinkedIn",
 		"resume": true,
