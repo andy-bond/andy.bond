@@ -95,6 +95,10 @@ export default async function (eleventyConfig) {
 				name: 'simple-icons',
 				path: 'node_modules/simple-icons/icons',
 			},
+			{
+				name: 'custom',
+				path: './src/static/icons',
+			},
 		],
 		icon: {
 			class: (name, source) => `${source} icon icon-${name}`,
