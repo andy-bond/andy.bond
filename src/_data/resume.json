@@ -1,9 +1,9 @@
 {
 	"name": "Andy Bond",
 	"pronouns": "he/him",
-	"occupation": "Software Engineer",
+	"occupation": "Software Engineering Technical Leader",
 	"location": "Orlando, FL",
-	"summary": "Experienced Software Engineer with a demonstrated history of working in a non-partisan government role. Skilled in Angular, JavaScript, HTML5, CSS3, .NET Core, ASP.NET MVC, C#, WPF, Windows Forms, and always ready to learn more. Strong engineering professional with a Bachelor of Science (B.S.) focused in Computer Science from the University of Kentucky.",
+	"summary": "Software Engineering Technical Leader with a focus on driving innovation and technical excellence in large-scale applications. I lead teams in developing critical features, including AI Assistant solutions and reusable components for internal design systems, leveraging deep expertise in Angular, NgRx, and Nx. My contributions extend to shaping frontend architecture, streamlining project execution, and ensuring robust code quality. I am dedicated to mentorship and improving engineering processes through effective documentation and strategic planning, always pushing the boundaries of what's possible in software development.",
 	"education": [
 		{
 			"start": "2012-08-01 EST",
@@ -30,7 +30,7 @@
 			"organization": "Cisco",
 			"location": "Remote",
 			"summary": [
-				"As Technical Leader, drove the successful planning, execution, and delivery of critical, large-scale features, resulting in measurable improvements to customer experience.",
+				"Drove the successful planning, execution, and delivery of critical, large-scale features, resulting in measurable improvements to customer experience.",
 				"Led the complete frontend development for multiple AI Assistants, and architected reusable, flexible AI Assistant components for seamless integration and adoption by external teams.",
 				"Played a key role in frontend architecture review and leadership meetings, consistently providing valuable feedback and strategic guidance on high-level initiatives.",
 				"Mentored and guided team members through dedicated office hours and ad-hoc support, fostering a culture of knowledge sharing and technical growth across multiple teams.",
@@ -80,7 +80,7 @@
 				"Developed a server application using C# that fetched and cached live images from IP based security cameras.",
 				"Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML, CSS, JavaScript, and ASP.NET."
 			],
-			"display": false
+			"display": true
 		},
 		{
 			"start": "2014-05-01 PDT",
@@ -92,7 +92,7 @@
 			"position": "Software Developer (Intern)",
 			"organization": "Occidental Petroleum Corporation",
 			"location": "Bakersfield, CA",
-			"display": false
+			"display": true
 		},
 		{
 			"start": "2012-05-01 EST",
