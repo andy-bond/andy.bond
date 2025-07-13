@@ -26,10 +26,20 @@
 		{
 			"start": "2021-12-07 EST",
 			"end": "",
-			"position": "Senior Software Engineer",
+			"position": "Software Engineering Technical Leader",
 			"organization": "Cisco",
 			"location": "Remote",
-			"summary": [],
+			"summary": [
+				"As Technical Leader, drove the successful planning, execution, and delivery of critical, large-scale features, resulting in measurable improvements to customer experience.",
+				"Led the complete frontend development for multiple AI Assistants, and architected reusable, flexible AI Assistant components for seamless integration and adoption by external teams.",
+				"Played a key role in frontend architecture review and leadership meetings, consistently providing valuable feedback and strategic guidance on high-level initiatives.",
+				"Mentored and guided team members through dedicated office hours and ad-hoc support, fostering a culture of knowledge sharing and technical growth across multiple teams.",
+				"Contributed significantly to project planning and workflow optimization, leading efforts in work estimation, requirement refinement, and task organization to enhance team efficiency and project delivery.",
+				"Developed and optimized highly scalable and maintainable components and services using Angular and NgRx, within a robust Nx Monorepo environment.",
+				"Authored and maintained critical organizational documentation, including new developer onboarding guides, project setup instructions, and the implementation of Architecture Decision Records (ADRs) to standardize processes.",
+				"Played a key role in building and expanding internal design system component libraries, contributing with Angular, React, and Storybook.",
+				"Implemented and enforced rigorous testing practices, including Jest unit tests and Playwright/Cypress E2E tests, to maintain superior code quality and reliability."
+			],
 			"display": true
 		},
 		{
@@ -39,12 +49,12 @@
 			"organization": "Legislative Research Commission",
 			"location": "Frankfort, KY",
 			"summary": [
-				"Created responsive web based applications with a strong focus on user experience using Angular to be used by LRC staff, legislators, and the general public",
-				"Worked directly with clients to develop new project features and migrate out-of-date applications to modern standards",
-				"Developed templates and libraries used in nearly every Angular application in the agency",
-				"Developed APIs using ASP.NET Core MVC to provide data to various applications and other APIs/microservices",
-				"Developed multiple Windows desktop applications to assist members of LRC staff in their various duties using both Windows Forms and WPF",
-				"Managed SQL tables, stored procedures, functions, users, and roles for use in the applications that were developed"
+				"Created responsive web based applications with a strong focus on user experience using Angular to be used by LRC staff, legislators, and the general public.",
+				"Worked directly with clients to develop new project features and migrate out-of-date applications to modern standards.",
+				"Developed templates and libraries used in nearly every Angular application in the agency.",
+				"Developed APIs using ASP.NET Core MVC to provide data to various applications and other APIs/microservices.",
+				"Developed multiple Windows desktop applications to assist members of LRC staff in their various duties using both Windows Forms and WPF.",
+				"Managed SQL tables, stored procedures, functions, users, and roles for use in the applications that were developed."
 			],
 			"display": true
 		},
@@ -55,8 +65,8 @@
 			"organization": "University of Kentucky",
 			"location": "Lexington, KY",
 			"summary": [
-				"Photographed banquets, concerts, student and faculty activities, sporting events, speeches, and many other functions",
-				"Organized group shots of 50+ people"
+				"Photographed banquets, concerts, student and faculty activities, sporting events, speeches, and many other functions.",
+				"Organized group shots of 50+ people."
 			],
 			"display": true
 		},
@@ -67,8 +77,8 @@
 			"organization": "California Resources Corporation",
 			"location": "Bakersfield, CA",
 			"summary": [
-				"Developed a server application using C# that fetched and cached live images from IP based security cameras",
-				"Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML, CSS, JavaScript, and ASP.NET"
+				"Developed a server application using C# that fetched and cached live images from IP based security cameras.",
+				"Created client webpage application to facilitate selecting cameras for a lived feed of any camera in the field using HTML, CSS, JavaScript, and ASP.NET."
 			],
 			"display": false
 		},
@@ -76,8 +86,8 @@
 			"start": "2014-05-01 PDT",
 			"end": "2014-09-01 PDT",
 			"summary": [
-				"Created and edited over 200 human-machine interface pages for online viewing",
-				"Created a program to improve speed on human-machine interface development process using Visual Basic 6.0"
+				"Created and edited over 200 human-machine interface pages for online viewing.",
+				"Created a program to improve speed on human-machine interface development process using Visual Basic 6.0."
 			],
 			"position": "Software Developer (Intern)",
 			"organization": "Occidental Petroleum Corporation",
@@ -91,10 +101,10 @@
 			"organization": "Starkville Country Club",
 			"location": "Starkville, MS",
 			"summary": [
-				"Observed the pool and surrounding area to ensure the safety of all swimmers and guests",
-				"Performed First Aid when necessary",
-				"Cleaned and maintained the pool and pool deck",
-				"Occasionally filled in for the Head Lifeguard when out of town by helping new lifeguards determine the right course of action for different situations"
+				"Observed the pool and surrounding area to ensure the safety of all swimmers and guests.",
+				"Performed First Aid when necessary.",
+				"Cleaned and maintained the pool and pool deck.",
+				"Occasionally filled in for the Head Lifeguard when out of town by helping new lifeguards determine the right course of action for different situations."
 			],
 			"display": false
 		}
@@ -118,7 +128,7 @@
 		},
 		{
 			"name": "CSS",
-			"icon": "simple-icons:css3"
+			"icon": "simple-icons:css"
 		},
 		{
 			"name": "TypeScript",
@@ -127,6 +137,10 @@
 		{
 			"name": "JavaScript",
 			"icon": "simple-icons:javascript"
+		},
+		{
+			"name": "React",
+			"icon": "simple-icons:react"
 		},
 		{
 			"name": "Jest",

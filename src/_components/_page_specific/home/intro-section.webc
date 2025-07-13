@@ -20,16 +20,7 @@
 			</p>
 			<hr />
 			<p>
-				<template
-					webc:nokeep
-					@text="$data.dynamic.books[0].current ? 'I am currently reading' : 'I just finished reading'"
-				></template>
-				<em @text="$data.dynamic.books[0].title"></em>, have recently watched
-				<em @text="$data.dynamic.movies[0].label"></em>, and gave
-				<em @text="$data.dynamic.games[0].label"></em> a shot!
-			</p>
-			<p>
-				If you want to see what else I've been up to, head over to my
+				If you want to see what I've been up to, head over to my
 				<a href="/now">Now</a> page.
 			</p>
 		</div>

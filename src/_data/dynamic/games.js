@@ -1,4 +1,4 @@
-import EleventyFetch from '@11ty/eleventy-fetch';
+import Fetch from '@11ty/eleventy-fetch';
 import { JSDOM } from 'jsdom';
 
 const appUrl = 'https://www.backloggd.com';
@@ -35,7 +35,7 @@ function parseGamesPageDom(text, current) {
 
 export default async function () {
 	try {
-		const gamesText = await EleventyFetch(gamesUrl, {
+		const gamesText = await Fetch(gamesUrl, {
 			duration: '4h',
 			type: 'text',
 		});

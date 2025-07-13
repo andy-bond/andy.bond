@@ -1,4 +1,4 @@
-import EleventyFetch from '@11ty/eleventy-fetch';
+import Fetch from '@11ty/eleventy-fetch';
 import { JSDOM } from 'jsdom';
 
 const appUrl = 'https://app.thestorygraph.com';
@@ -44,11 +44,11 @@ function parseBookPageDom(text, current) {
 
 export default async function () {
 	try {
-		const currentlyReadingText = await EleventyFetch(currentUrl, {
+		const currentlyReadingText = await Fetch(currentUrl, {
 			duration: '4h',
 			type: 'text',
 		});
-		const finishedReadingText = await EleventyFetch(finishedUrl, {
+		const finishedReadingText = await Fetch(finishedUrl, {
 			duration: '4h',
 			type: 'text',
 		});

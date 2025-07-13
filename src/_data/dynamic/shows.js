@@ -1,11 +1,11 @@
-import EleventyFetch from '@11ty/eleventy-fetch';
+import Fetch from '@11ty/eleventy-fetch';
 
 export default async function () {
 	const TMDB_KEY = process.env.TMDB_KEY;
 	const url = `https://api.themoviedb.org/3/account/20625628/rated/tv?api_key=${TMDB_KEY}&sort_by=created_at.desc`;
 
 	try {
-		const showsResponse = await EleventyFetch(url, {
+		const showsResponse = await Fetch(url, {
 			duration: '4h',
 			type: 'json',
 			fetchOptions: {

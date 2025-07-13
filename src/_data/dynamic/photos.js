@@ -1,11 +1,11 @@
-import EleventyFetch from '@11ty/eleventy-fetch';
+import Fetch from '@11ty/eleventy-fetch';
 import Parser from 'rss-parser';
 
 export default async function () {
 	const url = 'https://pixelfed.social/users/andybond.atom';
 
 	try {
-		const text = await EleventyFetch(url, {
+		const text = await Fetch(url, {
 			duration: '4h',
 			type: 'text',
 		});
