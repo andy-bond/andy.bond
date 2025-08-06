@@ -5,6 +5,7 @@
 			src="/static/img/andy-kayla-cropped.jpg"
 			alt="Picture of Andy & Kayla"
 			loading="eager"
+			fetchpriority="high"
 		/>
 	</div>
 	<div class="intro-contents">
