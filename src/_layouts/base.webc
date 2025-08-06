@@ -40,5 +40,12 @@
 		<!-- `defer` bucket -->
 		<style @raw="getBundle('css', 'defer')" webc:keep></style>
 		<script @raw="getBundle('js', 'defer')" webc:keep></script>
+
+		<script
+			webc:keep
+			src="/static/scripts/speedlify-score.js"
+			defer
+			async
+		></script>
 	</body>
 </html>

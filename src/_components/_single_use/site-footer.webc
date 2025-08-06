@@ -22,6 +22,20 @@
 				</li>
 			</ul>
 		</li>
+		<li>
+			<a
+				class="speedlify-score-link"
+				href="https://www.11ty.dev/speedlify/andy-bond/"
+				target="_blank"
+				aria-label="View Speedlify Scores"
+			>
+				<speedlify-score
+					speedlify-url="https://www.11ty.dev/speedlify"
+					hash="c08e26a0"
+					score
+				></speedlify-score>
+			</a>
+		</li>
 	</ul>
 </footer>
 
@@ -64,13 +78,17 @@
 		display: none;
 	}
 
-	@media screen and (max-width: 599px) {
+	a.speedlify-score-link {
+		text-decoration: none;
+	}
+
+	@media screen and (max-width: 769px) {
 		ul:not(.footer-socials) {
 			flex-direction: column;
 		}
 
 		.footer-socials {
-			margin-top: var(--default-spacing-half);
+			margin-block: var(--default-spacing-half);
 		}
 
 		ul li:not(:last-of-type)::after {

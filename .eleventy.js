@@ -30,6 +30,7 @@ export default async function (eleventyConfig) {
 	/* File Copy */
 	eleventyConfig.addPassthroughCopy('./src/static/fonts');
 	eleventyConfig.addPassthroughCopy('./src/static/favicon');
+	eleventyConfig.addPassthroughCopy('./src/static/scripts');
 
 	/* WebC */
 	eleventyConfig.addPlugin(eleventyWebcPlugin, {
