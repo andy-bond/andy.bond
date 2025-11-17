@@ -43,14 +43,28 @@ function parseBookPageDom(text, current) {
 }
 
 export default async function () {
+	const storygraphSession = process.env.STORYGRAPH_SESSION;
+	const storygraphUserToken = process.env.STORYGRAPH_USER_TOKEN;
+
+	const fetchOptions = {
+		headers: {
+			'user-agent':
+				'Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0',
+			_storygraph_session: storygraphSession,
+			remember_user_token: storygraphUserToken,
+		},
+	};
+
 	try {
 		const currentlyReadingText = await Fetch(currentUrl, {
 			duration: '4h',
 			type: 'text',
+			fetchOptions,
 		});
 		const finishedReadingText = await Fetch(finishedUrl, {
 			duration: '4h',
 			type: 'text',
+			fetchOptions,
 		});
 
 		const currentBooks = parseBookPageDom(currentlyReadingText, true);

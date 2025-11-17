@@ -5,7 +5,7 @@
 	<p>Here's a bit of what I've been up to lately!</p>
 </wavy-section>
 
-<wavy-section>
+<wavy-section webc:if="$data.dynamic.books.length > 0">
 	<div class="section-header">
 		<h2>Books</h2>
 		<anchor
@@ -22,7 +22,7 @@
 	</media-grid>
 </wavy-section>
 
-<wavy-section>
+<wavy-section webc:if="$data.dynamic.movies.length > 0">
 	<div class="section-header">
 		<h2>Movies</h2>
 		<anchor
@@ -37,7 +37,7 @@
 	</media-grid>
 </wavy-section>
 
-<wavy-section>
+<wavy-section webc:if="$data.dynamic.shows.length > 0">
 	<div class="section-header">
 		<h2>TV</h2>
 		<anchor
@@ -52,7 +52,7 @@
 	</media-grid>
 </wavy-section>
 
-<wavy-section>
+<wavy-section webc:if="$data.dynamic.games.length > 0">
 	<div class="section-header">
 		<h2>Games</h2>
 		<anchor
