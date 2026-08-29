@@ -43,7 +43,8 @@
 
 		<script
 			webc:keep
-			src="/static/scripts/speedlify-score.js"
+			src="/static/scripts/speedlify2-score.js"
+			type="module"
 			defer
 			async
 		></script>

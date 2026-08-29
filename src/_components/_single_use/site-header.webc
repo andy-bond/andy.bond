@@ -26,7 +26,7 @@
 		</nav>
 	</div>
 	<div id="icon-buttons">
-		<a href="/apps" title="Applications">
+		<a href="/apps" title="Applications" aria-label="Applications">
 			<icon @icon-name="flask-conical"></icon>
 		</a>
 		<theme-toggle></theme-toggle>
@@ -42,7 +42,8 @@
 		margin-bottom: var(--default-spacing-dbl);
 		color: var(--theme-color-text);
 		background-color: var(--theme-color-background);
-		transition: background-color var(--default-transition),
+		transition:
+			background-color var(--default-transition),
 			color var(--default-transition);
 	}
 
@@ -83,7 +84,8 @@
 		text-decoration: underline;
 		text-decoration-thickness: 3px;
 		text-decoration-color: transparent;
-		transition: color var(--default-transition),
+		transition:
+			color var(--default-transition),
 			text-decoration-color var(--default-transition);
 	}
 

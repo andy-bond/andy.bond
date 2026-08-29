@@ -23,18 +23,10 @@
 			</ul>
 		</li>
 		<li>
-			<a
-				class="speedlify-score-link"
-				href="https://www.11ty.dev/speedlify/andy-bond/"
-				target="_blank"
-				aria-label="View Speedlify Scores"
-			>
-				<speedlify-score
-					speedlify-url="https://www.11ty.dev/speedlify"
-					hash="c08e26a0"
-					score
-				></speedlify-score>
-			</a>
+			<speedlify2-score
+				speedlify-url="https://www.speedlify.dev/"
+				url="https://andy.bond/"
+			></speedlify2-score>
 		</li>
 	</ul>
 </footer>

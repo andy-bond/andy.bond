@@ -8,11 +8,8 @@
 <wavy-section webc:if="$data.dynamic.books.length > 0">
 	<div class="section-header">
 		<h2>Books</h2>
-		<anchor
-			href="https://app.thestorygraph.com/profile/andy_bond"
-			target="_blank"
-		>
-			View more on <em>StoryGraph</em>
+		<anchor href="https://hardcover.app/@andy-bond" target="_blank">
+			View more on <em>Hardcover</em>
 		</anchor>
 	</div>
 	<media-grid>

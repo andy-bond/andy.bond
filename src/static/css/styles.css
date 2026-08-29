@@ -310,6 +310,7 @@
 
 @layer theme {
 	:root {
+		color-scheme: light;
 		--theme-color-background: var(--color-white-100);
 		--theme-color-background-secondary: var(--color-white-200);
 		--theme-color-card: var(--color-white-000);
@@ -330,6 +331,7 @@
 	}
 
 	.theme-dark {
+		color-scheme: dark;
 		--theme-color-background: var(--color-blue-800);
 		--theme-color-background-secondary: var(--color-blue-700);
 		--theme-color-card: var(--color-blue-600);

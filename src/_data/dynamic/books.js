@@ -1,66 +1,94 @@
 import Fetch from '@11ty/eleventy-fetch';
-import { JSDOM } from 'jsdom';
 
-const appUrl = 'https://app.thestorygraph.com';
-const currentUrl = `${appUrl}/currently-reading/andy_bond`;
-const finishedUrl = `${appUrl}/books-read/andy_bond`;
+const HARDCOVER_API_URL = 'https://api.hardcover.app/v1/graphql';
+const HARDCOVER_API_KEY = process.env.HARDCOVER_API_KEY;
+const HARDCOVER_USER_ID = process.env.HARDCOVER_USER_ID;
+const HARDCOVER_BOOK_URL = 'https://hardcover.app/books';
 
-function parseBookDom(bookNode) {
-	const cover = bookNode.querySelector('.book-cover > a');
-	const title = bookNode.querySelector(
-		'.book-title-author-and-series a[href^="/books/"]'
-	).textContent;
-	const author = bookNode.querySelector(
-		'.book-title-author-and-series a[href^="/authors/"]'
-	).textContent;
-	const imageNode = cover.querySelector('img');
-
-	const link = appUrl + cover.getAttribute('href');
-	const image = imageNode.getAttribute('src');
-	const label = imageNode.getAttribute('alt');
-
-	return {
-		label,
-		link,
-		image,
-		title,
-		author,
-	};
+const GRAPHQL_QUERY = `
+# Book Object
+fragment BookInfo on books {
+	slug
+  title
+  image {
+    url
+  }
+  contributions {
+    author {
+      name
+    }
+  }
 }
 
-function parseBookPageDom(text, current) {
-	const dom = new JSDOM(text);
-	const body = dom.window.document.body;
-	const books = [];
-
-	const bookNodes = body.querySelectorAll('.book-pane[data-book-id]');
-
-	bookNodes?.forEach((node) => {
-		books.push({ ...parseBookDom(node), current });
-	});
-
-	return books;
+# Request User Stats by ID
+query ReadingList($userId: Int!) {
+  currentlyReading: user_books(
+    where: {user_id: {_eq: $userId}, status_id: {_eq: 2}}
+    order_by: {updated_at: desc}
+  ) {
+    status_id
+    rating
+    book {
+      ...BookInfo
+    }
+  }
+  recentlyRead: user_books(
+    where: {user_id: {_eq: $userId}, status_id: {_eq: 3}}
+    order_by: {last_read_date: desc}
+    limit: 8
+  ) {
+    status_id
+    rating
+    last_read_date
+    book {
+      ...BookInfo
+    }
+  }
 }
+`;
 
 export default async function () {
 	try {
-		const currentlyReadingText = await Fetch(currentUrl, {
+		const response = await Fetch(HARDCOVER_API_URL, {
 			duration: '4h',
-			type: 'text',
+			type: 'json',
+			fetchOptions: {
+				method: 'POST',
+				headers: {
+					Authorization: `Bearer ${HARDCOVER_API_KEY}`,
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					operationName: 'ReadingList',
+					query: GRAPHQL_QUERY,
+					variables: { userId: HARDCOVER_USER_ID },
+				}),
+			},
 		});
-		const finishedReadingText = await Fetch(finishedUrl, {
-			duration: '4h',
-			type: 'text',
-		});
 
-		const currentBooks = parseBookPageDom(currentlyReadingText, true);
-		const finishedBooks = parseBookPageDom(finishedReadingText, false);
+		const { currentlyReading, recentlyRead } = response.data;
 
-		const allBooks = [...currentBooks, ...finishedBooks];
+		const entries = [...currentlyReading, ...recentlyRead];
 
-		return allBooks.slice(0, 8);
+		return entries
+			.map((entry) => {
+				const title = entry.book.title;
+				const author = entry.book.contributions[0].author.name;
+				const image = entry.book.image.url;
+				const link = `${HARDCOVER_BOOK_URL}/${entry.book.slug}`;
+				const label = `${title} by ${author}`;
+
+				return {
+					title,
+					author,
+					image,
+					label,
+					link,
+				};
+			})
+			.slice(0, 8);
 	} catch (error) {
-		console.log('Error: Failed to parse TheStoryGraph', error);
+		console.log('Error: Failed to parse Hardcover', error);
 		return [];
 	}
 }

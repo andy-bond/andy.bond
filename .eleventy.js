@@ -104,6 +104,10 @@ export default async function (eleventyConfig) {
 		icon: {
 			class: (name, source) => `${source} icon icon-${name}`,
 			id: (name, source) => `${source}-${name}-icon`,
+			attributes: {
+				'aria-hidden': 'true',
+				focusable: 'false',
+			},
 		},
 	});
 
