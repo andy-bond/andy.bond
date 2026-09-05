@@ -120,7 +120,7 @@ export default async function (eleventyConfig) {
 		extensions: 'html',
 		urlPath: '/static/img/',
 		formats: ['webp', 'jpeg'],
-		widths: [300, 600, 1200],
+		widths: [300, 400, 600, 800, 1200],
 		defaultAttributes: {
 			loading: 'lazy',
 			decoding: 'async',

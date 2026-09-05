@@ -1,0 +1,448 @@
+<style webc:root="override" webc:keep>
+	@layer reset, typography, tokens, layout, theme;
+
+	@layer reset {
+		*,
+		::before,
+		::after {
+			box-sizing: border-box;
+			line-height: 1.6;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		article,
+		aside,
+		details,
+		figcaption,
+		figure,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		section {
+			display: block;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		p,
+		li,
+		figure,
+		figcaption,
+		blockquote {
+			margin: 0;
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+
+		picture,
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	@layer typography {
+		/* poppins-regular - latin */
+		@font-face {
+			font-family: 'Poppins';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src:
+				local(''),
+				url('/static/fonts/poppins-v19-latin-regular.woff2') format('woff2'),
+				url('/static/fonts/poppins-v19-latin-regular.woff') format('woff');
+		}
+		/* poppins-italic - latin */
+		@font-face {
+			font-family: 'Poppins';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src:
+				local(''),
+				url('/static/fonts/poppins-v19-latin-italic.woff2') format('woff2'),
+				url('/static/fonts/poppins-v19-latin-italic.woff') format('woff');
+		}
+		/* poppins-500 - latin */
+		@font-face {
+			font-family: 'Poppins';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src:
+				local(''),
+				url('/static/fonts/poppins-v19-latin-500.woff2') format('woff2'),
+				url('/static/fonts/poppins-v19-latin-500.woff') format('woff');
+		}
+		/* poppins-500italic - latin */
+		@font-face {
+			font-family: 'Poppins';
+			font-style: italic;
+			font-weight: 500;
+			font-display: swap;
+			src:
+				local(''),
+				url('/static/fonts/poppins-v19-latin-500italic.woff2') format('woff2'),
+				url('/static/fonts/poppins-v19-latin-500italic.woff') format('woff');
+		}
+		/* poppins-700 - latin */
+		@font-face {
+			font-family: 'Poppins';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src:
+				local(''),
+				url('/static/fonts/poppins-v19-latin-700.woff2') format('woff2'),
+				url('/static/fonts/poppins-v19-latin-700.woff') format('woff');
+		}
+		/* poppins-700italic - latin */
+		@font-face {
+			font-family: 'Poppins';
+			font-style: italic;
+			font-weight: 700;
+			font-display: swap;
+			src:
+				local(''),
+				url('/static/fonts/poppins-v19-latin-700italic.woff2') format('woff2'),
+				url('/static/fonts/poppins-v19-latin-700italic.woff') format('woff');
+		}
+	}
+
+	@layer tokens {
+		:root {
+			/* Typography */
+			--default-font-sans-serif:
+				'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+				Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+			/* Spacing */
+			--default-spacing: 1rem;
+			--default-spacing-qtr: calc(var(--default-spacing) * 0.25);
+			--default-spacing-half: calc(var(--default-spacing) * 0.5);
+			--default-spacing-triqtr: calc(var(--default-spacing) * 0.75);
+			--default-spacing-plus-qtr: calc(var(--default-spacing) * 1.25);
+			--default-spacing-dbl: calc(var(--default-spacing) * 2);
+
+			/* Layout */
+			--default-container-size: 999px;
+			--default-border-radius: 10px;
+
+			/* Shadows */
+			--default-shadow-color: 0deg 0% 0%;
+			--default-shadow-small:
+				0.3px 0.3px 0.5px hsl(var(--default-shadow-color) / 0.1),
+				0.5px 0.5px 0.8px -1.2px hsl(var(--default-shadow-color) / 0.1),
+				1.3px 1.3px 2.1px -2.5px hsl(var(--default-shadow-color) / 0.1);
+			--default-shadow-medium:
+				0.3px 0.3px 0.5px hsl(var(--default-shadow-color) / 0.11),
+				1.1px 1.1px 1.8px -0.8px hsl(var(--default-shadow-color) / 0.11),
+				2.7px 2.7px 4.3px -1.7px hsl(var(--default-shadow-color) / 0.11),
+				6.5px 6.6px 10.4px -2.5px hsl(var(--default-shadow-color) / 0.11);
+			--default-shadow-large:
+				0.3px 0.3px 0.5px hsl(var(--default-shadow-color) / 0.1),
+				1.9px 1.9px 3px -0.4px hsl(var(--default-shadow-color) / 0.1),
+				3.5px 3.6px 5.6px -0.7px hsl(var(--default-shadow-color) / 0.1),
+				5.8px 5.9px 9.3px -1.1px hsl(var(--default-shadow-color) / 0.1),
+				9.3px 9.4px 14.9px -1.4px hsl(var(--default-shadow-color) / 0.1),
+				14.5px 14.6px 23.1px -1.8px hsl(var(--default-shadow-color) / 0.1),
+				22px 22.3px 35.2px -2.1px hsl(var(--default-shadow-color) / 0.1),
+				32.4px 32.8px 51.9px -2.5px hsl(var(--default-shadow-color) / 0.1);
+
+			/* Transitions */
+			--default-transition-timing: 250ms;
+			--default-transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+			--default-transition: var(--default-transition-timing)
+				var(--default-transition-curve);
+
+			/* Colors */
+			--color-white-rgb: 255, 255, 255;
+			--color-black-rgb: 0, 0, 0;
+
+			--color-text-white: rgba(var(--color-white-rgb));
+			--color-text-white-secondary: rgba(var(--color-white-rgb), 0.6);
+			--color-text-black: rgba(var(--color-black-rgb));
+			--color-text-black-secondary: rgba(var(--color-black-rgb), 0.6);
+
+			--color-highlight-light: rgba(var(--color-black-rgb), 0.125);
+			--color-highlight-dark: rgba(var(--color-white-rgb), 0.125);
+
+			--color-overlay-background: rgba(var(--color-black-rgb), 0.25);
+			--color-overlay-text: var(--color-text-white);
+			--color-overlay-highlight: var(--color-highlight-dark);
+
+			--color-white-000: #ffffff;
+			--color-white-100: #ecf2f9;
+			--color-white-200: #d2e0f1;
+
+			--color-purple-100: #e0aaff;
+			--color-purple-200: #c77dff;
+			--color-purple-300: #9d4edd;
+			--color-purple-400: #7b2cbf;
+			--color-purple-500: #5a189a;
+
+			--color-blue-600: #15273d;
+			--color-blue-700: #0b1724;
+			--color-blue-800: #0d1c2b;
+		}
+	}
+
+	@layer layout {
+		::-webkit-scrollbar {
+			width: 12px;
+			background-color: var(--theme-color-highlight);
+		}
+
+		::-webkit-scrollbar-thumb {
+			border-radius: 4px;
+			background-color: var(--theme-color-title);
+		}
+
+		::-webkit-scrollbar-track {
+			border-radius: 2px;
+			background-color: transparent;
+		}
+
+		::selection {
+			background-color: var(--color-purple-400);
+			color: var(--color-white-000);
+		}
+
+		html,
+		body {
+			height: 100%;
+			max-height: 100%;
+			margin: 0;
+			scroll-behavior: smooth;
+
+			scrollbar-color: var(--theme-color-title) var(--theme-color-highlight);
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+		/* Layout */
+
+		.default-page-wrapper {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 auto;
+			position: relative;
+		}
+
+		.content-wrapper {
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+			min-height: -webkit-fill-available;
+		}
+
+		.full-bleed-wrapper {
+			display: grid;
+			grid-template-columns:
+				1fr
+				min(var(--default-container-size), 100%)
+				1fr;
+
+			> * {
+				grid-column: 2;
+				margin-left: var(--default-spacing);
+				margin-right: var(--default-spacing);
+			}
+
+			.full-bleed {
+				grid-column: 1 / -1;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		/* Constrain Container */
+		.container {
+			width: min(var(--default-container-size), 100%);
+			margin: 0 auto;
+		}
+
+		/* Lucide Icons */
+		.lucide {
+			width: 1em;
+			height: 1em;
+			stroke-width: 2;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+
+			&:not(.lucide-override) {
+				stroke: currentColor;
+				fill: none;
+			}
+		}
+
+		svg:not(.lucide) {
+			width: 1em;
+			height: 1em;
+
+			fill: currentColor;
+		}
+
+		/* Hidden */
+		.hidden {
+			display: none !important;
+		}
+
+		.print-hidden {
+			@media only print {
+				display: none !important;
+			}
+		}
+
+		.visually-hidden {
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+		}
+	}
+
+	@layer theme {
+		:root {
+			color-scheme: light;
+			--theme-color-background: var(--color-white-100);
+			--theme-color-background-secondary: var(--color-white-200);
+			--theme-color-card: var(--color-white-000);
+
+			--theme-color-text: var(--color-text-black);
+			--theme-color-text-secondary: var(--color-text-black-secondary);
+			--theme-color-title: var(--color-purple-500);
+			--theme-color-text-inverse: var(--color-text-white);
+
+			--theme-color-highlight: var(--color-highlight-light);
+			--theme-color-link: var(--color-purple-400);
+
+			--theme-color-overlay-background: var(--color-overlay-background);
+			--theme-color-overlay-text: var(--color-overlay-text);
+			--theme-color-overlay-highlight: var(--color-overlay-highlight);
+
+			--theme-font-weight-medium: 500;
+		}
+
+		.theme-dark {
+			color-scheme: dark;
+			--theme-color-background: var(--color-blue-800);
+			--theme-color-background-secondary: var(--color-blue-700);
+			--theme-color-card: var(--color-blue-600);
+
+			--theme-color-text: var(--color-text-white);
+			--theme-color-text-secondary: var(--color-text-white-secondary);
+			--theme-color-title: var(--color-purple-200);
+			--theme-color-text-inverse: var(--color-text-black);
+
+			--theme-color-highlight: var(--color-highlight-dark);
+			--theme-color-link: var(--color-purple-100);
+
+			--theme-color-overlay-background: var(--color-overlay-background);
+			--theme-color-overlay-text: var(--color-overlay-text);
+			--theme-color-overlay-highlight: var(--color-overlay-highlight);
+
+			--theme-font-weight-medium: 400;
+		}
+
+		/* Everything */
+		html,
+		body {
+			font-family: var(--default-font-sans-serif);
+			font-weight: var(--theme-font-weight-medium);
+
+			color: var(--theme-color-text);
+			background-color: var(--theme-color-background);
+			transition:
+				background-color var(--default-transition),
+				color var(--default-transition);
+		}
+
+		/* Links */
+		a {
+			color: var(--theme-color-link);
+			text-underline-offset: 0.25em;
+		}
+
+		:is(h1, h2, h3, h4, h5, h6):has(a.header-anchor) {
+			position: relative;
+
+			&:is(:hover, :focus-visible) a.header-anchor {
+				color: var(--theme-color-text-secondary);
+			}
+		}
+
+		a.header-anchor {
+			color: transparent;
+			text-decoration: none;
+
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: var(--default-spacing-half);
+			transform: translateX(calc(-100% - var(--default-spacing-qtr)));
+
+			transition: color var(--default-transition);
+			outline-offset: -0.125em;
+			outline-width: 2px;
+			border-radius: var(--default-border-radius);
+
+			&:is(:hover, :focus-visible) {
+				color: var(--theme-color-link) !important;
+			}
+		}
+
+		@media screen and (max-width: 1099px) {
+			a.header-anchor {
+				color: var(--theme-color-text-secondary);
+				position: relative;
+				left: unset;
+				top: unset;
+				bottom: unset;
+
+				padding: unset;
+				transform: unset;
+			}
+		}
+
+		/* Syntax Highlighting*/
+		:not(pre) > code[class*='language-'],
+		pre[class*='language-'] {
+			border: none;
+		}
+
+		/* Horizontal Rules (for use in markdown) */
+		hr {
+			border: none;
+			border-top: 4px dotted var(--theme-color-highlight);
+			margin: var(--default-spacing-half) 0;
+		}
+
+		/* Outlines */
+
+		*:focus-visible {
+			outline: 4px solid var(--theme-color-title);
+			outline-offset: 0.25em;
+		}
+	}
+</style>

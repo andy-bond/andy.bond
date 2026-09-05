@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<!-- `critical` bucket -->
+		<style webc:is="site-styles"></style>
 		<script @raw="getBundle('js', 'critical')" webc:keep></script>
 
 		<meta charset="UTF-8" />
@@ -14,14 +15,6 @@
 		<meta webc:is="meta-favicons" />
 		<meta webc:is="meta-social" />
 		<link rel="me" href="https://mastodon.social/@andybond" />
-
-		<!-- Base Styles -->
-		<link
-			webc:keep
-			rel="stylesheet"
-			type="text/css"
-			href="/static/css/styles.css"
-		/>
 
 		<!-- Syntax Highlighting Styles -->
 		<link
