@@ -1,7 +1,7 @@
 <section webc:root="override" class="introduction">
 	<div class="intro-image">
 		<img
-			sizes="(max-width: 499px) 1200px, 600px"
+			sizes="250px"
 			src="/static/img/andy-kayla-cropped.jpg"
 			alt="Picture of Andy & Kayla"
 			loading="eager"

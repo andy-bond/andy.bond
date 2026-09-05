@@ -8,6 +8,7 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" :content="eleventy.generator" />
+		<link rel="preconnect" href="https://www.speedlify.dev/" />
 
 		<title webc:is="meta-title"></title>
 		<meta webc:is="meta-favicons" />
@@ -19,7 +20,7 @@
 			webc:keep
 			rel="stylesheet"
 			type="text/css"
-			:href="url('/static/css/styles.css')"
+			href="/static/css/styles.css"
 		/>
 
 		<!-- Syntax Highlighting Styles -->
@@ -28,7 +29,7 @@
 			webc:keep
 			rel="stylesheet"
 			type="text/css"
-			:href="url('/static/css/prism.css')"
+			href="/static/css/prism.css"
 		/>
 
 		<style @raw="getBundle('css')" webc:keep></style>
@@ -43,7 +44,7 @@
 
 		<script
 			webc:keep
-			src="/static/scripts/speedlify2-score.js"
+			src="/static/scripts/speedlify2-score.min.js"
 			type="module"
 			defer
 			async

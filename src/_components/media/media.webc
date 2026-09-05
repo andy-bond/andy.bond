@@ -1,7 +1,7 @@
 <a webc:root="override" @attributes="({ href: media.link, target: '_blank' })">
 	<div class="media-cover">
 		<img
-			sizes="(max-width: 499px) 1200px, 600px"
+			sizes="(max-width: 499px) calc(50vw - 4px), calc(25vw - 6px)"
 			:src="media.image"
 			:title="media.label"
 			:alt="media.label"
@@ -65,7 +65,8 @@
 		background-color: var(--theme-color-title);
 		color: var(--theme-color-text-inverse);
 
-		transition: background-color var(--default-transition),
+		transition:
+			background-color var(--default-transition),
 			color var(--default-transition);
 
 		--f: 0.5em; /* control the folded part*/
