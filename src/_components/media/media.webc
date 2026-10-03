@@ -60,7 +60,7 @@
 	}
 
 	.media-overlay {
-		font-size: clamp(1em, 2vw, 1.2em);
+		font-size: clamp(0.7em, 2vw, 0.8em);
 		font-weight: bold;
 		background-color: var(--theme-color-title);
 		color: var(--theme-color-text-inverse);

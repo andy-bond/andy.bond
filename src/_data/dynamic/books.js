@@ -31,6 +31,9 @@ query ReadingList($userId: Int!) {
     book {
       ...BookInfo
     }
+		user_book_reads(order_by: {id: desc}, limit: 1) {
+      progress
+    }
   }
   recentlyRead: user_books(
     where: {user_id: {_eq: $userId}, status_id: {_eq: 3}}
@@ -66,7 +69,21 @@ export default async function () {
 			},
 		});
 
-		const { currentlyReading, recentlyRead } = response.data;
+		const currentlyReading = response.data.currentlyReading.map((entry) => {
+			return {
+				...entry,
+				progress: entry.user_book_reads?.[0]?.progress ?? 0,
+				current: true,
+			};
+		});
+
+		const recentlyRead = response.data.recentlyRead.map((entry) => {
+			return {
+				...entry,
+				progress: 100,
+				current: false,
+			};
+		});
 
 		const entries = [...currentlyReading, ...recentlyRead];
 
@@ -77,6 +94,8 @@ export default async function () {
 				const image = entry.book.image.url;
 				const link = `${HARDCOVER_BOOK_URL}/${entry.book.slug}`;
 				const label = `${title} by ${author}`;
+				const progress = `${Math.round(entry.progress)}%`;
+				const current = entry.current;
 
 				return {
 					title,
@@ -84,6 +103,8 @@ export default async function () {
 					image,
 					label,
 					link,
+					progress,
+					current,
 				};
 			})
 			.slice(0, 8);

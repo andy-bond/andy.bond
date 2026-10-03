@@ -14,7 +14,7 @@
 	</div>
 	<media-grid>
 		<media webc:for="book of $data.dynamic.books" :@media="book">
-			Currently Reading
+			Currently Reading (<span @text="book.progress"></span>)
 		</media>
 	</media-grid>
 </wavy-section>
